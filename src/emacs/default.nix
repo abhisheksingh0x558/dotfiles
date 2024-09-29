@@ -37,6 +37,9 @@
         # Autocompletion
         corfu # TODO: document this here and in init.el
         cape # TODO: document this here and in init.el
+
+        # VCS integration
+        magit # Git client
       ];
   };
 
