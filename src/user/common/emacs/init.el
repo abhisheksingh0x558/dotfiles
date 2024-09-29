@@ -27,3 +27,7 @@
 (electric-pair-mode) ; Autocomplete brackets, quotes, etc.
 (global-corfu-mode)
 (setq corfu-auto t)
+
+;;; VCS integration
+;; Git client
+(evil-global-set-key 'normal (kbd "<leader>g") 'magit)
