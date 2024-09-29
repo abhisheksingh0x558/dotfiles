@@ -29,5 +29,7 @@ in {
   # Initialization files
   xdg.configFile = (transpile [
     "init" # Initialization file
+    "lua/lib" # Library
+    "lua/option" # Options
   ]);
 }
