@@ -28,3 +28,8 @@
 (vertico-mode)
 (marginalia-mode)
 (evil-global-set-key 'normal (kbd "<leader>spc") 'consult-fd)
+
+;;; Autocompletion
+(electric-pair-mode) ; Autocomplete brackets, quotes, etc.
+(global-corfu-mode)
+(setq corfu-auto t)
