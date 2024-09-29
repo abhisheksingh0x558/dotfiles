@@ -23,6 +23,10 @@
         consult # TODO: document this here and in init.el
         marginalia # TODO: document this here and in init.el
         orderless # TODO: document this here and in init.el
+
+        # Autocompletion
+        corfu # TODO: document this here and in init.el
+        cape # TODO: document this here and in init.el
       ];
   };
 
