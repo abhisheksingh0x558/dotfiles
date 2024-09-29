@@ -17,3 +17,8 @@
 (global-display-line-numbers-mode) ; Line numbering
 (which-key-mode) ; Helper popup for keys
 (vertico-posframe-mode) ; UI for mini-buffer
+
+;;; Fuzzy finder
+(vertico-mode)
+(marginalia-mode)
+(evil-global-set-key 'normal (kbd "SPC SPC") 'consult-fd)

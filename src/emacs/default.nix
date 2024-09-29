@@ -17,6 +17,12 @@
         catppuccin-theme # Theme
         (lib.warn "which-key is merged to upstream in emacs 30" which-key)
         vertico-posframe # UI for mini-buffer
+
+        # Fuzzy finder
+        vertico # TODO: document this here and in init.el
+        consult # TODO: document this here and in init.el
+        marginalia # TODO: document this here and in init.el
+        orderless # TODO: document this here and in init.el
       ];
   };
 
