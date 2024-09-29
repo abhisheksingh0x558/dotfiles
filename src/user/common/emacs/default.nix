@@ -29,6 +29,13 @@
         # TODO: Check if this is possilbe via treesitter
         hl-todo # Highlight todo comments
         rainbow-delimiters # Highlight brackets
+
+        # Fuzzy finder
+        vertico # TODO: document this here and in init.el
+        consult # TODO: document this here and in init.el
+        marginalia # TODO: document this here and in init.el
+        # TODO: Check if prescient is better
+        orderless # TODO: document this here and in init.el
       ];
   };
 
