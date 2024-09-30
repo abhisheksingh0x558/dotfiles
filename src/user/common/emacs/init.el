@@ -11,3 +11,15 @@
 (general-create-definer leader-definer :prefix "SPC")
 (general-create-definer local-leader-definer :prefix "\\")
 
+;;; UI/UX
+;; Font
+(add-to-list 'default-frame-alist
+	     '(font . "FiraCode Nerd Font-12"))
+(load-theme 'doom-one t) ; Theme
+(doom-modeline-mode 1) ; Modeline
+;; Dashboard
+(use-package dashboard
+  :config
+  (dashboard-setup-startup-hook))
+(global-display-line-numbers-mode) ; Line numbering
+(which-key-mode) ; Helper popup for keys
