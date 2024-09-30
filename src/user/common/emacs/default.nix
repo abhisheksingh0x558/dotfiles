@@ -19,6 +19,16 @@
         general
         # TODO: Replace with embark/transient/hercules
         hydra # Sticky keymaps
+
+        # UI/UX
+        doom-themes # Theme
+        nerd-icons # Icons
+        doom-modeline # Modeline
+        dashboard # Dashboard
+        highlight-indent-guides # Indentation guides
+        # TODO: Check if this is possilbe via treesitter
+        hl-todo # Highlight todo comments
+        rainbow-delimiters # Highlight brackets
       ];
   };
 
