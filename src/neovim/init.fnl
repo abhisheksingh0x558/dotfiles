@@ -108,4 +108,16 @@
 ;; (setup-package :focus)
 (setup-package :edgy)
 
+;;; Fuzzy finder
+(let [telescope (require :telescope)
+      builtin (require :telescope.builtin)
+      themes (require :telescope.themes)
+      theme (themes.get_dropdown {:previewer false})]
+  ;; Fzf file sorter
+  (telescope.load_extension :fzf)
+  (map :n :<leader><space> (lambda [] (builtin.find_files theme)))
+  (map :n :<leader><tab> (lambda [] (builtin.buffers theme)))
+  (map :n :<leader><bs> (lambda [] (builtin.oldfiles theme)))
+  (map :n :g/ (lambda [] (builtin.live_grep theme))))
+
 {}
