@@ -63,6 +63,10 @@ in {
       vim-illuminate # Highlight word under cursor
       focus-nvim # Window layout manager
       edgy-nvim # Window layout manager
+
+      # Fuzzy finder
+      telescope-nvim
+      telescope-fzf-native-nvim # Fzf file sorter
     ];
   };
 
