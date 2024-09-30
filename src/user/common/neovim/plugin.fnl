@@ -1,7 +1,9 @@
 (local vim _G.vim)
 
 (local focus-ignore-filetypes [;; Quickfix list
-                               :qf])
+                               :qf
+                               ;; Diffview panel
+                               :DiffviewFiles])
 
 (local telescope-extensions [;; Fzf file sorter
                              :fzf])
@@ -12,6 +14,15 @@
         builtin (require :telescope.builtin)
         namespace (if extension (. telescope :extensions extension) builtin)]
     (. namespace action)))
+
+(lambda hunk-jump [key direction buffer]
+  (let [gitsigns (require :gitsigns)]
+    (vim.keymap.set :n key
+                    (lambda []
+                      (if (and vim.wo.diff
+                               (or (= direction :prev) (= direction :next)))
+                          (vim.cmd.normal key {:bang true})
+                          (gitsigns.nav_hunk direction {: buffer}))))))
 
 [;;; Keymaps
  ;; Pairs of bracket keymaps
@@ -118,4 +129,16 @@
                (cmp.setup.cmdline ["/" "?"]
                                   {:sources (cmp.config.sources [;; Buffer autocompletion source
                                                                  {:name :buffer}])
-                                   :mapping (cmp.mapping.preset.cmdline)}))}]
+                                   :mapping (cmp.mapping.preset.cmdline)}))}
+ ;;; VCS integration
+ ;; Git commands in buffer
+ {:name :gitsigns
+  :setup {:on_attach (lambda [buffer]
+                       (hunk-jump "[c" :prev buffer)
+                       (hunk-jump "]c" :next buffer)
+                       (hunk-jump "[C" :first buffer)
+                       (hunk-jump "]C" :last buffer))}}
+ ;; Git client
+ {:name :neogit :keymaps (lambda [neogit] [[:n :<leader>g neogit.open]])}
+ ;; Resolve merge conflicts
+ :git-conflict]
