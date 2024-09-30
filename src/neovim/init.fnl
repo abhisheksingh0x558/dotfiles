@@ -150,4 +150,35 @@
                                          {:name :buffer}])
                       :mapping (mapping.preset.cmdline)}))
 
+;;; VCS integration
+;; Git commands in buffer
+(let [gitsigns (require :gitsigns)]
+  (gitsigns.setup {:on_attach (lambda [bufnr]
+                                (map :n "[c"
+                                     (if vim.wo.diff
+                                         (cmd.normal "[c" {:bang true})
+                                         (lambda [] (gitsigns.nav_hunk :prev)
+                                           {:buffer bufnr})))
+                                (map :n "]c"
+                                     (lambda []
+                                       (if vim.wo.diff
+                                           (cmd.normal "]c" {:bang true})
+                                           (gitsigns.nav_hunk :next
+                                                              {:buffer bufnr}))))
+                                (map :n "[C"
+                                     (lambda []
+                                       (when (not vim.wo.diff)
+                                         (gitsigns.nav_hunk :first
+                                                            {:buffer bufnr}))))
+                                (map :n "]C"
+                                     (lambda []
+                                       (when (not vim.wo.diff)
+                                         (gitsigns.nav_hunk :last
+                                                            {:buffer bufnr})))))}))
+
+;; Git client
+(let [neogit (require :neogit)]
+  (neogit.setup {:kind :replace})
+  (map :n :<leader>g neogit.open))
+
 {}
