@@ -10,3 +10,10 @@
 (evil-collection-init)
 (evil-set-leader 'normal (kbd " "))
 (evil-set-leader 'normal (kbd "\\"))
+
+;;; UI/UX
+;; Font
+(add-to-list 'default-frame-alist
+       '(font . "Fira Code Nerd Font-12"))
+(global-display-line-numbers-mode) ; Line numbering
+(which-key-mode) ; Helper popup for keys
