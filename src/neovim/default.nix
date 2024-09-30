@@ -133,6 +133,16 @@ in {
       # Fuzzy finder
       telescope-nvim
       telescope-fzf-native-nvim # Fzf file sorter
+
+      # Autocompletion
+      nvim-autopairs # Autocomplete brackets, quotes, etc.
+      nvim-snippets # Snippet engine
+      friendly-snippets # Snippets collection
+      nvim-cmp
+      cmp-buffer # Buffer autocompletion source
+      cmp-path # Filesystem path autocompletion source
+      cmp-nvim-lsp # LSP autocompletion source
+      cmp-cmdline # Command-line autocompletion source
     ];
   };
 
