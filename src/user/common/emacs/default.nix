@@ -17,6 +17,13 @@
         evil-snipe # Navigate with search labels
         # TODO: Replace with embark/transient/hercules
         hydra # Sticky keymaps
+
+        # UI/UX
+        dashboard # Dashboard
+        highlight-indent-guides # Indentation guides
+        # TODO: Check if this is possilbe via treesitter
+        hl-todo # Highlight todo comments
+        rainbow-delimiters # Highlight brackets
       ];
   };
 
