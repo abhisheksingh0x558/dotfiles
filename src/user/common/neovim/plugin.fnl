@@ -78,4 +78,32 @@
             ;; Find recent files
             [:n :<leader><bs> (telescope-find :oldfiles)]
             ;; Search project files
-            [:n :g/ (telescope-find :live_grep)]]}]
+            [:n :g/ (telescope-find :live_grep)]]}
+ ;;; Autocompletion
+ ;; Autocomplete brackets, quotes, etc.
+ :nvim-autopairs
+ ;; Snippet engine
+ {:name :snippets :setup {:create_cmp_source true :friendly_snippets true}}
+ {:name :cmp
+  :setup (lambda [cmp]
+           {:sources (cmp.config.sources [;; LSP autocompletion source
+                                          {:name :nvim_lsp}
+                                          ;; Snippet autocompletion source
+                                          {:name :snippets}
+                                          ;; Filesystem path autocompletion source
+                                          {:name :path}]
+                                         [;; Buffer autocompletion source
+                                          {:name :buffer}])
+            :mapping (cmp.mapping.preset.insert {:<tab> (cmp.mapping.confirm {:select true})
+                                                 :<cr> (cmp.mapping.confirm {:select true})})})
+  :post-hook (lambda [cmp]
+               (cmp.setup.cmdline ":"
+                                  {:sources (cmp.config.sources [;; Filesystem path autocompletion source
+                                                                 {:name :path}
+                                                                 ;; Command-line autocompletion source
+                                                                 {:name :cmdline}])
+                                   :mapping (cmp.mapping.preset.cmdline)})
+               (cmp.setup.cmdline ["/" "?"]
+                                  {:sources (cmp.config.sources [;; Buffer autocompletion source
+                                                                 {:name :buffer}])
+                                   :mapping (cmp.mapping.preset.cmdline)}))}]
