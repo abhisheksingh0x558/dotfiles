@@ -119,4 +119,35 @@
   (map :n :<leader><bs> (lambda [] (builtin.oldfiles theme)))
   (map :n :g/ (lambda [] (builtin.live_grep theme))))
 
+;;; Autocompletion
+;; Autocomplete brackets, quotes, etc.
+(setup-package :nvim-autopairs)
+;; Snippet engine
+(setup-package :snippets {:create_cmp_source true :friendly_snippets true})
+(let [cmp (require :cmp)
+      sources cmp.config.sources
+      mapping cmp.mapping]
+  (cmp.setup {;; TODO: Check if this is required
+              :snippet {:expand (lambda [args] (vim.snippet.expand args.body))}
+              :sources (sources [;; LSP autocompletion source
+                                 {:name :nvim_lsp}
+                                 ;; Snippet autocompletion source
+                                 {:name :snippets}
+                                 ;; Filesystem path autocompletion source
+                                 {:name :path}]
+                                [;; Buffer autocompletion source
+                                 {:name :buffer}])
+              :mapping (mapping.preset.insert {:<tab> (mapping.confirm {:select true})
+                                               :<cr> (mapping.confirm {:select true})})})
+  (cmp.setup.cmdline ":"
+                     {:sources (sources [;; Filesystem path autocompletion source
+                                         {:name :path}
+                                         ;; Command-line autocompletion source
+                                         {:name :cmdline}])
+                      :mapping (mapping.preset.cmdline)})
+  (cmp.setup.cmdline ["/" "?"]
+                     {:sources (sources [;; Buffer autocompletion source
+                                         {:name :buffer}])
+                      :mapping (mapping.preset.cmdline)}))
+
 {}
