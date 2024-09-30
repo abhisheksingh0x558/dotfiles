@@ -128,6 +128,10 @@ in {
       # precognition.nvim # Virtual text to discover motions
       focus-nvim # Window layout manager
       edgy-nvim # Window layout manager
+
+      # Fuzzy finder
+      telescope-nvim
+      telescope-fzf-native-nvim # Fzf file sorter
     ];
   };
 
