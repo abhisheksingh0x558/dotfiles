@@ -3,6 +3,16 @@
 (local focus-ignore-filetypes [;; Quickfix list
                                :qf])
 
+(local telescope-extensions [;; Fzf file sorter
+                             :fzf])
+
+(lambda telescope-find [action ?extension]
+  (let [extension (or ?extension false)
+        telescope (require :telescope)
+        builtin (require :telescope.builtin)
+        namespace (if extension (. telescope :extensions extension) builtin)]
+    (. namespace action)))
+
 [;;; Keymaps
  ;; Pairs of bracket keymaps
  :unimpaired
@@ -65,4 +75,19 @@
  ;;                                                         (set vim.b.focus_disable
  ;;                                                              (vim.tbl_contains focus-ignore-filetypes
  ;;                                                                                vim.bo.filetype)))}))}
- :edgy]
+ :edgy
+ ;;; Fuzzy finder
+ {:name :telescope
+  :setup {:defaults {:layout_strategy :bottom_pane
+                     :sorting_strategy :ascending}}
+  :post-hook (lambda [telescope]
+               (each [_ extension (ipairs telescope-extensions)]
+                 (telescope.load_extension extension)))
+  :keymaps [;; Find project files
+            [:n :<leader><space> (telescope-find :find_files)]
+            ;; Find buffer
+            [:n :<leader><tab> (telescope-find :buffers)]
+            ;; Find recent files
+            [:n :<leader><bs> (telescope-find :oldfiles)]
+            ;; Search project files
+            [:n :g/ (telescope-find :live_grep)]]}]
