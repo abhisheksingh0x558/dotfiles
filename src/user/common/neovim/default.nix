@@ -78,6 +78,12 @@ in {
       cmp-path # Filesystem path autocompletion source
       cmp-nvim-lsp # LSP autocompletion source
       cmp-cmdline # Command-line autocompletion source
+
+      # VCS integration
+      gitsigns-nvim # Git commands in buffer
+      neogit # Git client
+      git-conflict-nvim # Resolve merge conflicts
+      diffview-nvim # Cycle diffs
     ];
   };
 
