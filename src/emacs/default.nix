@@ -12,8 +12,16 @@
         # Vi layer
         evil
         evil-collection
+
+        # UI/UX
+        catppuccin-theme # Theme
+        (lib.warn "which-key is merged to upstream in emacs 30" which-key)
+        vertico-posframe # UI for mini-buffer
       ];
   };
 
-  xdg.configFile."emacs/init.el".source = ./init.el; # Init file
+  xdg.configFile = {
+    "emacs/init.el".source = ./init.el; # Init file
+    "emacs/early-init.el".source = ./early-init.el; # Early init file
+  };
 }
