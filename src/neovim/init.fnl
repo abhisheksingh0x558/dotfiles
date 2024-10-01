@@ -206,4 +206,8 @@
 (setup-package :refactoring)
 (setup-package :inc_rename)
 
+;;; Formattor
+(setup-package :conform {:format_after_save {}})
+(set opt.formatexpr "v:lua.require'conform'.formatexpr()")
+
 {}
