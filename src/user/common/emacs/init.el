@@ -47,3 +47,6 @@
   ;; Syntax highlighting
   ;; TODO: Check if this is required and check other treesitter supported actions from neovim apart from hightlight
   (tree-sitter-mode . tree-sitter-hl-mode))
+
+;;; Formatter
+(apheleia-global-mode)
