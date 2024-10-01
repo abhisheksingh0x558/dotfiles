@@ -47,6 +47,9 @@
         # Treesitter integration
         treesit-grammars.with-all-grammars # Language grammars
         tree-sitter-langs # Language queries
+
+        # Formatter
+        apheleia
       ];
   };
 
