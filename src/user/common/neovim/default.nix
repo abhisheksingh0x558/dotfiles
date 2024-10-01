@@ -85,6 +85,17 @@ in {
       neogit # Git client
       git-conflict-nvim # Resolve merge conflicts
       diffview-nvim # Cycle diffs
+
+      # Treesitter integration
+      nvim-treesitter.withAllGrammars # Language queries and grammars
+      nvim-treesitter-textobjects # Treesitter text objects
+      nvim-treesitter-textsubjects # Treesitter context aware text objects
+      nvim-ts-autotag # Manipulate tag pairs
+      nvim-treesitter-pairs # Manipulate pair objects
+      nvim-treesitter-context # Cursor context
+      nvim-treesitter-sexp # Manipulate S-expressions
+      nvim-ts-context-commentstring # Manipulate comments
+      nvim-paredit # Paredit implementation for neovim
     ];
   };
 
