@@ -107,6 +107,9 @@ in {
       nvim-treesitter-refactor
       refactoring-nvim
       inc-rename-nvim
+
+      # Formatter
+      conform-nvim
     ];
   };
 
