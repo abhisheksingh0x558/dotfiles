@@ -174,4 +174,11 @@
                      ((. lsp options.server :setup) {: capabilities})))))}
  ;;; Refactoring
  :refactoring
- :inc_rename]
+ :inc_rename
+ ;;; Formattor
+ {:name :conform
+  :setup (let [languages (require :language)]
+           {:format_after_save {}
+            :formatters_by_ft (collect [language options (pairs languages)]
+                                (values language options.formatters))})
+  :options {:formatexpr "v:lua.require'conform'.formatexpr()"}}]
