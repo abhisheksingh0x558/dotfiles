@@ -97,6 +97,10 @@ in {
       nvim-ts-context-commentstring # Manipulate comments
       nvim-paredit # Paredit implementation for neovim
       nvim-parinfer # Parinfer implementation for neovim
+
+      # LSP integration
+      nvim-lspconfig
+      none-ls-nvim
     ];
   };
 
@@ -107,5 +111,6 @@ in {
     "lua/option" # Options
     "lua/keymap" # Keymaps
     "lua/plugin/plugin" # Plugins
+    "lua/language" # Languages
   ]);
 }
