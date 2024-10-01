@@ -1,3 +1,4 @@
+(local vim _G.vim)
 (local lib (require :lib))
 
 ;;; Set options
@@ -12,5 +13,9 @@
 (each [_ plugins (ipairs (lib.require-modules :plugin))]
   (each [_ plugin (ipairs plugins)]
     (lib.setup-plugin plugin)))
+
+;;; UI/UX
+;; Theme
+(vim.cmd.colorscheme :carbonfox)
 
 {}
