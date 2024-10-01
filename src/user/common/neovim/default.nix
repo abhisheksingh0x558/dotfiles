@@ -43,6 +43,26 @@ in {
       other-nvim # Alternative files
       scretch-nvim # Scratch files
       hydra-nvim # Sticky keymaps
+
+      # UI/UX
+      nightfox-nvim # Theme
+      nvim-web-devicons # Icons
+      tabby-nvim # Tabline
+      feline-nvim # Statusline
+      dashboard-nvim # Dashboard
+      which-key-nvim # Helper popup for keys
+      indent-blankline-nvim # Indentation guides
+      nui-nvim # UI component library
+      noice-nvim # UI for messages, cmdline, and popupmenu
+      trouble-nvim # UI for diagnostics, references, telescope results, quickfix and location list
+      nvim-notify # UI for notifications
+      dressing-nvim # Improve UI defaults
+      # TODO: Check if this is possilbe via treesitter
+      todo-comments-nvim # Highlight todo comments
+      rainbow-delimiters-nvim # Highlight brackets
+      vim-illuminate # Highlight word under cursor
+      focus-nvim # Window layout manager
+      edgy-nvim # Window layout manager
     ];
   };
 
