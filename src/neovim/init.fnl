@@ -1,6 +1,9 @@
 (local vim _G.vim)
 (local g vim.g)
 (local map vim.keymap.set)
+(local cmd vim.cmd)
+(local opt vim.opt)
+(local api vim.api)
 
 (macro setup-package [package options]
   `(let [package# (require ,package)]
@@ -60,5 +63,49 @@
 (setup-package :other-nvim)
 ;; Scratch files
 (setup-package :scretch)
+
+;;; UI/UX
+;; Theme
+(cmd.colorscheme :catppuccin-mocha)
+;; Line numbering
+(set opt.number true)
+;; System clipboard
+(set opt.clipboard :unnamedplus)
+;; Smart seach
+(set opt.ignorecase true)
+(set opt.smartcase true)
+;; Icons
+(setup-package :nvim-web-devicons)
+;; Tabline
+(setup-package :tabby)
+;; Statusline
+(setup-package :feline)
+;; Dashboard
+(setup-package :dashboard)
+;; Indentation guides
+(setup-package :ibl {;; Disable treesitter scope indicator
+                     :scope {:enabled false}
+                     ;; Disable indentation guides for specific files
+                     :exclude {:filetypes [:dashboard]}})
+
+;; UI for messages, cmdline, and popupmenu
+(setup-package :notify
+               {:on_open (lambda [win]
+                           (api.nvim_win_set_config win {:focusable false}))})
+
+(setup-package :noice)
+;; UI for diagnostics, references, telescope results, quickfix and location list
+(setup-package :trouble)
+;; UI for progress messages
+(setup-package :fidget)
+;; Improve UI defaults
+(setup-package :dressing)
+;; Highlight todo comments
+(setup-package :todo-comments)
+;; Window layout manager
+(set opt.splitright true)
+(set opt.splitbelow true)
+;; (setup-package :focus)
+(setup-package :edgy)
 
 {}
