@@ -82,6 +82,34 @@ let
     };
     meta.homepage = "https://github.com/nvim-focus/focus.nvim/";
   };
+
+  # Manipulate pair objects
+  # TODO: Merge this to upstream nixpkgs and remove from here
+  nvim-treesitter-pairs = pkgs.vimUtils.buildVimPlugin {
+    pname = "nvim-treesitter-pairs";
+    version = "2024-10-04";
+    src = pkgs.fetchFromGitHub {
+      owner = "theHamsta";
+      repo = "nvim-treesitter-pairs";
+      rev = "f8c195d4d8464cba6971bf8de2d6a5c8c109b37a";
+      sha256 = "sha256-VHq7ohBDThkBwqUIEVBb4RujBkftu96DQe/y6l7egzM=";
+    };
+    meta.homepage = "https://github.com/theHamsta/nvim-treesitter-pairs/";
+  };
+
+  # Manipulate pair objects
+  # TODO: Merge this to upstream nixpkgs and remove from here
+  nvim-treesitter-sexp = pkgs.vimUtils.buildVimPlugin {
+    pname = "nvim-treesitter-sexp";
+    version = "2024-10-04";
+    src = pkgs.fetchFromGitHub {
+      owner = "PaterJason";
+      repo = "nvim-treesitter-sexp";
+      rev = "32509f4071f9c8ba5655bf2e1ccf1f1cd8447da0";
+      sha256 = "sha256-ehpGvHnY28Ym55B7ituwcvZmGmLt1x92J5M+m8j1ytU=";
+    };
+    meta.homepage = "https://github.com/PaterJason/nvim-treesitter-sexp/";
+  };
 in {
   # Editor
   programs.neovim = {
@@ -149,6 +177,15 @@ in {
       neogit # Git client
       git-conflict-nvim # Resolve merge conflicts
       diffview-nvim # Cycle diffs
+
+      # Treesitter integration
+      nvim-treesitter.withAllGrammars # Language queries and grammars
+      nvim-treesitter-textobjects # Treesitter text objects
+      nvim-ts-autotag # Manipulate tag pairs
+      nvim-treesitter-pairs # Manipulate pair objects
+      nvim-treesitter-context # Cursor context
+      nvim-treesitter-sexp # Manipulate S-expressions
+      nvim-ts-context-commentstring # Manipulate comments
     ];
   };
 

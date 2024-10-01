@@ -182,4 +182,25 @@
   (neogit.setup)
   (map :n :<leader>g neogit.open))
 
+;;; Treesitter integration
+(setup-package :nvim-treesitter.configs
+               {;; Syntax highlighting
+                :highlight {:enable true}
+                ;; Incremental text object selection
+                :incremental_selection {:enable true}
+                ;; Indentation
+                :indent {:enable true}
+                ;; Treesitter text objects
+                :textobjects {:select {:enable true}
+                              :swap {:enable true}
+                              :move {:enable true}
+                              :lsp_interop {:enable true}}
+                ;; Manipulate tag pairs
+                :pairs {:enable true}})
+
+;; Manipulate tag pairs
+(setup-package :nvim-ts-autotag)
+;; Manipulate S-expressions
+(setup-package :treesitter-sexp)
+
 {}
