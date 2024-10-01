@@ -45,3 +45,6 @@
   ;; Syntax highlighting
   ;; TODO: Check if this is required
   (tree-sitter-mode . tree-sitter-hl-mode))
+
+;;; Formatter
+(apheleia-global-mode)
