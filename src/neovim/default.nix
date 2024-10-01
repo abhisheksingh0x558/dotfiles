@@ -186,6 +186,10 @@ in {
       nvim-treesitter-context # Cursor context
       nvim-treesitter-sexp # Manipulate S-expressions
       nvim-ts-context-commentstring # Manipulate comments
+
+      # LSP integration
+      nvim-lspconfig
+      none-ls-nvim
     ];
   };
 
