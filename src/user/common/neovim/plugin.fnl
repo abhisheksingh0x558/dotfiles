@@ -141,4 +141,25 @@
  ;; Git client
  {:name :neogit :keymaps (lambda [neogit] [[:n :<leader>g neogit.open]])}
  ;; Resolve merge conflicts
- :git-conflict]
+ :git-conflict
+ ;;; Treesitter integration
+ {:name :nvim-treesitter.configs
+  :setup {;; Syntax highlighting
+          :highlight {:enable true}
+          ;; Incremental text object selection
+          :incremental_selection {:enable true}
+          ;; Indentation
+          :indent {:enable true}
+          ;; Treesitter text objects
+          :textobjects {:select {:enable true}
+                        :swap {:enable true}
+                        :move {:enable true}
+                        :lsp_interop {:enable true}}
+          ;; Manipulate tag pairs
+          :pairs {:enable true}}}
+ ;; Manipulate tag pairs
+ :nvim-ts-autotag
+ ;; Manipulate S-expressions
+ :treesitter-sexp
+ ;; Paredit implementation for neovim
+ :nvim-paredit]
