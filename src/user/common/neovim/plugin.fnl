@@ -162,4 +162,14 @@
  ;; Manipulate S-expressions
  :treesitter-sexp
  ;; Paredit implementation for neovim
- :nvim-paredit]
+ :nvim-paredit
+ ;;; LSP integration
+ {:name :lspconfig
+  :setup false
+  :post-hook (lambda [lsp]
+               (let [languages (require :language)
+                     cmp (require :cmp_nvim_lsp)
+                     capabilities (cmp.default_capabilities)]
+                 (each [_ options (pairs languages)]
+                   (when options.server
+                     ((. lsp options.server :setup) {: capabilities})))))}]
