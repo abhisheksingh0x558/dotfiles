@@ -35,3 +35,13 @@
 ;;; VCS integration
 ;; Git client
 (evil-global-set-key 'normal (kbd "<leader>g") 'magit)
+
+;;; Treesitter integration
+(use-package tree-sitter
+  :config
+  ;; TODO: Check if this is required
+  (global-tree-sitter-mode)
+  :hook
+  ;; Syntax highlighting
+  ;; TODO: Check if this is required
+  (tree-sitter-mode . tree-sitter-hl-mode))
