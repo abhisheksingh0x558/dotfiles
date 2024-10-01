@@ -68,6 +68,20 @@ let
     };
     meta.homepage = "https://github.com/0xJohnnyboy/scretch.nvim/";
   };
+
+  # Window manager
+  # TODO: Merge this to upstream nixpkgs and remove from here
+  focus-nvim = pkgs.vimUtils.buildVimPlugin {
+    pname = "focus.nvim";
+    version = "2024-10-04";
+    src = pkgs.fetchFromGitHub {
+      owner = "nvim-focus";
+      repo = "focus.nvim";
+      rev = "3841a38df972534567e85840d7ead20d3a26faa6";
+      sha256 = "sha256-mgHk4u0ab2uSUNE+7DU22IO/xS5uop9iATfFRk6l6hs=";
+    };
+    meta.homepage = "https://github.com/nvim-focus/focus.nvim/";
+  };
 in {
   # Editor
   programs.neovim = {
@@ -92,6 +106,28 @@ in {
       other-nvim # Alternative files
       scretch-nvim # Scratch files
       hydra-nvim # Sticky key mappings
+
+      # UI/UX
+      catppuccin-nvim # Theme
+      nvim-web-devicons # Icons
+      tabby-nvim # Tabline
+      feline-nvim # Statusline
+      dashboard-nvim # Dashboard
+      which-key-nvim # Helper popup for keys
+      indent-blankline-nvim # Indentation guides
+      nui-nvim # UI component library
+      noice-nvim # UI for messages, cmdline, and popupmenu
+      trouble-nvim # UI for diagnostics, references, telescope results, quickfix and location list
+      nvim-notify # UI for notifications
+      dressing-nvim # Improve UI defaults
+      # TODO: Check if this is possilbe via treesitter
+      todo-comments-nvim # Highlight todo comments
+      rainbow-delimiters-nvim # Highlight brackets
+      vim-illuminate # Highlight word under cursor
+      # TODO: Enable this
+      # precognition.nvim # Virtual text to discover motions
+      focus-nvim # Window layout manager
+      edgy-nvim # Window layout manager
     ];
   };
 
