@@ -1,3 +1,6 @@
 {:g {;;; Code style
      ;; Editorconfig integration
-     :editorconfig true}}
+     :editorconfig true
+     ;;; Keymaps
+     :mapleader " "
+     :maplocalleader "\\"}}
