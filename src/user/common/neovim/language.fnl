@@ -15,4 +15,11 @@
  ;;; Nu
  ;; TODO: Add formatters and linters
  :nu {;; Language server
-      :server :nushell}}
+      :server :nushell}
+ ;;; Go
+ :go {;; Language server
+      :server :gopls
+      ;; Formatters
+      :formatters [:gofumpt]
+      ;; Linters
+      :linters [:staticcheck]}}
