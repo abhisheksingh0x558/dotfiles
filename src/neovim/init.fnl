@@ -221,7 +221,9 @@
   ;; Nu language server
   (lsp.nushell.setup {: capabilities})
   ;; Go language server
-  (lsp.gopls.setup {: capabilities}))
+  (lsp.gopls.setup {: capabilities})
+  ;; Kotlin language server
+  (lsp.kotlin_language_server.setup {: capabilities}))
 
 ;;; Refactoring
 (setup-package :refactoring)
@@ -241,7 +243,9 @@
                                    ;; Nu formatter
                                    :nu [:nufmt]
                                    ;; Go formatter
-                                   :go [:gofumpt]}})
+                                   :go [:gofumpt]
+                                   ;; Kotlin formatter
+                                   :kotlin [:ktfmt]}})
 
 (set opt.formatexpr "v:lua.require'conform'.formatexpr()")
 
@@ -253,6 +257,8 @@
   (set lint.linters_by_ft.nix [:deadnix])
   ;; Go linter
   (set lint.linters_by_ft.go [:staticcheck])
+  ;; Kotlin linter
+  (set lint.linters_by_ft.kotlin [:ktlint])
   (api.nvim_create_autocmd [:BufWritePost :BufReadPost :InsertLeave]
                            {:group (api.nvim_create_augroup :linting {})
                             :callback (lambda [] (lint.try_lint))}))
