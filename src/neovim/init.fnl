@@ -215,7 +215,9 @@
       cmp (require :cmp_nvim_lsp)
       capabilities (cmp.default_capabilities)]
   ;; Fennel language server
-  (lsp.fennel_ls.setup {: capabilities}))
+  (lsp.fennel_ls.setup {: capabilities})
+  ;; Nix language server
+  (lsp.nil_ls.setup {: capabilities}))
 
 ;;; Refactoring
 (setup-package :refactoring)
@@ -225,7 +227,9 @@
 (setup-package :conform
                {:format_after_save {}
                 :formatters_by_ft {;; Fennel formatter
-                                   :fennel [:fnlfmt]}})
+                                   :fennel [:fnlfmt]
+                                   ;; Nix formatter
+                                   :nix [:nixfmt]}})
 
 (set opt.formatexpr "v:lua.require'conform'.formatexpr()")
 
@@ -233,6 +237,8 @@
 (let [lint (require :lint)]
   ;; Fennel linter
   (set lint.linters_by_ft.fennel [:fennel])
+  ;; Nix linter
+  (set lint.linters_by_ft.nix [:deadnix])
   (api.nvim_create_autocmd [:BufWritePost :BufReadPost :InsertLeave]
                            {:group (api.nvim_create_augroup :linting {})
                             :callback (lambda [] (lint.try_lint))}))
