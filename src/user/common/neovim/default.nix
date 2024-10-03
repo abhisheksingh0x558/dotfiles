@@ -129,6 +129,9 @@ in {
 
       # Outliner
       aerial-nvim
+
+      # Task runner
+      overseer-nvim
     ];
   };
 
