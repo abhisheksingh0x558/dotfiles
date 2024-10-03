@@ -150,6 +150,9 @@ in {
       nvim-dap
       nvim-dap-ui
       nvim-dap-virtual-text
+
+      # PKM tool
+      neorg
     ];
   };
 
