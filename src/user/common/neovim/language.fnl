@@ -22,4 +22,11 @@
       ;; Formatters
       :formatters [:gofumpt]
       ;; Linters
-      :linters [:staticcheck]}}
+      :linters [:staticcheck]}
+ ;;; Kotlin
+ :kotlin {;; Language server
+          :server :kotlin_language_server
+          ;; Formatters
+          :formatters [:ktfmt]
+          ;; Linters
+          :linters [:ktlint]}}
