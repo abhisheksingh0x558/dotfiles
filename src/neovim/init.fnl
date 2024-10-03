@@ -210,16 +210,29 @@
 ;; Manipulate S-expressions
 (setup-package :treesitter-sexp)
 
+;;; LSP integration
+(let [lsp (require :lspconfig)
+      cmp (require :cmp_nvim_lsp)
+      capabilities (cmp.default_capabilities)]
+  ;; Fennel language server
+  (lsp.fennel_ls.setup {: capabilities}))
+
 ;;; Refactoring
 (setup-package :refactoring)
 (setup-package :inc_rename)
 
 ;;; Formattor
-(setup-package :conform {:format_after_save {}})
+(setup-package :conform
+               {:format_after_save {}
+                :formatters_by_ft {;; Fennel formatter
+                                   :fennel [:fnlfmt]}})
+
 (set opt.formatexpr "v:lua.require'conform'.formatexpr()")
 
 ;;; Linter
 (let [lint (require :lint)]
+  ;; Fennel linter
+  (set lint.linters_by_ft.fennel [:fennel])
   (api.nvim_create_autocmd [:BufWritePost :BufReadPost :InsertLeave]
                            {:group (api.nvim_create_augroup :linting {})
                             :callback (lambda [] (lint.try_lint))}))
