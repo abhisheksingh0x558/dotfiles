@@ -127,7 +127,11 @@
 ;; Autocomplete brackets, quotes, etc.
 (setup-package :nvim-autopairs)
 ;; Snippet engine
-(setup-package :snippets {:create_cmp_source true :friendly_snippets true})
+(setup-package :snippets {:create_cmp_source true
+                          :friendly_snippets true
+                          ;; TODO: Fix norg snippets
+                          :ignored_filetypes [:norg]})
+
 (let [cmp (require :cmp)
       sources cmp.config.sources
       mapping cmp.mapping]
@@ -263,5 +267,8 @@
 ;;; Debugger
 (setup-package :dapui)
 (setup-package :nvim-dap-virtual-text)
+
+;;; PKM tool
+(setup-package :neorg {:load {:core.defaults {} :core.concealer {}}})
 
 {}
