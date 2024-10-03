@@ -22,4 +22,11 @@
            ;; Formatters
            :formatters [:fourmolu]
            ;; Linters
-           :linters [:hlint]}}
+           :linters [:hlint]}
+ ;;; Go
+ :go {;; Language server
+      :server :gopls
+      ;; Formatters
+      :formatters [:gofumpt]
+      ;; Linters
+      :linters [:staticcheck]}}
