@@ -252,4 +252,7 @@
 ;;; Outliner
 (setup-package :aerial)
 
+;;; Task runner
+(setup-package :overseer)
+
 {}
