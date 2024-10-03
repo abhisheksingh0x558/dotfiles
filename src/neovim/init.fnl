@@ -219,7 +219,9 @@
   ;; Nix language server
   (lsp.nil_ls.setup {: capabilities})
   ;; Nu language server
-  (lsp.nushell.setup {: capabilities}))
+  (lsp.nushell.setup {: capabilities})
+  ;; Go language server
+  (lsp.gopls.setup {: capabilities}))
 
 ;;; Refactoring
 (setup-package :refactoring)
@@ -237,7 +239,9 @@
                                    ;; Nix formatter
                                    :nix [:nixfmt]
                                    ;; Nu formatter
-                                   :nu [:nufmt]}})
+                                   :nu [:nufmt]
+                                   ;; Go formatter
+                                   :go [:gofumpt]}})
 
 (set opt.formatexpr "v:lua.require'conform'.formatexpr()")
 
@@ -247,6 +251,8 @@
   (set lint.linters_by_ft.fennel [:fennel])
   ;; Nix linter
   (set lint.linters_by_ft.nix [:deadnix])
+  ;; Go linter
+  (set lint.linters_by_ft.go [:staticcheck])
   (api.nvim_create_autocmd [:BufWritePost :BufReadPost :InsertLeave]
                            {:group (api.nvim_create_augroup :linting {})
                             :callback (lambda [] (lint.try_lint))}))
