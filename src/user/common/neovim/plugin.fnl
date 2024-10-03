@@ -234,4 +234,6 @@
   :setup {:config {:repl_definition {:haskell {:command [:ghci]}}}}}
  ;;; Debugger
  :dapui
- :nvim-dap-virtual-text]
+ :nvim-dap-virtual-text
+ ;;; PKM tool
+ {:name :neorg :setup {:load {:core.defaults {} :core.concealer {}}}}]
