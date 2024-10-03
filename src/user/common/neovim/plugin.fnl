@@ -219,4 +219,6 @@
  ;;; Project manager
  :project_nvim
  ;;; Outliner
- :aerial]
+ :aerial
+ ;;; Task runner
+ :overseer]
