@@ -202,4 +202,6 @@
  ;; Explorer in buffer
  :oil
  ;;; Project manager
- :project_nvim]
+ :project_nvim
+ ;;; Outliner
+ :aerial]

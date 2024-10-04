@@ -126,6 +126,9 @@ in {
 
       # Project manager
       project-nvim
+
+      # Outliner
+      aerial-nvim
     ];
   };
 
