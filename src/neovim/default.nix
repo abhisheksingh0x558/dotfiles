@@ -190,6 +190,11 @@ in {
       # LSP integration
       nvim-lspconfig
       none-ls-nvim
+
+      # Refactoring
+      nvim-treesitter-refactor
+      refactoring-nvim
+      inc-rename-nvim
     ];
   };
 
