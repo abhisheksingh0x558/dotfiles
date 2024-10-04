@@ -133,6 +133,9 @@ in {
 
       # Task runner
       overseer-nvim
+
+      # Test runner
+      neotest
     ];
   };
 
