@@ -145,6 +145,11 @@ in {
 
       # Notebook runner
       molten-nvim
+
+      # Debugger
+      nvim-dap
+      nvim-dap-ui
+      nvim-dap-virtual-text
     ];
   };
 
