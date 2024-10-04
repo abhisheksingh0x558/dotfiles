@@ -201,6 +201,10 @@ in {
 
       # Linter
       nvim-lint
+
+      # Folding
+      # TODO: Enable this
+      # nvim-ufo
     ];
   };
 

@@ -217,4 +217,14 @@
                            {:group (api.nvim_create_augroup :linting {})
                             :callback (lambda [] (lint.try_lint))}))
 
+;;; Folding
+;; TODO: Enable this
+;; (let [ufo (require :ufo)]
+;;   (ufo.setup {:provider_selector (lambda [] [:treesitter :indent])})
+;;   (set opt.foldcolumn :1)
+;;   (set opt.foldlevel 99)
+;;   (set opt.foldlevelstart 99)
+;;   (map :n :zR ufo.openAllFolds)
+;;   (map :n :zM ufo.closeAllFolds))
+
 {}
