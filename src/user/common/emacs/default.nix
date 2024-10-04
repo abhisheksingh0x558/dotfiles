@@ -50,6 +50,11 @@
 
         # Formatter
         apheleia
+
+        # Nix support
+        # TODO: Merge this in upstream emacs and remove from here
+        nix-mode
+        nix-ts-mode
       ];
   };
 
