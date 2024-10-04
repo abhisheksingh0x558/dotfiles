@@ -180,4 +180,9 @@
                                               {:group (vim.api.nvim_create_augroup :linting
                                                                                    {})
                                                :callback (lambda []
-                                                           (lint.try_lint))})))}]
+                                                           (lint.try_lint))})))}
+ ;;; Folding
+ {:name :ufo
+  :setup {:provider_selector (lambda [] [:treesitter :indent])}
+  :options {:foldcolumn :1 :foldlevel 99 :foldlevelstart 99 :foldenable true}
+  :keymaps (lambda [ufo] [[:n :zR ufo.openAllFolds] [:n :zM ufo.closeAllFolds]])}]

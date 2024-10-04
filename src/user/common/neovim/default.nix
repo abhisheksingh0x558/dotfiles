@@ -112,6 +112,9 @@ in {
 
       # Linter
       nvim-lint
+
+      # Folding
+      nvim-ufo
     ];
   };
 
