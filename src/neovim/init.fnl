@@ -202,4 +202,8 @@
 ;; Manipulate S-expressions
 (setup-package :treesitter-sexp)
 
+;;; Refactoring
+(setup-package :refactoring)
+(setup-package :inc_rename)
+
 {}
