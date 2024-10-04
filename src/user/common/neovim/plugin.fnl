@@ -206,4 +206,6 @@
  ;;; Outliner
  :aerial
  ;;; Task runner
- :overseer]
+ :overseer
+ ;;; Test runner
+ :neotest]
