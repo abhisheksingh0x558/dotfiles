@@ -255,4 +255,7 @@
 ;;; Task runner
 (setup-package :overseer)
 
+;;; Test runner
+(setup-package :neotest)
+
 {}
