@@ -225,6 +225,9 @@ in {
 
       # Test runner
       neotest
+
+      # Code runner
+      sniprun
     ];
   };
 
