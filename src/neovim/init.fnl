@@ -232,4 +232,14 @@
   (toggleterm.setup)
   (map :n :<leader>t toggleterm.toggle_command))
 
+;;; Filesystem manager
+;; Explorer in sidebar
+(let [neotree (require :neo-tree)
+      command (require :neo-tree.command)]
+  (neotree.setup)
+  (map :n :<leader>e (lambda [] (command.execute {:toggle true}))))
+
+;; Explorer in buffer
+(setup-package :oil)
+
 {}
