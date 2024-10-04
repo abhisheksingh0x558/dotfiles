@@ -172,4 +172,7 @@
                      capabilities (cmp.default_capabilities)]
                  (each [_ options (pairs languages)]
                    (when options.server
-                     ((. lsp options.server :setup) {: capabilities})))))}]
+                     ((. lsp options.server :setup) {: capabilities})))))}
+ ;;; Refactoring
+ :refactoring
+ :inc_rename]
