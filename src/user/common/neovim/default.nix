@@ -139,6 +139,10 @@ in {
 
       # Code runner
       sniprun
+
+      # REPL runner
+      iron-nvim
+      conjure
     ];
   };
 
