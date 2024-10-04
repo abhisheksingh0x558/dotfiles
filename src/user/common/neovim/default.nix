@@ -123,6 +123,9 @@ in {
       neo-tree-nvim # Explorer in sidebar
       oil-nvim # Explorer in buffer
       nvim-genghis # Commands for managing files and directories
+
+      # Project manager
+      project-nvim
     ];
   };
 
