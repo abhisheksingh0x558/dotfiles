@@ -1,6 +1,26 @@
 {
   # Editor
-  programs.emacs.enable = true;
+  programs.emacs = {
+    enable = true;
+
+    extraPackages = epkgs:
+      with epkgs; [
+        # Keymaps
+        # Vi layer
+        evil
+        evil-collection
+        evil-commentary # Manipulate comments
+        evil-surround # Manipulate surrounding pairs
+        evil-exchange # Exchange operator
+        evil-lion # Manipulate alignments
+        # TODO: Check if this is required
+        evil-snipe # Navigate with search labels
+        # TODO: Replace with newer packages by the same author
+        general
+        # TODO: Replace with embark/transient/hercules
+        hydra # Sticky keymaps
+      ];
+  };
 
   # Initialization files
   xdg.configFile = {
