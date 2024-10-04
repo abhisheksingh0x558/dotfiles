@@ -185,4 +185,7 @@
  {:name :ufo
   :setup {:provider_selector (lambda [] [:treesitter :indent])}
   :options {:foldcolumn :1 :foldlevel 99 :foldlevelstart 99 :foldenable true}
-  :keymaps (lambda [ufo] [[:n :zR ufo.openAllFolds] [:n :zM ufo.closeAllFolds]])}]
+  :keymaps (lambda [ufo] [[:n :zR ufo.openAllFolds] [:n :zM ufo.closeAllFolds]])}
+ ;;; Terminal manager
+ {:name :toggleterm
+  :keymaps (lambda [toggleterm] [[:n :<leader>t toggleterm.toggle_command]])}]
