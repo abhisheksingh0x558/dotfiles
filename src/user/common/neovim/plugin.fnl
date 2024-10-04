@@ -228,4 +228,7 @@
  ;;; Test runner
  :neotest
  ;;; Code runner
- :sniprun]
+ :sniprun
+ ;;; REPL runner
+ {:name :iron.core
+  :setup {:config {:repl_definition {:haskell {:command [:ghci]}}}}}]
