@@ -223,4 +223,6 @@
  ;;; Task runner
  :overseer
  ;;; Test runner
- :neotest]
+ :neotest
+ ;;; Code runner
+ :sniprun]
