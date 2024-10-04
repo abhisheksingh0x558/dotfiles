@@ -109,15 +109,19 @@
 
 ;;; Fuzzy finder
 (let [telescope (require :telescope)
+      extensions telescope.extensions
       builtin (require :telescope.builtin)
       themes (require :telescope.themes)
       theme (themes.get_dropdown {:previewer false})]
   ;; Fzf file sorter
   (telescope.load_extension :fzf)
+  ;; Project manager
+  (telescope.load_extension :projects)
   (map :n :<leader><space> (lambda [] (builtin.find_files theme)))
   (map :n :<leader><tab> (lambda [] (builtin.buffers theme)))
   (map :n :<leader><bs> (lambda [] (builtin.oldfiles theme)))
-  (map :n :g/ (lambda [] (builtin.live_grep theme))))
+  (map :n :g/ (lambda [] (builtin.live_grep theme)))
+  (map :n :<leader>p (lambda [] (extensions.projects.projects theme))))
 
 ;;; Autocompletion
 ;; Autocomplete brackets, quotes, etc.
@@ -240,5 +244,8 @@
 
 ;; Explorer in buffer
 (setup-package :oil)
+
+;;; Project manager
+(setup-package :project_nvim)
 
 {}
