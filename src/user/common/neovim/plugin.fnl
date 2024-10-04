@@ -212,4 +212,7 @@
  ;;; Code runner
  :sniprun
  ;;; REPL runner
- {:name :iron.core :setup {:config {}}}]
+ {:name :iron.core :setup {:config {}}}
+ ;;; Debugger
+ :dapui
+ :nvim-dap-virtual-text]
