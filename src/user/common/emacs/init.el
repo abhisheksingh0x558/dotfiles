@@ -47,6 +47,23 @@
   ;; Syntax highlighting
   ;; TODO: Check if this is required and check other treesitter supported actions from neovim apart from hightlight
   (tree-sitter-mode . tree-sitter-hl-mode))
+;; Nix treesitter mode
+;; TODO: Merge this in upstream emacs and remove from here
+(use-package nix-ts-mode
+  :mode "\\.nix\\'")
+
+;;; LSP integration
+(use-package eglot
+  :config
+  ;; TODO: Do this in a better way
+  (add-to-list 'eglot-server-programs
+	       ;; Nix language server
+	       ;; TODO: Check if this is required
+	       '(nix-ts-mode "nil"))
+  :hook
+  ;; TODO: Check if this is required
+  ;; TODO: Do this in a better way
+  (nix-ts-mode . eglot-ensure))
 
 ;;; Formatter
 (apheleia-global-mode)
