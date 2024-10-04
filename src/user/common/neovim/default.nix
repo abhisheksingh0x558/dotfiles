@@ -100,6 +100,12 @@ in {
       # LSP integration
       nvim-lspconfig
       none-ls-nvim
+
+      # Refactoring
+      # TODO: Enable this
+      nvim-treesitter-refactor
+      refactoring-nvim
+      inc-rename-nvim
     ];
   };
 
