@@ -227,4 +227,9 @@
 ;;   (map :n :zR ufo.openAllFolds)
 ;;   (map :n :zM ufo.closeAllFolds))
 
+;;; Terminal manager
+(let [toggleterm (require :toggleterm)]
+  (toggleterm.setup)
+  (map :n :<leader>t toggleterm.toggle_command))
+
 {}
