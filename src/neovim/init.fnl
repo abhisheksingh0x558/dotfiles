@@ -257,4 +257,7 @@
 ;;; Test runner
 (setup-package :neotest)
 
+;;; Code runner
+(setup-package :sniprun)
+
 {}
