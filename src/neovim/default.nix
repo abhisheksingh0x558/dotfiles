@@ -228,6 +228,10 @@ in {
 
       # Code runner
       sniprun
+
+      # REPL runner
+      # TODO: Enable this
+      # conjure
     ];
   };
 
