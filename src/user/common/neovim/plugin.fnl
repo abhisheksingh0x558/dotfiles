@@ -225,4 +225,6 @@
  ;;; Test runner
  :neotest
  ;;; Code runner
- :sniprun]
+ :sniprun
+ ;;; REPL runner
+ {:name :iron.core :setup {:config {}}}]
