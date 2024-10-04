@@ -260,4 +260,8 @@
 ;;; Code runner
 (setup-package :sniprun)
 
+;;; Debugger
+(setup-package :dapui)
+(setup-package :nvim-dap-virtual-text)
+
 {}
