@@ -3,7 +3,9 @@
 (local focus-ignore-filetypes [;; Quickfix list
                                :qf
                                ;; Diffview panel
-                               :DiffviewFiles])
+                               :DiffviewFiles
+                               ;; Neotree filesystem explorer
+                               :neo-tree])
 
 (local telescope-extensions [;; Fzf file sorter
                              :fzf])
@@ -204,4 +206,12 @@
   :keymaps (lambda [ufo] [[:n :zR ufo.openAllFolds] [:n :zM ufo.closeAllFolds]])}
  ;;; Terminal manager
  {:name :toggleterm
-  :keymaps (lambda [toggleterm] [[:n :<leader>t toggleterm.toggle_command]])}]
+  :keymaps (lambda [toggleterm] [[:n :<leader>t toggleterm.toggle_command]])}
+ ;;; Filesystem manager
+ ;; Explorer in sidebar
+ {:name :neo-tree
+  :keymaps (lambda [_]
+             (let [command (require :neo-tree.command)]
+               [[:n :<leader>e (lambda [] (command.execute {:toggle true}))]]))}
+ ;; Explorer in buffer
+ :oil]
