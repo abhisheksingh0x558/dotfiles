@@ -231,4 +231,7 @@
  :sniprun
  ;;; REPL runner
  {:name :iron.core
-  :setup {:config {:repl_definition {:haskell {:command [:ghci]}}}}}]
+  :setup {:config {:repl_definition {:haskell {:command [:ghci]}}}}}
+ ;;; Debugger
+ :dapui
+ :nvim-dap-virtual-text]
