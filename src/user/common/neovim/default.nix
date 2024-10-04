@@ -115,6 +115,9 @@ in {
 
       # Folding
       nvim-ufo
+
+      # Terminal manager
+      toggleterm-nvim
     ];
   };
 
