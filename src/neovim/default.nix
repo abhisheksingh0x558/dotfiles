@@ -232,6 +232,11 @@ in {
       # REPL runner
       # TODO: Enable this
       # conjure
+
+      # Debugger
+      nvim-dap
+      nvim-dap-ui
+      nvim-dap-virtual-text
     ];
   };
 
