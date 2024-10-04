@@ -205,6 +205,9 @@ in {
       # Folding
       # TODO: Enable this
       # nvim-ufo
+
+      # Terminal manager
+      toggleterm-nvim
     ];
   };
 
