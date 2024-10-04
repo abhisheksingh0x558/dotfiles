@@ -249,4 +249,7 @@
 ;;; Project manager
 (setup-package :project_nvim)
 
+;;; Outliner
+(setup-package :aerial)
+
 {}
