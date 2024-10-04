@@ -8,7 +8,9 @@
                                :neo-tree])
 
 (local telescope-extensions [;; Fzf file sorter
-                             :fzf])
+                             :fzf
+                             ;; Project manager
+                             :projects])
 
 (lambda telescope-find [action ?extension]
   (let [extension (or ?extension false)
@@ -102,7 +104,9 @@
             ;; Find recent files
             [:n :<leader><bs> (telescope-find :oldfiles)]
             ;; Search project files
-            [:n :g/ (telescope-find :live_grep)]]}
+            [:n :g/ (telescope-find :live_grep)]
+            ;; Find projects
+            [:n :<leader>p (telescope-find :projects :projects)]]}
  ;;; Autocompletion
  ;; Autocomplete brackets, quotes, etc.
  :nvim-autopairs
@@ -213,4 +217,6 @@
              (let [command (require :neo-tree.command)]
                [[:n :<leader>e (lambda [] (command.execute {:toggle true}))]]))}
  ;; Explorer in buffer
- :oil]
+ :oil
+ ;;; Project manager
+ :project_nvim]
