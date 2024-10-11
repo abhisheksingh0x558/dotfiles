@@ -54,6 +54,11 @@
       starship # Prompt
       carapace # Autocompletion
       thefuck # Autocorrection
+
+      # Nix
+      nil # Language server
+      statix # Linter
+      nixfmt # Formatter
     ] ++ (if pkgs.stdenvNoCC.isLinux then
       (with pkgs; [
         # GUIs
