@@ -12,6 +12,7 @@ in {
     ./emacs # Editor
     ./neovim # Editor
     ./zellij.nix # Terminal multiplexer
+    ./language.nix # Languages
   ];
 
   # Home Manager
