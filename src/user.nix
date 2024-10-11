@@ -17,6 +17,7 @@ in {
     ./editorconfig.nix # Code style
     ./git.nix # VCS
     ./alacritty.nix # Terminal
+    ./emacs # Editor
   ];
 
   # MIME applications
