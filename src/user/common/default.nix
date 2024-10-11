@@ -7,6 +7,7 @@ in {
     ./zsh # Shell
     ./firefox.nix # Browser
     ./brave.nix # Browser
+    ./git.nix # VCS
   ];
 
   # Home Manager
