@@ -1,5 +1,8 @@
 {
-  outputs = { nixpkgs, nixos-hardware, ... }:
+  # Sync Home Manager nixpkgs version with NixOS nixpkgs version
+  inputs.home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+  outputs = { nixpkgs, nixos-hardware, home-manager, ... }:
     let
       cfg = import ./cfg/config.nix;
       system = "x86_64-linux";
@@ -44,5 +47,12 @@
           firmware
         ];
       };
+
+      # Home Mananger
+      homeConfigurations.${cfg.default.user.username} =
+        home-manager.lib.homeManagerConfiguration {
+          pkgs = nixpkgs.legacyPackages.${system};
+          modules = [ ./src/user.nix ];
+        };
     };
 }
