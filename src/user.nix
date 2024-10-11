@@ -18,6 +18,7 @@ in {
     ./git.nix # VCS
     ./alacritty.nix # Terminal
     ./emacs # Editor
+    ./neovim # Editor
   ];
 
   # MIME applications
