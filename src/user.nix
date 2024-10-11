@@ -42,6 +42,9 @@ in {
     # TUIs
     fzf # Fuzzy finder
     lazygit # Git client
+
+    # GUIs
+    bitwarden-desktop # Password manager
   ];
 
   # Fonts
