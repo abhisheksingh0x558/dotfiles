@@ -13,31 +13,51 @@
   else
     /Users/abhisheksingh;
 
-  home.packages = with pkgs; [
-    # Dotfile manager
-    chezmoi
+  home.packages = with pkgs;
+    [
+      # Dotfile manager
+      chezmoi
 
-    # CLIs
-    git # Version control system
-    zoxide # Change directory
-    eza # List files
-    bat # View files
-    fd # Find files
-    ripgrep # Search files
-    difftastic # Compare files
-    sd # Search and replace files
-    choose # Extract text from files
-    scc # Code counter
-    just # Command runner
-    ouch # Compressor
-    watchexec # File watcher
-    gnumake # Build system
-    devenv # Developer environment manager
+      # CLIs
+      git # Version control system
+      zoxide # Change directory
+      eza # List files
+      bat # View files
+      fd # Find files
+      ripgrep # Search files
+      difftastic # Compare files
+      sd # Search and replace files
+      choose # Extract text from files
+      scc # Code counter
+      just # Command runner
+      ouch # Compressor
+      watchexec # File watcher
+      gnumake # Build system
+      devenv # Developer environment manager
 
-    # TUIs
-    fzf # Fuzzy finder
-    lazygit # Git client
-    zellij # Terminal multiplexer
-    neovim # Editor
-  ];
+      # TUIs
+      fzf # Fuzzy finder
+      lazygit # Git client
+      zellij # Terminal multiplexer
+      neovim # Editor
+
+      # GUIs
+      emacs # Editor
+      zed-editor # Editor
+      vscodium # Editor
+      element-desktop # Instant messenger
+    ] ++ (if pkgs.stdenvNoCC.isLinux then
+      (with pkgs; [
+        # GUIs
+        firefox-devedition # Browser
+        brave # Browser
+        alacritty # Terminal
+        wezterm # Terminal
+        bitwarden-desktop # Password manager
+        proton-pass # Password manager
+        protonmail-desktop # Email
+        protonvpn-gui # VPN
+      ])
+    else
+      [ ]);
 }
