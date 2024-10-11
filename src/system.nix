@@ -25,4 +25,15 @@ in {
 
   # Time zone
   time.timeZone = "Asia/Kolkata";
+
+  # Default user
+  # FIXME: Set a password with `passwd` to enable login
+  users.users.${cfg.default.user.username} = {
+    isNormalUser = true;
+    extraGroups = [
+      "wheel" # Enable sudo to execute commands as root
+      "networkmanager" # Allow configuring network
+    ];
+    description = cfg.default.user.name;
+  };
 }
