@@ -10,6 +10,7 @@ in {
     ./alacritty.nix # Terminal
     ./wezterm # Terminal
     ./emacs # Editor
+    ./neovim # Editor
   ];
 
   # Home Manager
