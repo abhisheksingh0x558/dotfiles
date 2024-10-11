@@ -1,5 +1,28 @@
 {
   "nodes": {
+    "emacs-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ],
+        "nixpkgs-stable": [
+          "nixpkgs-stable"
+        ]
+      },
+      "locked": {
+        "lastModified": 1731204630,
+        "narHash": "sha256-8ZaDHOEcO5MvPK8QPnY0P95KfHlVGpg/tCZPMEmabv4=",
+        "owner": "nix-community",
+        "repo": "emacs-overlay",
+        "rev": "207f6791278638301f7783cff08d8c1e00e6703b",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "emacs-overlay",
+        "type": "github"
+      }
+    },
     "flake-utils": {
       "inputs": {
         "systems": "systems"
@@ -140,13 +163,31 @@
         "type": "github"
       }
     },
+    "nixpkgs-stable": {
+      "locked": {
+        "lastModified": 1731172921,
+        "narHash": "sha256-LTwbJCRZua1cZCiaisO1pnX446EKSZcYy9730jX1F4w=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "0b88841b5eb61720be435a9e40f69bd853fa232c",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "release-24.05",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
+        "emacs-overlay": "emacs-overlay",
         "flake-utils": "flake-utils",
         "home-manager": "home-manager",
         "nix-darwin": "nix-darwin",
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
+        "nixpkgs-stable": "nixpkgs-stable",
         "rust-overlay": "rust-overlay",
         "wezterm": "wezterm"
       }

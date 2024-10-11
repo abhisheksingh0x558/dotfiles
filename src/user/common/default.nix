@@ -10,6 +10,7 @@ in {
     ./git.nix # VCS
     ./alacritty.nix # Terminal
     ./wezterm # Terminal
+    ./emacs # Editor
   ];
 
   # Home Manager
