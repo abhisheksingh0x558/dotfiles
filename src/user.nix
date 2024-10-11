@@ -9,6 +9,7 @@ in {
     ./alacritty.nix # Terminal
     ./wezterm # Terminal
     ./emacs # Editor
+    ./neovim # Editor
   ];
 
   programs.home-manager.enable = true;
