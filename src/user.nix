@@ -30,6 +30,15 @@ in {
     # Fonts
     font-awesome
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
+
+    # CLIs
+    gnumake # Build system
+    eza # List files
+    bat # View files
+    fd # Find files
+    ripgrep # Search files
+    scc # Code counter
+    just # Command runner
   ];
 
   # Fonts
