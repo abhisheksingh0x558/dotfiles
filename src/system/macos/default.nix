@@ -27,5 +27,6 @@
     "brave-browser" # Browser
     "alacritty" # Terminal
     "wezterm" # Terminal
+    "bitwarden" # Password manager
   ];
 }
