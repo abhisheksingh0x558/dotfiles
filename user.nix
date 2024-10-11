@@ -82,6 +82,12 @@
       rust-analyzer # Language server
       clippy # Linter
       rustfmt # Formatter
+
+      # Go
+      go
+      gopls # Language server
+      go-tools # Linter
+      gofumpt # Formatter
     ] ++ (if pkgs.stdenvNoCC.isLinux then
       (with pkgs; [
         # GUIs
