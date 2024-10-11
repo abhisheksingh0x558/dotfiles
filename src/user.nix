@@ -51,6 +51,12 @@ in {
     luajitPackages.fennel
     fennel-ls # Language server
     fnlfmt # Formatter
+
+    # Nix
+    # TODO: Install language
+    nil # Language server
+    nixfmt # Formatter
+    deadnix # Linter
   ];
 
   # Fonts
