@@ -30,6 +30,31 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Flake parts
+    # TODO: Remove this overlay
+    flake-parts.url = "github:hercules-ci/flake-parts";
+
+    # Flake compat
+    # TODO: Remove this overlay
+    flake-compat.url = "github:edolstra/flake-compat";
+
+    # Git hooks
+    # TODO: Remove this overlay
+    git-hooks = {
+      url = "github:cachix/git-hooks.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs-stable.follows = "nixpkgs-stable";
+      inputs.flake-compat.follows = "flake-compat";
+    };
+
+    # Hercules CI effects
+    # TODO: Remove this overlay
+    hercules-ci-effects = {
+      url = "github:hercules-ci/hercules-ci-effects";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+    };
+
     # Wezterm nightly overlay
     # TODO: Remove this overlay
     wezterm = {
@@ -45,6 +70,17 @@
       url = "github:nix-community/emacs-overlay";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nixpkgs-stable.follows = "nixpkgs-stable";
+    };
+
+    # Neovim nightly overlay
+    # TODO: Remove this overlay
+    neovim-nightly-overlay = {
+      url = "github:nix-community/neovim-nightly-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-parts.follows = "flake-parts";
+      inputs.flake-compat.follows = "flake-compat";
+      inputs.git-hooks.follows = "flake-compat";
+      inputs.hercules-ci-effects.follows = "hercules-ci-effects";
     };
   };
 
