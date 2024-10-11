@@ -49,6 +49,17 @@ in {
     # Fonts
     font-awesome
     nerd-fonts.fira-code
+
+    # CLIs
+    gnumake # Build system
+    eza # List files
+    bat # View files
+    fd # Find files
+    ripgrep # Search files
+    scc # Code counter
+    just # Command runner
+    ouch # Compressor
+    devenv # Developer environments
   ];
 
   # Code style
