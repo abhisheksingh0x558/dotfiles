@@ -2,6 +2,7 @@
   inputs = {
     # Nixpkgs
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs-stable.url = "github:NixOS/nixpkgs/release-24.05";
 
     # NixOS hardware
     nixos-hardware.url = "github:NixOS/nixos-hardware";
@@ -36,6 +37,14 @@
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.flake-utils.follows = "flake-utils";
       inputs.rust-overlay.follows = "rust-overlay";
+    };
+
+    # Emacs nightly overlay
+    # TODO: Remove this overlay
+    emacs-overlay = {
+      url = "github:nix-community/emacs-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs-stable.follows = "nixpkgs-stable";
     };
   };
 
