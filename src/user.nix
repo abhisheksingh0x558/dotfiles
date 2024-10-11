@@ -8,6 +8,7 @@ in {
     ./git.nix # VCS
     ./alacritty.nix # Terminal
     ./wezterm # Terminal
+    ./emacs # Editor
   ];
 
   programs.home-manager.enable = true;
