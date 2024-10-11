@@ -69,6 +69,11 @@ in {
     # TODO: Install formatter
     # TODO: Install linter
     zig
+
+    # Go
+    gopls # Language server
+    gofumpt # Formatter
+    go-tools # Linter
   ];
 
   # Fonts
@@ -79,4 +84,12 @@ in {
 
   # TUIs
   programs.zoxide.enable = true; # Change directory
+
+  # Go
+  programs.go = {
+    enable = true;
+    goPath = ".local/share/go"; # Path for install global modules
+    goBin = ".local/share/bin"; # Path for installing global binaries
+    goPrivate = [ "github.com/watchtowerai" ]; # Private modules
+  };
 }
