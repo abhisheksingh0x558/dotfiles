@@ -15,6 +15,7 @@ in {
     ./nushell # Shell
     ./brave.nix # Browser
     ./editorconfig.nix # Code style
+    ./git.nix # VCS
   ];
 
   # MIME applications
