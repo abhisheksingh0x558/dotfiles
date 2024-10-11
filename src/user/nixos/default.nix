@@ -26,4 +26,10 @@ in {
 
   # Terminal
   programs.wezterm.enable = true;
+
+  home.packages = with pkgs;
+    [
+      # GUIs
+      bitwarden-desktop # Password manager
+    ];
 }
