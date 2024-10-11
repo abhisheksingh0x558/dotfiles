@@ -5,6 +5,7 @@ in {
     ./nushell # Shell
     ./firefox.nix # Browser
     ./brave.nix # Browser
+    ./git.nix # VCS
   ];
 
   programs.home-manager.enable = true;
