@@ -1,6 +1,12 @@
 { pkgs, ... }:
 let cfg = import ../cfg/config.nix;
 in {
+  imports = [
+    # TODO: Think of a better structure
+    ./hyprland/system.nix # Window manager
+    ../res/resource.nix # Resources
+  ];
+
   # NixOS version
   # WARNING: Do not change this without referring to release notes for NixOS
   system.stateVersion = "24.11";
