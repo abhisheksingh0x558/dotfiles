@@ -1,1 +1,183 @@
 * Dotfiles
+** TODOs
+*** General
+		~~ ( ) Fix cursor theme for cosmic
+		~~ ( ) Remove cosmic default applications
+		~~ ( ) Make brave, neovim and wezterm (with zellij) as default programs
+		~~ ( ) Extract fonts, themes, etc. to config file for all terminals, etc.
+		~~ ( ) Switch to nightly versions of all installed packages
+		~~ ( ) Delete nixpkgs fork and local clone
+		~~ ( ) Delete nvim-treesitter fork
+		~~ ( ) Delete conform fork
+		~~ ( ) Enable fuzzy search on emacs
+		~~ ( ) Enable ligatures both for neovim and emacs
+		~~ ( ) Set telescope theme for all commands in neovim
+		~~ ( ) Remove github PAT
+		~~ ( ) Install debug adapters for all languages
+		~~ ( ) Install test suites for all languages
+		~~ ( ) Enable nushell integration for zellij
+		~~ ( ) Fix neovim notifications
+		~~ ( ) Configure spell check
+		~~ ( ) Configure pre commit hooks
+		~~ ( ) Add ssh key caching via git/ssh-agent
+		~~ ( ) Check nixos installation instructions in apple notes and document it in dotfiles
+		~~ ( ) Configure stylix or set fonts manually
+		~~ ( ) Enable nix-darwin
+		~~ ( ) Highlight injected sql
+		~~ ( ) Make brave, alacritty, etc transparent
+		~~ ( ) Manage bitwarden password manager via HM
+		~~ ( ) Manage fd, ripgrep, eza via HM
+		~~ ( ) Remove _G prefix from neovim fennel code
+		~~ ( ) Rename boot loader
+		~~ ( ) Since nix store is world readable, encrypt secure files in it
+		~~ ( ) Encrypt netrc
+		~~ ( ) Use age/sops/git crypt/bitwarden/keybase
+		~~ ( ) Use nushell with nix shell/develop
+		~~ ( ) Validate if no secrets were commited to dotfiles repo ever
+		~~ ( ) Add clipboard manager
+		~~ ( ) Add neovim remote/client support
+		~~ ( ) Emacs posframe for minibuffer
+		~~ ( ) Enable commit signing
+		~~ ( ) Install mail client, rss feed reader, iirc, matrix, discord, slack, etc. clients
+		~~ ( ) Explore rocks, use-package, and lazy for neovim
+		~~ ( ) Explore leaf, general, straight, and cask for emacs
+		~~ ( ) Migrate to neovim 0.11 native lsp completion
+*** Emacs languages
+		~~ ( ) Fennel
+		~~ ( ) Nix
+		~~ ( ) Nu
+		~~ ( ) Go
+		~~ ( ) Kotlin
+		~~ ( ) Proto
+		~~ ( ) Bash/Sh
+		~~ ( ) Regex
+		~~ ( ) Clojure
+		~~ ( ) Common Lisp
+		~~ ( ) Conf/Gitconf
+		~~ ( ) Elisp
+		~~ ( ) Haskell
+		~~ ( ) Json
+		~~ ( ) Julia
+		~~ ( ) Justfile
+		~~ ( ) Lua
+		~~ ( ) Makefile
+		~~ ( ) Purescript
+		~~ ( ) Python
+		~~ ( ) Rust
+		~~ ( ) Scheme
+		~~ ( ) Toml
+		~~ ( ) Yaml
+		~~ ( ) Markdown
+		~~ ( ) Neorg
+		~~ ( ) Docker
+		~~ ( ) Terraform
+		~~ ( ) Sql
+*** Neovim languages
+		~~ ( ) Bash/Sh
+		~~ ( ) Regex
+		~~ ( ) Clojure
+		~~ ( ) Common Lisp
+		~~ ( ) Conf/Gitconf
+		~~ ( ) Elisp
+		~~ ( ) Haskell
+		~~ ( ) Json
+		~~ ( ) Julia
+		~~ ( ) Justfile
+		~~ ( ) Lua
+		~~ ( ) Makefile
+		~~ ( ) Purescript
+		~~ ( ) Python
+		~~ ( ) Rust
+		~~ ( ) Scheme
+		~~ ( ) Toml
+		~~ ( ) Yaml
+		~~ ( ) Markdown
+		~~ ( ) Neorg
+		~~ ( ) Docker
+		~~ ( ) Terraform
+		~~ ( ) Sql
+*** Themes
+		~~ ( ) Hyprland
+		~~ ( ) Waybar
+		~~ ( ) Fzf
+		~~ ( ) Bat
+		~~ ( ) Lazygit
+		~~ ( ) Rofi
+		~~ ( ) Starship
+		~~ ( ) Nushell
+		~~ ( ) Difftastic
+		~~ ( ) Neovim feline
+		~~ ( ) Neovim tabby
+		~~ ( ) Cosmic
+		~~ ( ) Firefox
+		~~ ( ) Wezterm
+*** Neovim plugins
+		~~ ( ) Yanky
+		~~ ( ) Marks
+		~~ ( ) Undos
+		~~ ( ) Jumps
+		~~ ( ) Changes
+		~~ ( ) Harpoon
+		~~ ( ) Arrow
+		~~ ( ) Transient mode
+		~~ ( ) Rainbow mode
+		~~ ( ) PKM tools - obsidian, roam, etc.
+		~~ ( ) Git clouding hosting site integration
+*** Emacs packages
+		~~ ( ) Any package like general.el
+		~~ ( ) Snippets
+		~~ ( ) Auto pairs
+		~~ ( ) Autocompletion
+		~~ ( ) VCS
+		~~ ( ) Treesitter plugins
+		~~ ( ) LSP tools
+		~~ ( ) Refactoring tools
+		~~ ( ) Linter
+		~~ ( ) Folding - Origami
+		~~ ( ) Terminal manager
+		~~ ( ) Filesystem manager - sidebar and buffer
+		~~ ( ) Project manager
+		~~ ( ) Code outliner
+		~~ ( ) Task runner
+		~~ ( ) Test runner
+		~~ ( ) Code runner
+		~~ ( ) REPL runner
+		~~ ( ) Debugger
+		~~ ( ) PKM tools - obsidian, roam, etc.
+		~~ ( ) AI integration
+		~~ ( ) Session manager
+		~~ ( ) Text case
+		~~ ( ) Inc/Dec operator
+		~~ ( ) Split join
+		~~ ( ) Move/duplicate operator
+		~~ ( ) Find and replace
+		~~ ( ) Text objects plain and treesitter based
+		~~ ( ) Annotation generator
+		~~ ( ) Alternate files
+		~~ ( ) Scratch files
+		~~ ( ) Transient mode
+		~~ ( ) Rainbow mode
+		~~ ( ) Icons
+		~~ ( ) Tabline
+		~~ ( ) Statusline
+		~~ ( ) UI components
+		~~ ( ) Highlight word under cursor
+		~~ ( ) Virtual text to discover motions
+		~~ ( ) Window layout manager
+		~~ ( ) Yanky
+		~~ ( ) Marks
+		~~ ( ) Undos
+		~~ ( ) Jumps
+		~~ ( ) Changes
+		~~ ( ) Harpoon
+		~~ ( ) Arrow
+		~~ ( ) Git clouding hosting site integration
+*** Neovim improvments
+		~~ ( ) Fix vim.lsp mappings
+		~~ ( ) Fix neogit tab handling
+		~~ ( ) Fix telescope theme with dressing
+		~~ ( ) Add conflict mappings
+		~~ ( ) Fix neogit log buffer top line issue
+		~~ ( ) Fugitive with cloud integrations
+		~~ ( ) Targets
+		~~ ( ) Lion

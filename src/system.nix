@@ -5,6 +5,7 @@ in {
     # TODO: Think of a better structure
     ./hyprland/system.nix # Window manager
     ../res/resource.nix # Resources
+    ./cosmic/system.nix # Desktop environment
   ];
 
   # NixOS version
