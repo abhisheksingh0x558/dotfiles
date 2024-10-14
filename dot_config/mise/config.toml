@@ -123,3 +123,6 @@ haskell = "latest" # Toolchain and package manager
 
 # Common Lisp
 # sbcl = "latest" # Toolchain # TODO: Enable this
+
+# Zig
+zig = "latest" # Toolchain
