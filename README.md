@@ -1,1 +1,261 @@
 # Dotfiles
+
+## WIP
+
+## TODOs
+
+###  General
+- [ ] Do not install zsh and nushell from home manager
+- [ ] Retry difftastic
+- [ ] Use isDarwin, isArch, flake-parts, and devenv
+- [ ] Home manager overrides
+- [ ] Enable XDG for both macos and nixos specially for nushell and zsh
+- [ ] Install and manage xcode cmdline tools and homebrew by home manager instead of nix darwin
+- [ ] Check if root is required for nix trusted users or is added by default
+- [ ] Enable homebrew autoupdate and other options
+- [ ] Add location and i18n and console settings by referring to nixos configuration
+- [ ] Check if https://cache.nixos.org/ is added to substituters on nixos and macos, and also enable cachix
+- [ ] Enable line numbering and syntax highlight on git-delta
+- [ ] Check how empty option, keymap, plugin, language fennel neovim module behave
+- [ ] Add github read:project token via nix
+- [ ] Allow defining keymap, plugin, language fennel neovim module as both array and singular objects
+- [ ] Copy nixos system setting to macos system settings
+- [ ] Track scroll settings for macos and nixos
+- [ ] Check if substituters are required by home manager and nix darwin
+- [ ] Check cmdline completion via noice/nvim-cmp
+- [ ] Split large neovim and emacs commits and configure conventional commits modules and add module scope to existing commits
+- [ ] Install git flow and conventional commits
+- [ ] Allow dynamic loading of fennel into neovim
+- [ ] Add script to clone all github repos
+- [ ] Remove cosmic default applications
+- [ ] Make brave, neovim and wezterm (with zellij) as default programs
+- [ ] Extract fonts, themes, etc. to config file for all terminals, etc.
+- [ ] Switch to nightly versions of all installed packages
+- [ ] Delete nvim-treesitter fork
+- [ ] Enable fuzzy search on emacs
+- [ ] Enable ligatures both for neovim and emacs
+- [ ] Install debug adapters for all languages
+- [ ] Install test suites for all languages
+- [ ] Enable nushell integration for zellij
+- [ ] Configure spell check
+- [ ] Configure pre commit hooks
+- [ ] Add ssh key caching via git/ssh-agent
+- [ ] Check nixos installation instructions in apple notes and document it in dotfiles
+- [ ] Configure stylix or set fonts manually
+- [ ] Enable nix-darwin
+- [ ] Highlight injected sql
+- [ ] Make brave, alacritty, etc transparent
+- [ ] Manage bitwarden password manager via HM
+- [ ] Manage fd, ripgrep, eza via HM
+- [ ] Remove _G prefix from neovim fennel code
+- [ ] Rename boot loader
+- [ ] Since nix store is world readable, encrypt secure files in it
+- [ ] Encrypt netrc
+- [ ] Use age/sops/git crypt/bitwarden/keybase
+- [ ] Validate if no secrets were commited to dotfiles repo ever
+- [ ] Add neovim remote/client support
+- [ ] Emacs posframe for minibuffer
+- [ ] Enable commit signing
+- [ ] Install mail client, rss feed reader, iirc, matrix, discord, slack, etc. clients
+- [ ] Explore rocks, use-package, and lazy for neovim
+- [ ] Explore leaf, general, straight, and cask for emacs
+- [ ] Migrate to neovim 0.11 native lsp completion, native snippet engine, only use snippets templates
+- [ ] Migrate to neovim terminal, project manager, file explorer, formatter, folder, linter and any other native features
+
+### Emacs languages
+- [ ] Bash/Sh
+- [ ] C
+- [ ] C++
+- [ ] CSS
+- [ ] Clojure
+- [ ] Common Lisp
+- [ ] Conf/Gitconf
+- [ ] Docker/compose
+- [ ] Elisp
+- [ ] Fennel
+- [ ] Go
+- [ ] HTML
+- [ ] Haskell
+- [ ] Java
+- [ ] Javascript
+- [ ] Json
+- [ ] Julia
+- [ ] Justfile
+- [ ] Kotlin
+- [ ] Latex
+- [ ] Lua
+- [ ] Makefile
+- [ ] Markdown
+- [ ] Neorg
+- [ ] Nix
+- [ ] Nu
+- [ ] Obsidian
+- [ ] Org
+- [ ] Proto
+- [ ] Purescript
+- [ ] Python
+- [ ] Racket
+- [ ] Regex
+- [ ] Rust
+- [ ] Sass
+- [ ] Scheme
+- [ ] Scss
+- [ ] Sql with dialects
+- [ ] Terraform/terragrunt
+- [ ] Toml
+- [ ] Typescript
+- [ ] Typst
+- [ ] XML
+- [ ] Yaml
+- [ ] Zig
+- [ ] Zsh
+
+### Neovim languages
+- [ ] Bash/Sh
+- [ ] C
+- [ ] C++
+- [ ] CSS
+- [ ] Clojure
+- [ ] Scala
+- [ ] Common Lisp
+- [ ] Conf/Gitconf
+- [ ] Docker/compose
+- [ ] Elisp
+- [ ] Fennel
+- [ ] Go
+- [ ] HTML
+- [ ] Haskell
+- [ ] Java
+- [ ] Javascript
+- [ ] Json
+- [ ] Julia
+- [ ] Justfile
+- [ ] Kotlin
+- [ ] Latex
+- [ ] Lua
+- [ ] Makefile
+- [ ] Markdown
+- [ ] Neorg
+- [ ] Nix
+- [ ] Nu
+- [ ] Obsidian
+- [ ] Org
+- [ ] Proto
+- [ ] Purescript
+- [ ] Elm
+- [ ] Python
+- [ ] Racket
+- [ ] Regex
+- [ ] Rust
+- [ ] Sass
+- [ ] Scheme
+- [ ] Scss
+- [ ] Sql with dialects
+- [ ] Terraform/terragrunt
+- [ ] Toml
+- [ ] Typescript
+- [ ] Typst
+- [ ] XML
+- [ ] Yaml
+- [ ] Zig
+- [ ] Zsh
+
+### Themes
+- [ ] Brave
+- [ ] Emacs
+- [ ] Neovim
+- [ ] Zellij
+- [ ] Alacritty
+- [ ] Hyprland
+- [ ] Waybar
+- [ ] Fzf
+- [ ] Bat
+- [ ] Lazygit
+- [ ] Rofi
+- [ ] Starship
+- [ ] Nushell
+- [ ] Difftastic
+- [ ] Neovim feline
+- [ ] Neovim tabby
+- [ ] Cosmic
+- [ ] Firefox
+- [ ] Wezterm
+
+### Neovim plugins
+- [ ] Yanky
+- [ ] Marks
+- [ ] Undos
+- [ ] Jumps
+- [ ] Changes
+- [ ] Harpoon
+- [ ] Arrow
+- [ ] Transient mode
+- [ ] Rainbow mode for CSS
+- [ ] PKM tools - obsidian, roam, etc.
+- [ ] Git clouding hosting site integration
+
+### Emacs packages
+- [ ] Any package like general.el
+- [ ] Snippets
+- [ ] Auto pairs
+- [ ] Autocompletion
+- [ ] VCS
+- [ ] Treesitter plugins
+- [ ] LSP tools
+- [ ] Refactoring tools
+- [ ] Linter
+- [ ] Folding - Origami
+- [ ] Terminal manager
+- [ ] Filesystem manager - sidebar and buffer
+- [ ] Project manager
+- [ ] Code outliner
+- [ ] Task runner
+- [ ] Test runner
+- [ ] Code runner
+- [ ] REPL runner
+- [ ] Debugger
+- [ ] PKM tools - obsidian, roam, etc.
+- [ ] AI integration
+- [ ] Session manager
+- [ ] Text case
+- [ ] Inc/Dec operator
+- [ ] Split join
+- [ ] Move/duplicate operator
+- [ ] Find and replace
+- [ ] Text objects plain and treesitter based
+- [ ] Annotation generator
+- [ ] Alternate files
+- [ ] Scratch files
+- [ ] Transient mode
+- [ ] Rainbow mode
+- [ ] Icons
+- [ ] Tabline
+- [ ] Statusline
+- [ ] UI components
+- [ ] Highlight word under cursor
+- [ ] Virtual text to discover motions
+- [ ] Window layout manager
+- [ ] Yanky
+- [ ] Marks
+- [ ] Undos
+- [ ] Jumps
+- [ ] Changes
+- [ ] Harpoon
+- [ ] Arrow
+- [ ] Git clouding hosting site integration
+
+### Neovim improvments
+- [x] Check if precognition-nvim is required
+- [ ] Fix vim.lsp mappings
+- [ ] Fix neogit tab handling
+- [ ] Fix telescope theme with dressing
+- [ ] Add conflict marker mappings
+- [ ] Fix neogit log buffer top line issue
+- [ ] Fugitive with cloud integrations
+- [ ] Targets
+- [ ] Lion
+- [ ] Render markdown
+- [ ] Fix neogit rebase modify
+- [ ] Fix neogit char wise diff
+- [ ] Check paredit, parinfer, vim-sexp vs nvim-treesitter-sexp
+- [ ] Check if refactoring plugings are required

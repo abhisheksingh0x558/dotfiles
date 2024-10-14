@@ -96,7 +96,8 @@ in {
       nvim-treesitter-sexp # Manipulate S-expressions
       nvim-ts-context-commentstring # Manipulate comments
       nvim-paredit # Paredit implementation for neovim
-      nvim-parinfer # Parinfer implementation for neovim
+      # TODO: Enable this
+      # nvim-parinfer # Parinfer implementation for neovim
 
       # LSP integration
       nvim-lspconfig
