@@ -29,4 +29,8 @@
           ;; Formatters
           :formatters [:ktfmt]
           ;; Linters
-          :linters [:ktlint]}}
+          :linters [:ktlint]}
+ ;;; Proto
+ ;; TODO: Add language server and linters
+ :proto {;; Formatters
+         :formatters [:buf]}}
