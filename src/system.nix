@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 let cfg = import ../cfg/config.nix;
 in {
   # NixOS version
@@ -81,4 +82,7 @@ in {
       };
     };
   };
+
+  # Default shell for all users
+  users.defaultUserShell = pkgs.nushell;
 }

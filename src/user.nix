@@ -9,4 +9,8 @@ in {
   # Default user
   home.username = cfg.default.user.username;
   home.homeDirectory = /home + "/${cfg.default.user.username}";
+
+  imports = [
+    ./nushell # Shell
+  ];
 }
