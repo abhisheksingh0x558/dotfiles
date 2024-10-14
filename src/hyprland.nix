@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: {
   # Window manager
   wayland.windowManager.hyprland = {
     enable = true;
@@ -13,6 +13,7 @@
         "$mod, t, exec, emacs" # Open editor
         "$mod, w, killactive" # Close window
         "$mod, q, exit" # Exit window manager
+        "$mod, space, exec, wofi --show drun" # Open application launcher
       ] ++ builtins.concatLists (builtins.genList (i:
         let ws = i + 1;
         in [
@@ -34,4 +35,10 @@
     enable = true;
     systemd.enable = true;
   };
+
+  home.packages = with pkgs;
+    [
+      # Application launcher
+      wofi
+    ];
 }
