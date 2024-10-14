@@ -11,4 +11,8 @@
        ;; Formatters
        :formatters [:nixfmt]
        ;; Linters
-       :linters [:deadnix]}}
+       :linters [:deadnix]}
+ ;;; Nu
+ ;; TODO: Add formatters and linters
+ :nu {;; Language server
+      :server :nushell}}
