@@ -20,6 +20,7 @@ in {
     ./emacs # Editor
     ./neovim # Editor
     ./zellij.nix # Terminal multiplexer
+    ./hyprland.nix # Window manager
   ];
 
   # MIME applications
