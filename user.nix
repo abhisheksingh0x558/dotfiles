@@ -1,4 +1,8 @@
 { pkgs, ... }: {
+  imports = [
+    ./resource.nix # Resources
+  ];
+
   # Home Manager
   programs.home-manager.enable = true;
 
@@ -101,6 +105,10 @@
         alacritty # Terminal
         wezterm # Terminal
         bitwarden-desktop # Password manager
+
+        # Clipboard manager
+        # TODO: Move this to hyprland
+        wl-clipboard
       ])
     else
       [ ]);

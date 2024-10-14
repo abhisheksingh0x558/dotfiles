@@ -1,30 +1,6 @@
-{ pkgs, ... }:
-let
-  # Transpile fennel to lua
-  transpile = files:
-    builtins.foldl' (files: file:
-      let
-        fileName = builtins.baseNameOf file;
-        filePath = pkgs.stdenvNoCC.mkDerivation rec {
-          name = "neovim";
-          src = ./${fileName} + ".fnl";
-          dontUnpack = true;
-          installPhase = ''
-            mkdir -p $out
-            fennel --compile ${src} > $out/${fileName}.lua
-          '';
-          nativeBuildInputs = [ pkgs.luajitPackages.fennel ];
-        };
-      in files // {
-        "nvim/${file}.lua".source = builtins.toString filePath
-          + "/${fileName}.lua";
-      }) { } files;
-in {
+{ pkgs, ... }: {
   # Editor
   programs.neovim = {
-    enable = true;
-    defaultEditor = true; # Default editor
-
     plugins = with pkgs.vimPlugins; [
       # Keymaps
       unimpaired-nvim # Pairs of bracket keymaps
@@ -45,7 +21,6 @@ in {
       hydra-nvim # Sticky keymaps
 
       # UI/UX
-      nightfox-nvim # Theme
       nvim-web-devicons # Icons
       tabby-nvim # Tabline
       feline-nvim # Statusline
@@ -82,7 +57,6 @@ in {
 
       # VCS integration
       gitsigns-nvim # Git commands in buffer
-      neogit # Git client
       git-conflict-nvim # Resolve merge conflicts
       diffview-nvim # Cycle diffs
 
@@ -141,7 +115,7 @@ in {
 
       # REPL runner
       iron-nvim
-      conjure
+      # conjure # TODO: Enable this
 
       # Notebook runner
       molten-nvim
@@ -165,14 +139,4 @@ in {
       octo-nvim
     ];
   };
-
-  # Initialization files
-  xdg.configFile = (transpile [
-    "init" # Initialization file
-    "lua/lib" # Library
-    "lua/option" # Options
-    "lua/keymap" # Keymaps
-    "lua/plugin/plugin" # Plugins
-    "lua/language" # Languages
-  ]);
 }
