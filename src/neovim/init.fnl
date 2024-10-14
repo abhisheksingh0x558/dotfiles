@@ -217,7 +217,9 @@
   ;; Fennel language server
   (lsp.fennel_ls.setup {: capabilities})
   ;; Nix language server
-  (lsp.nil_ls.setup {: capabilities}))
+  (lsp.nil_ls.setup {: capabilities})
+  ;; Nu language server
+  (lsp.nushell.setup {: capabilities}))
 
 ;;; Refactoring
 (setup-package :refactoring)
@@ -226,10 +228,16 @@
 ;;; Formattor
 (setup-package :conform
                {:format_after_save {}
+                :formatters {;; TODO: Merge this to upstream conform config and remove from here
+                             :nufmt {:command :nufmt
+                                     :args [:$FILENAME]
+                                     :stdin false}}
                 :formatters_by_ft {;; Fennel formatter
                                    :fennel [:fnlfmt]
                                    ;; Nix formatter
-                                   :nix [:nixfmt]}})
+                                   :nix [:nixfmt]
+                                   ;; Nu formatter
+                                   :nu [:nufmt]}})
 
 (set opt.formatexpr "v:lua.require'conform'.formatexpr()")
 
