@@ -1,5 +1,9 @@
 let cfg = import ../cfg/config.nix;
 in {
+  imports = [
+    ./nushell # Shell
+  ];
+
   programs.home-manager.enable = true;
 
   # Home Manager version
