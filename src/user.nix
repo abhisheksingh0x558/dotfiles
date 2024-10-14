@@ -80,6 +80,12 @@ in {
     kotlin-language-server # Language server
     ktfmt # Formatter
     ktlint # Linter
+
+    # Proto
+    # TODO: Install language server
+    # TODO: Install linter
+    protobuf
+    buf # Formatter
   ];
 
   # Fonts
