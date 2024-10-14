@@ -20,3 +20,6 @@ haskell = {} # Toolchain and package manager
 
 # Common Lisp
 # sbcl = {} # Toolchain # TODO: Enable this
+
+# Zig
+zig = {} # Toolchain
