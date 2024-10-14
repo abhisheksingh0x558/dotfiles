@@ -110,6 +110,9 @@ in {
 
       # Formatter
       conform-nvim
+
+      # Linter
+      nvim-lint
     ];
   };
 
