@@ -35,6 +35,12 @@
     # TODO: Install linter
     rustc
     cargo # Package manager
+
+    # Kotlin
+    kotlin
+    kotlin-language-server # Language server
+    ktfmt # Formatter
+    ktlint # Linter
   ];
 
   # Go
