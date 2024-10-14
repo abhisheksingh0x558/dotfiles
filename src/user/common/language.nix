@@ -47,6 +47,12 @@
     # TODO: Install linter
     protobuf
     buf # Formatter
+
+    # Sql
+    # TODO: Install language
+    # TODO: Install language server
+    # TODO: Install formatter
+    # TODO: Install linter
   ];
 
   # Go
