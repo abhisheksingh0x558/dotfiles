@@ -11,6 +11,9 @@ in {
     ./emacs # Editor
     ./neovim # Editor
     ./zellij.nix # Terminal multiplexer
+    # TODO: Think of a better structure
+    ./hyprland/user.nix # Window manager
+    ../res/resource.nix # Resources
   ];
 
   programs.home-manager.enable = true;
