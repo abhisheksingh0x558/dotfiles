@@ -11,5 +11,11 @@
     nil # Language server
     nixfmt # Formatter
     deadnix # Linter
+
+    # Nu
+    # TODO: Install language
+    # TODO: Install language server
+    # TODO: Install linter
+    nufmt # Formatter
   ];
 }
