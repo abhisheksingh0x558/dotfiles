@@ -72,6 +72,9 @@
 
       # Lisp
       sbcl
+
+      # Zig
+      zig
     ] ++ (if pkgs.stdenvNoCC.isLinux then
       (with pkgs; [
         # GUIs
