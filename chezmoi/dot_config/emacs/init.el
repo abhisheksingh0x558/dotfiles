@@ -5,7 +5,6 @@
 (require 'use-package-core)
 (require 'use-package-ensure)
 (require 'treesit)
-(require 'eglot)
 
 ;;; Package manager
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/")) ; Add melpa as package repository
@@ -73,22 +72,23 @@
      (rust "https://github.com/tree-sitter/tree-sitter-rust")
      (go "https://github.com/tree-sitter/tree-sitter-go")))
 ;; Treesitter major modes
-(use-package nix-ts-mode)
-(use-package haskell-ts-mode)
+(use-package nix-ts-mode :defer t)
+(use-package haskell-ts-mode :defer t)
 (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-ts-mode))
 (add-to-list 'auto-mode-alist '("\\.go\\'" . go-ts-mode))
 
 ;;; LSP integration
+(use-package lsp-mode :defer t)
+(use-package lsp-haskell :defer t)
 ;; Register language servers
-(add-to-list 'eglot-server-programs '(nix-ts-mode . "nil"))
-(add-to-list 'eglot-server-programs '(haskell-ts-mode . ("haskell-language-server-wrapper" "--lsp")))
-(add-hook 'nix-ts-mode-hook #'eglot-ensure)
-(add-hook 'haskell-ts-mode-hook #'eglot-ensure)
-(add-hook 'rust-ts-mode-hook #'eglot-ensure)
-(add-hook 'go-ts-mode-hook #'eglot-ensure)
+(add-hook 'nix-ts-mode-hook #'lsp)
+(add-hook 'haskell-ts-mode-hook #'lsp)
+(add-hook 'rust-ts-mode-hook #'lsp)
+(add-hook 'go-ts-mode-hook #'lsp)
 
 ;;; Formatter integration
 (use-package apheleia
+  :defer t
   :config
   (apheleia-global-mode)
   (add-to-list 'apheleia-formatters '(fourmolu . ("fourmolu" "--stdin-input-file" filepath)))

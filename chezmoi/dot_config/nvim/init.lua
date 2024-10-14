@@ -183,4 +183,19 @@ require("lazy").setup({
 			},
 		},
 	},
+
+	-- Terminal manager
+	{
+		"akinsho/toggleterm.nvim",
+	},
+
+	-- REPL manager
+	{
+		"Vigemus/iron.nvim",
+	},
+
+	-- Haskell support
+	{
+		"mrcjkb/haskell-tools.nvim",
+	},
 })
