@@ -1,10 +1,33 @@
-{
+{ pkgs, ... }:
+let
+  # TODO: Merge this setting to upstream nixpkgs and remove from here
+  elpaca = pkgs.emacs.pkgs.melpaBuild {
+    pname = "elpaca";
+    version = "0.0.1";
+
+    src = pkgs.fetchFromGitHub {
+      owner = "progfolio";
+      repo = "elpaca";
+      rev = "db2fd7258ff69fe2d100888cb8d92cf3bf94d465";
+      hash = "sha256-SseY0iU3D3cloKZy6xPp8QT0H1Cu2uGiiVG6rXq/UHg=";
+    };
+
+    packageRequires = [ pkgs.git ];
+  };
+in {
   # Editor
   programs.emacs = {
     enable = true;
 
     extraPackages = epkgs:
       with epkgs; [
+        # Package manager
+        elpaca
+        leaf # Package configuration
+
+        # Code style
+        editorconfig # Editorconfig integration # TODO: Remove this in emacs 30
+
         # Keymaps
         # Vi layer
         evil
@@ -29,6 +52,7 @@
         # TODO: Check if this is possilbe via treesitter
         hl-todo # Highlight todo comments
         rainbow-delimiters # Highlight brackets
+        which-key # Helper popup for keys # TODO: Remove this in emacs 30
 
         # Fuzzy finder
         vertico # TODO: document this here and in init.el
@@ -65,7 +89,8 @@
 
   # Initialization files
   xdg.configFile = {
-    "emacs/init.el".source = ./init.el; # Initialization file
-    "emacs/early-init.el".source = ./early-init.el; # Early initialization file
+    "emacs-adhoc/init.el".source = ./init.el; # Initialization file
+    "emacs-adhoc/early-init.el".source =
+      ./early-init.el; # Early initialization file
   };
 }
