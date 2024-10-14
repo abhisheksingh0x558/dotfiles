@@ -1,4 +1,8 @@
-{ pkgs, ... }: {
+{ pkgs, neovim-nightly-overlay, ... }: {
+  imports = [
+    ./resource.nix # Resources
+  ];
+
   # Home Manager
   programs.home-manager.enable = true;
 
@@ -39,10 +43,10 @@
       fzf # Fuzzy finder
       lazygit # Git client
       zellij # Terminal multiplexer
-      neovim # Editor
+      neovim-nightly-overlay.packages.${pkgs.system}.default
 
       # GUIs
-      emacs # Editor
+      emacs30 # Editor
 
       # Key manager
       keychain
@@ -101,6 +105,10 @@
         alacritty # Terminal
         wezterm # Terminal
         bitwarden-desktop # Password manager
+
+        # Clipboard manager
+        # TODO: Move this to hyprland
+        wl-clipboard
       ])
     else
       [ ]);
