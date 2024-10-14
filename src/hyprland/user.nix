@@ -29,4 +29,10 @@
       ];
     };
   };
+
+  # Status bar
+  programs.waybar = {
+    enable = true;
+    systemd.enable = true;
+  };
 }
