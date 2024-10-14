@@ -1,4 +1,4 @@
-{ inputs, ... }:
+{ inputs, pkgs, ... }:
 let
   cfg = import ../../../cfg/config.nix;
 
@@ -89,4 +89,7 @@ in {
       };
     };
   };
+
+  # Default shell for all users
+  users.defaultUserShell = pkgs.nushell;
 }

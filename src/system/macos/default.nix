@@ -1,4 +1,4 @@
-{
+{ pkgs, ... }: rec {
   imports = [ ../common ];
 
   # Nix Darwin version
@@ -14,6 +14,14 @@
   # Homebrew
   homebrew.enable = true;
   homebrew.onActivation.cleanup = "zap"; # Uninstall stale applications
+
+  # TODO: Merge this setting to upstream nixpkgs and remove from here
+  environment.shells = [
+    pkgs.nushell # Default shell
+  ];
+
+  # TODO: Merge this setting to upstream nixpkgs and remove from here
+  environment.systemPackages = environment.shells;
 
   # Homebrew casks
   homebrew.casks = [
