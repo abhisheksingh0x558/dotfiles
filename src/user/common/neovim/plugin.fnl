@@ -166,4 +166,18 @@
            {:format_after_save {}
             :formatters_by_ft (collect [language options (pairs languages)]
                                 (values language options.formatters))})
-  :options {:formatexpr "v:lua.require'conform'.formatexpr()"}}]
+  :options {:formatexpr "v:lua.require'conform'.formatexpr()"}}
+ ;;; Linter
+ {:name :lint
+  :setup false
+  :post-hook (lambda [lint]
+               (let [languages (require :language)]
+                 (each [language options (pairs languages)]
+                   (set (. lint :linters_by_ft language) options.linters))
+                 (vim.api.nvim_create_autocmd [:BufWritePost
+                                               :BufReadPost
+                                               :InsertLeave]
+                                              {:group (vim.api.nvim_create_augroup :linting
+                                                                                   {})
+                                               :callback (lambda []
+                                                           (lint.try_lint))})))}]
