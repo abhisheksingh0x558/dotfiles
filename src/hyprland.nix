@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, config, ... }: {
   # Window manager
   wayland.windowManager.hyprland = {
     enable = true;
@@ -41,4 +41,17 @@
       # Application launcher
       wofi
     ];
+
+  imports = [ ../res/resource.nix ];
+
+  # Wallpaper daemon
+  services.hyprpaper = {
+    enable = true;
+
+    settings = {
+      # Desktop wallpaper
+      preload = config.resource.wallpaper;
+      wallpaper = ", ${config.resource.wallpaper}";
+    };
+  };
 }
