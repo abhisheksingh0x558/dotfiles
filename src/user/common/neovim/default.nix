@@ -97,7 +97,8 @@ in {
       # Autocompletion
       nvim-autopairs # Autocomplete brackets, quotes, etc.
       nvim-snippets # Snippet engine
-      nvim-scissors # Manage snippets
+      # TODO: Enable this
+      # nvim-scissors # Manage snippets
       friendly-snippets # Snippets collection
       nvim-cmp
       cmp-buffer # Buffer autocompletion source
