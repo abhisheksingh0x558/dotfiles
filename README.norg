@@ -1,1 +1,83 @@
 * Dotfiles
+** TODOs
+*** (-)
+		~~ ( ) Set telescope theme for all commands
+		~~ ( ) Remove github PAT
+		~~ ( ) Fix load-path for emacs
+		~~ ( ) Fix runtimepath for neovim
+		~~ ( ) Install debug adapters for all languages
+		~~ ( ) Install test suites for all languages
+		~~ ( ) Enable nushell integration for zellij
+		~~ ( ) Fix neovim notifications
+		~~ ( ) Configure spell check
+		~~ ( ) Configure pre commit hooks
+		~~ ( ) Add macbook kernal cache
+		~~ ( ) Add nix community cache
+		~~ ( ) Add hyprland cache
+		~~ ( ) Add cosmic cache
+		~~ ( ) Add ssh key cache
+		~~ ( ) Check nixos installation instructions in apple notes and document it in dotfiles
+		~~ ( ) Configure stylix or set fonts manually
+		~~ ( ) Enable nix-darwin
+		~~ ( ) Highlight injected sql
+		~~ ( ) Make brave, alacritty, etc transparent
+		~~ ( ) Manage bitwarden password manager via HM
+		~~ ( ) Manage fd, ripgrep, eza via HM
+		~~ ( ) Remove _G prefix from neovim fennel code
+		~~ ( ) Rename boot loader
+		~~ ( ) Since nix store is world readable, encrypt secure files in it
+		~~ ( ) Encrypt netrc
+		~~ ( ) Use age/sops/git crypt/bitwarden/keybase
+		~~ ( ) Use nushell with nix shell/develop
+		~~ ( ) Validate if no secrets were commited to dotfiles repo ever
+		~~ ( ) Add clipboard manager
+		~~ ( ) Add neovim remote/client support
+		~~ ( ) Install thefuck via nix
+		~~ ( ) Install carapace via nix
+		~~ ( ) Delete nixpkgs fork and local clone
+		~~ ( ) Delete nvim-treesitter fork
+		~~ ( ) Delete conform fork
+*** Languages (-)
+		~~ ( ) Add bash/sh language support
+		~~ ( ) Add regex language support
+		~~ ( ) Add clojure language support
+		~~ ( ) Add common lisp language support
+		~~ ( ) Add conf/gitconf language support
+		~~ ( ) Add elisp language support
+		~~ ( ) Add haskell language support
+		~~ ( ) Add json language support
+		~~ ( ) Add julia language support
+		~~ ( ) Add justfile language support
+		~~ ( ) Add lua language support
+		~~ ( ) Add makefile language support
+		~~ ( ) Add purescript language support
+		~~ ( ) Add python language support
+		~~ ( ) Add rust language support
+		~~ ( ) Add scheme language support
+		~~ ( ) Add toml language support
+		~~ ( ) Add yaml language support
+		~~ ( ) Add markdown language support
+		~~ ( ) Add neorg language support
+		~~ ( ) Add docker language support
+		~~ ( ) Add terraform language support
+*** Themes
+		~~ ( ) Hyprland
+		~~ ( ) Waybar
+		~~ ( ) Fzf
+		~~ ( ) Bat
+		~~ ( ) Lazygit
+		~~ ( ) Rofi
+		~~ ( ) Starship
+		~~ ( ) Nushell
+		~~ ( ) Difftastic
+		~~ ( ) Neovim feline
+		~~ ( ) Neovim tabby
+		~~ ( ) Cosmic
+*** ( ) Neovim plugins
+		~~ ( ) Yanky
+		~~ ( ) Marks
+		~~ ( ) Undos
+		~~ ( ) Jumps
+		~~ ( ) Changes
+		~~ ( ) Harpoon
+		~~ ( ) Arrow
