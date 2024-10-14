@@ -17,5 +17,11 @@
     # TODO: Install language server
     # TODO: Install linter
     nufmt # Formatter
+
+    # Zig
+    # TODO: Install language server
+    # TODO: Install formatter
+    # TODO: Install linter
+    zig
   ];
 }
