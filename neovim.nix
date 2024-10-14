@@ -16,7 +16,7 @@ let
           nativeBuildInputs = [ pkgs.luajitPackages.fennel ];
         };
       in files // {
-        "nvim/${file}.lua".source = builtins.toString filePath
+        "nvim-adhoc/${file}.lua".source = builtins.toString filePath
           + "/${fileName}.lua";
       }) { } files;
 in {
@@ -26,6 +26,12 @@ in {
     defaultEditor = true; # Default editor
 
     plugins = with pkgs.vimPlugins; [
+      # Fennel transpiler
+      hotpot-nvim
+
+      # Plugin manager
+      lazy-nvim
+
       # Keymaps
       unimpaired-nvim # Pairs of bracket keymaps
       comment-nvim # Manipulate comments
@@ -141,7 +147,7 @@ in {
 
       # REPL runner
       iron-nvim
-      conjure
+      # conjure # TODO: Enable this
 
       # Notebook runner
       molten-nvim
