@@ -1,4 +1,8 @@
 { pkgs, ... }: {
+  imports = [
+    ./resource.nix # Resources
+  ];
+
   # Home Manager
   programs.home-manager.enable = true;
 
@@ -112,6 +116,10 @@
         proton-pass # Password manager
         protonmail-desktop # Email
         protonvpn-gui # VPN
+
+        # Clipboard manager
+        # TODO: Move this to hyprland
+        wl-clipboard
       ])
     else
       [ ]);

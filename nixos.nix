@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
 let
   # Keymaps
   keydSettings = {
@@ -10,6 +10,10 @@ let
       "overload(alt, space)"; # Map space to alt if pressed with other keys
   };
 in {
+  imports = [
+    ./resource.nix # Resources
+  ];
+
   # NixOS version
   # WARNING: Do not change this without referring to release notes for NixOS
   system.stateVersion = "24.11";
@@ -80,10 +84,33 @@ in {
   environment.systemPackages = with pkgs; [
     nushell # Shell
     zsh # Shell
+    kitty # Terminal
+    latte-dock # Dock
   ];
 
   # Default shell
   users.defaultUserShell = pkgs.zsh;
   # WARNING: Required for setting defualt user shell to zsh
   programs.zsh.enable = true;
+
+  # Display manager
+  # programs.regreet = {
+  #   enable = true;
+  #   cageArgs = [ "-s" "-m" "last" ]; # Run display server on single monitor
+  #
+  #   settings = {
+  #     background.path = config.resource.wallpaper; # Login screen wallpaper
+  #     GTK.application_prefer_dark_theme = true; # Dark theme
+  #   };
+  # };
+  # services.desktopManager.plasma6.enable = true;
+  services.xserver.displayManager.gdm.enable = true;
+
+  # Window manager
+  programs.hyprland.enable = true;
+  # services.displayManager.sddm.enable = true;
+  services.xserver.desktopManager.gnome.enable = true;
+
+  # Wayland support in chromium and electron applications
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 }
