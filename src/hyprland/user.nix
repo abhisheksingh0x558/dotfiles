@@ -15,6 +15,7 @@
         "$mod, w, killactive" # Close window
         "$mod, q, exit" # Exit window manager
         "$mod, space, exec, wofi --show drun" # Open application launcher
+        "$mod, escape, exec, hyprlock" # Open screen lock
       ] ++ builtins.concatLists (builtins.genList (i:
         let ws = i + 1;
         in [
@@ -51,6 +52,16 @@
       # Desktop wallpaper
       preload = config.resource.wallpaper;
       wallpaper = ", ${config.resource.wallpaper}";
+    };
+  };
+
+  # Screen lock
+  programs.hyprlock = {
+    enable = true;
+
+    settings = {
+      background.path = config.resource.wallpaper; # Screen lock wallpaper
+      input-field.size = "200, 50"; # Password field size
     };
   };
 }
