@@ -244,7 +244,9 @@
                                    ;; Go formatter
                                    :go [:gofumpt]
                                    ;; Kotlin formatter
-                                   :kotlin [:ktfmt]}})
+                                   :kotlin [:ktfmt]
+                                   ;; Proto formatter
+                                   :proto [:buf]}})
 
 (set opt.formatexpr "v:lua.require'conform'.formatexpr()")
 
