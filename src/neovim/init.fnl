@@ -211,4 +211,10 @@
 (setup-package :conform {:format_after_save {}})
 (set opt.formatexpr "v:lua.require'conform'.formatexpr()")
 
+;;; Linter
+(let [lint (require :lint)]
+  (api.nvim_create_autocmd [:BufWritePost :BufReadPost :InsertLeave]
+                           {:group (api.nvim_create_augroup :linting {})
+                            :callback (lambda [] (lint.try_lint))}))
+
 {}
