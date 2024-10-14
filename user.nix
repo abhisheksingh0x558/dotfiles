@@ -88,6 +88,12 @@
       gopls # Language server
       go-tools # Linter
       gofumpt # Formatter
+
+      # Kotlin
+      kotlin
+      kotlin-language-server # Language server
+      ktlint # Linter
+      ktfmt # Formatter
     ] ++ (if pkgs.stdenvNoCC.isLinux then
       (with pkgs; [
         # GUIs
