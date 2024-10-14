@@ -110,6 +110,32 @@ let
     };
     meta.homepage = "https://github.com/PaterJason/nvim-treesitter-sexp/";
   };
+
+  # Nu treesitter parser
+  # TODO: Merge this to upstream nixpkgs and remove from here
+  tree-sitter-nu = pkgs.vimUtils.buildVimPlugin {
+    pname = "tree-sitter-nu";
+    version = "2024-10-04";
+    src = pkgs.fetchFromGitHub {
+      owner = "nushell";
+      repo = "tree-sitter-nu";
+      rev = "e3b4c967937cad628dca09bd098cd780d8288750";
+      sha256 = "sha256-DlvBRKDXOJCqyJE0BJn8omqF50pQmnceiYsihJa/opg=";
+    };
+    meta.homepage = "https://github.com/nushell/tree-sitter-nu/";
+  };
+  # TODO: Merge this to upstream nixpkgs and remove from here
+  nvim-treesitter-parser-nu = pkgs.tree-sitter.buildGrammar {
+    language = "nu";
+    version = "2024-10-04";
+    src = pkgs.fetchFromGitHub {
+      owner = "nushell";
+      repo = "tree-sitter-nu";
+      rev = "e3b4c967937cad628dca09bd098cd780d8288750";
+      sha256 = "sha256-DlvBRKDXOJCqyJE0BJn8omqF50pQmnceiYsihJa/opg=";
+    };
+    meta.homepage = "https://github.com/nushell/tree-sitter-nu/";
+  };
 in {
   # Editor
   programs.neovim = {
@@ -186,6 +212,11 @@ in {
       nvim-treesitter-context # Cursor context
       nvim-treesitter-sexp # Manipulate S-expressions
       nvim-ts-context-commentstring # Manipulate comments
+      # TODO: Merge this to upstream nvim-treesitter and remove from here
+      (pkgs.neovimUtils.grammarToPlugin
+        nvim-treesitter-parser-nu) # Nu treesitter parser
+      # TODO: Merge this to upstream nvim-treesitter and remove from here
+      tree-sitter-nu # Nu treesitter parser
 
       # LSP integration
       nvim-lspconfig
