@@ -75,6 +75,12 @@ in {
     gopls # Language server
     gofumpt # Formatter
     go-tools # Linter
+
+    # Kotlin
+    kotlin
+    kotlin-language-server # Language server
+    ktfmt # Formatter
+    ktlint # Linter
   ];
 
   # Fonts
