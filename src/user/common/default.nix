@@ -2,6 +2,7 @@ let cfg = import ../../../cfg/config.nix;
 in {
   imports = [
     ./overlay.nix # Overlays
+    ./nushell # Shell
   ];
 
   # Home Manager
