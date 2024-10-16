@@ -1,4 +1,5 @@
 README.md # Readme
+justfile # Just
 
 .local/share/dot/target/ # Cargo build for Dot CLI
 
