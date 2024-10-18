@@ -27,5 +27,8 @@ in {
           "ssh -i ~/.ssh/nightfallai/auth_github"; # Work github account
       };
     }];
+
+    # Compare files CLI
+    delta.enable = true;
   };
 }
