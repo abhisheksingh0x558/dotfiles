@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 let cfg = import ../../../cfg/config.nix;
 in {
   imports = [
@@ -17,4 +18,13 @@ in {
 
   # Default user
   home.username = cfg.user.default.username;
+
+  # Fonts
+  fonts.fontconfig.enable = true;
+
+  home.packages = with pkgs; [
+    # Fonts
+    font-awesome
+    nerd-fonts.fira-code
+  ];
 }
