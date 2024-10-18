@@ -20,4 +20,7 @@ in {
     enable = true;
     package = pkgs.brave;
   };
+
+  # Terminal
+  programs.alacritty.enable = true;
 }
