@@ -26,6 +26,9 @@ in {
   programs.carapace.enable = true;
   programs.thefuck.enable = true; # Autocorrection
 
+  # TUIs
+  programs.zoxide.enable = true; # Change directory
+
   # Fonts
   fonts.fontconfig.enable = true;
 
