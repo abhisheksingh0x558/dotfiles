@@ -25,5 +25,6 @@
     "karabiner-elements" # Keymaps
     "firefox@developer-edition" # Browser
     "brave-browser" # Browser
+    "alacritty" # Terminal
   ];
 }

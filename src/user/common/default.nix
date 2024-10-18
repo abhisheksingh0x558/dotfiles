@@ -8,6 +8,7 @@ in {
     ./firefox.nix # Browser
     ./brave.nix # Browser
     ./git.nix # VCS
+    ./alacritty.nix # Terminal
   ];
 
   # Home Manager
