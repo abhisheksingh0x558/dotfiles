@@ -27,5 +27,11 @@ in {
           "ssh -i ~/.ssh/nightfallai/auth_github"; # Work github account
       };
     }];
+
+    # Compare files CLI
+    difftastic = {
+      enable = true;
+      display = "inline"; # Inline diffs
+    };
   };
 }
