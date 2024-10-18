@@ -16,6 +16,7 @@ in {
     ./brave.nix # Browser
     ./editorconfig.nix # Code style
     ./git.nix # VCS
+    ./alacritty.nix # Terminal
   ];
 
   # MIME applications
