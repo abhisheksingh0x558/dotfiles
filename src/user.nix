@@ -35,4 +35,7 @@ in {
   # Shell autocompletion
   programs.carapace.enable = true;
   programs.thefuck.enable = true; # Autocorrection
+
+  # TUIs
+  programs.zoxide.enable = true; # Change directory
 }

@@ -14,4 +14,7 @@
   # Autocompletion
   programs.carapace.enableNushellIntegration = true;
   programs.thefuck.enableNushellIntegration = true; # Autocorrection
+
+  # TUIs
+  programs.zoxide.enableNushellIntegration = true; # Change directory
 }
