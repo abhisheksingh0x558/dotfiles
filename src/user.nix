@@ -30,4 +30,7 @@ in {
 
   # Prompt
   programs.starship.enable = true;
+
+  # TUIs
+  programs.zoxide.enable = true; # Change directory
 }

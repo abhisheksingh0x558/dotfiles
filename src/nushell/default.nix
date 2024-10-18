@@ -10,4 +10,7 @@
 
   # UI/UX
   programs.starship.enableNushellIntegration = true; # Prompt
+
+  # TUIs
+  programs.zoxide.enableNushellIntegration = true; # Change directory
 }
