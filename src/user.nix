@@ -39,6 +39,10 @@ in {
     ripgrep # Search files
     scc # Code counter
     just # Command runner
+
+    # TUIs
+    fzf # Fuzzy finder
+    lazygit # Git client
   ];
 
   # Fonts
