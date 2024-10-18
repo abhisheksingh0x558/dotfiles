@@ -60,6 +60,10 @@ in {
     just # Command runner
     ouch # Compressor
     devenv # Developer environments
+
+    # TUIs
+    fzf # Fuzzy finder
+    lazygit # Git client
   ];
 
   # Code style
