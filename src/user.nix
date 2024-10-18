@@ -6,6 +6,7 @@ in {
     ./firefox.nix # Browser
     ./brave.nix # Browser
     ./git.nix # VCS
+    ./alacritty.nix # Terminal
   ];
 
   programs.home-manager.enable = true;
