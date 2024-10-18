@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 let cfg = import ../cfg/config.nix;
 in {
   programs.home-manager.enable = true;
@@ -17,4 +18,13 @@ in {
 
   # MIME applications
   xdg.mimeApps.enable = true;
+
+  home.packages = with pkgs; [
+    # Fonts
+    font-awesome
+    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+  ];
+
+  # Fonts
+  fonts.fontconfig.enable = true;
 }
