@@ -33,5 +33,11 @@
     watchexec # File watcher
     gnumake # Build system
     devenv # Developer environment manager
+
+    # TUIs
+    fzf # Fuzzy finder
+    lazygit # Git client
+    zellij # Terminal multiplexer
+    neovim # Editor
   ];
 }
