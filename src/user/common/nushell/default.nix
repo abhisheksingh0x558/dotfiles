@@ -10,4 +10,7 @@
     envFile.source = ./env.nu; # Environment file
     configFile.source = ./config.nu; # Configuration file
   };
+
+  # UI/UX
+  programs.starship.enableNushellIntegration = true; # Prompt
 }
