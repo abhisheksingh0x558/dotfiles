@@ -18,6 +18,9 @@ in {
   # Default user
   home.username = cfg.user.default.username;
 
+  # Shell prompt
+  programs.starship.enable = true;
+
   # Fonts
   fonts.fontconfig.enable = true;
 
