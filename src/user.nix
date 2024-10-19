@@ -93,6 +93,10 @@ in {
     # TODO: Install language server
     # TODO: Install formatter
     # TODO: Install linter
+
+    # Clipboard manager
+    # TODO: Check if this is required and check the default clipboard tool install with hyprland
+    wl-clipboard
   ];
 
   # Fonts
