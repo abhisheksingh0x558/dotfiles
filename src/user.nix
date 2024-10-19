@@ -28,4 +28,7 @@ in {
 
   # Fonts
   fonts.fontconfig.enable = true;
+
+  # Shell prompt
+  programs.starship.enable = true;
 }

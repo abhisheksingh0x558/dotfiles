@@ -5,5 +5,9 @@
     # TODO: Merge this setting to upstream nixpkgs and remove from here
     environmentVariables =
       config.home.sessionVariables; # Mimic environment variables
+    configFile.source = ./config.nu; # Configuration file
   };
+
+  # UI/UX
+  programs.starship.enableNushellIntegration = true; # Prompt
 }
