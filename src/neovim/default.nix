@@ -271,6 +271,9 @@ in {
 
       # PKM tool
       neorg
+
+      # AI integration
+      avante-nvim
     ];
   };
 
