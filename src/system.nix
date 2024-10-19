@@ -98,4 +98,10 @@ in {
       GTK.application_prefer_dark_theme = true; # Dark theme
     };
   };
+
+  # Window manager
+  programs.hyprland.enable = true;
+
+  # Wayland support in chromium and electron applications
+  environment.sessionVariables.NIXOS_OZONE_WL = "1";
 }
