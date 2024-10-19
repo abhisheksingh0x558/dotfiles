@@ -3,6 +3,7 @@ in {
   imports = [
     ./nushell # Shell
     ./firefox.nix # Browser
+    ./brave.nix # Browser
   ];
 
   programs.home-manager.enable = true;
@@ -14,4 +15,7 @@ in {
   # Default user
   home.username = cfg.default.user.username;
   home.homeDirectory = /home + "/${cfg.default.user.username}";
+
+  # MIME applications
+  xdg.mimeApps.enable = true;
 }
