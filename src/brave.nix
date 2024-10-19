@@ -8,6 +8,12 @@ in {
   programs.chromium = {
     enable = true;
     package = pkgs.brave;
+
+    extensions = [
+      { id = "bkkmolkhemgaeaeggcmfbghljjjoofoh"; } # Theme
+      { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # Ad blocker
+      { id = "nngceckbapebfimnlniiiahkandclblb"; } # Password manager
+    ];
   };
 
   xdg.mimeApps.defaultApplications = {
