@@ -312,4 +312,10 @@
 ;;; PKM tool
 (setup-package :neorg {:load {:core.defaults {} :core.concealer {}}})
 
+;;; AI integration
+(let [avante (require :avante_lib)]
+  (avante.load))
+
+(setup-package :avante)
+
 {}
