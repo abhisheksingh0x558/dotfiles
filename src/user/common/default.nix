@@ -5,6 +5,7 @@ in {
     ./nushell # Shell
     ./zsh # Shell
     ./firefox.nix # Browser
+    ./brave.nix # Browser
   ];
 
   # Home Manager
