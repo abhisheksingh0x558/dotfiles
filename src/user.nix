@@ -27,4 +27,7 @@ in {
 
   # Fonts
   fonts.fontconfig.enable = true;
+
+  # Prompt
+  programs.starship.enable = true;
 }
