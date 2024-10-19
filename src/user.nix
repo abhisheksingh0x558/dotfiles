@@ -12,5 +12,9 @@ in {
 
   imports = [
     ./nushell # Shell
+    ./brave.nix # Browser
   ];
+
+  # MIME applications
+  xdg.mimeApps.enable = true;
 }
