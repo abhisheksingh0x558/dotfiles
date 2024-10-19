@@ -184,6 +184,10 @@ in {
 
       # PKM tool
       neorg
+
+      # AI integration
+      # TODO: Enable this
+      # avante-nvim
     ];
   };
 
