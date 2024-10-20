@@ -38,11 +38,13 @@
     systemd.enable = true;
   };
 
-  home.packages = with pkgs;
-    [
-      # Application launcher
-      wofi
-    ];
+  home.packages = with pkgs; [
+    # Application launcher
+    wofi
+
+    # Cursor them
+    hyprcursor
+  ];
 
   # Wallpaper daemon
   services.hyprpaper = {
@@ -63,5 +65,12 @@
       background.path = config.resource.wallpaper; # Screen lock wallpaper
       input-field.size = "200, 50"; # Password field size
     };
+  };
+
+  home.sessionVariables = {
+    # Cursor theme
+    # TODO: Expose a Home Manager option for this in upstream and remove this
+    HYPRCURSOR_THEME = "Default";
+    HYPRCURSOR_SIZE = config.home.sessionVariables.XCURSOR_SIZE;
   };
 }

@@ -137,4 +137,10 @@ in {
     goBin = ".local/share/bin"; # Path for installing global binaries
     goPrivate = [ "github.com/watchtowerai" ]; # Private modules
   };
+
+  # Cursor theme
+  home.pointerCursor = {
+    name = "Catppuccin-Mocha-Mauve";
+    package = pkgs.catppuccin-cursors.mochaMauve;
+  };
 }
