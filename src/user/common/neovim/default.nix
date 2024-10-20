@@ -157,6 +157,9 @@ in {
       # AI integration
       # TODO: Enable this
       # avante-nvim
+
+      # Session manager
+      persistence-nvim
     ];
   };
 
