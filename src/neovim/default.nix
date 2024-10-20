@@ -274,6 +274,9 @@ in {
 
       # AI integration
       avante-nvim
+
+      # Session manager
+      persistence-nvim
     ];
   };
 
