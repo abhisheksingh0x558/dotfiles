@@ -37,11 +37,13 @@
     systemd.enable = true;
   };
 
-  home.packages = with pkgs;
-    [
-      # Application launcher
-      wofi
-    ];
+  home.packages = with pkgs; [
+    # Application launcher
+    wofi
+
+    # Cursor them
+    hyprcursor
+  ];
 
   imports = [ ../res/resource.nix ];
 
@@ -64,5 +66,18 @@
       background.path = config.resource.wallpaper; # Screen lock wallpaper
       input-field.size = "200, 50"; # Password field size
     };
+  };
+
+  home.sessionVariables = {
+    # Cursor theme
+    # TODO: Expose a Home Manager option for this in upstream and remove this
+    HYPRCURSOR_THEME = "Default";
+    HYPRCURSOR_SIZE = config.home.sessionVariables.XCURSOR_SIZE;
+  };
+
+  # Cursor theme
+  home.pointerCursor = {
+    name = "Catppuccin-Mocha-Mauve";
+    package = pkgs.catppuccin-cursors.mochaMauve;
   };
 }
