@@ -19,6 +19,7 @@ in {
     ./alacritty.nix # Terminal
     ./emacs # Editor
     ./neovim # Editor
+    ./zellij.nix # Terminal multiplexer
   ];
 
   # MIME applications
