@@ -12,6 +12,7 @@ in {
     ./wezterm # Terminal
     ./emacs # Editor
     ./neovim # Editor
+    ./zellij.nix # Terminal multiplexer
   ];
 
   # Home Manager
