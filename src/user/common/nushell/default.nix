@@ -16,4 +16,5 @@
 
   # Autocompletion
   programs.carapace.enableNushellIntegration = true;
+  programs.thefuck.enableNushellIntegration = true; # Autocorrection
 }
