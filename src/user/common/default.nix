@@ -8,6 +8,7 @@ in {
     ./brave.nix # Browser
     ./git.nix # VCS
     ./alacritty.nix # Terminal
+    ./wezterm # Terminal
   ];
 
   # Home Manager

@@ -29,5 +29,6 @@
     "firefox@developer-edition" # Browser
     "brave-browser" # Browser
     "alacritty" # Terminal
+    "wezterm" # Terminal
   ];
 }
