@@ -2,6 +2,7 @@ let cfg = import ../cfg/config.nix;
 in {
   imports = [
     ./nushell # Shell
+    ./firefox.nix # Browser
   ];
 
   programs.home-manager.enable = true;
