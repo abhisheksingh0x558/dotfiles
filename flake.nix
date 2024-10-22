@@ -17,6 +17,26 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    # Flake utils
+    # TODO: Remove this overlay
+    flake-utils.url = "github:numtide/flake-utils";
+
+    # Rust overlay
+    # TODO: Remove this overlay
+    rust-overlay = {
+      url = "github:oxalica/rust-overlay";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    # Wezterm nightly overlay
+    # TODO: Remove this overlay
+    wezterm = {
+      url = "github:wez/wezterm?dir=nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.flake-utils.follows = "flake-utils";
+      inputs.rust-overlay.follows = "rust-overlay";
+    };
   };
 
   outputs = inputs@{ nixpkgs, nix-darwin, home-manager, ... }:

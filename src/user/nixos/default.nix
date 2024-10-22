@@ -23,4 +23,7 @@ in {
 
   # Terminal
   programs.alacritty.enable = true;
+
+  # Terminal
+  programs.wezterm.enable = true;
 }
