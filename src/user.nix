@@ -34,4 +34,5 @@ in {
 
   # Shell autocompletion
   programs.carapace.enable = true;
+  programs.thefuck.enable = true; # Autocorrection
 }
