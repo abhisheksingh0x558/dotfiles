@@ -4,6 +4,7 @@ in {
     ./overlay.nix # Overlays
     ./nushell # Shell
     ./zsh # Shell
+    ./firefox.nix # Browser
   ];
 
   # Home Manager
