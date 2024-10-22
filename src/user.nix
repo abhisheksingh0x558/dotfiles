@@ -31,4 +31,7 @@ in {
 
   # Shell prompt
   programs.starship.enable = true;
+
+  # Shell autocompletion
+  programs.carapace.enable = true;
 }

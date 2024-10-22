@@ -10,4 +10,7 @@
 
   # UI/UX
   programs.starship.enableNushellIntegration = true; # Prompt
+
+  # Autocompletion
+  programs.carapace.enableNushellIntegration = true;
 }
