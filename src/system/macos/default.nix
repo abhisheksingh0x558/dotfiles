@@ -26,5 +26,6 @@
   # Homebrew casks
   homebrew.casks = [
     "karabiner-elements" # Keymaps
+    "firefox@developer-edition" # Browser
   ];
 }

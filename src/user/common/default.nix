@@ -3,6 +3,7 @@ in {
   imports = [
     ./overlay.nix # Overlays
     ./nushell # Shell
+    ./firefox.nix # Browser
   ];
 
   # Home Manager
