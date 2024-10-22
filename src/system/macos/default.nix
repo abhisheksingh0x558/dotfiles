@@ -26,5 +26,6 @@
   # TODO: Merge this setting to upstream nixpkgs and remove from here
   homebrew.casks = [
     "karabiner-elements" # Keymaps
+    "firefox@developer-edition" # Browser
   ];
 }
