@@ -24,6 +24,7 @@ in {
 
   # Shell autocompletion
   programs.carapace.enable = true;
+  programs.thefuck.enable = true; # Autocorrection
 
   # Fonts
   fonts.fontconfig.enable = true;
