@@ -1,7 +1,10 @@
 { pkgs, ... }:
 let cfg = import ../../../cfg/config.nix;
 in {
-  imports = [ ../common ];
+  imports = [
+    ../common
+    ./cosmic.nix # Desktop environment
+  ];
 
   # Default user
   home.homeDirectory = /home + "/${cfg.user.default.username}";
