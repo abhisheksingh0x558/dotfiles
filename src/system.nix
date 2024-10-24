@@ -91,4 +91,10 @@ in {
 
   # Default shell for all users
   users.defaultUserShell = pkgs.nushell;
+
+  # Docker
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
 }
