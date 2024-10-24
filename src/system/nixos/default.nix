@@ -86,4 +86,10 @@ in {
 
   # Default shell
   users.defaultUserShell = pkgs.zsh;
+
+  # Docker
+  virtualisation.docker.rootless = {
+    enable = true;
+    setSocketVariable = true;
+  };
 }
