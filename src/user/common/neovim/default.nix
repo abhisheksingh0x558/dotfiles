@@ -191,6 +191,9 @@ in {
 
       # Session manager
       persistence-nvim
+
+      # Github client
+      octo-nvim
     ];
   };
 
