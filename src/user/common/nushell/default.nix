@@ -9,6 +9,9 @@
     # Initialization files
     envFile.source = ./env.nu; # Environment file
     configFile.source = ./config.nu; # Configuration file
+
+    # Aliases
+    shellAliases = config.shell.aliases;
   };
 
   # UI/UX
