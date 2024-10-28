@@ -234,4 +234,6 @@
  :dapui
  :nvim-dap-virtual-text
  ;;; PKM tool
- {:name :neorg :setup {:load {:core.defaults {} :core.concealer {}}}}]
+ {:name :neorg :setup {:load {:core.defaults {} :core.concealer {}}}}
+ ;; Github client
+ {:name :octo :setup {:default_to_projects_v2 true}}]
