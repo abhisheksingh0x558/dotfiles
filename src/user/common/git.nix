@@ -30,5 +30,46 @@ in {
 
     # Compare files CLI
     delta.enable = true;
+
+    # Aliases
+    aliases = {
+      a = "add";
+      b = "branch";
+      bd = "branch --delete --force";
+      c = "commit";
+      ca = "commit --amend";
+      cam = "commit --amend --message";
+      can = "commit --amend --no-edit";
+      cm = "commit --message";
+      cn = "commit --no-edit";
+      co = "checkout";
+      cof = "checkout --force";
+      cp = "cherry-pick";
+      cpa = "cherry-pick --abort";
+      cpc = "cherry-pick --continue";
+      d = "diff";
+      ds = "diff --staged";
+      f = "fetch";
+      fp = "format-patch";
+      l = "log";
+      m = "merge";
+      ma = "merge --abort";
+      mc = "merge --continue";
+      p = "pull";
+      ph = "push";
+      phf = "push --force";
+      r = "rebase";
+      ra = "rebase --abort";
+      rc = "rebase --continue";
+      ri = "rebase --interactive";
+      rri = "rebase --root --interactive";
+      s = "status";
+      st = "stash";
+      sta = "stash apply";
+      std = "stash drop";
+      stp = "stash pop";
+      sw = "switch";
+      swc = "switch --create";
+    };
   };
 }
