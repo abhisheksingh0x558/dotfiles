@@ -3,6 +3,7 @@ let cfg = import ../../../cfg/config.nix;
 in {
   imports = [
     ./overlay.nix # Overlays
+    ./common.nix # Common utilities
     ./nushell # Shell
     ./zsh # Shell
     ./firefox.nix # Browser
