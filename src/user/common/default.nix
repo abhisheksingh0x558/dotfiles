@@ -32,6 +32,13 @@ in {
   programs.carapace.enable = true;
   programs.thefuck.enable = true; # Autocorrection
 
+  # CLIs
+  # Github client
+  programs.gh = {
+    enable = true;
+    settings.git_protocol = "ssh";
+  };
+
   # TUIs
   programs.zoxide.enable = true; # Change directory
 
