@@ -75,6 +75,13 @@
 
       # Zig
       zig
+
+      # Rust
+      rustc
+      cargo # Package manager
+      rust-analyzer # Language server
+      clippy # Linter
+      rustfmt # Formatter
     ] ++ (if pkgs.stdenvNoCC.isLinux then
       (with pkgs; [
         # GUIs
