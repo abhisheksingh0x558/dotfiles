@@ -23,3 +23,6 @@ haskell = {} # Toolchain and package manager
 
 # Zig
 zig = {} # Toolchain
+
+# Rust
+rust = { components = "rust-analyzer" } # Toolchain, package manager, language server, linter and formatter
