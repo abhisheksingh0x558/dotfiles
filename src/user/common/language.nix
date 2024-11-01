@@ -28,6 +28,13 @@
     gopls # Language server
     gofumpt # Formatter
     go-tools # Linter
+
+    # Rust
+    # TODO: Install language server
+    # TODO: Install formatter
+    # TODO: Install linter
+    rustc
+    cargo # Package manager
   ];
 
   # Go
