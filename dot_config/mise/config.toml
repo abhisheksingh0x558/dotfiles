@@ -79,3 +79,6 @@ haskell = "latest" # Toolchain and package manager
 
 # Zig
 zig = "latest" # Toolchain
+
+# Rust
+rust = { version = "latest", components = "rust-analyzer" } # Toolchain, package manager, language server, linter and formatter
