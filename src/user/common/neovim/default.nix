@@ -143,6 +143,9 @@ in {
       # REPL runner
       iron-nvim
       conjure
+
+      # Notebook runner
+      molten-nvim
     ];
   };
 
