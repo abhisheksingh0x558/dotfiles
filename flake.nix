@@ -5,9 +5,15 @@
 
     # NixOS hardware
     nixos-hardware.url = "github:NixOS/nixos-hardware";
+
+    # Nix Darwin
+    nix-darwin = {
+      url = "github:LnL7/nix-darwin";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { nixpkgs, nixos-hardware, ... }: {
+  outputs = { nixpkgs, nixos-hardware, nix-darwin, ... }: {
     # NixOS on AMD based Darwin machine
     nixosConfigurations.darwin-amd = nixpkgs.lib.nixosSystem {
       modules = [
@@ -29,6 +35,18 @@
         ./hardware.nix # FIXME: Generate with `nixos-generate-config`
         ./nixos.nix
       ];
+    };
+
+    # MacOS on AMD based Darwin machine
+    darwinConfigurations.darwin-amd = nix-darwin.lib.darwinSystem {
+      modules =
+        [ { nixpkgs.hostPlatform = "x86_64-darwin"; } ./macos.nix ];
+    };
+
+    # MacOS on ARM based Darwin machine
+    darwinConfigurations.darwin-arm = nix-darwin.lib.darwinSystem {
+      modules =
+        [ { nixpkgs.hostPlatform = "aarch64-darwin"; } ./macos.nix ];
     };
   };
 }
