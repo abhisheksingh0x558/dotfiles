@@ -13,5 +13,5 @@
 
   # Homebrew
   homebrew.enable = true;
-  homebrew.onActivationOptions.cleanup = "zap"; # Uninstall stale applications
+  homebrew.onActivation.cleanup = "zap"; # Uninstall stale applications
 }

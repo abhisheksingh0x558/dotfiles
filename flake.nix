@@ -40,5 +40,12 @@
         extraSpecialArgs = { inherit inputs; };
         modules = [ ./src/user/nixos ];
       };
+
+      # MacOS Home Mananger
+      homeConfigurations.macos = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-darwin;
+        extraSpecialArgs = { inherit inputs; };
+        modules = [ ./src/user/macos ];
+      };
     };
 }
