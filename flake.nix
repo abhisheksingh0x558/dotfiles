@@ -48,5 +48,17 @@
       pkgs = nixpkgs.legacyPackages.x86_64-linux;
       modules = [ ./src/user/nixos ];
     };
+
+    # Home Mananger on MacOS on MacBook Pro
+    homeConfigurations.macos-mbp = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.x86_64-darwin;
+      modules = [ ./src/user/macos ];
+    };
+
+    # Home Mananger on MacOS on MacBook Pro
+    homeConfigurations.macos-mbpm1 = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.aarch64-darwin;
+      modules = [ ./src/user/macos ];
+    };
   };
 }
