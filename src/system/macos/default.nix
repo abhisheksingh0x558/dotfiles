@@ -10,4 +10,8 @@
 
   # Nix daemon
   services.nix-daemon.enable = true;
+
+  # Homebrew
+  homebrew.enable = true;
+  homebrew.onActivationOptions.cleanup = "zap"; # Uninstall stale applications
 }
