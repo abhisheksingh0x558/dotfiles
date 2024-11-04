@@ -17,4 +17,14 @@
 
   # Permissible shells
   environment.shells = with pkgs; [ nushell zsh ];
+
+  # GUIs
+  homebrew.casks = [
+    "karabiner-elements" # Keymaps
+    "firefox@developer-edition" # Browser
+    "brave-browser" # Browser
+    "alacritty" # Terminal
+    "wezterm" # Terminal
+    "bitwarden" # Password manager
+  ];
 }
