@@ -82,16 +82,6 @@
       inputs.git-hooks.follows = "flake-compat";
       inputs.hercules-ci-effects.follows = "hercules-ci-effects";
     };
-
-    # Cosmic nightly overlay
-    # TODO: Remove this overlay
-    nixos-cosmic = {
-      url = "github:lilyinstarlight/nixos-cosmic";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.nixpkgs-stable.follows = "nixpkgs-stable";
-      inputs.rust-overlay.follows = "rust-overlay";
-      inputs.flake-compat.follows = "flake-compat";
-    };
   };
 
   outputs = inputs@{ nixpkgs, nix-darwin, home-manager, ... }:

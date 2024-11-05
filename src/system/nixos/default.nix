@@ -15,10 +15,10 @@ in {
   imports = [
     ./firmware.nix # Firmware
     inputs.nixos-hardware.nixosModules.apple-t2 # NOTE: Kernal for macbook to enable wifi, keyboard, touchpad, etc.
-    inputs.nixos-cosmic.nixosModules.default # Cosmic nightly overlay
     ../../../gen/hardware.nix # FIXME: Generate with `nixos-generate-config`
     ../common
-    ./cosmic.nix # Desktop environment
+    ./hyprland.nix # Window manager
+    ../../../res/resource.nix # Resources
   ];
 
   # NixOS version
