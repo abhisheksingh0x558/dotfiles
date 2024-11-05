@@ -9,6 +9,7 @@
 - [ ] Remove overlays
 - [ ] Fix justfile
 - [ ] Do not install zsh and nushell from home manager
+- [ ] Use nushell on linux and zsh on macos and bash for nix envs
 - [ ] Delete cosmic and hyprland branches from origin
 - [ ] Retry difftastic
 - [ ] Use isDarwin, isArch, flake-parts, and devenv
