@@ -34,26 +34,26 @@
     # TODO: Remove this overlay
     flake-parts.url = "github:hercules-ci/flake-parts";
 
-    # Flake compat
-    # TODO: Remove this overlay
-    flake-compat.url = "github:edolstra/flake-compat";
-
-    # Git hooks
-    # TODO: Remove this overlay
-    git-hooks = {
-      url = "github:cachix/git-hooks.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.nixpkgs-stable.follows = "nixpkgs-stable";
-      inputs.flake-compat.follows = "flake-compat";
-    };
-
-    # Hercules CI effects
-    # TODO: Remove this overlay
-    hercules-ci-effects = {
-      url = "github:hercules-ci/hercules-ci-effects";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-parts.follows = "flake-parts";
-    };
+    # # Flake compat
+    # # TODO: Remove this overlay
+    # flake-compat.url = "github:edolstra/flake-compat";
+    #
+    # # Git hooks
+    # # TODO: Remove this overlay
+    # git-hooks = {
+    #   url = "github:cachix/git-hooks.nix";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   inputs.nixpkgs-stable.follows = "nixpkgs-stable";
+    #   inputs.flake-compat.follows = "flake-compat";
+    # };
+    #
+    # # Hercules CI effects
+    # # TODO: Remove this overlay
+    # hercules-ci-effects = {
+    #   url = "github:hercules-ci/hercules-ci-effects";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   inputs.flake-parts.follows = "flake-parts";
+    # };
 
     # Wezterm nightly overlay
     # TODO: Remove this overlay
@@ -64,63 +64,64 @@
       inputs.rust-overlay.follows = "rust-overlay";
     };
 
-    # Emacs nightly overlay
-    # TODO: Remove this overlay
-    emacs-overlay = {
-      url = "github:nix-community/emacs-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.nixpkgs-stable.follows = "nixpkgs-stable";
-    };
-
-    # Neovim nightly overlay
-    # TODO: Remove this overlay
-    neovim-nightly-overlay = {
-      url = "github:nix-community/neovim-nightly-overlay";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.flake-parts.follows = "flake-parts";
-      inputs.flake-compat.follows = "flake-compat";
-      inputs.git-hooks.follows = "flake-compat";
-      inputs.hercules-ci-effects.follows = "hercules-ci-effects";
-    };
-
-    # Cosmic nightly overlay
-    # TODO: Remove this overlay
-    nixos-cosmic = {
-      url = "github:lilyinstarlight/nixos-cosmic";
-      inputs.nixpkgs.follows = "nixpkgs";
-      inputs.nixpkgs-stable.follows = "nixpkgs-stable";
-      inputs.rust-overlay.follows = "rust-overlay";
-      inputs.flake-compat.follows = "flake-compat";
-    };
+    # # Emacs nightly overlay
+    # # TODO: Remove this overlay
+    # emacs-overlay = {
+    #   url = "github:nix-community/emacs-overlay";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   inputs.nixpkgs-stable.follows = "nixpkgs-stable";
+    # };
+    #
+    # # Neovim nightly overlay
+    # # TODO: Remove this overlay
+    # neovim-nightly-overlay = {
+    #   url = "github:nix-community/neovim-nightly-overlay";
+    #   inputs.nixpkgs.follows = "nixpkgs";
+    #   inputs.flake-parts.follows = "flake-parts";
+    #   inputs.flake-compat.follows = "flake-compat";
+    #   inputs.git-hooks.follows = "flake-compat";
+    #   inputs.hercules-ci-effects.follows = "hercules-ci-effects";
+    # };
   };
 
-  outputs = inputs@{ nixpkgs, nix-darwin, home-manager, ... }:
-    let cfg = import ./cfg/config.nix;
-    in {
-      # NixOS
-      nixosConfigurations.${cfg.hostname} = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [ ./src/system/nixos ];
-      };
-
-      # MacOS
-      darwinConfigurations.${cfg.hostname} = nix-darwin.lib.darwinSystem {
-        specialArgs = { inherit inputs; };
-        modules = [ ./src/system/macos ];
-      };
-
-      # NixOS Home Mananger
-      homeConfigurations.nixos = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = { inherit inputs; };
-        modules = [ ./src/user/nixos ];
-      };
-
-      # MacOS Home Mananger
-      homeConfigurations.macos = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-darwin;
-        extraSpecialArgs = { inherit inputs; };
-        modules = [ ./src/user/macos ];
-      };
+  outputs = { nixpkgs, nix-darwin, home-manager, wezterm, ... }: {
+    # NixOS on MacBook Pro
+    nixosConfigurations.mbp = nixpkgs.lib.nixosSystem {
+      modules =
+        [ { nixpkgs.hostPlatform = "x86_64-linux"; } ./src/system/nixos ];
     };
+
+    # MacOS on MacBook Pro
+    darwinConfigurations.mbp = nix-darwin.lib.darwinSystem {
+      modules =
+        [ { nixpkgs.hostPlatform = "x86_64-darwin"; } ./src/system/macos ];
+    };
+
+    # MacOS on MacBook Pro M1
+    darwinConfigurations.mbpm1 = nix-darwin.lib.darwinSystem {
+      modules =
+        [ { nixpkgs.hostPlatform = "aarch64-darwin"; } ./src/system/macos ];
+    };
+
+    # Home Mananger on NixOS on MacBook Pro
+    homeConfigurations.nixos-mbp = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.x86_64-linux;
+      extraSpecialArgs = { inherit wezterm; };
+      modules = [ ./src/user/nixos ];
+    };
+
+    # Home Mananger on MacOS on MacBook Pro
+    homeConfigurations.macos-mbp = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.x86_64-darwin;
+      extraSpecialArgs = { inherit wezterm; };
+      modules = [ ./src/user/macos ];
+    };
+
+    # Home Mananger on MacOS on MacBook Pro
+    homeConfigurations.macos-mbpm1 = home-manager.lib.homeManagerConfiguration {
+      pkgs = nixpkgs.legacyPackages.aarch64-darwin;
+      extraSpecialArgs = { inherit wezterm; };
+      modules = [ ./src/user/macos ];
+    };
+  };
 }

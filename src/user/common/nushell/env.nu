@@ -10,3 +10,5 @@
 # path add /nix/var/nix/profiles/default/bin
 # path add /run/current-system/sw/bin
 # path add ~/.nix-profile/bin
+
+# TODO: Add /opt/homebrew/bin to path

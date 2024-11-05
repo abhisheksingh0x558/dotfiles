@@ -58,8 +58,13 @@
   # Go
   programs.go = {
     enable = true;
+    # TODO: Use xdg.dataHome
     goPath = ".local/share/go"; # Path for install global modules
+    # TODO: Use xdg.dataHome
     goBin = ".local/share/bin"; # Path for installing global binaries
-    goPrivate = [ "github.com/watchtowerai" ]; # Private modules
+    # Private modules
+    goPrivate = [
+      "github.com/watchtowerai" # Work repositories
+    ];
   };
 }
