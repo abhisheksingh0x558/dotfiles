@@ -1,7 +1,11 @@
 { pkgs, ... }:
 let cfg = import ../../../cfg/config.nix;
 in {
-  imports = [ ../common ];
+  imports = [
+    ../common
+    ./hyprland.nix # Window manager
+    ../../../res/resource.nix # Resources
+  ];
 
   # Default user
   home.homeDirectory = /home + "/${cfg.user.default.username}";

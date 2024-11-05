@@ -1,3 +1,4 @@
+# TODO: Delete this file
 { lib, config, ... }:
 let gitAliasPrefix = "g";
 in {

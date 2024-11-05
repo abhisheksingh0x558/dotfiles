@@ -66,6 +66,10 @@ in {
     # TUIs
     fzf # Fuzzy finder
     lazygit # Git client
+
+    # Clipboard manager
+    # TODO: Move this to hyprland
+    wl-clipboard
   ];
 
   # Code style

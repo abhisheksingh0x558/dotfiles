@@ -14,6 +14,8 @@ let
 in {
   imports = [
     ../common
+    ./hyprland.nix # Window manager
+    ../../../res/resource.nix # Resources
   ];
 
   # NixOS version
