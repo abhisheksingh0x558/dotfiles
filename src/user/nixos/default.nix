@@ -3,7 +3,8 @@ let cfg = import ../../../cfg/config.nix;
 in {
   imports = [
     ../common
-    ./cosmic.nix # Desktop environment
+    ./hyprland.nix # Window manager
+    ../../../res/resource.nix # Resources
   ];
 
   # Default user

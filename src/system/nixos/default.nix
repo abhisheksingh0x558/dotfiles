@@ -15,25 +15,22 @@ in {
   imports = [
     ./firmware.nix # Firmware
     inputs.nixos-hardware.nixosModules.apple-t2 # NOTE: Kernal for macbook to enable wifi, keyboard, touchpad, etc.
-    inputs.nixos-cosmic.nixosModules.default # Cosmic nightly overlay
     ../../../gen/hardware.nix # FIXME: Generate with `nixos-generate-config`
     ../common
-    ./cosmic.nix # Desktop environment
+    ./hyprland.nix # Window manager
+    ../../../res/resource.nix # Resources
   ];
 
   # NixOS version
   # WARNING: Do not change this without referring to release notes for NixOS
   system.stateVersion = "24.11";
 
-  # System architecture
-  nixpkgs.hostPlatform = "x86_64-linux";
-
   # Flakes
   # TODO: Remove these when they are merged to nix upstream
   nix.settings.trusted-users = [ "root" "@wheel" ];
 
   # Host
-  networking.hostName = cfg.hostname;
+  networking.hostName = "macbookpro";
 
   # Network
   networking.networkmanager.enable = true;

@@ -5,7 +5,9 @@
 ## TODOs
 
 ###  General
+- [ ] Fix justfile
 - [ ] Do not install zsh and nushell from home manager
+- [ ] Delete cosmic and hyprland branches from origin
 - [ ] Retry difftastic
 - [ ] Use isDarwin, isArch, flake-parts, and devenv
 - [ ] Home manager overrides
@@ -61,6 +63,7 @@
 - [ ] Explore leaf, general, straight, and cask for emacs
 - [ ] Migrate to neovim 0.11 native lsp completion, native snippet engine, only use snippets templates
 - [ ] Migrate to neovim terminal, project manager, file explorer, formatter, folder, linter and any other native features
+- [ ] Migrate to cosmic once it is stable
 
 ### Emacs languages
 - [ ] Bash/Sh

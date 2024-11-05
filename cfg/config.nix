@@ -1,7 +1,4 @@
 {
-  # Host
-  hostname = "macbookpro";
-
   user = {
     # Default user
     default = {

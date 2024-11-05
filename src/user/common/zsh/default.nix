@@ -5,6 +5,8 @@
 
     # Aliases
     shellAliases = config.shell.aliases;
+
+    # TODO: Add /opt/homebrew/bin to path
   };
 
   # UI/UX
