@@ -8,4 +8,7 @@
   # Autocompletion
   programs.carapace.enableZshIntegration = true;
   programs.thefuck.enableZshIntegration = true; # Autocorrection
+
+  # TUIs
+  programs.zoxide.enableZshIntegration = true; # Change directory
 }
