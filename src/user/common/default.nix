@@ -3,6 +3,7 @@ in {
   imports = [
     ./overlay.nix # Overlays
     ./nushell # Shell
+    ./zsh # Shell
   ];
 
   # Home Manager

@@ -89,4 +89,7 @@ in {
       };
     };
   };
+
+  # Default shell
+  users.defaultUserShell = pkgs.zsh;
 }
