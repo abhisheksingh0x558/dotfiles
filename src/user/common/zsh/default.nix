@@ -7,4 +7,5 @@
 
   # Autocompletion
   programs.carapace.enableZshIntegration = true;
+  programs.thefuck.enableZshIntegration = true; # Autocorrection
 }
