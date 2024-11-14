@@ -1,6 +1,11 @@
-{
+{ config, ... }: {
   # Shell
-  programs.zsh.enable = true;
+  programs.zsh = {
+    enable = true;
+
+    # Aliases
+    shellAliases = config.shell.aliases;
+  };
 
   # UI/UX
   programs.starship.enableZshIntegration = true;
