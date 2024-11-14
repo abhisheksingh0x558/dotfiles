@@ -8,4 +8,7 @@
     envExtra = builtins.readFile ./env.zsh; # Environment file
     initExtra = builtins.readFile ./rc.zsh; # Configuration file
   };
+
+  # UI/UX
+  programs.starship.enableZshIntegration = true;
 }
