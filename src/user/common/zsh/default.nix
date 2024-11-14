@@ -1,4 +1,4 @@
-{
+{ config, ... }: {
   # Shell
   programs.zsh = {
     enable = true;
@@ -7,6 +7,9 @@
     # TODO: Merge this setting to upstream nixpkgs and remove from here
     envExtra = builtins.readFile ./env.zsh; # Environment file
     initExtra = builtins.readFile ./rc.zsh; # Configuration file
+
+    # Aliases
+    shellAliases = config.shell.aliases;
   };
 
   # UI/UX
