@@ -14,7 +14,7 @@
 
   # Shells
   # TODO: Merge this setting to upstream nixpkgs and remove from here
-  environment.shells = with pkgs; [ nushell ];
+  environment.shells = with pkgs; [ nushell zsh ];
 
   # TODO: Merge this setting to upstream nixpkgs and remove from here
   environment.systemPackages = environment.shells;

@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 let
   cfg = import ../../../cfg/config.nix;
 
@@ -82,4 +83,7 @@ in {
       };
     };
   };
+
+  # Default shell
+  users.defaultUserShell = pkgs.zsh;
 }
