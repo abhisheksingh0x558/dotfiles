@@ -29,4 +29,11 @@
       ;; Formatters
       :formatters [:gofumpt]
       ;; Linters
-      :linters [:staticcheck]}}
+      :linters [:staticcheck]}
+ ;;; Rust
+ :rust {;; Language server
+        :server :rust_analyzer
+        ;; Formatters
+        :formatters [:rustfmt]
+        ;; Linters
+        :linters [:clippy]}}
