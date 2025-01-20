@@ -15,4 +15,11 @@
  ;;; Nu
  ;; TODO: Add formatters and linters
  :nu {;; Language server
-      :server :nushell}}
+      :server :nushell}
+ ;;; Haskell
+ :haskell {;; Language server
+           :server :hls
+           ;; Formatters
+           :formatters [:fourmolu]
+           ;; Linters
+           :linters [:hlint]}}
