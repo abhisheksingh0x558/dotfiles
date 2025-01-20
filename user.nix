@@ -62,6 +62,13 @@
       lua-language-server # Language server
       luajitPackages.luacheck # Linter # TODO: Check if this is the correct version
       stylua # Formatter
+
+      # Haskell
+      ghc
+      stack # Package manager
+      haskell-language-server # Language server
+      hlint # Linter
+      haskellPackages.fourmolu # Formatter
     ] ++ (if pkgs.stdenvNoCC.isLinux then
       (with pkgs; [
         # GUIs
