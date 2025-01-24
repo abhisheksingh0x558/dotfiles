@@ -68,6 +68,9 @@
       haskell-language-server # Language server
       hlint # Linter
       haskellPackages.fourmolu # Formatter
+
+      # Lisp
+      sbcl
     ] ++ (if pkgs.stdenvNoCC.isLinux then
       (with pkgs; [
         # GUIs
