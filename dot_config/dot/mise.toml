@@ -17,3 +17,6 @@ stylua = {}              # Formatter
 
 # Haskell
 haskell = {} # Toolchain and package manager
+
+# Common Lisp
+# sbcl = {} # Toolchain # TODO: Enable this
