@@ -55,6 +55,11 @@
         # TODO: Merge this in upstream emacs and remove from here
         nix-mode
         nix-ts-mode
+
+        # Haskell support
+        # TODO: Merge this in upstream emacs and remove from here
+        haskell-mode
+        haskell-ts-mode
       ];
   };
 
