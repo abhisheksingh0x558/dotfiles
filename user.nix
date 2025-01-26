@@ -13,9 +13,25 @@
   else
     /Users/abhisheksingh;
 
-  home.packages = with pkgs;
-    [
-      # Dotfile manager
-      chezmoi
-    ];
+  home.packages = with pkgs; [
+    # Dotfile manager
+    chezmoi
+
+    # CLIs
+    git # Version control system
+    zoxide # Change directory
+    eza # List files
+    bat # View files
+    fd # Find files
+    ripgrep # Search files
+    difftastic # Compare files
+    sd # Search and replace files
+    choose # Extract text from files
+    scc # Code counter
+    just # Command runner
+    ouch # Compressor
+    watchexec # File watcher
+    gnumake # Build system
+    devenv # Developer environment manager
+  ];
 }
