@@ -51,6 +51,10 @@
 ;; TODO: Merge this in upstream emacs and remove from here
 (use-package nix-ts-mode
   :mode "\\.nix\\'")
+;; Haskell treesitter mode
+;; TODO: Merge this in upstream emacs and remove from here
+(use-package haskell-ts-mode
+  :mode "\\.hs\\'")
 
 ;;; LSP integration
 (use-package eglot
@@ -60,10 +64,18 @@
 	       ;; Nix language server
 	       ;; TODO: Check if this is required
 	       '(nix-ts-mode "nil"))
+  ;; TODO: Do this in a better way
+  (add-to-list 'eglot-server-programs
+	       ;; Haskell language server
+	       ;; TODO: Check if this is required
+	       '(haskell-ts-mode "haskell-language-server-wrapper" "--lsp"))
   :hook
   ;; TODO: Check if this is required
   ;; TODO: Do this in a better way
-  (nix-ts-mode . eglot-ensure))
+  (nix-ts-mode . eglot-ensure)
+  ;; TODO: Check if this is required
+  ;; TODO: Do this in a better way
+  (haskell-ts-mode . eglot-ensure))
 
 ;;; Formatter
 (apheleia-global-mode)
