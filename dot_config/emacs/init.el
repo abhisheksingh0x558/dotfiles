@@ -19,3 +19,6 @@
   (require 'leaf-keywords)
   (leaf-keywords-init))
 (elpaca-wait)
+
+;;; Code style
+(editorconfig-mode) ; Editorconfig integration
