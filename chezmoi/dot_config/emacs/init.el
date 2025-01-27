@@ -34,3 +34,30 @@
 
 ;;; Code style
 (editorconfig-mode) ; Editorconfig integration
+
+;;; Keymaps
+;; Vi layer
+(leaf evil
+  :custom
+  ((evil-want-keybinding . nil) ; Do not set keymaps
+   (evil-undo-system . #'undo-redo)) ; Keymap for redo
+  :config
+  (evil-mode)
+  (evil-set-leader 'normal (kbd "SPC")) ; Leader key
+  (evil-set-leader 'normal "\\" t)) ; Local leader key
+(leaf evil-collection
+  :custom ((evil-collection-key-blacklist . '("[q" "]q"))) ; Keymaps not to be defined
+  :config
+  (evil-collection-init))
+(leaf general
+  :config
+  (general-evil-setup t)
+  (nmap
+    "[d" #'flymake-goto-prev-error ; Goto previous flymake entry
+    "]d" #'flymake-goto-next-error) ; Goto next flymake entry
+    "[q" #'previous-error ; Goto previous error or xref entry
+    "]q" #'next-error ; Goto next error or xref entry
+  (nmap
+    :keymaps 'xref--xref-buffer-mode-map
+    "k" #'xref-prev-line ; Goto previous xref entry
+    "j" #'xref-next-line)) ; Goto next xref entry
