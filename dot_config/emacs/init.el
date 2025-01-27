@@ -21,3 +21,42 @@
 
 ;;; Code style
 (editorconfig-mode) ; EditorConfig integration
+
+;;; Keymaps
+;; Vi layer
+(leaf evil
+  :custom
+  ((evil-want-keybinding . nil) ; Do not set keymaps
+   (evil-undo-system . #'undo-redo)) ; Keymap for redo
+  :config
+  (evil-mode)
+  (evil-set-leader 'normal (kbd "SPC")) ; Leader key
+  (evil-set-leader 'normal "\\" t)) ; Local leader key
+(leaf evil-collection
+  :custom ((evil-collection-key-blacklist . '("[q" "]q"))) ; Disable keymaps
+  :config (evil-collection-init))
+(leaf evil-commentary :config (evil-commentary-mode)) ; Manipulate comments
+(leaf evil-surround :config (global-evil-surround-mode)) ; Manipulate surrounding pairs
+(leaf evil-exchange) ; Exchange text
+(leaf evil-string-inflection) ; Manipulate text cases
+(leaf evil-snipe) ; Navigate with search labels
+(leaf evil-lion) ; Manipulate alignments
+(leaf general
+  :config
+  (general-evil-setup t)
+  (nmap
+    "[q" #'previous-error ; Goto previous error or xref entry
+    "]q" #'next-error ; Goto next error or xref entry
+    "[x" #'smerge-prev ; Goto previous conflict
+    "]x" #'smerge-next) ; Goto next conflict
+  (nmap
+    :keymaps 'smerge-mode-map
+    :prefix "c"
+    "o" #'smerge-keep-upper ; Choose ours
+    "t" #'smerge-keep-lower ; Choose theirs
+    "b" #'smerge-keep-all ; Choose both
+    "0" #'smerge-keep-base) ; Choose none
+  (nmap
+    :keymaps 'xref--xref-buffer-mode-map
+    "k" #'xref-prev-line ; Goto previous xref entry
+    "j" #'xref-next-line)) ; Goto next xref entry
