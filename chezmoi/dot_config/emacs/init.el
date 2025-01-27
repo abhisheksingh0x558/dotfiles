@@ -20,3 +20,16 @@
 ;;; Code style
 ;; Editorconfig integration
 (use-package editorconfig :config (editorconfig-mode))
+
+;;; Keymaps
+;; Vi layer
+(use-package evil
+  :custom
+  (evil-want-keybinding nil) ; Do not set keymaps
+  (evil-undo-system 'undo-redo) ; Keymap for redo
+  :config
+  (evil-mode)
+  (evil-set-leader 'normal (kbd "SPC")) ; Leader key
+  (evil-set-leader 'normal "\\" t)) ; Local leader key
+(use-package evil-collection :config (evil-collection-init))
+(evil-global-set-key 'normal (kbd "<leader>SPC") 'project-find-file) ; Find project files
