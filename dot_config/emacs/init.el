@@ -23,3 +23,6 @@
 ;;; Path
 ;; Add Nix to path
 (leaf exec-path-from-shell :config (exec-path-from-shell-initialize))
+
+;;; Code style
+(editorconfig-mode) ; Editorconfig integration
