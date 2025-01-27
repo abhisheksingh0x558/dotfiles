@@ -28,3 +28,6 @@
   (unless (string-match-p (regexp-quote nix-path) path)
     (setenv "PATH" (concat nix-path ":" path)))
   (add-to-list 'exec-path nix-path))
+
+;;; Code style
+(editorconfig-mode) ; Editorconfig integration
