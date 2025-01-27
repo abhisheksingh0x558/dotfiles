@@ -34,3 +34,44 @@
 
 ;;; Code style
 (editorconfig-mode) ; Editorconfig integration
+
+;;; Keymaps
+;; Vi layer
+(leaf evil
+  :custom
+  ((evil-want-keybinding . nil) ; Do not set keymaps
+   (evil-undo-system . #'undo-redo)) ; Keymap for redo
+  :config
+  (evil-mode)
+  (evil-set-leader 'normal (kbd "SPC")) ; Leader key
+  (evil-set-leader 'normal "\\" t)) ; Local leader key
+(leaf evil-collection
+  :custom ((evil-collection-key-blacklist . '("[q" "]q"))) ; Keymaps not to be defined
+  :config
+  (evil-collection-init))
+(leaf evil-commentary :config (evil-commentary-mode)) ; Manipulate comments
+(leaf general
+  :config
+  (general-evil-setup t)
+  ;; Find files in current directory
+  (nmap
+    "<leader>SPC" #'(lambda ()
+                      (interactive)
+                      (if (project-current)
+                        (call-interactively #'project-find-file)
+                        (call-interactively #'find-file)))
+    "[q" #'previous-error ; Goto previous error or xref entry
+    "]q" #'next-error ; Goto next error or xref entry
+    "[x" #'smerge-prev ; Goto previous conflict
+    "]x" #'smerge-next) ; Goto next conflict
+  (nmap
+    :keymaps 'smerge-mode-map
+    :prefix "c"
+    "o" #'smerge-keep-upper ; Choose ours
+    "t" #'smerge-keep-lower ; Choose theirs
+    "b" #'smerge-keep-all ; Choose both
+    "0" #'smerge-keep-base) ; Choose none
+  (nmap
+    :keymaps 'xref--xref-buffer-mode-map
+    "k" #'xref-prev-line ; Goto previous xref entry
+    "j" #'xref-next-line)) ; Goto next xref entry
