@@ -48,3 +48,6 @@
 
 ;; Load package modules
 (my-load "my-pkg")
+
+;;; Code style
+(editorconfig-mode) ; EditorConfig integration
