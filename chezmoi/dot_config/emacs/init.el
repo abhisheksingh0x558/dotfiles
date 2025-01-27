@@ -16,3 +16,7 @@
 ;; TODO: Add de-duplication
 (setenv "PATH" (concat (expand-file-name "~/.nix-profile/bin:") (getenv "PATH"))) ; Add Nix to path
 (add-to-list 'exec-path "~/.nix-profile/bin") ; Add Nix to path
+
+;;; Code style
+;; Editorconfig integration
+(use-package editorconfig :config (editorconfig-mode))
