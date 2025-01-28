@@ -2,6 +2,7 @@ local fs = vim.fs
 local uv = vim.uv
 local system = vim.system
 local opt = vim.opt
+local g = vim.g
 
 -- Plugin manager
 local lazypath = fs.normalize("~/.local/share/nvim/lazy/lazy.nvim")
@@ -15,3 +16,6 @@ if not uv.fs_stat(lazypath) then
 end
 -- Load plugin manager
 opt.rtp:prepend(lazypath)
+
+-- Code style
+g.editorconfig = true -- Editorconfig integration
