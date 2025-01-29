@@ -120,4 +120,49 @@ require("lazy").setup({
 			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" }, -- Fzf based native sorter
 		},
 	},
+
+	-- VCS integration
+	-- Git client
+	{
+		"NeogitOrg/neogit",
+		lazy = false,
+		keys = {
+			-- Open git client
+			{
+				"<leader>g",
+				function()
+					require("neogit").open()
+				end,
+			},
+		},
+	},
+	-- Git commands in buffer
+	{
+		"lewis6991/gitsigns.nvim",
+		opts = {},
+		keys = {
+			-- Goto previous hunk
+			{
+				"[c",
+				function()
+					require("gitsigns").nav_hunk("prev")
+				end,
+			},
+			-- Goto next hunk
+			{
+				"]c",
+				function()
+					require("gitsigns").nav_hunk("next")
+				end,
+			},
+		},
+	},
+	{
+		"akinsho/git-conflict.nvim",
+		opts = {
+			default_mappings = {
+				none = "n", -- Choose none
+			},
+		},
+	},
 })
