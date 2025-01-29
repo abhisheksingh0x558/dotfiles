@@ -65,3 +65,350 @@
 
 [maintenance]
 	# repo = ~/.dotfiles # Hourly run optimization tasks for dotfiles repository in background # TODO: Enable this
+
+# Aliases
+[alias]
+	# Add
+	a = add --all
+	au = add
+	# Absorb
+	abr = absorb --base
+	ab = !git absorb --base=$(git show-root)
+	# Blame
+	bl = blame
+	# Branch
+	b = branch
+	bd = branch --delete --force
+	bds = branch-delete-stale
+	# Commit
+	c = commit
+	cb = commit --all
+	cm = commit --message
+	cn = commit --no-edit
+	ca = commit --amend
+	cbm = commit --all --message
+	cbn = commit --all --no-edit
+	cam = commit --amend --message
+	can = commit --amend --no-edit
+	cba = commit --all --amend
+	cbam = commit --all --amend --message
+	cban = commit --all --amend --no-edit
+	cra = commit-reset-author
+	crd = commit-reset-date
+	# Checkout
+	co = checkout
+	cof = checkout --force
+	# Cherry pick
+	cp = cherry-pick
+	cpa = cherry-pick --abort
+	cpc = cherry-pick --continue
+	# Cherry
+	cr = cherry
+	# Clean
+	cl = clean
+	# Diff
+	d = diff
+	dno = diff --name-only
+	dns = diff --name-status
+	dst = diff --stat
+	dsst = diff --shortstat
+	ds = diff --staged
+	dsno = diff --staged --name-only
+	dsns = diff --staged --name-status
+	dsst = diff --staged --stat
+	dssst = diff --staged --shortstat
+	dl = diff HEAD^!
+	du = diff @{upstream}
+	# du = diff ..@{upstream} # TODO: Think of an alias for this
+	# du = diff @{upstream}.. # TODO: Think of an alias for this
+	# du = diff ...@{upstream} # TODO: Think of an alias for this
+	# du = diff @{upstream}... # TODO: Think of an alias for this
+	dsu = diff --staged @{upstream}
+	# dsu = diff --staged ..@{upstream} # TODO: Think of an alias for this
+	# dsu = diff --staged @{upstream}.. # TODO: Think of an alias for this
+	# dsu = diff --staged ...@{upstream} # TODO: Think of an alias for this
+	# dsu = diff --staged @{upstream}... # TODO: Think of an alias for this
+	dhu = diff HEAD @{upstream}
+	duh = diff @{upstream} HEAD
+	dmu = diff HEAD...@{upstream}
+	dum = diff @{upstream}...HEAD
+	dd = !git diff $(git branch-default)
+	# dd = !git diff ..$(git branch-default) # TODO: Think of an alias for this
+	# dd = !git diff $(git branch-default).. # TODO: Think of an alias for this
+	# dd = !git diff ...$(git branch-default) # TODO: Think of an alias for this
+	# dd = !git diff $(git branch-default)... # TODO: Think of an alias for this
+	dsd = !git diff --staged $(git branch-default)
+	# dsd = !git diff --staged ..$(git branch-default) # TODO: Think of an alias for this
+	# dsd = !git diff --staged $(git branch-default).. # TODO: Think of an alias for this
+	# dsd = !git diff --staged ...$(git branch-default) # TODO: Think of an alias for this
+	# dsd = !git diff --staged $(git branch-default)... # TODO: Think of an alias for this
+	dhd = !git diff HEAD $(git branch-default)
+	ddh = !git diff $(git branch-default) HEAD
+	dmd = !git diff HEAD...$(git branch-default)
+	ddm = !git diff $(git branch-default)...HEAD
+	dod = !git diff origin/$(git branch-default)
+	# dod = !git diff ..origin/$(git branch-default) # TODO: Think of an alias for this
+	# dod = !git diff origin/$(git branch-default).. # TODO: Think of an alias for this
+	# dod = !git diff ...origin/$(git branch-default) # TODO: Think of an alias for this
+	# dod = !git diff origin/$(git branch-default)... # TODO: Think of an alias for this
+	dsod = !git diff --staged origin/$(git branch-default)
+	# dsod = !git diff --staged ..origin/$(git branch-default) # TODO: Think of an alias for this
+	# dsod = !git diff --staged origin/$(git branch-default).. # TODO: Think of an alias for this
+	# dsod = !git diff --staged ...origin/$(git branch-default) # TODO: Think of an alias for this
+	# dsod = !git diff --staged origin/$(git branch-default)... # TODO: Think of an alias for this
+	dhod = !git diff HEAD origin/$(git branch-default)
+	dodh = !git diff origin/$(git branch-default) HEAD
+	dmod = !git diff HEAD...origin/$(git branch-default)
+	dodm = !git diff origin/$(git branch-default)...HEAD
+	dud = !git diff upstream/$(git branch-default)
+	# dud = !git diff ..upstream/$(git branch-default) # TODO: Think of an alias for this
+	# dud = !git diff upstream/$(git branch-default).. # TODO: Think of an alias for this
+	# dud = !git diff ...upstream/$(git branch-default) # TODO: Think of an alias for this
+	# dud = !git diff upstream/$(git branch-default)... # TODO: Think of an alias for this
+	dsud = !git diff --staged upstream/$(git branch-default)
+	# dsud = !git diff --staged ..upstream/$(git branch-default) # TODO: Think of an alias for this
+	# dsud = !git diff --staged upstream/$(git branch-default).. # TODO: Think of an alias for this
+	# dsud = !git diff --staged ...upstream/$(git branch-default) # TODO: Think of an alias for this
+	# dsud = !git diff --staged upstream/$(git branch-default)... # TODO: Think of an alias for this
+	dhud = !git diff HEAD upstream/$(git branch-default)
+	dudh = !git diff upstream/$(git branch-default) HEAD
+	dmud = !git diff HEAD...upstream/$(git branch-default)
+	dudm = !git diff upstream/$(git branch-default)...HEAD
+	# Fetch
+	f = fetch
+	fu = fetch upstream
+	# Format patch
+	fp = format-patch
+	# Log
+	l = log
+	lo = log --oneline
+	lr = log --reverse
+	lp = log --patch
+	lor = log --oneline --reverse
+	lrp = log --reverse --patch
+	lg = log --graph
+	lu = log @{upstream}
+	lou = log --oneline @{upstream}
+	lru = log --reverse @{upstream}
+	lpu = log --patch @{upstream}
+	loru = log --oneline --reverse @{upstream}
+	lrpu = log --reverse --patch @{upstream}
+	lgu = log --graph @{upstream}
+	lhu = log HEAD..@{upstream}
+	lohu = log --oneline HEAD..@{upstream}
+	lrhu = log --reverse HEAD..@{upstream}
+	lphu = log --patch HEAD..@{upstream}
+	lorhu = log --oneline --reverse HEAD..@{upstream}
+	lrphu = log --reverse --patch HEAD..@{upstream}
+	lghu = log --graph HEAD..@{upstream}
+	luh = log @{upstream}..HEAD
+	louh = log --oneline @{upstream}..HEAD
+	lruh = log --reverse @{upstream}..HEAD
+	lpuh = log --patch @{upstream}..HEAD
+	loruh = log --oneline --reverse @{upstream}..HEAD
+	lrpuh = log --reverse --patch @{upstream}..HEAD
+	lguh = log --graph @{upstream}..HEAD
+	ld = !git log $(git branch-default)
+	lod = !git log --oneline $(git branch-default)
+	lrd = !git log --reverse $(git branch-default)
+	lpd = !git log --patch $(git branch-default)
+	lord = !git log --oneline --reverse $(git branch-default)
+	lrpd = !git log --reverse --patch $(git branch-default)
+	lgd = !git log --graph $(git branch-default)
+	lhd = !git log HEAD..$(git branch-default)
+	lohd = !git log --oneline HEAD..$(git branch-default)
+	lrhd = !git log --reverse HEAD..$(git branch-default)
+	lphd = !git log --patch HEAD..$(git branch-default)
+	lorhd = !git log --oneline --reverse HEAD..$(git branch-default)
+	lrphd = !git log --reverse --patch HEAD..$(git branch-default)
+	lghd = !git log --graph HEAD..$(git branch-default)
+	ldh = !git log $(git branch-default)..HEAD
+	lodh = !git log --oneline $(git branch-default)..HEAD
+	lrdh = !git log --reverse $(git branch-default)..HEAD
+	lpdh = !git log --patch $(git branch-default)..HEAD
+	lordh = !git log --oneline --reverse $(git branch-default)..HEAD
+	lrpdh = !git log --reverse --patch $(git branch-default)..HEAD
+	lgdh = !git log --graph $(git branch-default)..HEAD
+	lod = !git log origin/$(git branch-default)
+	lood = !git log --oneline origin/$(git branch-default)
+	lrod = !git log --reverse origin/$(git branch-default)
+	lpod = !git log --patch origin/$(git branch-default)
+	lorod = !git log --oneline --reverse origin/$(git branch-default)
+	lrpod = !git log --reverse --patch origin/$(git branch-default)
+	lgod = !git log --graph origin/$(git branch-default)
+	lhod = !git log HEAD..origin/$(git branch-default)
+	lohod = !git log --oneline HEAD..origin/$(git branch-default)
+	lrhod = !git log --reverse HEAD..origin/$(git branch-default)
+	lphod = !git log --patch HEAD..origin/$(git branch-default)
+	lorhod = !git log --oneline --reverse HEAD..origin/$(git branch-default)
+	lrphod = !git log --reverse --patch HEAD..origin/$(git branch-default)
+	lghod = !git log --graph HEAD..origin/$(git branch-default)
+	lodh = !git log origin/$(git branch-default)..HEAD
+	loodh = !git log --oneline origin/$(git branch-default)..HEAD
+	lrodh = !git log --reverse origin/$(git branch-default)..HEAD
+	lpodh = !git log --patch origin/$(git branch-default)..HEAD
+	lorodh = !git log --oneline --reverse origin/$(git branch-default)..HEAD
+	lrpodh = !git log --reverse --patch origin/$(git branch-default)..HEAD
+	lgodh = !git log --graph origin/$(git branch-default)..HEAD
+	lud = !git log upstream/$(git branch-default)
+	loud = !git log --oneline upstream/$(git branch-default)
+	lrud = !git log --reverse upstream/$(git branch-default)
+	lpud = !git log --patch upstream/$(git branch-default)
+	lorud = !git log --oneline --reverse upstream/$(git branch-default)
+	lrpud = !git log --reverse --patch upstream/$(git branch-default)
+	lgud = !git log --graph upstream/$(git branch-default)
+	lhud = !git log HEAD..upstream/$(git branch-default)
+	lohud = !git log --oneline HEAD..upstream/$(git branch-default)
+	lrhud = !git log --reverse HEAD..upstream/$(git branch-default)
+	lphud = !git log --patch HEAD..upstream/$(git branch-default)
+	lorhud = !git log --oneline --reverse HEAD..upstream/$(git branch-default)
+	lrphud = !git log --reverse --patch HEAD..upstream/$(git branch-default)
+	lghud = !git log --graph HEAD..upstream/$(git branch-default)
+	ludh = !git log upstream/$(git branch-default)..HEAD
+	loudh = !git log --oneline upstream/$(git branch-default)..HEAD
+	lrudh = !git log --reverse upstream/$(git branch-default)..HEAD
+	lpudh = !git log --patch upstream/$(git branch-default)..HEAD
+	lorudh = !git log --oneline --reverse upstream/$(git branch-default)..HEAD
+	lrpudh = !git log --reverse --patch upstream/$(git branch-default)..HEAD
+	lgudh = !git log --graph upstream/$(git branch-default)..HEAD
+	# Ls files
+	ls = ls-files
+	# Merge
+	m = merge
+	mf = merge --ff-only
+	ms = merge --squash
+	ma = merge --abort
+	mc = merge --continue
+	mu = merge @{upstream}
+	mfu = merge --ff-only @{upstream}
+	msu = merge --squash @{upstream}
+	md = !git merge $(git branch-default)
+	mfd = !git merge --ff-only $(git branch-default)
+	msd = !git merge --squash $(git branch-default)
+	mod = !git merge origin/$(git branch-default)
+	mfod = !git merge --ff-only origin/$(git branch-default)
+	msod = !git merge --squash origin/$(git branch-default)
+	mud = !git merge upstream/$(git branch-default)
+	mcud = !git merge @{upstream} $(git branch-default)
+	mfcud = !git merge --ff-only @{upstream} $(git branch-default)
+	mscud = !git merge --squash @{upstream} $(git branch-default)
+	modd = !git merge origin/$(git branch-default) $(git branch-default)
+	mfodd = !git merge --ff-only origin/$(git branch-default) $(git branch-default)
+	msodd = !git merge --squash origin/$(git branch-default) $(git branch-default)
+	mudd = !git merge upstream/$(git branch-default) $(git branch-default)
+	mfudd = !git merge --ff-only upstream/$(git branch-default) $(git branch-default)
+	msudd = !git merge --squash upstream/$(git branch-default) $(git branch-default)
+	# Pull
+	p = pull
+	pu = pull upstream
+	pod = !git pull origin $(git branch-default)
+	pud = !git pull upstream $(git branch-default)
+	# Push
+	ph = push
+	pho = push origin
+	phu = push upstream
+	phf = push --force-with-lease
+	phfo = push --force-with-lease origin
+	phfu = push --force-with-lease upstream
+	phod = !git push origin $(git branch-default)
+	phud = !git push upstream $(git branch-default)
+	phfod = !git push --force-with-lease origin $(git branch-default)
+	phfud = !git push --force-with-lease upstream $(git branch-default)
+	# Rebase
+	r = rebase
+	ro = rebase --onto
+	ri = rebase --interactive
+	rin = -c core.editor=true rebase --interactive
+	rix = rebase --interactive --exec
+	rinx = -c core.editor=true rebase --interactive --exec
+	rr = rebase --root --interactive
+	rrn = -c core.editor=true rebase --root --interactive
+	rrx = rebase --root --interactive --exec
+	rrnx = -c core.editor=true rebase --root --interactive --exec
+	ra = rebase --abort
+	rc = rebase --continue
+	ru = rebase @{upstream}
+	rou = rebase --onto @{upstream}
+	rd = !git rebase $(git branch-default)
+	rod = !git rebase --onto $(git branch-default)
+	rod = !git rebase origin/$(git branch-default)
+	rood = !git rebase --onto origin/$(git branch-default)
+	rud = !git rebase upstream/$(git branch-default)
+	roud = !git rebase --onto upstream/$(git branch-default)
+	rcud = !git rebase @{upstream} $(git branch-default)
+	rocud = !git rebase --onto @{upstream} $(git branch-default)
+	rodd = !git rebase origin/$(git branch-default) $(git branch-default)
+	roodd = !git rebase --onto origin/$(git branch-default) $(git branch-default)
+	rudd = !git rebase upstream/$(git branch-default) $(git branch-default)
+	roudd = !git rebase --onto upstream/$(git branch-default) $(git branch-default)
+	# Restore
+	re = restore :/
+	res = restore --staged :/
+	reb = restore --worktree --staged :/
+	rer = restore --source
+	reo = restore --ours
+	ret = restore --theirs
+	reu = restore --source=@{upstream} :/
+	resu = restore --staged --source=@{upstream} :/
+	rebu = restore --worktree --staged --source=@{upstream} :/
+	red = !git restore --source=$(git branch-default) :/
+	resd = !git restore --staged --source=$(git branch-default) :/
+	rebd = !git restore --worktree --staged --source=$(git branch-default) :/
+	reod = !git restore --source=origin/$(git branch-default) :/
+	resod = !git restore --staged --source=origin/$(git branch-default) :/
+	rebod = !git restore --worktree --staged --source=origin/$(git branch-default) :/
+	reud = !git restore --source=upstream/$(git branch-default) :/
+	resud = !git restore --staged --source=upstream/$(git branch-default) :/
+	rebud = !git restore --worktree --staged --source=upstream/$(git branch-default) :/
+	# Reset
+	rs = reset
+	rss = reset --soft
+	rsh = reset --hard
+	rsl = reset HEAD~
+	rssl = reset --soft HEAD~
+	rshl = reset --hard HEAD~
+	rsu = reset @{upstream}
+	rssu = reset --soft @{upstream}
+	rshu = reset --hard @{upstream}
+	rsd = !git reset $(git branch-default)
+	rssd = !git reset --soft $(git branch-default)
+	rshd = !git reset --hard $(git branch-default)
+	rsod = !git reset origin/$(git branch-default)
+	rssod = !git reset --soft origin/$(git branch-default)
+	rshod = !git reset --hard origin/$(git branch-default)
+	rsud = !git reset upstream/$(git branch-default)
+	rssud = !git reset --soft upstream/$(git branch-default)
+	rshud = !git reset --hard upstream/$(git branch-default)
+	# Revert
+	rv = revert --no-commit
+	rve = revert --edit
+	rvn = revert --no-edit
+	rvl = revert --no-commit HEAD
+	rvel = revert --edit HEAD
+	rvnl = revert --no-edit HEAD
+	# Status
+	s = status --short --branch
+	# Send email
+	se = send-email
+	# Show
+	sh = show
+	shn = show --no-patch
+	shno = show --name-only
+	shns = show --name-status
+	shr = show-root
+	# Stash
+	st = stash --include-untracked
+	stt = stash
+	sty = stash apply --index
+	std = stash drop
+	stl = stash list
+	stp = stash pop --index
+	sts = stash show
+	stsp = stash show --patch
+	# Switch
+	sw = switch
+	swc = switch --create
+	swd = !git switch $(git branch-default)
+	swl = switch -
+	# Worktree
+	w = worktree
