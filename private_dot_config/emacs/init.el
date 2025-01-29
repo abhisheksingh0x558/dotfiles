@@ -96,3 +96,28 @@
 ;; In-buffer completion extensions
 (leaf yasnippet-capf)
 (leaf cape :config (add-to-list 'completion-at-point-functions (cape-capf-super #'lsp-completion-at-point #'yasnippet-capf)))
+
+;;; Fuzzy finder
+(leaf vertico :config (vertico-mode)) ; Mini-buffer completion UI
+;; Fuzzy matcher
+(leaf prescient
+  :custom ((prescient-filter-method . '(fuzzy)))
+  :defer-config (prescient-persist-mode))
+(leaf vertico-prescient :config (vertico-prescient-mode))
+(leaf corfu-prescient :config (corfu-prescient-mode))
+;; Mini-buffer commands
+(leaf consult
+  :custom ((xref-show-xrefs-function . #'consult-xref))
+  :config
+  (nmap
+    ;; Find files in current directory
+    "<leader>SPC" #'(lambda ()
+                      (interactive)
+                      (if (project-current)
+                          (call-interactively #'project-find-file)
+                        (call-interactively #'consult-fd)))
+
+    "<leader>BS" #'consult-recent-file ; Find recent files
+    "g/" #'consult-line ; Search current file
+    "<leader>/" #'consult-ripgrep)) ; Search project buffers
+(leaf consult-lsp)
