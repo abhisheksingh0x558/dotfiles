@@ -86,4 +86,20 @@ require("lazy").setup({
 		},
 		dependencies = { "nvim-telescope/telescope-fzf-native.nvim", build = "make" }, -- Fzf based native sorter
 	},
+
+	-- VCS integration
+	{
+		-- Git client
+		"NeogitOrg/neogit",
+		lazy = false,
+		keys = {
+			-- Open git client
+			{
+				"<leader>g",
+				function()
+					require("neogit").open()
+				end,
+			},
+		},
+	},
 })
