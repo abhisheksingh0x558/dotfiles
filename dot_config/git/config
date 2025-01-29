@@ -46,6 +46,11 @@
 [maintenance]
 	# repo = ~/.dotfiles # Hourly run optimization tasks for dotfiles repository in background # TODO: Enable this
 
+# TODO:
+# Nightfall AI user
+[includeif "hasconfig:remote.*.url:git@github.com:watchtowerai/*"]
+	path = ~/.config/git/nightfallai
+
 # Aliases
 [alias]
 	# Add
