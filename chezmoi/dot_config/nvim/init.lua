@@ -19,3 +19,7 @@ opt.rtp:prepend(lazypath)
 
 -- Code style
 g.editorconfig = true -- Editorconfig integration
+
+-- Keymaps
+g.mapleader = " " -- Leader key
+g.maplocalleader = "\\" -- Local leader key
