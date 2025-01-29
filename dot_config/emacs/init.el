@@ -87,3 +87,17 @@
 (leaf hl-todo :config (global-hl-todo-mode)) ; Highlight todo comments
 (leaf symbol-overlay :config (symbol-overlay-mode)) ; Highlight word under cursor ; TODO: Replace with lsp alternative
 (leaf rainbow-delimiters :config (rainbow-delimiters-mode)) ; Highlight brackets
+
+;;; Autocompletion
+(electric-pair-mode) ; Autoclose pairs
+(leaf yasnippet :config (yas-global-mode)) ; Snippet engine
+(leaf yasnippet-snippets) ; Snippet collection
+;; In-buffer completion UI
+(leaf corfu
+  :custom
+  ((corfu-auto . t)
+   (corfu-auto-prefix . 1)) ; Trigger autocompletion popup after typing 1 character
+  :config (global-corfu-mode))
+;; In-buffer completion extensions
+(leaf yasnippet-capf :config (add-to-list 'completion-at-point-functions #'yasnippet-capf))
+(leaf cape)
