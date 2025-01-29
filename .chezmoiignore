@@ -10,4 +10,5 @@ README.md # Documentation
 # MacOS only includes
 {{ if ne .chezmoi.os "darwin" }}
 .Brewfile # Homebrew packages
+.config/karabiner # Karabiner configuration
 {{ end }}
