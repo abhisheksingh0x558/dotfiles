@@ -48,3 +48,102 @@
 
 [maintenance]
 	repo = ~/.dotfiles # Hourly run optimization tasks for dotfiles repository in background
+
+# Aliases
+[alias]
+	# Add
+	a = add
+	aa = add --all
+	# Branch
+	b = branch
+	bd = branch --delete --force
+	# Commit
+	c = commit
+	cm = commit --message
+	cn = commit --no-edit
+	ca = commit --amend
+	cam = commit --amend --message
+	can = commit --amend --no-edit
+	caa = commit --amend --all
+	caam = commit --amend --all --message
+	caan = commit --amend --all --no-edit
+	# Checkout
+	co = checkout
+	cof = checkout --force
+	# Cherry pick
+	cp = cherry-pick
+	cpa = cherry-pick --abort
+	cpc = cherry-pick --continue
+	# Cherry
+	cr = cherry
+	# Diff
+	d = diff
+	ds = diff --staged
+	du = diff @{upstream}
+	# Fetch
+	f = fetch
+	fo = fetch origin
+	fu = fetch upstream
+	# Format patch
+	fp = format-patch
+	# Log
+	l = log
+	lp = log --patch
+	# Merge
+	m = merge
+	ma = merge --abort
+	mc = merge --continue
+	mm = !git merge $(git-default-branch)
+	mo = !git merge origin/$(git-default-branch)
+	mu = !git merge upstream/$(git-default-branch)
+	# Pull
+	p = pull
+	po = pull origin
+	pu = pull upstream
+	pom = !git pull origin $(git-default-branch)
+	pum = !git pull upstream $(git-default-branch)
+	# Push
+	ph = push
+	pho = push origin
+	phu = push upstream
+	phf = push --force-with-lease
+	phfo = push --force-with-lease origin
+	phfu = push --force-with-lease upstream
+	phom = !git push origin $(git-default-branch)
+	phum = !git push upstream $(git-default-branch)
+	phfom = !git push --force-with-lease origin $(git-default-branch)
+	phfum = !git push --force-with-lease upstream $(git-default-branch)
+	# Rebase
+	r = rebase
+	ra = rebase --abort
+	rc = rebase --continue
+	ri = rebase --interactive
+	rri = rebase --root --interactive
+	rm = !git rebase $(git-default-branch)
+	ro = !git rebase origin/$(git-default-branch)
+	ru = !git rebase upstream/$(git-default-branch)
+	# Restore
+	re = restore
+	# Reset
+	rs = reset
+	# Revert
+	rv = revert
+	# Status
+	s = status
+	# Show
+	sh = show
+	# Stash
+	st = stash
+	sta = stash apply
+	std = stash drop
+	stl = stash list
+	stp = stash pop
+	# Switch
+	sw = switch
+	swc = switch --create
+	swm = !git switch $(git-default-branch)
+	sw- = switch -
+	# Worktree
+	w = worktree
+	# Custom
+	remove-stale-branches = !git branch -vv | rg ': gone]' | choose 0 | rust-parallel git branch --delete --force
