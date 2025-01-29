@@ -4,6 +4,84 @@ vim.opt.runtimepath:prepend(vim.fs.normalize("~/.local/share/nvim/lazy/lazy.nvim
 -- Code style
 vim.g.editorconfig = true -- EditorConfig integration
 
+-- Keymaps
+vim.g.mapleader = " " -- Leader key
+vim.g.maplocalleader = "\\" -- Local leader key
+vim.keymap.set("n", "<C-k>", "<Up>") -- Command line prefix history search upward
+vim.keymap.set("n", "<C-j>", "<Down>") -- Command line prefix history search downward
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>") -- Switch from terminal mode to normal mode
+vim.keymap.set("t", "<C-\\><C-n>", "<Esc>") -- Send escape key to program running in terminal
+vim.keymap.set("n", "<M-k>", "<Cmd>move --<CR>") -- Exchange current line with previous line TODO: Allow count, dot repeat and indent
+vim.keymap.set("n", "<M-j>", "<Cmd>move +<CR>") -- Exchange current line with next line TODO: Allow count, dot repeat and indent
+vim.keymap.set("i", "<M-k>", "<Cmd>move --<CR>") -- Exchange current line with previous line TODO: Allow count, dot repeat, indent, and goto last insert point
+vim.keymap.set("i", "<M-j>", "<Cmd>move +<CR>") -- Exchange current line with next line TODO: Allow count, dot repeat, indent, and goto last insert point
+vim.keymap.set("v", "<M-k>", "<Esc><Cmd>'<,'>move '<--<CR>") -- Exchange current line with previous line TODO: Allow count, dot repeat, indent, and select last visual selection
+vim.keymap.set("v", "<M-j>", "<Esc><Cmd>'<,'>move '>+<CR>") -- Exchange current line with next line TODO: Allow count, dot repeat, indent, and select last visual selection
+-- Goto previous error
+vim.keymap.set("n", "[e", function()
+	vim.diagnostic.jump({ severity = vim.diagnostic.severity.ERROR, count = -vim.v.count1 })
+end)
+-- Goto next error
+vim.keymap.set("n", "]e", function()
+	vim.diagnostic.jump({ severity = vim.diagnostic.severity.ERROR, count = vim.v.count1 })
+end)
+-- Goto first error
+vim.keymap.set("n", "[E", function()
+	vim.diagnostic.jump({ severity = vim.diagnostic.severity.ERROR, count = -vim._maxint, wrap = false })
+end)
+-- Goto last error
+vim.keymap.set("n", "]E", function()
+	vim.diagnostic.jump({ severity = vim.diagnostic.severity.ERROR, count = vim._maxint, wrap = false })
+end)
+-- Goto previous warning
+vim.keymap.set("n", "[w", function()
+	vim.diagnostic.jump({ severity = vim.diagnostic.severity.WARN, count = -vim.v.count1 })
+end)
+-- Goto next warning
+vim.keymap.set("n", "]w", function()
+	vim.diagnostic.jump({ severity = vim.diagnostic.severity.WARN, count = vim.v.count1 })
+end)
+-- Goto first warning
+vim.keymap.set("n", "[W", function()
+	vim.diagnostic.jump({ severity = vim.diagnostic.severity.WARN, count = -vim._maxint, wrap = false })
+end)
+-- Goto last warning
+vim.keymap.set("n", "]W", function()
+	vim.diagnostic.jump({ severity = vim.diagnostic.severity.WARN, count = vim._maxint, wrap = false })
+end)
+-- Goto previous info
+vim.keymap.set("n", "[i", function()
+	vim.diagnostic.jump({ severity = vim.diagnostic.severity.INFO, count = -vim.v.count1 })
+end)
+-- Goto next info
+vim.keymap.set("n", "]i", function()
+	vim.diagnostic.jump({ severity = vim.diagnostic.severity.INFO, count = vim.v.count1 })
+end)
+-- Goto first info
+vim.keymap.set("n", "[I", function()
+	vim.diagnostic.jump({ severity = vim.diagnostic.severity.INFO, count = -vim._maxint, wrap = false })
+end)
+-- Goto last info
+vim.keymap.set("n", "]I", function()
+	vim.diagnostic.jump({ severity = vim.diagnostic.severity.INFO, count = vim._maxint, wrap = false })
+end)
+-- Goto previous hint
+vim.keymap.set("n", "[h", function()
+	vim.diagnostic.jump({ severity = vim.diagnostic.severity.HINT, count = -vim.v.count1 })
+end)
+-- Goto next hint
+vim.keymap.set("n", "]h", function()
+	vim.diagnostic.jump({ severity = vim.diagnostic.severity.HINT, count = vim.v.count1 })
+end)
+-- Goto first hint
+vim.keymap.set("n", "[H", function()
+	vim.diagnostic.jump({ severity = vim.diagnostic.severity.HINT, count = -vim._maxint, wrap = false })
+end)
+-- Goto last hint
+vim.keymap.set("n", "]H", function()
+	vim.diagnostic.jump({ severity = vim.diagnostic.severity.HINT, count = vim._maxint, wrap = false })
+end)
+
 require("lazy").setup({
 	-- Collection of plugins
 	{
@@ -17,4 +95,25 @@ require("lazy").setup({
 		"rktjmp/hotpot.nvim",
 		opts = {},
 	},
+
+	-- Keymaps
+	{ "numToStr/Comment.nvim", opts = {} }, -- Manipulate comments TODO: Remove this
+	{ "kylechui/nvim-surround", opts = {} }, -- Manipulate surrounding pairs TODO: Remove this
+	{ "gbprod/substitute.nvim", opts = {} }, -- Exchange text TODO: Remove this
+	{ "johmsalas/text-case.nvim", opts = {} }, -- Manipulate text cases TODO: Remove this
+	{ "folke/flash.nvim", opts = {} }, -- Navigate with search labels
+	"Vonr/align.nvim", -- Manipulate alignments TODO: Remove this
+	-- Manipulate indentations
+	{
+		"folke/snacks.nvim",
+		opts = {
+			scope = {
+				enabled = true,
+				keys = {
+					jump = {}, -- Disable jumps TODO: Fix this
+				},
+			},
+		},
+	},
+	{ "MagicDuck/grug-far.nvim", opts = {} }, -- Find and replace in project
 })
