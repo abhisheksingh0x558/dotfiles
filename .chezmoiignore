@@ -11,4 +11,5 @@
 {{ if ne .chezmoi.os "darwin" }}
 # MacOS only includes
 /.Brewfile # Homebrew applications
+/.config/karabiner/ # Karabiner configuration
 {{ end }}
