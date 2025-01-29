@@ -1,0 +1,46 @@
+# -*- mode: conf-unix -*-
+# vim: filetype=gitconfig
+
+# Default user
+[user]
+	name = Abhishek Singh
+	email = abhisheksingh0x558@proton.me
+	signingkey = 037EFBF4F57F150C
+
+[init]
+	defaultbranch = main # Branch created while initializing repository
+
+[fetch]
+	prune = true # Remove deleted remote references while fetching
+	writecommitgraph = true # Write commit graph on while fetching
+
+[pull]
+	rebase = true # Integrate changes with rebase while pulling
+
+[push]
+	autosetupremote = true # Setup upstream branch while pushing
+	# gpgsign = true # Enable signing # TODO: Remove this
+
+[commit]
+	gpgsign = true # Enable signing
+
+[tag]
+	gpgsign = true # Enable signing
+
+[rebase]
+	autostash = true # Automatically stash changes before rebasing and re-apply after it is done
+	autosquash = true # Automatically squash while performing interactive rebase
+	updaterefs = true # Automatically update any branches having commits during interactive rebase
+
+[core]
+	untrackedcache = true # Cache untracked files
+	fsmonitor = true # Monitor filesystem
+
+[column]
+	ui = auto # Display output in columns for supported commands
+
+[rerere]
+	enabled = true # Record resolved merge conflicts and automatically apply them if they occur again
+
+[maintenance]
+	repo = ~/.dotfiles # Hourly run optimization tasks for dotfiles repository in background
