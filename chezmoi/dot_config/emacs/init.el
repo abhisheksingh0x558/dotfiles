@@ -33,3 +33,14 @@
   (evil-set-leader 'normal "\\" t)) ; Local leader key
 (use-package evil-collection :config (evil-collection-init))
 (evil-global-set-key 'normal (kbd "<leader>SPC") 'project-find-file) ; Find project files
+
+;;; UI/UX
+(setq inhibit-startup-screen t) ; Disable startup screen
+(setq initial-scratch-message nil) ; Disable scratch buffer message
+(global-display-line-numbers-mode) ; Enable line numbering
+(setq evil-vsplit-window-right t) ; Put new window on right on vertical split
+(setq evil-split-window-below t) ; Put new window on bottom on horizontal split
+;; Theme
+(use-package catppuccin-theme
+  :custom (catppuccin-flavor 'mocha)
+  :config (load-theme 'catppuccin :no-confirm))
