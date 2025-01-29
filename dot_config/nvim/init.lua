@@ -140,4 +140,20 @@ require("lazy").setup({
 	},
 	"RRethy/vim-illuminate", --  Highlight word under cursor
 	"HiPhish/rainbow-delimiters.nvim", -- Highlight brackets
+
+	-- Autocompletion
+	-- Autoclose pairs
+	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		opts = {},
+	},
+	"rafamadriz/friendly-snippets", -- Snippet collection
+	{
+		"saghen/blink.cmp",
+		build = "cargo build --release",
+		opts = {
+			keymap = { preset = "super-tab" }, -- Use tab for autocompletion
+		},
+	},
 })
