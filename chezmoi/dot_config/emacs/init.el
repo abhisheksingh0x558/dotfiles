@@ -50,3 +50,7 @@
 (use-package corfu
   :custom (corfu-auto t)
   :config (global-corfu-mode))
+
+;;; Fuzzy finder
+;; In-buffer completion UI
+(use-package vertico :config (vertico-mode))
