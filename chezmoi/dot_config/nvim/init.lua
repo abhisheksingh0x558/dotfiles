@@ -85,4 +85,49 @@ require("lazy").setup({
 			keymap = { preset = "super-tab" }, -- Use tab for autocompletion
 		},
 	},
+
+	-- Fuzzy finder
+	{
+		"nvim-telescope/telescope.nvim",
+		lazy = false,
+		config = function()
+			local telescope = require("telescope")
+			telescope.setup({
+				defaults = {
+					layout_strategy = "bottom_pane", -- Open finder at bottom
+					sorting_strategy = "ascending", -- Sort results in ascending order
+				},
+			})
+			-- Load extensions
+			telescope.load_extension("fzf")
+			telescope.load_extension("frecency")
+		end,
+		keys = {
+			-- Find files in current directory
+			{
+				"<leader><space>",
+				function()
+					require("telescope").extensions.frecency.frecency()
+				end,
+			},
+			-- Find lsp references
+			{
+				"grr",
+				function()
+					require("telescope.builtin").lsp_references()
+				end,
+			},
+			-- Find lsp implementations
+			{
+				"gri",
+				function()
+					require("telescope.builtin").lsp_implementations()
+				end,
+			},
+		},
+		dependencies = {
+			{ "nvim-telescope/telescope-fzf-native.nvim", build = "make" }, -- Fzf based native sorter
+			{ "nvim-telescope/telescope-frecency.nvim" }, -- Frecency based search
+		},
+	},
 })
