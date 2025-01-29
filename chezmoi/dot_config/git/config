@@ -1,0 +1,36 @@
+# Default user
+[user]
+	name = Abhishek Singh
+	email = abhisheksingh0x558@proton.me
+
+[init]
+	defaultBranch = main # Branch created while initializing repository
+
+[fetch]
+	prune = true # Remove deleted remote references while fetching
+	writeCommitGraph = true # Write commit graph on while fetching
+
+[pull]
+	rebase = true # Integrate changes with rebase while pulling
+
+[push]
+	autoSetupRemote = true # Setup upstream branch while pushing
+
+[rebase]
+	autoStash = true # Automatically stash changes before rebasing and re-apply after it is done
+	autoSquash = true # Automatically squash while performing interactive rebase
+	updateRefs = true # Automatically update any branches having commits during interactive rebase
+
+[core]
+	untrackedCache = true # Cache untracked files
+	fsmonitor = true # Monitor filesystem
+	sshCommand = ssh -i ~/.ssh/default/auth_github # SSH key for default github account
+
+[column]
+	ui = auto # Display output in columns for supported commands
+
+[rerere]
+	enabled = true # Record resolved merge conflicts and automatically apply them if they occur again
+
+[maintenance]
+	repo = ~/.dotfiles # Hourly run optimization tasks for dotfiles repository in background
