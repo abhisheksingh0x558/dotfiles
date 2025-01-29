@@ -1,0 +1,67 @@
+# -*- mode: conf-unix -*-
+# vim: filetype=gitconfig
+
+# Default user
+[user]
+	name = Abhishek Singh
+	email = abhisheksingh0x558@proton.me
+	signingKey = 0B9ADEA0F3E21BFC
+
+[init]
+	defaultBranch = main # Branch created while initializing repository
+
+[fetch]
+	all = true # Attempt to update all available remotes while fetching
+	prune = true # Remove deleted remote references while fetching
+	writeCommitGraph = true # Write commit graph while fetching
+
+[pull]
+	rebase = true # Integrate changes with rebase while pulling
+
+[push]
+	autoSetupRemote = true # Setup upstream branch while pushing
+	useForceIfIncludes = true # Reject force push if remotes changes are not present locally
+	# gpgSign = true # Enable signing # TODO: Remove this
+
+[commit]
+	gpgSign = true # Enable signing
+
+[tag]
+	gpgSign = true # Enable signing
+
+[merge]
+	autoStash = true # Automatically stash changes before merging and re-apply after it is done
+	ff = false # Always create a merge commit
+	conflictStyle = zdiff3 # Show base of conflict as well
+
+[rebase]
+	autoStash = true # Automatically stash changes before rebasing and re-apply after it is done
+	autoSquash = true # Automatically squash while performing interactive rebase
+	updateRefs = true # Automatically update any branches having commits during interactive rebase
+
+[core]
+	untrackedCache = true # Cache untracked files
+	fsmonitor = true # Monitor filesystem
+	pager = delta # Pager with syntax highlighting
+
+[column]
+	ui = auto # Display output in columns for supported commands
+
+[rerere]
+	enabled = true # Record resolved conflicts and automatically resolve them if they occur again
+	autoUpdate = true # Automatically stage resolved conflicts
+
+[absorb]
+	oneFixupPerCommit = true # Only generate one fixup commit per commit
+	autoStageIfNothingStaged = true # Automatically stage changes if nothing is staged
+
+# URL rewriting
+[url "git@codeberg.org:"]
+  insteadOf = codeberg:
+[url "git@github.com:"]
+  insteadOf = github:
+[url "git@gitlab.com:"]
+  insteadOf = gitlab:
+
+[maintenance]
+	# repo = ~/.dotfiles # Hourly run optimization tasks for dotfiles repository in background # TODO: Enable this

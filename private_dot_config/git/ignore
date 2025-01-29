@@ -1,0 +1,7 @@
+# -*- mode: conf-unix -*-
+# vim: filetype=gitignore
+
+# Direnv environment settings
+/.envrc
+# Jetbrains IDE project settings
+/.idea/
