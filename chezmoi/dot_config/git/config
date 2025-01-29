@@ -34,3 +34,54 @@
 
 [maintenance]
 	repo = ~/.dotfiles # Hourly run optimization tasks for dotfiles repository in background
+
+# Aliases
+[alias]
+	a = add
+	aa = add --all
+	b = branch
+	bd = branch --delete --force
+	c = commit
+	ca = commit --amend
+	caa = commit --all --amend
+	caam = commit --all --amend --message
+	caan = commit --all --amend --no-edit
+	cam = commit --amend --message
+	can = commit --amend --no-edit
+	cm = commit --message
+	cn = commit --no-edit
+	co = checkout
+	cof = checkout --force
+	cp = cherry-pick
+	cpa = cherry-pick --abort
+	cpc = cherry-pick --continue
+	cr = cherry
+	d = diff
+	ds = diff --staged
+	f = fetch
+	fp = format-patch
+	l = log
+	m = merge
+	ma = merge --abort
+	mc = merge --continue
+	p = pull
+	ph = push
+	phf = push --force-with-lease
+	r = rebase
+	ra = rebase --abort
+	rc = rebase --continue
+	re = restore
+	ri = rebase --interactive
+	rri = rebase --root --interactive
+	rs = reset
+	rv = revert
+	s = status
+	sh = show
+	st = stash
+	sta = stash apply
+	std = stash drop
+	stl = stash list
+	stp = stash pop
+	sw = switch
+	swc = switch --create
+	w = worktree
