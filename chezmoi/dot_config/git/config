@@ -63,3 +63,7 @@
 	stp = stash pop
 	sw = switch
 	swc = switch --create
+
+# Nightfall AI user
+[includeIf "hasconfig:remote.*.url:git@github.com:watchtowerai/*"]
+	path = ~/.config/git/nightfallai
