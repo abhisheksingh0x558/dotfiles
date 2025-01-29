@@ -243,4 +243,81 @@ require("lazy").setup({
 			keymap = { preset = "super-tab" }, -- Use tab for autocompletion
 		},
 	},
+
+	-- Fuzzy finder
+	{ "nvim-telescope/telescope.nvim", opts = {} }, -- TODO: Remove this
+	{
+		"folke/snacks.nvim",
+		opts = {
+			picker = {
+				enabled = true,
+				layout = {
+					preset = "bottom", -- Show fuzzy finder at the bottom
+				},
+				sources = {
+					files = {
+						hidden = true, -- Show hidden files
+					},
+				},
+			},
+		},
+		keys = {
+			-- Find files in current directory
+			{
+				"<Leader> ",
+				function()
+					Snacks.picker.files()
+				end,
+			},
+			-- Find buffers
+			{
+				"<Leader><Tab>",
+				function()
+					Snacks.picker.buffers()
+				end,
+			},
+			-- Find recent files
+			{
+				"<Leader><BS>",
+				function()
+					Snacks.picker.recent()
+				end,
+			},
+			-- Find lsp references
+			{
+				"grr",
+				function()
+					Snacks.picker.lsp_references()
+				end,
+			},
+			-- Find lsp implementations
+			{
+				"gri",
+				function()
+					Snacks.picker.lsp_implementations()
+				end,
+			},
+			-- Search current file
+			{
+				"g/",
+				function()
+					Snacks.picker.lines()
+				end,
+			},
+			-- Search project files
+			{
+				"<Leader>/",
+				function()
+					Snacks.picker.grep()
+				end,
+			},
+			-- Search commands
+			{
+				"<M-x>",
+				function()
+					Snacks.picker.commands()
+				end,
+			},
+		},
+	},
 })
