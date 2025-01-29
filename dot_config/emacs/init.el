@@ -70,3 +70,20 @@
     :keymaps 'xref--xref-buffer-mode-map
     "k" #'xref-prev-line ; Goto previous xref entry
     "j" #'xref-next-line)) ; Goto next xref entry
+
+;;; UI/UX
+(setq inhibit-startup-screen t) ; Disable startup screen
+(setq initial-scratch-message nil) ; Disable scratch buffer message
+(global-display-line-numbers-mode) ; Enable line numbering
+(global-hl-line-mode) ; Enable line highlighting
+(setq evil-vsplit-window-right t) ; Put new window on right on vertical split
+(setq evil-split-window-below t) ; Put new window on bottom on horizontal split
+;; Theme
+(leaf catppuccin-theme
+  :custom ((catppuccin-flavor . 'mocha))
+  :config (load-theme 'catppuccin :no-confirm))
+(leaf breadcrumb :config (breadcrumb-mode)) ; Breadcrumbs ; TODO: Replace with lsp alternative
+(leaf highlight-indent-guides :config (highlight-indent-guides-mode)) ; Indentation guides
+(leaf hl-todo :config (global-hl-todo-mode)) ; Highlight todo comments
+(leaf symbol-overlay :config (symbol-overlay-mode)) ; Highlight word under cursor ; TODO: Replace with lsp alternative
+(leaf rainbow-delimiters :config (rainbow-delimiters-mode)) ; Highlight brackets
