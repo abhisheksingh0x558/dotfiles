@@ -122,3 +122,17 @@
     "g/" #'consult-line ; Search current buffer
     "<leader>/" #'consult-ripgrep)) ; Search project buffers
 (leaf consult-lsp)
+
+;;; VCS integration
+;; Git client
+(leaf transient) ; TODO: Autoload this package
+(leaf magit
+  :bind
+  (("<leader>gg" . magit) ; Open git client
+   (:magit-mode-map ("C-r" . magit-refresh)))) ; Refresh magit status
+;; Git commands in buffer
+(leaf diff-hl
+  :config (global-diff-hl-mode)
+  (nmap
+    "[c" #'diff-hl-previous-hunk ; Goto previous hunk
+    "]c" #'diff-hl-next-hunk)) ; Goto next hunk
