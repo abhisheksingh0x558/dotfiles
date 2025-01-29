@@ -7,3 +7,7 @@ opt.rtp:prepend(fn.stdpath("data") .. "/lazy/lazy.nvim") -- Add plugin manager t
 
 -- Code style
 g.editorconfig = true -- Editorconfig integration
+
+-- Keymaps
+g.mapleader = " " -- Leader key
+g.maplocalleader = "\\" -- Local leader key
