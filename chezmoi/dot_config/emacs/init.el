@@ -100,3 +100,16 @@
   :config (global-corfu-mode))
 ;; In-buffer completion extensions
 (leaf cape)
+
+;;; Fuzzy finder
+;; Mini-buffer completion UI
+(leaf vertico :config (vertico-mode))
+;; Fuzzy matcher
+(leaf prescient
+  :custom ((prescient-filter-method . '(fuzzy)))
+  :config (prescient-persist-mode))
+(leaf vertico-prescient :config (vertico-prescient-mode))
+(leaf corfu-prescient :config (corfu-prescient-mode))
+;; Mini-buffer commands
+(leaf consult :custom ((xref-show-xrefs-function . #'consult-xref)))
+(leaf consult-lsp)
