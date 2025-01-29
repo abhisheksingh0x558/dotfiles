@@ -113,3 +113,18 @@
 ;; Mini-buffer commands
 (leaf consult :custom ((xref-show-xrefs-function . #'consult-xref)))
 (leaf consult-lsp)
+
+;;; VCS integration
+;; Git client
+(leaf transient) ; TODO: Check why is this required
+(leaf magit
+  :bind
+  (("<leader>g" . magit) ; Open git client
+   (:magit-mode-map ("C-r" . magit-refresh)))) ; Refresh magit status
+;; Git commands in buffer
+(leaf diff-hl
+  :config
+  (global-diff-hl-mode)
+  (nmap
+    "[c" #'diff-hl-previous-hunk ; Goto previous hunk
+    "]c" #'diff-hl-next-hunk)) ; Goto next hunk
