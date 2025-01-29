@@ -1,0 +1,22 @@
+# Default user
+[user]
+	name = Abhishek Singh
+	email = abhisheksingh0x558@proton.me
+
+[init]
+	defaultBranch = main # Branch created while initializing repository
+
+[fetch]
+	prune = true # Remove deleted remote references while fetching
+
+[pull]
+	rebase = true # Integrate changes with rebase while pulling
+
+[push]
+	autoSetupRemote = true; # Setup upstream branch while pushing
+
+[rebase]
+	autoStash = true; # Automatically stash changes before rebasing and re-apply after it is done
+
+[core]
+	sshCommand = ssh -i ~/.ssh/default/auth_github # SSH key for default github account
