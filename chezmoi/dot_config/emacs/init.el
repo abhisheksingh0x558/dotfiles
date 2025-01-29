@@ -73,3 +73,10 @@
 (leaf catppuccin-theme
   :custom ((catppuccin-flavor . 'mocha))
   :config (load-theme 'catppuccin :no-confirm))
+
+;;; Autocompletion
+(electric-pair-mode) ; Autoclose pairs
+;; In-buffer completion UI
+(leaf corfu
+  :custom ((corfu-auto . t))
+  :config (global-corfu-mode))
