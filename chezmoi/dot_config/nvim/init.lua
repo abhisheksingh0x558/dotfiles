@@ -32,4 +32,31 @@ require("lazy").setup({
 			cmd.colorscheme("catppuccin-mocha")
 		end,
 	},
+
+	-- Autocompletion
+	{
+		"hrsh7th/nvim-cmp",
+		config = function()
+			local cmp = require("cmp")
+			-- Autocompletion sources
+			cmp.setup({
+				sources = cmp.config.sources({
+					{ name = "nvim_lsp" },
+					{ name = "path" },
+				}, {
+					{ name = "buffer" },
+				}),
+				mapping = cmp.mapping.preset.insert({
+					["<tab>"] = cmp.mapping.confirm({ select = true }), -- Select entry from autocompletion popup
+					["<cr>"] = cmp.mapping.confirm({ select = true }), -- Select entry from autocompletion popup
+				}),
+			})
+		end,
+		dependencies = {
+			-- Autocompletion sources
+			"hrsh7th/cmp-nvim-lsp",
+			"hrsh7th/cmp-path",
+			"hrsh7th/cmp-buffer",
+		},
+	},
 })
