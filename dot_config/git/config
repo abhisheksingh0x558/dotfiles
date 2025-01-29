@@ -66,6 +66,11 @@
 [maintenance]
 	# repo = ~/.dotfiles # Hourly run optimization tasks for dotfiles repository in background # TODO: Enable this
 
+# TODO: Remove this
+# Nightfall overrides
+[includeIf "hasconfig:remote.*.url:git@github.com:watchtowerai/*"]
+	path = ~/.config/git/nightfall
+
 # Aliases
 [alias]
 	# Add
