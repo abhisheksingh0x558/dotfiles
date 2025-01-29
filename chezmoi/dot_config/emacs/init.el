@@ -86,3 +86,24 @@
 (leaf vertico :config (vertico-mode))
 ;; Mini-buffer commands
 (leaf consult :bind (("<leader>SPC" . find-file))) ; Find files in current directory
+
+;;; VCS integration
+;; Git client
+(leaf transient) ; TODO: Check why is this required
+(leaf magit :bind (("<leader>g" . magit))) ; Open git client
+;; Git commands in buffer
+(leaf diff-hl
+  :config
+  (global-diff-hl-mode)
+  (nmap
+    "[c" #'diff-hl-previous-hunk ; Goto previous hunk
+    "]c" #'diff-hl-next-hunk  ; Goto next hunk
+    "[x" #'smerge-prev ; Goto previous conflict
+    "]x" #'smerge-next) ; Goto next conflict
+  (nmap
+    :keymaps 'smerge-mode-map
+    :prefix "c"
+    "o" #'smerge-keep-upper ; Choose ours
+    "t" #'smerge-keep-lower ; Choose theirs
+    "b" #'smerge-keep-all ; Choose both
+    "n" #'smerge-keep-base)) ; Choose none
