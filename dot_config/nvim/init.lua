@@ -176,4 +176,67 @@ require("lazy").setup({
 			},
 		},
 	},
+
+	-- VCS integration
+	-- Git client
+	{
+		"NeogitOrg/neogit",
+		lazy = false,
+		keys = {
+			-- Open git client
+			{
+				"<leader>gg",
+				function()
+					require("neogit").open()
+				end,
+			},
+		},
+	},
+	-- Git commands in buffer
+	{
+		"lewis6991/gitsigns.nvim",
+		lazy = false,
+		opts = {},
+		keys = {
+			-- Blame
+			{
+				"<leader>gb",
+				function()
+					require("gitsigns").blame()
+				end,
+			},
+			-- Goto previous hunk
+			{
+				"[c",
+				function()
+					require("gitsigns").nav_hunk("prev")
+				end,
+			},
+			-- Goto next hunk
+			{
+				"]c",
+				function()
+					require("gitsigns").nav_hunk("next")
+				end,
+			},
+			-- Goto first hunk
+			{
+				"[c",
+				function()
+					require("gitsigns").nav_hunk("first")
+				end,
+			},
+			-- Goto last hunk
+			{
+				"]c",
+				function()
+					require("gitsigns").nav_hunk("last")
+				end,
+			},
+		},
+	},
+	{
+		"akinsho/git-conflict.nvim",
+		opts = {},
+	},
 })
