@@ -1,0 +1,4 @@
+# Link karabiner configuration file only on MacOS
+{{- if eq .chezmoi.os "linux" }}
+.config/karabiner
+{{- end }}
