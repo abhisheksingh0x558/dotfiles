@@ -13,4 +13,5 @@ install # Install script
 # MacOS only includes
 {{- if ne .chezmoi.os "darwin" }}
 .config/dot/brew.toml # Homebrew packages managed by Dot CLI
+.config/karabiner # Karabiner configuration
 {{- end }}
