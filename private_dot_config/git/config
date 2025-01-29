@@ -62,9 +62,21 @@
   insteadOf = github:
 [url "git@gitlab.com:"]
   insteadOf = gitlab:
+# TODO: Remove this
+[url "git@cyberhaven.github.com:CyberhavenInc/"]
+  insteadOf = cyberhaven:
 
 [maintenance]
 	# repo = ~/.dotfiles # Hourly run optimization tasks for dotfiles repository in background # TODO: Enable this
+
+# TODO: Remove this
+# Cyberhaven overrides
+[includeIf "hasconfig:remote.*.url:git@github.com:CyberhavenInc/*"]
+	path = ~/.config/git/cyberhaven
+[includeIf "hasconfig:remote.*.url:git@cyberhaven.github.com:CyberhavenInc/*"]
+	path = ~/.config/git/cyberhaven
+[includeIf "hasconfig:remote.*.url:cyberhaven:*"]
+	path = ~/.config/git/cyberhaven
 
 # Aliases
 [alias]
