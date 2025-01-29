@@ -1,0 +1,6 @@
+# Nightfall AI user
+[user]
+	email = abhishek@nightfall.ai
+
+[core]
+	sshCommand = ssh -i ~/.ssh/nightfallai/auth_github # SSH key for Nightfall AI github account
