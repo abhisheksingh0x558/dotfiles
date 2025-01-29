@@ -76,4 +76,19 @@ require("lazy").setup({
 			},
 		},
 	},
+
+	-- Autocompletion
+	-- Autoclose pairs
+	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		opts = {},
+	},
+	{
+		"saghen/blink.cmp",
+		build = "cargo build --release",
+		opts = {
+			keymap = { preset = "super-tab" }, -- Use tab for autocompletion
+		},
+	},
 })
