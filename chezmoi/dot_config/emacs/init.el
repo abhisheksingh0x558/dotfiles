@@ -80,3 +80,9 @@
 (leaf corfu
   :custom ((corfu-auto . t))
   :config (global-corfu-mode))
+
+;;; Fuzzy finder
+;; Mini-buffer completion UI
+(leaf vertico :config (vertico-mode))
+;; Mini-buffer commands
+(leaf consult :bind (("<leader>SPC" . find-file))) ; Find files in current directory
