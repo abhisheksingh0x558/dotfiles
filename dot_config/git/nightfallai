@@ -1,0 +1,15 @@
+# -*- mode: conf-unix -*-
+# vim: filetype=gitconfig
+
+# TODO:
+
+# Nightfall AI user
+[user]
+	email = abhishek@nightfall.ai
+	signingkey = ''
+
+[commit]
+	gpgsign = false # Disable signing
+
+[tag]
+	gpgsign = false # Disable signing
