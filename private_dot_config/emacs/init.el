@@ -78,3 +78,17 @@
 ;;; Spell checker
 (add-hook 'text-mode-hook #'flyspell-mode)
 (add-hook 'prog-mode-hook #'flyspell-mode)
+
+;;; Autocompletion
+(electric-pair-mode) ; Autoclose pairs
+(leaf yasnippet :config (yas-global-mode)) ; Snippet engine
+(leaf yasnippet-snippets) ; Snippet collection
+;; In-buffer completion UI
+(leaf corfu
+  :custom
+  ((corfu-auto . t)
+    (corfu-auto-prefix . 1)) ; Trigger autocompletion popup after typing 1 character
+  :config (global-corfu-mode))
+;; In-buffer completion extensions
+(leaf yasnippet-capf)
+(leaf cape :config (add-to-list 'completion-at-point-functions (cape-capf-super #'lsp-completion-at-point #'yasnippet-capf)))
