@@ -56,3 +56,9 @@
 ;;; Fuzzy finder
 ;; In-buffer completion UI
 (use-package vertico :config (vertico-mode))
+
+;;; VCS integration
+;; Git client
+(use-package magit
+  :defer t
+  :bind ("<leader>g" . magit)) ; Open git client
