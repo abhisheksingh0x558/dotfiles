@@ -44,3 +44,9 @@
 (use-package catppuccin-theme
   :custom (catppuccin-flavor 'mocha)
   :config (load-theme 'catppuccin :no-confirm))
+
+;;; Autocompletion
+;; Mini-buffer completion UI
+(use-package corfu
+  :custom (corfu-auto t)
+  :config (global-corfu-mode))
