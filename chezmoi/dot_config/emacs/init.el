@@ -87,3 +87,17 @@
 (leaf catppuccin-theme
   :custom ((catppuccin-flavor . 'mocha))
   :config (load-theme 'catppuccin :no-confirm))
+
+;;; Autocompletion
+(electric-pair-mode) ; Autoclose pairs
+(leaf yasnippet :config (yas-global-mode)) ; Snippet engine
+(leaf yasnippet-snippets) ; Snippet collection
+;; In-buffer completion UI
+(leaf corfu
+  :custom
+  ((corfu-auto . t)
+   (corfu-auto-prefix . 1)) ; Trigger autocompletion popup after typing 1 character
+  :config (global-corfu-mode))
+;; In-buffer completion extensions
+(leaf yasnippet-capf :config (add-to-list 'completion-at-point-functions #'yasnippet-capf))
+(leaf cape)
