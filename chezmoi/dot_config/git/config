@@ -85,3 +85,7 @@
 	sw = switch
 	swc = switch --create
 	w = worktree
+
+# Nightfall AI user
+[includeIf "hasconfig:remote.*.url:git@github.com:watchtowerai/*"]
+	path = ~/.config/git/nightfallai
