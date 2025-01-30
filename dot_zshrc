@@ -53,3 +53,25 @@ for key in "${ssh_keys[@]}"; do
 	[[ -f $key ]] && eval "$(keychain --eval --quiet "$key")"
 done
 unset ssh_keys
+
+# Aliases
+# Git
+alias g="git"
+# Define aliases defined in git config
+source <(git config --get-regexp '^alias\.' | rg 'alias.([^\s]+) (!git )?(.+)' --replace "alias g\$1='git \$3'") # TODO: Fix this
+# Chezmoi
+alias cz="chezmoi"
+alias cza="chezmoi apply"
+alias czd="chezmoi diff"
+# Kubernetes
+alias k="kubectl"
+# Kubernetes get
+alias kg="kubectl get"
+alias kgd="kubectl get deployments"
+alias kgp="kubectl get pods"
+alias kgs="kubectl get services"
+# Kubernetes describe
+alias kd="kubectl describe"
+alias kdd="kubectl describe deployments"
+alias kdp="kubectl describe pods"
+alias kds="kubectl describe services"
