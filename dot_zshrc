@@ -41,3 +41,9 @@ source <(direnv hook zsh)
 # Git client
 zinit light kazhala/dotbare
 zinit light wfxr/forgit
+
+# Aliases
+# Define common aliases
+source <(yq --output-format shell ~/.alias.toml | sd '^(.+)' 'alias $1')
+# Define Git aliases
+source <(git config --get-regexp '^alias\.' | sd 'alias.(\w+) (!git )?(.+)' "alias g\$1='git \$3'")
