@@ -45,3 +45,32 @@ source <(direnv hook zsh)
 
 # TUIs
 zinit load wfxr/forgit # Git client
+
+# Aliases
+# Git
+alias g="git"
+# Define aliases defined in git config
+source <(git config --get-regexp '^alias\.' | rg 'alias.(\w+) (!git )?(.+)' --replace "alias g\$1='git \$3'")
+# Chezmoi
+alias cz='chezmoi'
+alias cza='chezmoi apply'
+alias czd='chezmoi diff'
+# Just
+alias j='just'
+alias jc='just --choose'
+alias jl='just --list'
+alias jg='just --global-justfile'
+alias jgc='just --global-justfile --choose'
+alias jgl='just --global-justfile --list'
+# Kubernetes
+alias k='kubectl'
+# Kubernetes get
+alias kg='kubectl get'
+alias kgd='kubectl get deployments'
+alias kgp='kubectl get pods'
+alias kgs='kubectl get services'
+# Kubernetes describe
+alias kd='kubectl describe'
+alias kdd='kubectl describe deployments'
+alias kdp='kubectl describe pods'
+alias kds='kubectl describe services'
