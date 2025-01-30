@@ -41,3 +41,9 @@ zvm_after_init_commands+='source <(atuin init zsh)' # History, direct sourcing c
 # Git client
 # zinit light kazhala/dotbare # TODO: Enable this
 # zinit light wfxr/forgit # TODO: Enable this
+
+# Aliases
+# Define common aliases
+source <(yq --output-format=shell ~/.alias.toml | sd '^(.+)' 'alias $1')
+# Define Git aliases
+source <(git config --get-regexp '^alias\.' | sd 'alias.(\w+) (!git )?(.+)' "alias g\$1='git \$3'")
