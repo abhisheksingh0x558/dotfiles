@@ -42,3 +42,25 @@ source <(zoxide init zsh)                      # Change directory
 
 # Environment manager
 source <(direnv hook zsh)
+
+# Aliases
+# Git
+alias g="git"
+# Define aliases defined in git config
+source <(git config --get-regexp '^alias\.' | rg 'alias.(\w+) (!git )?(.+)' --replace "alias g\$1='git \$3'")
+# Chezmoi
+alias cz='chezmoi'
+alias cza='chezmoi apply'
+alias czd='chezmoi diff'
+# Kubernetes
+alias k='kubectl'
+# Kubernetes get
+alias kg='kubectl get'
+alias kgd='kubectl get deployments'
+alias kgp='kubectl get pods'
+alias kgs='kubectl get services'
+# Kubernetes describe
+alias kd='kubectl describe'
+alias kdd='kubectl describe deployments'
+alias kdp='kubectl describe pods'
+alias kds='kubectl describe services'
