@@ -1,3 +1,4 @@
+{ pkgs, ... }:
 let
   # Keymaps
   keydSettings = {
@@ -75,4 +76,14 @@ in {
       };
     };
   };
+
+  environment.systemPackages = with pkgs; [
+    nushell # Shell
+    zsh # Shell
+  ];
+
+  # Default shell
+  users.defaultUserShell = pkgs.zsh;
+  # WARNING: Required for setting defualt user shell to zsh
+  programs.zsh.enable = true;
 }
