@@ -1,3 +1,7 @@
+-- Load plugin manager
+vim.opt.runtimepath:prepend(vim.fs.normalize("~/.local/share/nvim/lazy/lazy.nvim"))
+local lazy = require("lazy")
+
 -- Load modules
 local function load(directory)
 	local namespace = directory:match(".*/lua/(.*)"):gsub("/", ".")
@@ -11,3 +15,6 @@ end
 
 -- Load core modules
 load(vim.fn.stdpath("config") .. "/lua/my/core")
+
+-- Setup plugins
+lazy.setup({ import = "my.spec" })
