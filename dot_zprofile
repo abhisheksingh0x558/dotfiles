@@ -3,3 +3,17 @@
 
 # Version manager
 source <(mise activate zsh --shims)
+
+# Path
+# Add Homebrew to path on MacOS
+if [[ $(uname -s) == "Darwin" ]]; then
+	if [[ $(uname -m) == "arm64" ]]; then
+		source <(/opt/homebrew/bin/brew shellenv)
+	elif [[ $(uname -m) == "x86_64" ]]; then
+		source <(/usr/local/bin/brew shellenv)
+	fi
+fi
+# Global Go binaries
+go_bin=$(go env GOBIN)
+path+="${go_bin:-$(go env GOPATH)/bin}"
+unset go_bin
