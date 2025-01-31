@@ -27,3 +27,9 @@ setopt histreduceblanks                       # Trim blanks from commands before
 setopt autocd                                 # If command is name of directory then cd into that directory
 zinit light zsh-users/zsh-syntax-highlighting # Enable syntax highlighting
 source <(starship init zsh)                   # Shell prompt
+
+# Autocompletion
+autoload -Uz compinit && compinit         # Initialize autocompletion engine
+zinit light zsh-users/zsh-autosuggestions # Enable command suggestion
+source <(carapace _carapace zsh)          # Autocompletion
+source <(pay-respects zsh)                # Autocorrection
