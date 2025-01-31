@@ -48,3 +48,6 @@ alias gstp = git stash pop
 alias gsw = git switch
 alias gswc = git switch --create
 alias gw = git worktree
+
+# Keymaps
+$env.config.edit_mode = 'vi' # Vi mode
