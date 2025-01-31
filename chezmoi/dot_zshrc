@@ -45,3 +45,8 @@ alias gstl="git stash list"
 alias gstp="git stash pop"
 alias gsw="git switch"
 alias gswc="git switch --create"
+
+# Keymaps
+# Vi mode
+bindkey -v
+zinit light jeffreytse/zsh-vi-mode
