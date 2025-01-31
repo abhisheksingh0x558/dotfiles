@@ -66,3 +66,8 @@ alias gstp="git stash pop"
 alias gsw="git switch"
 alias gswc="git switch --create"
 alias gw="git worktree"
+
+# Keymaps
+# Vi mode
+bindkey -v
+zinit light jeffreytse/zsh-vi-mode
