@@ -4,3 +4,10 @@
 # Plugin manager
 declare -A ZINIT
 ZINIT[NO_ALIASES]=1 # Disable aliases
+
+# Path
+declare -U path # De-duplicate path elements
+# Custom scripts
+local_bin=~/.local/bin
+[[ -d $local_bin ]] && path+=$local_bin
+unset local_bin
