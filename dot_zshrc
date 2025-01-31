@@ -8,3 +8,8 @@ source ~/.local/share/zinit/plugins/zdharma-continuum---zinit/zinit.zsh # Load p
 rc_file=~/.zshrc.local
 [[ -f $rc_file ]] && source "$rc_file"
 unset rc_file
+
+# Key mappings
+# Vi mode
+bindkey -v
+zinit light jeffreytse/zsh-vi-mode
