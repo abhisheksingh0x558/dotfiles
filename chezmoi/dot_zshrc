@@ -83,3 +83,7 @@ source <(starship init zsh) # Shell prompt
 zinit light zsh-users/zsh-autosuggestions # Enable command suggestion
 source <(carapace _carapace zsh) # Autocompletion
 source <(thefuck --alias) # Autocorrection
+
+# Fuzzy finder
+source <(fzf --zsh)
+source <(zoxide init zsh) # Change directory
