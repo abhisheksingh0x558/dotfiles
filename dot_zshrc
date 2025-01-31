@@ -12,3 +12,8 @@ unset zinit
 rc_file=~/.rc
 [[ -f $rc_file ]] && source "$rc_file"
 unset rc_file
+
+# Keymaps
+# Vi mode
+bindkey -v
+zinit light jeffreytse/zsh-vi-mode
