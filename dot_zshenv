@@ -19,3 +19,12 @@ unset local_bin
 env_file=~/.zshenv.local
 [[ -f $env_file ]] && source "$env_file"
 unset env_file
+
+# UI/UX
+HISTFILE=~/.zsh_history            # File where history is stored
+HISTSIZE=5000                      # Number of entries to load from history file into shell memory
+SAVEHIST=100000                    # Number of entries stored in history file
+export EDITOR=nvim                 # Default editor
+export DELTA_FEATURES=line-numbers # Feature to enable for delta
+export DFT_DISPLAY=inline          # Display style for difftastic
+export JUST_UNSTABLE=1             # Enable unstable just features # TODO: Remove this

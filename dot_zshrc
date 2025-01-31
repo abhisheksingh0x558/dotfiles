@@ -13,3 +13,13 @@ unset rc_file
 # Vi mode
 bindkey -v
 zinit light jeffreytse/zsh-vi-mode
+
+# UI/UX
+setopt EXTENDED_HISTORY                       # Store additional metadata in history file
+setopt INC_APPEND_HISTORY_TIME                # Append command to history file as each command is entered
+setopt HIST_EXPIRE_DUPS_FIRST                 # Remove oldest duplicate commands from history file when history reaches its limit
+setopt HIST_IGNORE_ALL_DUPS                   # Remove old duplicate commands from history file as each command is entered
+setopt HIST_REDUCE_BLANKS                     # Trim blanks from commands before adding to history list
+setopt AUTO_CD                                # If command is name of directory then cd into that directory
+zinit light zsh-users/zsh-syntax-highlighting # Enable syntax highlighting
+source <(starship init zsh)                   # Shell prompt
