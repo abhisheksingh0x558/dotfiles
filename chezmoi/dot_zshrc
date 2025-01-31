@@ -1,0 +1,9 @@
+# Plugin manager
+declare -A ZINIT
+ZINIT[NO_ALIASES]=1 # Do not set aliases
+local zinit_path="${HOME}/.local/share/zinit/plugins/zdharma-continuum---zinit"
+local zinit_repo="https://github.com/zdharma-continuum/zinit.git"
+# Install plugin manager
+[[ ! -d $zinit_path ]] && git clone $zinit_repo $zinit_path
+# Load plugin manager
+source "${zinit_path}/zinit.zsh"
