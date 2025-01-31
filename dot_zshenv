@@ -1,0 +1,10 @@
+# -*- mode: sh -*-
+# vim: filetype=zsh
+
+# Path
+declare -U path # De-duplicate path elements
+# Add Homebrew to path on MacOS
+# TODO: Merge this setting to upstream nixpkgs and remove from here
+[[ $(uname -s) == "Darwin" && $(uname -m) == "arm64" ]] && path+=/opt/homebrew/bin
+path+=~/.local/bin                      # Custom scripts
+path+="${CARGO_HOME:-$HOME/.cargo}/bin" # Global Rust binaries
