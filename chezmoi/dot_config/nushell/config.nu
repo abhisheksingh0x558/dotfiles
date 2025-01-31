@@ -40,3 +40,6 @@ alias gstl = git stash list
 alias gstp = git stash pop
 alias gsw = git switch
 alias gswc = git switch --create
+
+# Keymaps
+$env.config.edit_mode = 'vi' # Vi mode
