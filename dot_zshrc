@@ -1,0 +1,5 @@
+# -*- mode: sh -*-
+# vim: filetype=zsh
+
+# Plugin manager
+source ~/.local/share/zinit/plugins/zdharma-continuum---zinit/zinit.zsh # Load plugin manager
