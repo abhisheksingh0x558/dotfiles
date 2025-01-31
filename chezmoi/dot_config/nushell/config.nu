@@ -51,3 +51,6 @@ alias gw = git worktree
 # Chezmoi aliases
 alias cza = chezmoi apply
 alias czd = chezmoi diff
+
+# Keymaps
+$env.config.edit_mode = 'vi' # Vi mode
