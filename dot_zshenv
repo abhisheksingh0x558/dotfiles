@@ -4,3 +4,8 @@
 # Plugin manager
 declare -A ZINIT
 ZINIT[NO_ALIASES]=1 # Disable aliases
+
+# Path
+declare -U path                         # De-duplicate path elements
+path+=~/.local/bin                      # Custom scripts
+path+="${CARGO_HOME:-$HOME/.cargo}/bin" # Global Rust binaries
