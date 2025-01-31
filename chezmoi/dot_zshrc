@@ -1,0 +1,4 @@
+# Plugin manager
+declare -A ZINIT
+ZINIT[NO_ALIASES]=1 # Do not set aliases
+source "${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/plugins/zdharma-continuum---zinit/zinit.zsh" # Load plugin manager
