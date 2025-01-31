@@ -69,3 +69,8 @@ alias gw="git worktree"
 # Chezmoi aliases
 alias cza="chezmoi apply"
 alias czd="chezmoi diff"
+
+# Keymaps
+# Vi mode
+bindkey -v
+zinit light jeffreytse/zsh-vi-mode
