@@ -50,3 +50,7 @@ alias gswc="git switch --create"
 # Vi mode
 bindkey -v
 zinit light jeffreytse/zsh-vi-mode
+
+# UI/UX
+zinit light zsh-users/zsh-syntax-highlighting # Enable syntax highlighting
+source <(starship init zsh) # Shell prompt
