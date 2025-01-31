@@ -1,0 +1,9 @@
+# -*- mode: sh -*-
+# vim: filetype=zsh
+
+# Plugin manager
+declare -A ZINIT
+ZINIT[NO_ALIASES]=1 # Do not set aliases
+zinit_path=~/.local/share/zinit/plugins/zdharma-continuum---zinit
+source "${zinit_path}/zinit.zsh" # Load plugin manager
+unset zinit
