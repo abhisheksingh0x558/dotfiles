@@ -71,3 +71,8 @@ zinit light jeffreytse/zsh-vi-mode
 # UI/UX
 zinit light zsh-users/zsh-syntax-highlighting # Enable syntax highlighting
 source <(starship init zsh) # Shell prompt
+
+# Autocompletion
+zinit light zsh-users/zsh-autosuggestions # Enable command suggestion
+source <(carapace _carapace zsh) # Autocompletion
+source <(thefuck --alias) # Autocorrection
