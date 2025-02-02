@@ -145,7 +145,9 @@
 (setq treesit-language-source-alist
       '((nix "https://github.com/nix-community/tree-sitter-nix")
         (haskell "https://github.com/tree-sitter/tree-sitter-haskell")
-        (rust "https://github.com/tree-sitter/tree-sitter-rust")))
+        (rust "https://github.com/tree-sitter/tree-sitter-rust")
+        (go "https://github.com/tree-sitter/tree-sitter-go")
+        (gomod "https://github.com/camdencheek/tree-sitter-go-mod")))
 ;; Install parsers on startup
 (mapc
   (lambda (source)
@@ -154,6 +156,7 @@
   treesit-language-source-alist)
 ;; Treesitter major modes
 (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.go\\'" . go-ts-mode))
 
 ;;; LSP integration
 (leaf lsp-mode
@@ -174,7 +177,10 @@
                              (lsp-deferred)))
    (rust-ts-mode-hook . (lambda ()
                           (setq lsp-enabled-clients '(rust-analyzer))
-                          (lsp-deferred)))))
+                          (lsp-deferred)))
+   (go-ts-mode-hook . (lambda ()
+                        (setq lsp-enabled-clients '(gopls))
+                        (lsp-deferred)))))
 (leaf lsp-ui
   :custom
   ((lsp-ui-doc-show-with-mouse . nil) ; Do not show lsp hover documentation on mouse hover
@@ -201,7 +207,9 @@
                                         ((derived-mode-p 'haskell-ts-mode)
                                           (flycheck-add-next-checker 'lsp '(t . haskell-lint)))
                                         ((derived-mode-p 'rust-ts-mode)
-                                          (flycheck-add-next-checker 'lsp '(t . rust-clippy))))))))
+                                          (flycheck-add-next-checker 'lsp '(t . rust-clippy)))
+                                        ((derived-mode-p 'go-ts-mode)
+                                          (flycheck-add-next-checker 'lsp '(t . go-staticcheck))))))))
 
 ;;; Formatter integration
 (leaf apheleia
@@ -211,7 +219,8 @@
   ;; Register formatters
   (add-to-list 'apheleia-mode-alist '(nix-ts-mode . nixfmt))
   (add-to-list 'apheleia-mode-alist '(haskell-ts-mode . fourmolu))
-  (add-to-list 'apheleia-mode-alist '(rust-ts-mode . rustfmt)))
+  (add-to-list 'apheleia-mode-alist '(rust-ts-mode . rustfmt))
+  (add-to-list 'apheleia-mode-alist '(go-ts-mode . gofumpt)))
 
 ;; Nix support
 (leaf nix-ts-mode :mode "\\.nix\\'")
