@@ -179,3 +179,6 @@
                                   (let ((next-checkers (flycheck-get-next-checkers 'lsp)))
                                     (dolist (next next-checkers)
                                       (flycheck-remove-next-checker 'lsp next)))))))
+
+;;; Formatter integration
+(leaf apheleia :config (apheleia-global-mode))
