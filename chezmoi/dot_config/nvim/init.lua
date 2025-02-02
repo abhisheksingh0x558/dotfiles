@@ -116,6 +116,7 @@ require("lazy").setup({
 					"nix",
 					"lua",
 					"haskell",
+					"go",
 				},
 			})
 		end,
@@ -130,6 +131,7 @@ require("lazy").setup({
 			lspconfig.nil_ls.setup({})
 			lspconfig.lua_ls.setup({})
 			lspconfig.hls.setup({})
+			lspconfig.gopls.setup({})
 		end,
 	},
 
@@ -151,6 +153,7 @@ require("lazy").setup({
 				nix = { "deadnix" },
 				lua = { "luacheck" },
 				haskell = { "hlint" },
+				go = { "staticcheck" },
 			}
 		end,
 	},
@@ -165,6 +168,7 @@ require("lazy").setup({
 				nix = { "nixfmt" },
 				lua = { "stylua" },
 				haskell = { "fourmolu" },
+				go = { "gofumpt" },
 			},
 		},
 	},
