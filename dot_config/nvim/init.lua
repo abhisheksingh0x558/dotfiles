@@ -389,4 +389,7 @@ require("lazy").setup({
 			swap = { enable = true },
 		},
 	},
+
+	-- LSP integration
+	"neovim/nvim-lspconfig",
 })
