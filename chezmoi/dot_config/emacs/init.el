@@ -70,11 +70,13 @@
 (setq treesit-language-source-alist
   '((nix "https://github.com/nix-community/tree-sitter-nix")
      (haskell "https://github.com/tree-sitter/tree-sitter-haskell")
-     (rust "https://github.com/tree-sitter/tree-sitter-rust")))
+     (rust "https://github.com/tree-sitter/tree-sitter-rust")
+     (go "https://github.com/tree-sitter/tree-sitter-go")))
 ;; Treesitter major modes
 (use-package nix-ts-mode)
 (use-package haskell-ts-mode)
 (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.go\\'" . go-ts-mode))
 
 ;;; LSP integration
 ;; Register language servers
@@ -83,6 +85,7 @@
 (add-hook 'nix-ts-mode-hook #'eglot-ensure)
 (add-hook 'haskell-ts-mode-hook #'eglot-ensure)
 (add-hook 'rust-ts-mode-hook #'eglot-ensure)
+(add-hook 'go-ts-mode-hook #'eglot-ensure)
 
 ;;; Formatter integration
 (use-package apheleia
@@ -90,4 +93,5 @@
   (apheleia-global-mode)
   (add-to-list 'apheleia-formatters '(fourmolu . ("fourmolu" "--stdin-input-file" filepath)))
   (add-to-list 'apheleia-mode-alist '(nix-ts-mode . nixfmt))
-  (add-to-list 'apheleia-mode-alist '(haskell-ts-mode . fourmolu)))
+  (add-to-list 'apheleia-mode-alist '(haskell-ts-mode . fourmolu))
+  (add-to-list 'apheleia-mode-alist '(go-ts-mode . gofumpt)))
