@@ -143,7 +143,8 @@
 ;;; Treesitter integration
 ;; Parsers to install
 (setq treesit-language-source-alist
-      '((nix "https://github.com/nix-community/tree-sitter-nix"))) ; Nix
+      '((nix "https://github.com/nix-community/tree-sitter-nix") ; Nix
+        (haskell "https://github.com/tree-sitter/tree-sitter-haskell"))) ; Haskell
 ;; Install parsers on startup
 (mapc
   (lambda (source)
@@ -164,12 +165,16 @@
   :hook
   ((nix-ts-mode-hook . (lambda ()
                          (setq lsp-enabled-clients '(nix-nil)) ; Nix
-                         (lsp-deferred)))))
+                         (lsp-deferred)))
+   (haskell-ts-mode-hook . (lambda ()
+                             (setq lsp-enabled-clients '(lsp-haskell)) ; Haskell
+                             (lsp-deferred)))))
 (leaf lsp-ui
   :custom
   ((lsp-ui-doc-show-with-mouse . nil) ; Do not show lsp hover documentation on mouse hover
    (lsp-ui-doc-position . 'at-point)) ; Show lsp hover documentation above cursor
   :config (nmap "K" #'lsp-ui-doc-glance)) ; Show lsp hover documentation
+(leaf lsp-haskell) ; Haskell
 
 ;;; Linter integration
 (leaf flycheck
@@ -186,7 +191,9 @@
                                     (dolist (next next-checkers)
                                       (flycheck-remove-next-checker 'lsp next)))
                                   (cond ((derived-mode-p 'nix-ts-mode)
-                                          (flycheck-add-next-checker 'lsp '(t . statix)))))))) ; Nix
+                                          (flycheck-add-next-checker 'lsp '(t . statix))) ; Nix
+                                        ((derived-mode-p 'haskell-ts-mode)
+                                          (flycheck-add-next-checker 'lsp '(t . haskell-lint)))))))) ; Haskell
 
 ;;; Formatter integration
 (leaf apheleia
@@ -194,7 +201,8 @@
   (apheleia-global-mode)
   :defer-config
   ;; Register formatters
-  (add-to-list 'apheleia-mode-alist '(nix-ts-mode . nixfmt))) ; Nix
+  (add-to-list 'apheleia-mode-alist '(nix-ts-mode . nixfmt)) ; Nix
+  (add-to-list 'apheleia-mode-alist '(haskell-ts-mode . fourmolu))) ; Haskell
 
 ;;; Debugger integration
 (leaf dap-mode)
@@ -207,3 +215,6 @@
 
 ;;; Nix support
 (leaf nix-ts-mode :mode "\\.nix\\'")
+
+;;; Haskell support
+(leaf haskell-ts-mode :mode "\\.hs\\'")
