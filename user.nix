@@ -43,6 +43,9 @@
 
       # GUIs
       emacs # Editor
+
+      # Key manager
+      keychain
     ] ++ (if pkgs.stdenvNoCC.isLinux then
       (with pkgs; [
         # GUIs
