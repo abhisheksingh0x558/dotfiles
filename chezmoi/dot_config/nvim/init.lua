@@ -165,4 +165,15 @@ require("lazy").setup({
 			},
 		},
 	},
+
+	-- Treesitter integration
+	{
+		"nvim-treesitter/nvim-treesitter",
+		config = function()
+			require("nvim-treesitter.configs").setup({
+				sync_install = true, -- Install parsers synchronously
+				highlight = { enable = true }, -- Enable syntax highlighting
+			})
+		end,
+	},
 })
