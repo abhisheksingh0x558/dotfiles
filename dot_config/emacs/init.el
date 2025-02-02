@@ -19,3 +19,7 @@
   (require 'leaf-keywords)
   (leaf-keywords-init))
 (elpaca-wait)
+
+;;; Path
+;; Add Nix to path
+(leaf exec-path-from-shell :config (exec-path-from-shell-initialize))
