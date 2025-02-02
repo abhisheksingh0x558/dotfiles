@@ -44,6 +44,9 @@
       # GUIs
       emacs # Editor
       element-desktop # Instant messenger
+
+      # Key manager
+      keychain
     ] ++ (if pkgs.stdenvNoCC.isLinux then
       (with pkgs; [
         # GUIs
