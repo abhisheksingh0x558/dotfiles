@@ -207,6 +207,7 @@ require("lazy").setup({
 				ensure_installed = {
 					"nix",
 					"lua",
+					"haskell",
 				},
 			})
 		end,
@@ -220,6 +221,7 @@ require("lazy").setup({
 			-- Register language servers
 			lspconfig.nil_ls.setup({})
 			lspconfig.lua_ls.setup({})
+			lspconfig.hls.setup({})
 		end,
 	},
 
@@ -239,6 +241,7 @@ require("lazy").setup({
 			lint.linters_by_ft = {
 				nix = { "statix" },
 				lua = { "luacheck" },
+				haskell = { "hlint" },
 			}
 		end,
 	},
@@ -252,6 +255,7 @@ require("lazy").setup({
 			formatters_by_ft = {
 				nix = { "nixfmt" },
 				lua = { "stylua" },
+				haskell = { "fourmolu" },
 			},
 		},
 	},
@@ -260,5 +264,11 @@ require("lazy").setup({
 	{
 		"folke/lazydev.nvim",
 		ft = "lua",
+	},
+
+	-- Haskell support
+	{
+		"mrcjkb/haskell-tools.nvim",
+		ft = "haskell",
 	},
 })
