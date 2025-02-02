@@ -4,6 +4,8 @@ local g = vim.g
 local keymap = vim.keymap
 local o = vim.o
 local cmd = vim.cmd
+local api = vim.api
+local lsp = vim.lsp
 
 -- Plugin manager
 local lazypath = fs.normalize("~/.local/share/nvim/lazy/lazy.nvim")
@@ -275,5 +277,20 @@ require("lazy").setup({
 			move = { enable = true },
 			swap = { enable = true },
 		},
+	},
+
+	-- LSP integration
+	{
+		"neovim/nvim-lspconfig",
+		config = function()
+			-- Triggers for code lenses
+			api.nvim_create_autocmd({ "BufEnter", "CursorHold", "InsertLeave" }, {
+				group = api.nvim_create_augroup("lsp-code-lens", {}),
+				callback = function()
+					lsp.codelens.refresh()
+				end,
+			})
+			lsp.inlay_hint.enable() -- Inlay hints
+		end,
 	},
 })
