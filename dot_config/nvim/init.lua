@@ -318,6 +318,7 @@ require("lazy").setup({
 					"zig", -- Zig
 					"rust", -- Rust
 					"racket", -- Racket
+					"go", -- Go
 				},
 			})
 			treesitter.language.register("bash", "zsh") -- TODO: Remove this when zsh parser is supported officially
@@ -335,6 +336,7 @@ require("lazy").setup({
 			lsp.enable("lua_ls") -- Lua
 			lsp.enable("hls") -- Haskell
 			lsp.enable("rust_analyzer") -- Rust
+			lsp.enable("gopls") -- Go
 		end,
 	},
 
@@ -358,6 +360,7 @@ require("lazy").setup({
 				lua = { "luacheck" }, -- Lua
 				haskell = { "hlint" }, -- Haskell
 				rust = { "clippy" }, -- Rust
+				go = { "staticcheck" }, -- Go
 			}
 		end,
 	},
@@ -376,6 +379,7 @@ require("lazy").setup({
 				lua = { "stylua" }, -- Lua
 				haskell = { "fourmolu" }, -- Haskell
 				rust = { "rustfmt" }, -- Rust
+				go = { "gofumpt" }, -- Go
 			},
 		},
 	},
@@ -393,6 +397,11 @@ require("lazy").setup({
 	},
 	{
 		"theHamsta/nvim-dap-virtual-text",
+		opts = {},
+	},
+	-- Register debuggers
+	{
+		"leoluz/nvim-dap-go",
 		opts = {},
 	},
 
