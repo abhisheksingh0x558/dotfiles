@@ -62,3 +62,6 @@
 (use-package magit
   :defer t
   :bind ("<leader>g" . magit)) ; Open git client
+
+;;; Formatter integration
+(use-package apheleia :config (apheleia-global-mode))
