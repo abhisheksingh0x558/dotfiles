@@ -112,7 +112,9 @@
 (setq treesit-language-source-alist
       '((nix "https://github.com/nix-community/tree-sitter-nix")
         (haskell "https://github.com/tree-sitter/tree-sitter-haskell")
-        (rust "https://github.com/tree-sitter/tree-sitter-rust")))
+        (rust "https://github.com/tree-sitter/tree-sitter-rust")
+        (go "https://github.com/tree-sitter/tree-sitter-go")
+        (gomod "https://github.com/camdencheek/tree-sitter-go-mod")))
 ;; Install parsers on startup
 (mapc
   (lambda (source)
@@ -123,6 +125,7 @@
 (leaf nix-ts-mode :mode "\\.nix\\'")
 (leaf haskell-ts-mode :mode "\\.hs\\'")
 (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-ts-mode))
+(add-to-list 'auto-mode-alist '("\\.go\\'" . go-ts-mode))
 
 ;;; LSP integration
 (leaf lsp-mode
@@ -136,8 +139,13 @@
   :hook
   ((nix-ts-mode-hook . lsp)
    (haskell-ts-mode-hook . lsp)
-   (rust-ts-mode-hook . lsp)))
+   (rust-ts-mode-hook . lsp)
+   (go-ts-mode-hook . lsp)))
 (leaf lsp-haskell)
 
 ;;; Formatter integration
-(leaf apheleia :config (apheleia-global-mode))
+(leaf apheleia
+  :config
+  (apheleia-global-mode)
+  :defer-config
+  (add-to-list 'apheleia-mode-alist '(go-ts-mode . gofumpt)))
