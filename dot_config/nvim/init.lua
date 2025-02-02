@@ -367,4 +367,26 @@ require("lazy").setup({
 			},
 		},
 	},
+
+	-- Treesitter integration
+	{
+		"nvim-treesitter/nvim-treesitter",
+		branch = "main", -- TODO: Remove this when main is set as default branch
+		opts = {
+			auto_install = true, -- Install parsers when required
+			sync_install = true, -- Install parsers synchronously
+			highlight = { enable = true }, -- Enable syntax highlighting
+		},
+	},
+	-- Text objects
+	{
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		branch = "main", -- TODO: Remove this when main is set as default branch
+		-- TODO: Define keymaps otherwise these don't work and document each section below
+		opts = {
+			select = { enable = true },
+			move = { enable = true },
+			swap = { enable = true },
+		},
+	},
 })
