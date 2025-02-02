@@ -625,4 +625,16 @@ require("lazy").setup({
 			})
 		end,
 	},
+
+	-- Formatter
+	{
+		"stevearc/conform.nvim",
+		opts = {
+			format_after_save = {}, -- Enable asynchronous formatting
+		},
+		config = function(_, opts)
+			require("conform").setup(opts)
+			vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+		end,
+	},
 })
