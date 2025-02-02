@@ -67,10 +67,12 @@
 ;; Parsers to install
 (setq treesit-language-source-alist
   '((nix "https://github.com/nix-community/tree-sitter-nix")
-	   (haskell "https://github.com/tree-sitter/tree-sitter-haskell")))
+	   (haskell "https://github.com/tree-sitter/tree-sitter-haskell")
+	   (go "https://github.com/tree-sitter/tree-sitter-go")))
 ;; Treesitter major modes
 (use-package nix-ts-mode)
 (use-package haskell-ts-mode)
+(add-to-list 'auto-mode-alist '("\\.go\\'" . go-ts-mode))
 
 ;;; LSP integration
 ;; Register language servers
@@ -78,6 +80,7 @@
 (add-to-list 'eglot-server-programs '(haskell-ts-mode . ("haskell-language-server-wrapper" "--lsp")))
 (add-hook 'nix-ts-mode-hook #'eglot-ensure)
 (add-hook 'haskell-ts-mode-hook #'eglot-ensure)
+(add-hook 'go-ts-mode-hook #'eglot-ensure)
 
 ;;; Formatter integration
 (use-package apheleia
