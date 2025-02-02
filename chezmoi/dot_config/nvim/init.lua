@@ -124,6 +124,7 @@ require("lazy").setup({
 					"lua",
 					"haskell",
 					"rust",
+					"go",
 				},
 			})
 		end,
@@ -139,6 +140,7 @@ require("lazy").setup({
 			lspconfig.lua_ls.setup({})
 			lspconfig.hls.setup({})
 			lspconfig.rust_analyzer.setup({})
+			lspconfig.gopls.setup({})
 		end,
 	},
 
@@ -161,6 +163,7 @@ require("lazy").setup({
 				lua = { "luacheck" },
 				haskell = { "hlint" },
 				rust = { "clippy" },
+				go = { "staticcheck" },
 			}
 		end,
 	},
@@ -176,6 +179,7 @@ require("lazy").setup({
 				lua = { "stylua" },
 				haskell = { "fourmolu" },
 				rust = { "rustfmt" },
+				go = { "gofumpt" },
 			},
 		},
 	},
