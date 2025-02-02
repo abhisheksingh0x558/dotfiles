@@ -102,4 +102,15 @@ require("lazy").setup({
 			},
 		},
 	},
+
+	-- Treesitter integration
+	{
+		"nvim-treesitter/nvim-treesitter",
+		config = function()
+			require("nvim-treesitter.configs").setup({
+				auto_install = true, -- Automatically install parsers
+				highlight = { enable = true }, -- Enable syntax highlighting
+			})
+		end,
+	},
 })
