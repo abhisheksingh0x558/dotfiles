@@ -349,4 +349,57 @@ require("lazy").setup({
 			{ "gO", "<Cmd>AerialToggle<CR>" }, -- Toggle outline
 		},
 	},
+
+	-- Treesitter integration
+	{
+		"nvim-treesitter/nvim-treesitter",
+		branch = "main", -- TODO: Remove this when main is set as default branch
+		build = ":TSUpdate",
+		config = function()
+			require("nvim-treesitter").install("all") -- Install all parsers asynchronously
+		end,
+	},
+	-- Text objects
+	{
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		branch = "main", -- TODO: Remove this when main is set as default branch
+		-- TODO: Define other keymaps
+		opts = {
+			select = {
+				enable = true,
+				lookahead = true, -- Automatically jump forward to text object
+				keymaps = {
+					["af"] = "@function.outer", -- Select outside function
+					["if"] = "@function.inner", -- Select inside function
+					["ac"] = "@class.outer", -- Select outside class
+					["ic"] = "@class.inner", -- Select inside class
+					["aa"] = "@parameter.outer", -- Select outside parameter
+					["ia"] = "@parameter.inner", -- Select inside parameter
+				},
+			},
+			move = {
+				enable = true,
+				goto_next_start = {
+					["]m"] = "@function.outer", -- Goto start of next function
+					["]]"] = "@class.outer", -- Goto start of next class
+					["]a"] = "@parameter.inner", -- Goto start of next parameter
+				},
+				goto_next_end = {
+					["]M"] = "@function.outer", -- Goto end of next function
+					["]["] = "@class.outer", -- Goto end of next class
+					["]A"] = "@parameter.inner", -- Goto end of next parameter
+				},
+				goto_previous_start = {
+					["[m"] = "@function.outer", -- Goto start of previous function
+					["[["] = "@class.outer", -- Goto start of previous class
+					["[a"] = "@parameter.inner", -- Goto start of previous parameter
+				},
+				goto_previous_end = {
+					["[M"] = "@function.outer", -- Goto end of previous function
+					["[]"] = "@class.outer", -- Goto end of previous class
+					["[A"] = "@parameter.inner", -- Goto end of previous parameter
+				},
+			},
+		},
+	},
 })
