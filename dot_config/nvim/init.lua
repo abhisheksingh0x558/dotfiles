@@ -255,4 +255,25 @@ require("lazy").setup({
 			{ "gO", "<cmd>AerialToggle<cr>" }, -- Toggle outline
 		},
 	},
+
+	-- Treesitter integration
+	{
+		"nvim-treesitter/nvim-treesitter",
+		branch = "main", -- TODO: Remove this when main is set as default branch
+		build = ":TSUpdate",
+		config = function()
+			require("nvim-treesitter").install("all") -- Install all parsers asynchronously
+		end,
+	},
+	-- Text objects
+	{
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		branch = "main", -- TODO: Remove this when main is set as default branch
+		-- TODO: Define keymaps otherwise these don't work and document each section below
+		opts = {
+			select = { enable = true },
+			move = { enable = true },
+			swap = { enable = true },
+		},
+	},
 })
