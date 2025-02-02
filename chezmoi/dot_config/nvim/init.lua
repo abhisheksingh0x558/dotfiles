@@ -133,4 +133,12 @@ require("lazy").setup({
 			})
 		end,
 	},
+
+	-- Formatter integration
+	{
+		"stevearc/conform.nvim",
+		opts = {
+			format_after_save = {}, -- Enable asynchronous formatting
+		},
+	},
 })
