@@ -186,3 +186,6 @@
   (nmap
     "[d" #'flycheck-previous-error ; Goto previous flycheck entry
     "]d" #'flycheck-next-error)) ; Goto next flycheck entry
+
+;;; Formatter
+(leaf apheleia :config (apheleia-global-mode))
