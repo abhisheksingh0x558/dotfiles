@@ -151,3 +151,6 @@
   ((lsp-ui-doc-show-with-mouse . nil) ; Do not show lsp hover documentation on mouse hover
    (lsp-ui-doc-position . 'at-point)) ; Show lsp hover documentation above cursor
   :config (nmap "K" #'lsp-ui-doc-glance)) ; Show lsp hover documentation
+
+;;; Formatter integration
+(leaf apheleia :config (apheleia-global-mode))
