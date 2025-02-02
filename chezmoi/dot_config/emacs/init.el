@@ -23,3 +23,11 @@
   (require 'leaf-keywords)
   (leaf-keywords-init))
 (elpaca-wait)
+
+;;; Path
+;; Add Nix to path
+(let ((path (getenv "PATH"))
+      (nix-path (expand-file-name "~/.nix-profile/bin")))
+  (unless (string-match-p (regexp-quote nix-path) path)
+    (setenv "PATH" (concat nix-path ":" path)))
+  (add-to-list 'exec-path nix-path))
