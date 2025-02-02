@@ -200,3 +200,6 @@
   (evil-define-key 'normal 'global
     "[d" #'flycheck-previous-error ; Go to previous flycheck entry
     "]d" #'flycheck-next-error)) ; Go to next flycheck entry
+
+;;; Formatter
+(leaf apheleia :config (apheleia-global-mode))
