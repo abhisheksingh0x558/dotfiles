@@ -34,6 +34,9 @@ o.splitbelow = true -- Put new window towards bottom on horizontal split
 -- Spell checker
 o.spell = true
 
+-- Formatter integration
+o.formatexpr = "v:lua.require'conform'.formatexpr()"
+
 require("lazy").setup({
 	-- Keymaps
 	-- Pairs of bracket keymaps
@@ -319,5 +322,13 @@ require("lazy").setup({
 				end,
 			})
 		end,
+	},
+
+	-- Formatter integration
+	{
+		"stevearc/conform.nvim",
+		opts = {
+			format_after_save = {}, -- Enable asynchronous formatting
+		},
 	},
 })
