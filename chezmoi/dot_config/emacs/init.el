@@ -131,7 +131,8 @@
 ;;; Treesitter integration
 ;; Parsers to install
 (setq treesit-language-source-alist
-      '((nix "https://github.com/nix-community/tree-sitter-nix")))
+      '((nix "https://github.com/nix-community/tree-sitter-nix")
+        (haskell "https://github.com/tree-sitter/tree-sitter-haskell")))
 ;; Install parsers on startup
 (mapc
   (lambda (source)
@@ -140,6 +141,7 @@
   treesit-language-source-alist)
 ;; Treesitter major modes
 (leaf nix-ts-mode :mode "\\.nix\\'")
+(leaf haskell-ts-mode :mode "\\.hs\\'")
 
 ;;; LSP integration
 (leaf lsp-mode
@@ -151,12 +153,14 @@
     "gri" #'lsp-find-implementation) ; Find lsp implementations
   ;; Register language servers
   :hook
-  ((nix-ts-mode-hook . lsp)))
+  ((nix-ts-mode-hook . lsp)
+   (haskell-ts-mode-hook . lsp)))
 (leaf lsp-ui
   :custom
   ((lsp-ui-doc-show-with-mouse . nil) ; Do not show lsp hover documentation on mouse hover
    (lsp-ui-doc-position . 'at-point)) ; Show lsp hover documentation above cursor
   :config (nmap "K" #'lsp-ui-doc-glance)) ; Show lsp hover documentation
+(leaf lsp-haskell)
 
 ;;; Formatter integration
 (leaf apheleia :config (apheleia-global-mode))
