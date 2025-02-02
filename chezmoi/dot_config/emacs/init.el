@@ -125,3 +125,6 @@
   (nmap
     "grr" #'lsp-find-references ; Find lsp references
     "gri" #'lsp-find-implementation)) ; Find lsp implementations
+
+;;; Formatter integration
+(leaf apheleia :config (apheleia-global-mode))
