@@ -74,6 +74,13 @@ require("lazy").setup({
 					require("trouble").toggle("lsp_references")
 				end,
 			},
+			-- Find lsp implementations
+			{
+				"gri",
+				function()
+					require("trouble").toggle("lsp_implementations")
+				end,
+			},
 		},
 	},
 
@@ -176,4 +183,7 @@ require("lazy").setup({
 			})
 		end,
 	},
+
+	-- LSP integration
+	"neovim/nvim-lspconfig",
 })
