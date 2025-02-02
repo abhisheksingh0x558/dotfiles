@@ -66,17 +66,23 @@
 ;;; Treesitter integration
 ;; Parsers to install
 (setq treesit-language-source-alist
-      '((nix "https://github.com/nix-community/tree-sitter-nix")))
+  '((nix "https://github.com/nix-community/tree-sitter-nix")
+	   (haskell "https://github.com/tree-sitter/tree-sitter-haskell")))
 ;; Treesitter major modes
 (use-package nix-ts-mode)
+(use-package haskell-ts-mode)
 
 ;;; LSP integration
 ;; Register language servers
 (add-to-list 'eglot-server-programs '(go-ts-mode . "nil"))
+(add-to-list 'eglot-server-programs '(haskell-ts-mode . ("haskell-language-server-wrapper" "--lsp")))
 (add-hook 'nix-ts-mode-hook #'eglot-ensure)
+(add-hook 'haskell-ts-mode-hook #'eglot-ensure)
 
 ;;; Formatter integration
 (use-package apheleia
   :config
   (apheleia-global-mode)
-  (add-to-list 'apheleia-mode-alist '(nix-ts-mode . nixfmt)))
+  (add-to-list 'apheleia-formatters '(fourmolu . ("fourmolu" "--stdin-input-file" filepath)))
+  (add-to-list 'apheleia-mode-alist '(nix-ts-mode . nixfmt))
+  (add-to-list 'apheleia-mode-alist '(haskell-ts-mode . fourmolu)))
