@@ -6,6 +6,7 @@ local o = vim.o
 local cmd = vim.cmd
 local api = vim.api
 local treesitter = vim.treesitter
+local lsp = vim.lsp
 
 -- Plugin manager
 local lazypath = fs.normalize("~/.local/share/nvim/lazy/lazy.nvim")
@@ -310,6 +311,7 @@ require("lazy").setup({
 					"bash", -- Bash
 					"just", -- Just
 					"make", -- Make
+					"nix", -- Nix
 				},
 			})
 			treesitter.language.register("bash", "zsh") -- TODO: Remove this when zsh parser is supported officially
@@ -323,6 +325,7 @@ require("lazy").setup({
 			-- Register language servers
 			lsp.enable("nushell") -- Nushell
 			lsp.enable("bashls") -- Zsh and Bash # TODO: Enable for zsh
+			lsp.enable("nil_ls") -- Nix
 		end,
 	},
 
@@ -342,6 +345,7 @@ require("lazy").setup({
 			lint.linters_by_ft = {
 				zsh = { "shellcheck" }, -- Zsh
 				bash = { "shellcheck" }, -- Bash
+				nix = { "statix" }, -- Nix
 			}
 		end,
 	},
@@ -356,6 +360,7 @@ require("lazy").setup({
 				nu = { "nufmt" }, -- Nushell
 				zsh = { "shfmt" }, -- Zsh
 				bash = { "shfmt" }, -- Bash
+				nix = { "nixfmt" }, -- Nix
 			},
 		},
 	},
