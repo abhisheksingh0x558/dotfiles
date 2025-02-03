@@ -312,6 +312,7 @@ require("lazy").setup({
 					"just", -- Just
 					"make", -- Make
 					"nix", -- Nix
+					"lua", -- Lua
 				},
 			})
 			treesitter.language.register("bash", "zsh") -- TODO: Remove this when zsh parser is supported officially
@@ -326,6 +327,7 @@ require("lazy").setup({
 			lsp.enable("nushell") -- Nushell
 			lsp.enable("bashls") -- Zsh and Bash # TODO: Enable for zsh
 			lsp.enable("nil_ls") -- Nix
+			lsp.enable("lua_ls") -- Lua
 		end,
 	},
 
@@ -346,6 +348,7 @@ require("lazy").setup({
 				zsh = { "shellcheck" }, -- Zsh
 				bash = { "shellcheck" }, -- Bash
 				nix = { "statix" }, -- Nix
+				lua = { "luacheck" }, -- Lua
 			}
 		end,
 	},
@@ -361,6 +364,7 @@ require("lazy").setup({
 				zsh = { "shfmt" }, -- Zsh
 				bash = { "shfmt" }, -- Bash
 				nix = { "nixfmt" }, -- Nix
+				lua = { "stylua" }, -- Lua
 			},
 		},
 	},
