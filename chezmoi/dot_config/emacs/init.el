@@ -131,13 +131,16 @@
 
 ;;; Treesitter integration
 ;; Parsers to install
-(setq treesit-language-source-alist '())
+(setq treesit-language-source-alist
+      '((nix "https://github.com/nix-community/tree-sitter-nix")))
 ;; Install parsers on startup
 (mapc
   (lambda (source)
     (unless (treesit-language-available-p (car source))
       (treesit-install-language-grammar (car source))))
   treesit-language-source-alist)
+;; Treesitter major modes
+(leaf nix-ts-mode :mode "\\.nix\\'")
 
 ;;; LSP integration
 (leaf lsp-mode
@@ -147,7 +150,10 @@
   :config
   (nmap
     "grr" #'lsp-find-references ; Find lsp references
-    "gri" #'lsp-find-implementation)) ; Find lsp implementations
+    "gri" #'lsp-find-implementation) ; Find lsp implementations
+  ;; Register language servers
+  :hook
+  ((nix-ts-mode-hook . lsp)))
 (leaf lsp-ui
   :custom
   ((lsp-ui-doc-show-with-mouse . nil) ; Do not show lsp hover documentation on mouse hover
