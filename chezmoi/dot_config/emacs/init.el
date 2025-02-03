@@ -4,6 +4,8 @@
 (require 'cus-edit)
 (require 'use-package-core)
 (require 'use-package-ensure)
+(require 'treesit)
+(require 'eglot)
 
 ;;; Package manager
 (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/")) ; Add melpa as package repository
@@ -61,5 +63,20 @@
   :defer t
   :bind ("<leader>g" . magit)) ; Open git client
 
+;;; Treesitter integration
+;; Parsers to install
+(setq treesit-language-source-alist
+      '((nix "https://github.com/nix-community/tree-sitter-nix")))
+;; Treesitter major modes
+(use-package nix-ts-mode)
+
+;;; LSP integration
+;; Register language servers
+(add-to-list 'eglot-server-programs '(go-ts-mode . "nil"))
+(add-hook 'nix-ts-mode-hook #'eglot-ensure)
+
 ;;; Formatter integration
-(use-package apheleia :config (apheleia-global-mode))
+(use-package apheleia
+  :config
+  (apheleia-global-mode)
+  (add-to-list 'apheleia-mode-alist '(nix-ts-mode . nixfmt)))
