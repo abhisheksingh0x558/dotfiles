@@ -88,3 +88,6 @@ source <(thefuck --alias) # Autocorrection
 source <(fzf --zsh)
 source <(zoxide init zsh) # Change directory
 bindkey '^r' fzf-history-widget # Needs to be set explicitly as vi mode overrides history search keymap # TODO: Remove this
+
+# Key manager
+eval $(keychain --eval --quiet ~/.ssh/default/auth_github)
