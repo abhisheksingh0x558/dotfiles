@@ -22,3 +22,12 @@ unset go_bin
 profile_file=~/.profile
 [[ -f $profile_file ]] && source "$profile_file"
 unset profile_file
+
+# Key manager
+ssh_keys=(
+	~/.ssh/default/auth_git_forge # Default git forge
+)
+for key in "${ssh_keys[@]}"; do
+	[[ -f $key ]] && eval "$(keychain --eval --quiet "$key")"
+done
+unset ssh_keys
