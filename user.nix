@@ -49,6 +49,11 @@
 
       # Key manager
       keychain
+
+      # Shell utilities
+      starship # Prompt
+      carapace # Autocompletion
+      thefuck # Autocorrection
     ] ++ (if pkgs.stdenvNoCC.isLinux then
       (with pkgs; [
         # GUIs
