@@ -184,6 +184,7 @@ require("lazy").setup({
 				-- Parsers to install
 				ensure_installed = {
 					"nix",
+					"lua",
 				},
 			})
 		end,
@@ -196,6 +197,7 @@ require("lazy").setup({
 			local lspconfig = require("lspconfig")
 			-- Register language servers
 			lspconfig.nil_ls.setup({})
+			lspconfig.lua_ls.setup({})
 		end,
 	},
 
@@ -214,6 +216,7 @@ require("lazy").setup({
 			-- Register linters
 			lint.linters_by_ft = {
 				nix = { "deadnix" },
+				lua = { "luacheck" },
 			}
 		end,
 	},
@@ -226,6 +229,7 @@ require("lazy").setup({
 			-- File specific formatters
 			formatters_by_ft = {
 				nix = { "nixfmt" },
+				lua = { "stylua" },
 			},
 		},
 	},
