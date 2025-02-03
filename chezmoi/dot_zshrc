@@ -87,3 +87,6 @@ source <(thefuck --alias) # Autocorrection
 # Fuzzy finder
 source <(fzf --zsh)
 source <(zoxide init zsh) # Change directory
+
+# Key manager
+eval $(keychain --eval --quiet ~/.ssh/default/auth_github)
