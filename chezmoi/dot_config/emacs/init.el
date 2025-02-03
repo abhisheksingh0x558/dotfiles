@@ -142,7 +142,8 @@
 
 ;;; Treesitter integration
 ;; Parsers to install
-(setq treesit-language-source-alist '())
+(setq treesit-language-source-alist
+      '((nix "https://github.com/nix-community/tree-sitter-nix")))
 ;; Install parsers on startup
 (mapc
   (lambda (source)
@@ -158,7 +159,12 @@
   :config
   (nmap
     "grr" #'lsp-find-references ; Find lsp references
-    "gri" #'lsp-find-implementation)) ; Find lsp implementations
+    "gri" #'lsp-find-implementation) ; Find lsp implementations
+  ;; Register language servers
+  :hook
+  ((nix-ts-mode-hook . (lambda ()
+                         (setq lsp-enabled-clients '(nix-nil))
+                         (lsp-deferred)))))
 (leaf lsp-ui
   :custom
   ((lsp-ui-doc-show-with-mouse . nil) ; Do not show lsp hover documentation on mouse hover
@@ -178,7 +184,17 @@
                                   (setq flycheck-checker 'lsp)
                                   (let ((next-checkers (flycheck-get-next-checkers 'lsp)))
                                     (dolist (next next-checkers)
-                                      (flycheck-remove-next-checker 'lsp next)))))))
+                                      (flycheck-remove-next-checker 'lsp next)))
+                                  (cond ((derived-mode-p 'nix-ts-mode)
+                                          (flycheck-add-next-checker 'lsp '(t . statix))))))))
 
 ;;; Formatter integration
-(leaf apheleia :config (apheleia-global-mode))
+(leaf apheleia
+  :config
+  (apheleia-global-mode)
+  :defer-config
+  ;; Register formatters
+  (add-to-list 'apheleia-mode-alist '(nix-ts-mode . nixfmt)))
+
+;; Nix support
+(leaf nix-ts-mode :mode "\\.nix\\'")
