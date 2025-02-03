@@ -57,6 +57,11 @@
       nil # Language server
       statix # Linter
       nixfmt # Formatter
+
+      # Lua
+      lua-language-server # Language server
+      luajitPackages.luacheck # Linter # TODO: Check if this is the correct version
+      stylua # Formatter
     ] ++ (if pkgs.stdenvNoCC.isLinux then
       (with pkgs; [
         # GUIs
