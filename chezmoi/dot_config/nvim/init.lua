@@ -203,12 +203,23 @@ require("lazy").setup({
 			require("nvim-treesitter.configs").setup({
 				sync_install = true, -- Install parsers synchronously
 				highlight = { enable = true }, -- Enable syntax highlighting
+				-- Parsers to install
+				ensure_installed = {
+					"nix",
+				},
 			})
 		end,
 	},
 
 	-- LSP integration
-	"neovim/nvim-lspconfig",
+	{
+		"neovim/nvim-lspconfig",
+		config = function()
+			local lspconfig = require("lspconfig")
+			-- Register language servers
+			lspconfig.nil_ls.setup({})
+		end,
+	},
 
 	-- Linter integration
 	{
@@ -222,6 +233,10 @@ require("lazy").setup({
 					lint.try_lint()
 				end,
 			})
+			-- Register linters
+			lint.linters_by_ft = {
+				nix = { "statix" },
+			}
 		end,
 	},
 
@@ -230,6 +245,10 @@ require("lazy").setup({
 		"stevearc/conform.nvim",
 		opts = {
 			format_after_save = {}, -- Enable asynchronous formatting
+			-- Register formatters
+			formatters_by_ft = {
+				nix = { "nixfmt" },
+			},
 		},
 	},
 })
