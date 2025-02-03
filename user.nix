@@ -12,4 +12,10 @@
     /home/abhisheksingh
   else
     /Users/abhisheksingh;
+
+  home.packages = with pkgs;
+    [
+      # Dotfile manager
+      chezmoi
+    ];
 }
