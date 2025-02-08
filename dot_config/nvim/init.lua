@@ -417,4 +417,19 @@ require("lazy").setup({
 			vim.lsp.inlay_hint.enable() -- Inlay hints
 		end,
 	},
+
+	-- Linter
+	{
+		"mfussenegger/nvim-lint",
+		config = function()
+			local lint = require("lint")
+			-- Triggers for linters
+			vim.api.nvim_create_autocmd({ "BufReadPost", "BufWritePost", "InsertLeave" }, {
+				group = vim.api.nvim_create_augroup("lint", {}),
+				callback = function()
+					lint.try_lint()
+				end,
+			})
+		end,
+	},
 })
