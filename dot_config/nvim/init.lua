@@ -4,6 +4,7 @@ local g = vim.g
 local keymap = vim.keymap
 local o = vim.o
 local cmd = vim.cmd
+local api = vim.api
 
 -- Plugin manager
 local lazypath = fs.normalize("~/.local/share/nvim/lazy/lazy.nvim")
@@ -392,4 +393,19 @@ require("lazy").setup({
 
 	-- LSP integration
 	"neovim/nvim-lspconfig",
+
+	-- Linter
+	{
+		"mfussenegger/nvim-lint",
+		config = function()
+			local lint = require("lint")
+			-- Triggers for linters
+			api.nvim_create_autocmd({ "BufReadPost", "BufWritePost", "InsertLeave" }, {
+				group = api.nvim_create_augroup("lint", {}),
+				callback = function()
+					lint.try_lint()
+				end,
+			})
+		end,
+	},
 })
