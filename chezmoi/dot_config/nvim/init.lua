@@ -3,6 +3,7 @@ local fn = vim.fn
 local g = vim.g
 local o = vim.o
 local cmd = vim.cmd
+local api = vim.api
 
 -- Plugin manager
 opt.rtp:prepend(fn.stdpath("data") .. "/lazy/lazy.nvim") -- Add plugin manager to runtime path
@@ -123,4 +124,20 @@ require("lazy").setup({
 
 	-- LSP integration
 	"neovim/nvim-lspconfig",
+
+	-- Linter integration
+	{
+		"mfussenegger/nvim-lint",
+		config = function()
+			local lint = require("lint")
+			-- Triggers for linters
+			api.nvim_create_autocmd({ "BufReadPost", "BufWritePost", "InsertLeave" }, {
+				-- Autocommand group for linting
+				group = api.nvim_create_augroup("linting", {}),
+				callback = function()
+					lint.try_lint()
+				end,
+			})
+		end,
+	},
 })
