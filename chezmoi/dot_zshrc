@@ -7,3 +7,11 @@ local zinit_repo="https://github.com/zdharma-continuum/zinit.git"
 [[ ! -d $zinit_path ]] && git clone $zinit_repo $zinit_path
 # Load plugin manager
 source "${zinit_path}/zinit.zsh"
+
+# Options
+setopt appendhistory # Append history list of session to history file
+setopt incappendhistory # Append command to history file as each command is entered
+setopt histexpiredupsfirst # Remove oldest duplicate commands from history file when history reaches its limit
+setopt histignorealldups # Remove old duplicate commands from history file as each command is entered
+setopt histreduceblanks # Trim blanks from commands before adding to history list
+setopt autocd # If command is name of directory then cd into that directory
