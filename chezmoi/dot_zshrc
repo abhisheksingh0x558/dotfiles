@@ -2,3 +2,11 @@
 declare -A ZINIT
 ZINIT[NO_ALIASES]=1 # Do not set aliases
 source "${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/plugins/zdharma-continuum---zinit/zinit.zsh" # Load plugin manager
+
+# Options
+setopt appendhistory # Append history list of session to history file
+setopt incappendhistory # Append command to history file as each command is entered
+setopt histexpiredupsfirst # Remove oldest duplicate commands from history file when history reaches its limit
+setopt histignorealldups # Remove old duplicate commands from history file as each command is entered
+setopt histreduceblanks # Trim blanks from commands before adding to history list
+setopt autocd # If command is name of directory then cd into that directory
