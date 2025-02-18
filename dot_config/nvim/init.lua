@@ -316,6 +316,7 @@ require("lazy").setup({
 					"haskell", -- Haskell
 					"commonlisp", -- Common Lisp
 					"zig", -- Zig
+					"rust", -- Rust
 				},
 			})
 			treesitter.language.register("bash", "zsh") -- TODO: Remove this when zsh parser is supported officially
@@ -332,6 +333,7 @@ require("lazy").setup({
 			lsp.enable("nil_ls") -- Nix
 			lsp.enable("lua_ls") -- Lua
 			lsp.enable("hls") -- Haskell
+			lsp.enable("rust_analyzer") -- Rust
 		end,
 	},
 
@@ -354,6 +356,7 @@ require("lazy").setup({
 				nix = { "statix" }, -- Nix
 				lua = { "luacheck" }, -- Lua
 				haskell = { "hlint" }, -- Haskell
+				rust = { "clippy" }, -- Rust
 			}
 		end,
 	},
@@ -371,6 +374,7 @@ require("lazy").setup({
 				nix = { "nixfmt" }, -- Nix
 				lua = { "stylua" }, -- Lua
 				haskell = { "fourmolu" }, -- Haskell
+				rust = { "rustfmt" }, -- Rust
 			},
 		},
 	},
@@ -400,4 +404,11 @@ require("lazy").setup({
 	-- {
 	-- 	"pwntester/octo.nvim",
 	-- },
+
+	-- Rust support
+	"mrcjkb/rustaceanvim", -- TODO: Disable server triggered
+	{
+		"Saecki/crates.nvim",
+		opts = {},
+	},
 })
