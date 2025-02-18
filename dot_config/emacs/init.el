@@ -144,13 +144,16 @@
 ;; Parsers to install
 (setq treesit-language-source-alist
       '((nix "https://github.com/nix-community/tree-sitter-nix") ; Nix
-        (haskell "https://github.com/tree-sitter/tree-sitter-haskell"))) ; Haskell
+        (haskell "https://github.com/tree-sitter/tree-sitter-haskell") ; Haskell
+        (rust "https://github.com/tree-sitter/tree-sitter-rust"))) ; Rust
 ;; Install parsers on startup
 (mapc
   (lambda (source)
     (unless (treesit-language-available-p (car source))
       (treesit-install-language-grammar (car source))))
   treesit-language-source-alist)
+;; Treesitter major modes
+(add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-ts-mode)) ; Rust
 
 ;;; LSP integration
 (leaf lsp-mode
@@ -168,7 +171,10 @@
                          (lsp-deferred)))
    (haskell-ts-mode-hook . (lambda ()
                              (setq lsp-enabled-clients '(lsp-haskell)) ; Haskell
-                             (lsp-deferred)))))
+                             (lsp-deferred)))
+   (rust-ts-mode-hook . (lambda ()
+                          (setq lsp-enabled-clients '(rust-analyzer)) ; Rust
+                          (lsp-deferred)))))
 (leaf lsp-ui
   :custom
   ((lsp-ui-doc-show-with-mouse . nil) ; Do not show lsp hover documentation on mouse hover
@@ -193,7 +199,9 @@
                                   (cond ((derived-mode-p 'nix-ts-mode)
                                           (flycheck-add-next-checker 'lsp '(t . statix))) ; Nix
                                         ((derived-mode-p 'haskell-ts-mode)
-                                          (flycheck-add-next-checker 'lsp '(t . haskell-lint)))))))) ; Haskell
+                                          (flycheck-add-next-checker 'lsp '(t . haskell-lint))) ; Haskell
+                                        ((derived-mode-p 'rust-ts-mode)
+                                          (flycheck-add-next-checker 'lsp '(t . rust-clippy)))))))) ; Rust
 
 ;;; Formatter integration
 (leaf apheleia
@@ -202,7 +210,8 @@
   :defer-config
   ;; Register formatters
   (add-to-list 'apheleia-mode-alist '(nix-ts-mode . nixfmt)) ; Nix
-  (add-to-list 'apheleia-mode-alist '(haskell-ts-mode . fourmolu))) ; Haskell
+  (add-to-list 'apheleia-mode-alist '(haskell-ts-mode . fourmolu)) ; Haskell
+  (add-to-list 'apheleia-mode-alist '(rust-ts-mode . rustfmt))) ; Rust
 
 ;;; Debugger integration
 (leaf dap-mode)
