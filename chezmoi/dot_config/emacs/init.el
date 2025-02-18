@@ -111,7 +111,8 @@
 ;; Parsers to install
 (setq treesit-language-source-alist
       '((nix "https://github.com/nix-community/tree-sitter-nix")
-        (haskell "https://github.com/tree-sitter/tree-sitter-haskell")))
+        (haskell "https://github.com/tree-sitter/tree-sitter-haskell")
+        (rust "https://github.com/tree-sitter/tree-sitter-rust")))
 ;; Install parsers on startup
 (mapc
   (lambda (source)
@@ -121,6 +122,7 @@
 ;; Treesitter major modes
 (leaf nix-ts-mode :mode "\\.nix\\'")
 (leaf haskell-ts-mode :mode "\\.hs\\'")
+(add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-ts-mode))
 
 ;;; LSP integration
 (leaf lsp-mode
@@ -133,7 +135,8 @@
   ;; Register language servers
   :hook
   ((nix-ts-mode-hook . lsp)
-   (haskell-ts-mode-hook . lsp)))
+   (haskell-ts-mode-hook . lsp)
+   (rust-ts-mode-hook . lsp)))
 (leaf lsp-haskell)
 
 ;;; Formatter integration
