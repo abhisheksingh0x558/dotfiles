@@ -208,6 +208,7 @@ require("lazy").setup({
 					"nix",
 					"lua",
 					"haskell",
+					"rust",
 				},
 			})
 		end,
@@ -222,6 +223,7 @@ require("lazy").setup({
 			lspconfig.nil_ls.setup({})
 			lspconfig.lua_ls.setup({})
 			lspconfig.hls.setup({})
+			lspconfig.rust_analyzer.setup({})
 		end,
 	},
 
@@ -242,6 +244,7 @@ require("lazy").setup({
 				nix = { "statix" },
 				lua = { "luacheck" },
 				haskell = { "hlint" },
+				rust = { "clippy" },
 			}
 		end,
 	},
@@ -256,6 +259,7 @@ require("lazy").setup({
 				nix = { "nixfmt" },
 				lua = { "stylua" },
 				haskell = { "fourmolu" },
+				rust = { "rustfmt" },
 			},
 		},
 	},
