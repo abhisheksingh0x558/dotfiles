@@ -25,6 +25,8 @@
 - [ ] git diff ignore whitespace and enable word diff
 
 - [ ] marginalia-mode
+- [ ] projectile
+- [ ] treesitter
 
 - [ ] Neovim
 ```
@@ -518,7 +520,6 @@
 
 ### Emacs packages
 - [ ] Combobulate
-- [ ] elpacca.el, leaf.el
 - [ ] goto-chg.el
 - [ ] no-littering
 - [ ] lsp-booster

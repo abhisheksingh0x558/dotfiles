@@ -7,3 +7,8 @@
 .local/share/nvim/lazy/lazy.nvim:
   type: git-repo
   url: https://github.com/folke/lazy.nvim
+
+# Emacs package manager
+.config/emacs/elpaca/repos/elpaca:
+  type: git-repo
+  url: https://github.com/progfolio/elpaca
