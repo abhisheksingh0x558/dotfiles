@@ -169,3 +169,11 @@
 
 ;;; Outliner
 (leaf lsp-treemacs) ; TODO: Replace with non lsp treesitter based alternative
+
+;;; Treesitter integration
+(leaf treesit-auto
+  :custom ((treesit-auto-install . t)) ; Install parsers when required
+  :config
+  (require 'treesit-auto) ; TODO: Autoload this package
+  (treesit-auto-add-to-auto-mode-alist 'all) ; Enable treesitter based mode for all available parsers
+  (global-treesit-auto-mode))
