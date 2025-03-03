@@ -128,3 +128,13 @@
   (nmap
     "[c" #'diff-hl-previous-hunk ; Goto previous hunk
     "]c" #'diff-hl-next-hunk)) ; Goto next hunk
+
+;;; Treesitter integration
+;; Parsers to install
+(setq treesit-language-source-alist '())
+;; Install parsers on startup
+(mapc
+  (lambda (source)
+    (unless (treesit-language-available-p (car source))
+      (treesit-install-language-grammar (car source))))
+  treesit-language-source-alist)
