@@ -177,3 +177,19 @@
   (require 'treesit-auto) ; TODO: Autoload this package
   (treesit-auto-add-to-auto-mode-alist 'all) ; Enable treesitter based mode for all available parsers
   (global-treesit-auto-mode))
+
+;;; LSP integration
+(leaf lsp-mode
+  :custom
+  ((lsp-completion-enable . nil) ; Disable autocompletion setup
+    (lsp-diagnostics-provider . :none) ; Disable diagnostics setup
+    (lsp-references-exclude-declaration . t)) ; Exclude declaration from lsp references
+  :config
+  (evil-define-key 'normal 'global
+    "grr" #'lsp-find-references ; Find lsp references
+    "gri" #'lsp-find-implementation)) ; Find lsp implementations
+(leaf lsp-ui
+  :custom
+  ((lsp-ui-doc-show-with-mouse . nil) ; Do not show lsp hover documentation on mouse hover
+    (lsp-ui-doc-position . 'at-point)) ; Show lsp hover documentation above cursor
+  :config (evil-define-key 'normal 'global "K" #'lsp-ui-doc-glance)) ; Show lsp hover documentation
