@@ -107,3 +107,13 @@
     "t" #'smerge-keep-lower ; Choose theirs
     "b" #'smerge-keep-all ; Choose both
     "n" #'smerge-keep-base)) ; Choose none
+
+;;; Treesitter integration
+;; Parsers to install
+(setq treesit-language-source-alist '())
+;; Install parsers on startup
+(mapc
+  (lambda (source)
+    (unless (treesit-language-available-p (car source))
+      (treesit-install-language-grammar (car source))))
+  treesit-language-source-alist)
