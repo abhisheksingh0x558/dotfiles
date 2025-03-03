@@ -99,8 +99,8 @@
    (corfu-auto-prefix . 1)) ; Trigger autocompletion popup after typing 1 character
   :config (global-corfu-mode))
 ;; In-buffer completion extensions
-(leaf yasnippet-capf :config (add-to-list 'completion-at-point-functions #'yasnippet-capf))
-(leaf cape)
+(leaf yasnippet-capf)
+(leaf cape :config (add-to-list 'completion-at-point-functions (cape-capf-super #'lsp-completion-at-point #'yasnippet-capf)))
 
 ;;; Fuzzy finder
 (leaf vertico :config (vertico-mode)) ; Mini-buffer completion UI
@@ -153,3 +153,18 @@
   (require 'treesit-auto) ; TODO: Autoload this package
   (treesit-auto-add-to-auto-mode-alist 'all) ; Enable treesitter based mode for all available parsers
   (global-treesit-auto-mode))
+
+;;; LSP integration
+(leaf lsp-mode
+  :custom
+  ((lsp-completion-enable . nil) ; Disable autocompletion setup
+   (lsp-references-exclude-declaration . t)) ; Exclude declaration from lsp references
+  :config
+  (nmap
+    "grr" #'lsp-find-references ; Find lsp references
+    "gri" #'lsp-find-implementation)) ; Find lsp implementations
+(leaf lsp-ui
+  :custom
+  ((lsp-ui-doc-show-with-mouse . nil) ; Do not show lsp hover documentation on mouse hover
+   (lsp-ui-doc-position . 'at-point)) ; Show lsp hover documentation above cursor
+  :config (nmap "K" #'lsp-ui-doc-glance)) ; Show lsp hover documentation
