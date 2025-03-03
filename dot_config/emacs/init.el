@@ -139,3 +139,13 @@
 
 ;;; Snippet executer
 (leaf quickrun)
+
+;;; Treesitter integration
+;; Parsers to install
+(setq treesit-language-source-alist '())
+;; Install parsers on startup
+(mapc
+  (lambda (source)
+    (unless (treesit-language-available-p (car source))
+      (treesit-install-language-grammar (car source))))
+  treesit-language-source-alist)
