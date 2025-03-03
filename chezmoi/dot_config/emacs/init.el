@@ -1,5 +1,4 @@
 ;; -*- lexical-binding: t; -*-
-
 ;;; Package manager
 (defvar elpaca-installer-version 0.10)
 (defvar elpaca-order '(elpaca :repo "https://github.com/progfolio/elpaca.git" :build (:not elpaca--activate-package)))
@@ -117,3 +116,12 @@
     (unless (treesit-language-available-p (car source))
       (treesit-install-language-grammar (car source))))
   treesit-language-source-alist)
+
+;;; LSP integration
+(leaf lsp-mode
+  :custom
+  ((lsp-references-exclude-declaration . t)) ; Exclude declaration from lsp references
+  :config
+  (nmap
+    "grr" #'lsp-find-references ; Find lsp references
+    "gri" #'lsp-find-implementation)) ; Find lsp implementations
