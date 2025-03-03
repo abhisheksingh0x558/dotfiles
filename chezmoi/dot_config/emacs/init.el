@@ -1,5 +1,4 @@
 ;; -*- lexical-binding: t; -*-
-
 ;;; Package manager
 (defvar elpaca-installer-version 0.10)
 (defvar elpaca-order '(elpaca :repo "https://github.com/progfolio/elpaca.git" :build (:not elpaca--activate-package)))
@@ -92,7 +91,7 @@
 
 ;;; Autocompletion
 (electric-pair-mode) ; Autoclose pairs
-(leaf tempel :config (add-to-list 'completion-at-point-functions #'tempel-complete)) ; Snippet engine
+(leaf tempel) ; Snippet engine
 (leaf tempel-collection) ; Snippet collection
 ;; In-buffer completion UI
 (leaf corfu
@@ -101,7 +100,7 @@
    (corfu-auto-prefix . 1)) ; Trigger autocompletion popup after typing 1 character
   :config (global-corfu-mode))
 ;; In-buffer completion extensions
-(leaf cape)
+(leaf cape :config (add-to-list 'completion-at-point-functions (cape-capf-super #'lsp-completion-at-point #'tempel-complete)))
 
 ;;; Fuzzy finder
 ;; Mini-buffer completion UI
@@ -139,3 +138,18 @@
     (unless (treesit-language-available-p (car source))
       (treesit-install-language-grammar (car source))))
   treesit-language-source-alist)
+
+;;; LSP integration
+(leaf lsp-mode
+  :custom
+  ((lsp-completion-enable . nil) ; Disable autocompletion setup
+   (lsp-references-exclude-declaration . t)) ; Exclude declaration from lsp references
+  :config
+  (nmap
+    "grr" #'lsp-find-references ; Find lsp references
+    "gri" #'lsp-find-implementation)) ; Find lsp implementations
+(leaf lsp-ui
+  :custom
+  ((lsp-ui-doc-show-with-mouse . nil) ; Do not show lsp hover documentation on mouse hover
+   (lsp-ui-doc-position . 'at-point)) ; Show lsp hover documentation above cursor
+  :config (nmap "K" #'lsp-ui-doc-glance)) ; Show lsp hover documentation
