@@ -408,4 +408,7 @@ require("lazy").setup({
 			},
 		},
 	},
+
+	-- REPL manager
+	{ "Vigemus/iron.nvim", opts = {} },
 })
