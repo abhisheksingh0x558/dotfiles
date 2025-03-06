@@ -260,4 +260,19 @@ require("lazy").setup({
 			{ "MunifTanjim/nui.nvim" },
 		},
 	},
+
+	-- Terminal manager
+	{
+		"akinsho/toggleterm.nvim",
+		opts = {},
+		keys = {
+			-- Toggle explorer
+			{
+				"<leader>t",
+				function()
+					require("toggleterm").toggle_command()
+				end,
+			},
+		},
+	},
 })
