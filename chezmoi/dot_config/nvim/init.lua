@@ -176,4 +176,10 @@ require("lazy").setup({
 		"akinsho/git-conflict.nvim",
 		opts = {},
 	},
+
+	-- Terminal manager
+	{
+		"akinsho/toggleterm.nvim",
+		opts = {},
+	},
 })
