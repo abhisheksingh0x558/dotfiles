@@ -322,4 +322,19 @@ require("lazy").setup({
 		},
 	},
 	"chrisgrieser/nvim-genghis", -- Commands for managing files and directories
+
+	-- Terminal manager
+	{
+		"akinsho/toggleterm.nvim",
+		opts = {},
+		keys = {
+			-- Toggle explorer
+			{
+				"<leader>t",
+				function()
+					require("toggleterm").toggle_command()
+				end,
+			},
+		},
+	},
 })
