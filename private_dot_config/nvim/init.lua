@@ -388,4 +388,21 @@ require("lazy").setup({
 	},
 	{ "stevearc/oil.nvim", opts = {} }, -- Filesystem explorer in buffer
 	{ "chrisgrieser/nvim-genghis", opts = {} }, -- Commands for managing files and directories
+
+	-- Terminal manager
+	{
+		"folke/snacks.nvim",
+		opts = {
+			terminal = { enabled = true },
+		},
+		keys = {
+			-- Toggle terminal
+			{
+				"<Leader>t",
+				function()
+					Snacks.terminal()
+				end,
+			},
+		},
+	},
 })
