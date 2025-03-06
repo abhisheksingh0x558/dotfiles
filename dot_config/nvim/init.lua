@@ -233,4 +233,7 @@ require("lazy").setup({
 			{ "<leader>t", "<cmd>lua Snacks.terminal()<cr>" }, -- Toggle terminal
 		},
 	},
+
+	-- REPL manager
+	{ "Vigemus/iron.nvim", opts = {} },
 })
