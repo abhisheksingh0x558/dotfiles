@@ -182,4 +182,10 @@ require("lazy").setup({
 		"akinsho/toggleterm.nvim",
 		opts = {},
 	},
+
+	-- REPL manager
+	{
+		"Vigemus/iron.nvim",
+		opts = {},
+	},
 })
