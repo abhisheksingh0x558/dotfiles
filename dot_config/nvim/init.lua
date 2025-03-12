@@ -281,4 +281,10 @@ require("lazy").setup({
 		"Vigemus/iron.nvim",
 		opts = {},
 	},
+
+	-- Snippet executer
+	{
+		"michaelb/sniprun",
+		build = "cargo build --release",
+	},
 })
