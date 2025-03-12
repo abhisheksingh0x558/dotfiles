@@ -150,7 +150,8 @@
         (gomod "https://github.com/camdencheek/tree-sitter-go-mod") ; Go
         (scala "https://github.com/tree-sitter/tree-sitter-scala") ; Scala
         (purescript "https://github.com/postsolar/tree-sitter-purescript") ; PureScript
-        (c "https://github.com/tree-sitter/tree-sitter-c"))) ; C
+        (c "https://github.com/tree-sitter/tree-sitter-c") ; C
+        (cpp "https://github.com/tree-sitter/tree-sitter-cpp"))) ; C++
 ;; Install parsers on startup
 (mapc
   (lambda (source)
@@ -160,6 +161,7 @@
 ;; Treesitter major modes
 (add-to-list 'auto-mode-alist '("\\.rs\\'" . rust-ts-mode)) ; Rust
 (add-to-list 'auto-mode-alist '("\\.go\\'" . go-ts-mode)) ; Go
+(add-to-list 'auto-mode-alist '("\\.cpp\\'" . c++-ts-mode)) ; C++
 
 ;;; LSP integration
 (leaf lsp-mode
@@ -189,7 +191,10 @@
                         (lsp-deferred)))
    (purescript-mode-hook . (lambda ()
                         (setq lsp-enabled-clients '(purescript-language-server)) ; PureScript
-                        (lsp-deferred)))))
+                        (lsp-deferred)))
+   (c++-ts-mode-hook . (lambda ()
+                         (setq lsp-enabled-clients '(clangd)) ; C++
+                         (lsp-deferred)))))
 (leaf lsp-ui
   :custom
   ((lsp-ui-doc-show-with-mouse . nil) ; Do not show lsp hover documentation on mouse hover
@@ -222,7 +227,8 @@
                                           (flycheck-add-next-checker 'lsp '(t . go-staticcheck))) ; Go
                                         ;; TODO: Setup linter for scala
                                         ;; TODO: Setup linter for purescript
-                                        )))))
+                                        ((derived-mode-p 'c++-ts-mode)
+                                          (flycheck-add-next-checker 'lsp '(t . c/c++-cppcheck)))))))) ; C++
 
 ;;; Formatter integration
 (leaf apheleia
@@ -235,7 +241,8 @@
   (add-to-list 'apheleia-mode-alist '(rust-ts-mode . rustfmt)) ; Rust
   (add-to-list 'apheleia-mode-alist '(go-ts-mode . gofumpt)) ; Go
   (add-to-list 'apheleia-mode-alist '(scala-ts-mode . scalafmt)) ; Scala ; TODO: Configure this formatter and merge to master
-  (add-to-list 'apheleia-mode-alist '(purescript-mode . purs-tidy))) ; PureScript ; TODO: Configure this formatter and merge to master
+  (add-to-list 'apheleia-mode-alist '(purescript-mode . purs-tidy)) ; PureScript ; TODO: Configure this formatter and merge to master
+  (add-to-list 'apheleia-mode-alist '(c++-ts-mode . clang-format))) ; C++
 
 ;;; Debugger integration
 (leaf dap-mode)
