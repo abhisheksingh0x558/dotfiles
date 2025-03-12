@@ -153,3 +153,6 @@
 
 ;;; Filesystem manager
 (leaf treemacs) ; Filesystem explorer in sidebar
+
+;;; Terminal manager
+(leaf (aweshell :repo "https://github.com/manateelazycat/aweshell.git")) ; TODO: Add this repo to melpa registry
