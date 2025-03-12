@@ -145,3 +145,6 @@
 ;;; REPL manager
 (leaf repl-toggle)
 (leaf eval-in-repl)
+
+;;; Snippet executer
+(leaf quickrun)
