@@ -193,3 +193,10 @@
   ((lsp-ui-doc-show-with-mouse . nil) ; Do not show lsp hover documentation on mouse hover
     (lsp-ui-doc-position . 'at-point)) ; Show lsp hover documentation above cursor
   :config (evil-define-key 'normal 'global "K" #'lsp-ui-doc-glance)) ; Show lsp hover documentation
+
+;;; Linter
+(leaf flycheck
+  :config (global-flycheck-mode)
+  (evil-define-key 'normal 'global
+    "[d" #'flycheck-previous-error ; Go to previous flycheck entry
+    "]d" #'flycheck-next-error)) ; Go to next flycheck entry
