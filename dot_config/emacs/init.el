@@ -164,3 +164,18 @@
   ((lsp-ui-doc-show-with-mouse . nil) ; Do not show lsp hover documentation on mouse hover
    (lsp-ui-doc-position . 'at-point)) ; Show lsp hover documentation above cursor
   :config (nmap "K" #'lsp-ui-doc-glance)) ; Show lsp hover documentation
+
+;;; Linter integration
+(leaf flycheck
+  :config
+  (global-flycheck-mode)
+  (nmap
+    "[d" #'flycheck-previous-error ; Goto previous flycheck entry
+    "]d" #'flycheck-next-error) ; Goto next flycheck entry
+  :hook
+  ;; Register linters
+  ((lsp-diagnostics-mode-hook . (lambda ()
+                                  (setq flycheck-checker 'lsp)
+                                  (let ((next-checkers (flycheck-get-next-checkers 'lsp)))
+                                    (dolist (next next-checkers)
+                                      (flycheck-remove-next-checker 'lsp next)))))))
