@@ -132,3 +132,7 @@
 
 ;;; Terminal manager
 (leaf (aweshell :repo "https://github.com/manateelazycat/aweshell.git"))
+
+;;; REPL manager
+(leaf repl-toggle)
+(leaf eval-in-repl)
