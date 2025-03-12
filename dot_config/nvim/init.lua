@@ -324,6 +324,7 @@ require("lazy").setup({
 					"kotlin", -- Kotlin
 					"purescript", -- PureScript
 					"c", -- C
+					"cpp", -- C++
 				},
 			})
 			treesitter.language.register("bash", "zsh") -- TODO: Remove this when zsh parser is supported officially
@@ -344,6 +345,7 @@ require("lazy").setup({
 			lsp.enable("gopls") -- Go
 			lsp.enable("metals") -- Scala
 			lsp.enable("purescriptls") -- PureScript
+			lsp.enable("clangd") -- C++
 		end,
 	},
 
@@ -370,6 +372,7 @@ require("lazy").setup({
 				go = { "staticcheck" }, -- Go
 				-- TODO: Setup linter for scala
 				-- TODO: Setup linter for purescript
+				cpp = { "cppcheck" }, -- C++
 			}
 		end,
 	},
@@ -391,6 +394,7 @@ require("lazy").setup({
 				go = { "gofumpt" }, -- Go
 				scala = { "scalafmt" }, -- Scala
 				purescript = { "purs-tidy" }, -- PureScript
+				cpp = { "clang-format" }, -- C++
 			},
 		},
 	},
