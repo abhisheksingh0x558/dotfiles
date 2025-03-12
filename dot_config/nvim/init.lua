@@ -411,4 +411,11 @@ require("lazy").setup({
 
 	-- REPL manager
 	{ "Vigemus/iron.nvim", opts = {} },
+
+	-- Snippet executer
+	{
+		"michaelb/sniprun",
+		build = "cargo build --release",
+		opts = {},
+	},
 })
