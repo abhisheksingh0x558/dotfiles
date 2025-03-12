@@ -129,3 +129,6 @@
   (nmap
     "[c" #'diff-hl-previous-hunk ; Goto previous hunk
     "]c" #'diff-hl-next-hunk)) ; Goto next hunk
+
+;;; Terminal manager
+(leaf (aweshell :repo "https://github.com/manateelazycat/aweshell.git"))
