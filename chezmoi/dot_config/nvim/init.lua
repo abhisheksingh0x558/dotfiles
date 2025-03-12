@@ -210,6 +210,7 @@ require("lazy").setup({
 					"haskell",
 					"rust",
 					"go",
+					"cpp",
 				},
 			})
 		end,
@@ -226,6 +227,7 @@ require("lazy").setup({
 			lspconfig.hls.setup({})
 			lspconfig.rust_analyzer.setup({})
 			lspconfig.gopls.setup({})
+			lspconfig.clangd.setup({})
 		end,
 	},
 
@@ -248,6 +250,7 @@ require("lazy").setup({
 				haskell = { "hlint" },
 				rust = { "clippy" },
 				go = { "staticcheck" },
+				cpp = { "cppcheck" },
 			}
 		end,
 	},
@@ -264,6 +267,7 @@ require("lazy").setup({
 				haskell = { "fourmolu" },
 				rust = { "rustfmt" },
 				go = { "gofumpt" },
+				cpp = { "clang-format" },
 			},
 		},
 	},
