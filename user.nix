@@ -96,6 +96,11 @@
       kotlin-language-server # Language server
       ktlint # Linter
       ktfmt # Formatter
+
+      # C++
+      clang
+      clang-tools # Language server and formatter
+      cppcheck # Linter
     ] ++ (if pkgs.stdenvNoCC.isLinux then
       (with pkgs; [
         # GUIs
