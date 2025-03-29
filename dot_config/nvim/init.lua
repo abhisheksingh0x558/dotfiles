@@ -447,4 +447,9 @@ require("lazy").setup({
 
 	-- Test runner
 	{ "nvim-neotest/neotest", opts = {} },
+
+	-- Debugger
+	"mfussenegger/nvim-dap",
+	{ "rcarriga/nvim-dap-ui", opts = {} },
+	{ "theHamsta/nvim-dap-virtual-text", opts = {} },
 })
