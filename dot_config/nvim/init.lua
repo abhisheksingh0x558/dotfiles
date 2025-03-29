@@ -331,4 +331,20 @@ require("lazy").setup({
 			format_after_save = {}, -- Enable asynchronous formatting
 		},
 	},
+
+	-- Debugger integration
+	{
+		"mfussenegger/nvim-dap",
+	},
+	{
+		"rcarriga/nvim-dap-ui",
+		opts = {},
+		dependencies = {
+			{ "nvim-neotest/nvim-nio" },
+		},
+	},
+	{
+		"theHamsta/nvim-dap-virtual-text",
+		opts = {},
+	},
 })
