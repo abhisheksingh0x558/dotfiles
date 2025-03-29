@@ -182,3 +182,6 @@
 
 ;;; Formatter integration
 (leaf apheleia :config (apheleia-global-mode))
+
+;;; Debugger integration
+(leaf dap-mode)
