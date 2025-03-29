@@ -231,6 +231,9 @@
   (add-to-list 'apheleia-mode-alist '(go-ts-mode . gofumpt))
   (add-to-list 'apheleia-mode-alist '(c++-ts-mode . clang-format)))
 
+;;; Debugger
+(leaf dap-mode)
+
 ;; Nix support
 (leaf nix-ts-mode :mode "\\.nix\\'")
 

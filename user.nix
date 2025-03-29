@@ -94,6 +94,7 @@
       gopls # Language server
       go-tools # Linter
       gofumpt # Formatter
+      delve # Debugger
 
       # Kotlin
       kotlin
