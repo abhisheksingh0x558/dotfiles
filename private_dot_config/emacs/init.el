@@ -203,3 +203,6 @@
 
 ;;; Formatter
 (leaf apheleia :config (apheleia-global-mode))
+
+;;; Debugger
+(leaf dap-mode)
