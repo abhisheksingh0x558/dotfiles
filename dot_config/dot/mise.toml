@@ -26,3 +26,6 @@ zig = {} # Toolchain
 
 # Rust
 rust = { components = "rust-analyzer" } # Toolchain, package manager, language server, linter and formatter
+
+# Racket
+# racket = {} # Toolchain # TODO: Enable this
