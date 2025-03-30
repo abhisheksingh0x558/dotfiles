@@ -146,3 +146,6 @@ java = "latest" # Toolchain
 # Scala
 scala = "latest" # Toolchain
 sbt = "latest"   # Package manager
+
+# Clojure
+clojure = "latest" # Toolchain
