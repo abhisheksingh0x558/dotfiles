@@ -43,3 +43,6 @@ java = {} # Toolchain
 # Scala
 scala = {} # Toolchain
 sbt = {}   # Package manager
+
+# Clojure
+clojure = {} # Toolchain
