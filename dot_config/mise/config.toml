@@ -132,3 +132,7 @@ zig = "latest" # Toolchain
 
 # Rust
 rust = { version = "latest", components = "rust-analyzer" } # Toolchain, package manager, language server, linter and formatter
+cargo-binstall = "latest"                                   # Binary installer
+
+# Racket
+# racket = "latest" # Toolchain # TODO: Enable this
