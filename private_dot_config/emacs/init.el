@@ -138,3 +138,6 @@
 
 ;;; PKM tool
 (leaf org-roam)
+
+;;; Filesystem manager
+(leaf treemacs) ; Filesystem explorer in sidebar
