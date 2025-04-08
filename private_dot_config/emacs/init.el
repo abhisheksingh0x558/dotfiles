@@ -150,3 +150,6 @@
                         (let ((project-current-directory-override org-directory))
                           (project-find-file-in nil (list org-directory) (project-current t org-directory) t)))
   (kbd "<leader>a") #'org-agenda) ; Open org agenda
+
+;;; Filesystem manager
+(leaf treemacs) ; Filesystem explorer in sidebar
