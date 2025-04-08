@@ -208,4 +208,18 @@ require("lazy").setup({
 
 	-- PKM tool
 	"nvim-neorg/neorg", -- TODO: Enable defaults and concealer addons
+
+	-- Filesystem manager
+	-- Filesystem explorer in sidebar
+	{
+		"folke/snacks.nvim",
+		opts = {
+			explorer = { enabled = true },
+		},
+		keys = {
+			{ "<leader>e", "<cmd>lua Snacks.explorer()<cr>" }, -- Toggle explorer for current file
+		},
+	},
+	{ "stevearc/oil.nvim", opts = {} }, -- Filesystem explorer in buffer
+	{ "chrisgrieser/nvim-genghis", opts = {} }, -- Commands for managing files and directories
 })
