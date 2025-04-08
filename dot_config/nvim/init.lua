@@ -242,4 +242,22 @@ require("lazy").setup({
 
 	-- PKM tool
 	"nvim-neorg/neorg", -- TODO: Enable defaults and concealer addons
+
+	-- Filesystem manager
+	-- Filesystem explorer in sidebar
+	{
+		"nvim-neo-tree/neo-tree.nvim",
+		keys = {
+			-- Toggle explorer
+			{
+				"<leader>e",
+				function()
+					require("neo-tree.command")._command("toggle")
+				end,
+			},
+		},
+		dependencies = {
+			{ "MunifTanjim/nui.nvim" },
+		},
+	},
 })
