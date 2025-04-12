@@ -322,6 +322,7 @@ require("lazy").setup({
 					"scala", -- Scala
 					"clojure", -- Clojure
 					"kotlin", -- Kotlin
+					"purescript", -- PureScript
 				},
 			})
 			treesitter.language.register("bash", "zsh") -- TODO: Remove this when zsh parser is supported officially
@@ -341,6 +342,7 @@ require("lazy").setup({
 			lsp.enable("rust_analyzer") -- Rust
 			lsp.enable("gopls") -- Go
 			lsp.enable("metals") -- Scala
+			lsp.enable("purescriptls") -- PureScript
 		end,
 	},
 
@@ -366,6 +368,7 @@ require("lazy").setup({
 				rust = { "clippy" }, -- Rust
 				go = { "staticcheck" }, -- Go
 				-- TODO: Setup linter for scala
+				-- TODO: Setup linter for purescript
 			}
 		end,
 	},
@@ -386,6 +389,7 @@ require("lazy").setup({
 				rust = { "rustfmt" }, -- Rust
 				go = { "gofumpt" }, -- Go
 				scala = { "scalafmt" }, -- Scala
+				purescript = { "purs-tidy" }, -- PureScript
 			},
 		},
 	},
