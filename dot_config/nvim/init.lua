@@ -319,6 +319,7 @@ require("lazy").setup({
 					"rust", -- Rust
 					"racket", -- Racket
 					"go", -- Go
+					"scala", -- Scala
 				},
 			})
 			treesitter.language.register("bash", "zsh") -- TODO: Remove this when zsh parser is supported officially
@@ -337,6 +338,7 @@ require("lazy").setup({
 			lsp.enable("hls") -- Haskell
 			lsp.enable("rust_analyzer") -- Rust
 			lsp.enable("gopls") -- Go
+			lsp.enable("metals") -- Scala
 		end,
 	},
 
@@ -361,6 +363,7 @@ require("lazy").setup({
 				haskell = { "hlint" }, -- Haskell
 				rust = { "clippy" }, -- Rust
 				go = { "staticcheck" }, -- Go
+				-- TODO: Setup linter for scala
 			}
 		end,
 	},
@@ -380,6 +383,7 @@ require("lazy").setup({
 				haskell = { "fourmolu" }, -- Haskell
 				rust = { "rustfmt" }, -- Rust
 				go = { "gofumpt" }, -- Go
+				scala = { "scalafmt" }, -- Scala
 			},
 		},
 	},
