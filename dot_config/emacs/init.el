@@ -147,7 +147,8 @@
         (haskell "https://github.com/tree-sitter/tree-sitter-haskell") ; Haskell
         (rust "https://github.com/tree-sitter/tree-sitter-rust") ; Rust
         (go "https://github.com/tree-sitter/tree-sitter-go") ; Go
-        (gomod "https://github.com/camdencheek/tree-sitter-go-mod"))) ; Go
+        (gomod "https://github.com/camdencheek/tree-sitter-go-mod") ; Go
+        (scala "https://github.com/tree-sitter/tree-sitter-scala"))) ; Scala
 ;; Install parsers on startup
 (mapc
   (lambda (source)
@@ -180,6 +181,9 @@
                           (lsp-deferred)))
    (go-ts-mode-hook . (lambda ()
                         (setq lsp-enabled-clients '(gopls)) ; Go
+                        (lsp-deferred)))
+   (scala-ts-mode-hook . (lambda ()
+                        (setq lsp-enabled-clients '(metals)) ; Scala
                         (lsp-deferred)))))
 (leaf lsp-ui
   :custom
@@ -187,6 +191,7 @@
    (lsp-ui-doc-position . 'at-point)) ; Show lsp hover documentation above cursor
   :config (nmap "K" #'lsp-ui-doc-glance)) ; Show lsp hover documentation
 (leaf lsp-haskell) ; Haskell
+(leaf lsp-metals) ; Scala
 
 ;;; Linter integration
 (leaf flycheck
@@ -209,7 +214,9 @@
                                         ((derived-mode-p 'rust-ts-mode)
                                           (flycheck-add-next-checker 'lsp '(t . rust-clippy))) ; Rust
                                         ((derived-mode-p 'go-ts-mode)
-                                          (flycheck-add-next-checker 'lsp '(t . go-staticcheck)))))))) ; Go
+                                          (flycheck-add-next-checker 'lsp '(t . go-staticcheck))) ; Go
+                                        ;; TODO: Setup linter for scala
+                                        )))))
 
 ;;; Formatter integration
 (leaf apheleia
@@ -220,7 +227,8 @@
   (add-to-list 'apheleia-mode-alist '(nix-ts-mode . nixfmt)) ; Nix
   (add-to-list 'apheleia-mode-alist '(haskell-ts-mode . fourmolu)) ; Haskell
   (add-to-list 'apheleia-mode-alist '(rust-ts-mode . rustfmt)) ; Rust
-  (add-to-list 'apheleia-mode-alist '(go-ts-mode . gofumpt))) ; Go
+  (add-to-list 'apheleia-mode-alist '(go-ts-mode . gofumpt)) ; Go
+  (add-to-list 'apheleia-mode-alist '(scala-ts-mode . scalafmt))) ; Scala ; TODO: Configure this formatter and merge to master
 
 ;;; Debugger integration
 (leaf dap-mode)
@@ -236,3 +244,6 @@
 
 ;;; Haskell support
 (leaf haskell-ts-mode :mode "\\.hs\\'")
+
+;;; Scala support
+(leaf scala-ts-mode :mode "\\.scala")
