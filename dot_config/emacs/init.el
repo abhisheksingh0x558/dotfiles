@@ -148,7 +148,8 @@
         (rust "https://github.com/tree-sitter/tree-sitter-rust") ; Rust
         (go "https://github.com/tree-sitter/tree-sitter-go") ; Go
         (gomod "https://github.com/camdencheek/tree-sitter-go-mod") ; Go
-        (scala "https://github.com/tree-sitter/tree-sitter-scala"))) ; Scala
+        (scala "https://github.com/tree-sitter/tree-sitter-scala") ; Scala
+        (purescript "https://github.com/postsolar/tree-sitter-purescript"))) ; PureScript
 ;; Install parsers on startup
 (mapc
   (lambda (source)
@@ -184,6 +185,9 @@
                         (lsp-deferred)))
    (scala-ts-mode-hook . (lambda ()
                         (setq lsp-enabled-clients '(metals)) ; Scala
+                        (lsp-deferred)))
+   (purescript-mode-hook . (lambda ()
+                        (setq lsp-enabled-clients '(purescript-language-server)) ; PureScript
                         (lsp-deferred)))))
 (leaf lsp-ui
   :custom
@@ -216,6 +220,7 @@
                                         ((derived-mode-p 'go-ts-mode)
                                           (flycheck-add-next-checker 'lsp '(t . go-staticcheck))) ; Go
                                         ;; TODO: Setup linter for scala
+                                        ;; TODO: Setup linter for purescript
                                         )))))
 
 ;;; Formatter integration
@@ -228,7 +233,8 @@
   (add-to-list 'apheleia-mode-alist '(haskell-ts-mode . fourmolu)) ; Haskell
   (add-to-list 'apheleia-mode-alist '(rust-ts-mode . rustfmt)) ; Rust
   (add-to-list 'apheleia-mode-alist '(go-ts-mode . gofumpt)) ; Go
-  (add-to-list 'apheleia-mode-alist '(scala-ts-mode . scalafmt))) ; Scala ; TODO: Configure this formatter and merge to master
+  (add-to-list 'apheleia-mode-alist '(scala-ts-mode . scalafmt)) ; Scala ; TODO: Configure this formatter and merge to master
+  (add-to-list 'apheleia-mode-alist '(purescript-mode . purs-tidy))) ; PureScript ; TODO: Configure this formatter and merge to master
 
 ;;; Debugger integration
 (leaf dap-mode)
@@ -247,3 +253,7 @@
 
 ;;; Scala support
 (leaf scala-ts-mode :mode "\\.scala")
+
+;;; PureScript support
+;; TODO: Setup purescript treesitter mode
+(leaf purescript-mode :mode "\\.purs")
