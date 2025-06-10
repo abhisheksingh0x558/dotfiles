@@ -645,4 +645,16 @@ require("lazy").setup({
 	"mfussenegger/nvim-dap",
 	{ "rcarriga/nvim-dap-ui", opts = {} },
 	{ "theHamsta/nvim-dap-virtual-text", opts = {} },
+
+	-- AI integration
+	-- TODO: Update model used
+	-- TODO: Enable NES
+	-- Model
+	{
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		event = "InsertEnter",
+		opts = {},
+	},
+	{ "olimorris/codecompanion.nvim", opts = {} }, -- Chat interface
 })
