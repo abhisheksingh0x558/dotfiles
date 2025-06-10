@@ -185,3 +185,6 @@
 
 ;;; Debugger integration
 (leaf dap-mode)
+
+;;; AI integration
+(leaf gptel)
