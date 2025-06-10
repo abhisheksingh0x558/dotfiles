@@ -192,3 +192,7 @@
 
 ;;; Debugger
 (leaf dap-mode)
+
+;;; AI integration
+(leaf gptel)
+(leaf elysium)
