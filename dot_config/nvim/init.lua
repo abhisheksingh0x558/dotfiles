@@ -439,4 +439,7 @@ require("lazy").setup({
 		"olimorris/codecompanion.nvim",
 		opts = {},
 	},
+
+	-- GitHub client
+	"pwntester/octo.nvim",
 })
