@@ -552,4 +552,7 @@ require("lazy").setup({
 			},
 		},
 	},
+
+	-- GitHub client
+	{ "pwntester/octo.nvim", opts = {} },
 })
