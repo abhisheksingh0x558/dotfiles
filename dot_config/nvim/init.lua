@@ -433,4 +433,10 @@ require("lazy").setup({
 		"theHamsta/nvim-dap-virtual-text",
 		opts = {},
 	},
+
+	-- AI integration
+	{
+		"olimorris/codecompanion.nvim",
+		opts = {},
+	},
 })
