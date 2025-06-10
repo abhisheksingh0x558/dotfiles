@@ -195,3 +195,6 @@
 ;;; AI integration
 (leaf gptel)
 (leaf elysium)
+
+;;; GitHub client
+(leaf forge)
