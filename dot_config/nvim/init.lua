@@ -452,4 +452,23 @@ require("lazy").setup({
 	"mfussenegger/nvim-dap",
 	{ "rcarriga/nvim-dap-ui", opts = {} },
 	{ "theHamsta/nvim-dap-virtual-text", opts = {} },
+
+	-- AI integration
+	-- TODO: Update model used
+	{
+		"olimorris/codecompanion.nvim",
+		opts = {
+			strategies = {
+				chat = {
+					adapter = "gemini",
+				},
+				inline = {
+					adapter = "gemini",
+				},
+				cmd = {
+					adapter = "gemini",
+				},
+			},
+		},
+	},
 })
