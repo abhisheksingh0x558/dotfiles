@@ -352,4 +352,9 @@ require("lazy").setup({
 	{
 		"yetone/avante.nvim",
 	},
+
+	-- GitHub client
+	-- {
+	-- 	"pwntester/octo.nvim",
+	-- },
 })
