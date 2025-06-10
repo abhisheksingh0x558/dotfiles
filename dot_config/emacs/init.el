@@ -188,3 +188,6 @@
 
 ;;; AI integration
 (leaf gptel)
+
+;;; GitHub client
+; (leaf forge)
