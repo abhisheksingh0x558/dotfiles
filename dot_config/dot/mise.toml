@@ -69,3 +69,7 @@ java = {} # Toolchain
 node = {}  # Toolchain
 pnpm = {}  # Package manager
 biome = {} # Language server, linter and formatter
+
+# Protobuf
+protoc = {} # Toolchain
+buf = {}    # Language server, linter and formatter
