@@ -38,3 +38,6 @@ source <(pay-respects zsh)                # Autocorrection
 source <(fzf --zsh)
 source <(zoxide init zsh)       # Change directory
 bindkey '^r' fzf-history-widget # Needs to be set explicitly as vi mode overrides history search keymap # TODO: Remove this
+
+# Version manager
+source <(mise activate zsh --shims)
