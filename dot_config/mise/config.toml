@@ -172,3 +172,7 @@ python = "latest"              # Toolchain and global packages # TODO: Remove gl
 uv = "latest"                  # Package manager
 "pipx:astral-sh/ty" = "latest" # Type checker and language server # TODO: Add to official registry
 ruff = "latest"                # Language server, linter and formatter
+
+# Protobuf
+protoc = "latest" # Toolchain
+buf = "latest"    # Language server, linter and formatter
