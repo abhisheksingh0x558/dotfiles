@@ -1,0 +1,5 @@
+# -*- mode: sh -*-
+# vim: filetype=zsh
+
+# Version manager
+source <(mise activate zsh --shims)
