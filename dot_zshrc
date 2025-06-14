@@ -39,3 +39,6 @@ source <(pay-respects zsh)                # Autocorrection
 FZF_DEFAULT_OPTS=--reverse                     # Display style for fzf
 zvm_after_init_commands+='source <(fzf --zsh)' # Directory sourcing causes conflicts with vi mode plugin
 source <(zoxide init zsh)                      # Change directory
+
+# Environment manager
+source <(direnv hook zsh)
