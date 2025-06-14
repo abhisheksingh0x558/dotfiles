@@ -29,3 +29,10 @@ rust = { components = "rust-analyzer" } # Toolchain, package manager, language s
 
 # Racket
 # racket = {} # Toolchain # TODO: Enable this
+
+# Go
+go = {}                                     # Toolchain and package manager
+"go:golang.org/x/tools/gopls" = {}          # Language server # TODO: Add to official registry
+staticcheck = {}                            # Linter
+gofumpt = {}                                # Formatter
+"go:github.com/go-delve/delve/cmd/dlv" = {} # Debugger # TODO: Add to official registry
