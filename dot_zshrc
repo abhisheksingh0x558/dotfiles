@@ -41,3 +41,6 @@ bindkey '^r' fzf-history-widget # Needs to be set explicitly as vi mode override
 
 # Version manager
 source <(mise activate zsh --shims)
+
+# Environment manager
+source <(direnv hook zsh)
