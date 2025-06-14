@@ -25,7 +25,8 @@ unset profile_file
 
 # Key manager
 ssh_keys=(
-	~/.ssh/default/auth_git_forge # Default git forge
+	~/.ssh/default/auth_git_forge   # Default git forge
+	~/.ssh/nightfall/auth_git_forge # Nightfall git forge # TODO: Remove this
 )
 for key in "${ssh_keys[@]}"; do
 	[[ -f $key ]] && eval "$(keychain --eval --quiet "$key")"
