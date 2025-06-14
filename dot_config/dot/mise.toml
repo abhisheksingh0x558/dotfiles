@@ -79,3 +79,6 @@ opentofu = {} # Toolchain
 
 # Terraform
 terraform = {} # Toolchain
+
+# Terragrunt
+terragrunt = {} # Toolchain
