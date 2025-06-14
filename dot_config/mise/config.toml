@@ -136,3 +136,10 @@ cargo-binstall = "latest"                                   # Binary installer
 
 # Racket
 # racket = "latest" # Toolchain # TODO: Enable this
+
+# Go
+go = "latest"                                     # Toolchain and package manager
+"go:golang.org/x/tools/gopls" = "latest"          # Language server # TODO: Add to official registry
+staticcheck = "latest"                            # Linter
+gofumpt = "latest"                                # Formatter
+"go:github.com/go-delve/delve/cmd/dlv" = "latest" # Debugger # TODO: Add to official registry
