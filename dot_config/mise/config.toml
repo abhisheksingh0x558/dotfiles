@@ -132,3 +132,6 @@ buf = "latest"    # Language server, linter and formatter
 
 # OpenTofu
 opentofu = "latest" # Toolchain
+
+# Terragrunt
+terragrunt = "latest" # Toolchain
