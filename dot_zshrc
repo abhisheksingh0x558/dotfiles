@@ -34,3 +34,6 @@ source <(pay-respects zsh)                # Autocorrection
 source <(fzf --zsh)
 source <(zoxide init zsh)                           # Change directory
 zvm_after_init_commands+='source <(atuin init zsh)' # History, direct sourcing causes conflicts with vi mode plugin
+
+# Environment manager
+(( $+commands[direnv] )) &>/dev/null && source <(direnv hook zsh)
