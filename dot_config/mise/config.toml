@@ -120,3 +120,6 @@ shfmt = "latest"                      # Formatter
 # Lua
 lua-language-server = "latest" # Language server
 stylua = "latest"              # Formatter
+
+# Haskell
+haskell = "latest" # Toolchain and package manager
