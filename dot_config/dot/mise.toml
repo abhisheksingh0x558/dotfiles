@@ -76,3 +76,6 @@ buf = {}    # Language server, linter and formatter
 
 # OpenTofu
 opentofu = {} # Toolchain
+
+# Terraform
+terraform = {} # Toolchain
