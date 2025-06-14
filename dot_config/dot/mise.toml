@@ -14,3 +14,6 @@ shfmt = {}                      # Formatter
 # Lua
 lua-language-server = {} # Language server
 stylua = {}              # Formatter
+
+# Haskell
+haskell = {} # Toolchain and package manager
