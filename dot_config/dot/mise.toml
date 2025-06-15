@@ -46,3 +46,6 @@ clojure = {} # Toolchain
 
 # Kotlin
 kotlin = {} # Toolchain
+
+# PureScript
+purescript = {} # Toolchain
