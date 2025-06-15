@@ -334,6 +334,7 @@ require("lazy").setup({
 					"yaml", -- YAML
 					"csv", -- CSV
 					"sql", -- SQL
+					"dockerfile", -- Docker
 				},
 			})
 			treesitter.language.register("bash", "zsh") -- TODO: Remove this when zsh parser is supported officially
