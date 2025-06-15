@@ -331,6 +331,7 @@ require("lazy").setup({
 					"graphql", -- GraphQL
 					"json5", -- JSON
 					"toml", -- TOML
+					"yaml", -- YAML
 				},
 			})
 			treesitter.language.register("bash", "zsh") -- TODO: Remove this when zsh parser is supported officially
