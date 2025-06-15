@@ -64,3 +64,8 @@ ruff = {}                # Language server, linter and formatter
 
 # Java
 java = {} # Toolchain
+
+# JavaScript
+node = {}  # Toolchain
+pnpm = {}  # Package manager
+biome = {} # Language server, linter and formatter
