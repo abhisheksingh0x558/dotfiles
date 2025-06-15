@@ -52,3 +52,6 @@ purescript = {} # Toolchain
 
 # TypeScript
 "npm:typescript" = {} # Toolchain
+
+# C++
+# clang = {} # Toolchain # TODO: Enable this
