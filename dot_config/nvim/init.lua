@@ -338,6 +338,7 @@ require("lazy").setup({
 					-- TODO: Setup treesitter for podman
 					"hcl", -- HCL
 					"html", -- HTML
+					"css", -- CSS
 				},
 			})
 			treesitter.language.register("bash", "zsh") -- TODO: Remove this when zsh parser is supported officially
