@@ -336,6 +336,7 @@ require("lazy").setup({
 					"sql", -- SQL
 					"dockerfile", -- Docker
 					-- TODO: Setup treesitter for podman
+					"hcl", -- HCL
 				},
 			})
 			treesitter.language.register("bash", "zsh") -- TODO: Remove this when zsh parser is supported officially
