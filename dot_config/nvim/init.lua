@@ -308,6 +308,7 @@ require("lazy").setup({
 					"nu", -- Nushell
 					-- TODO: Setup zsh
 					"bash", -- Bash
+					"just", -- Just
 				},
 			})
 			treesitter.language.register("bash", "zsh") -- TODO: Remove this when zsh parser is supported officially
