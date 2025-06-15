@@ -327,6 +327,7 @@ require("lazy").setup({
 					"cpp", -- C++
 					"python", -- Python
 					"javascript", -- JavaScript
+					"proto", -- Protobuf
 				},
 			})
 			treesitter.language.register("bash", "zsh") -- TODO: Remove this when zsh parser is supported officially
@@ -349,6 +350,7 @@ require("lazy").setup({
 			lsp.enable("purescriptls") -- PureScript
 			lsp.enable("clangd") -- C++
 			lsp.enable("ruff") -- Python -- TODO: Replace with ty
+			lsp.enable("buf_ls") -- Protobuf
 		end,
 	},
 
@@ -377,6 +379,7 @@ require("lazy").setup({
 				-- TODO: Setup linter for purescript
 				cpp = { "cppcheck" }, -- C++
 				python = { "ruff" }, -- Python
+				proto = { "buf_lint" }, -- Protobuf
 			}
 		end,
 	},
@@ -400,6 +403,7 @@ require("lazy").setup({
 				purescript = { "purs-tidy" }, -- PureScript
 				cpp = { "clang-format" }, -- C++
 				python = { "ruff_format" }, -- Python
+				proto = { "buf" }, -- Protobuf
 			},
 		},
 	},
