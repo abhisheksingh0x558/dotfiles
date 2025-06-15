@@ -163,3 +163,6 @@ purescript = "latest" # Toolchain
 
 # TypeScript
 "npm:typescript" = "latest" # Toolchain
+
+# C++
+# clang = "latest" # Toolchain # TODO: Enable this
