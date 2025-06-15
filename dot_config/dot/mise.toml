@@ -39,3 +39,7 @@ gofumpt = {}                                # Formatter
 
 # Java
 java = {} # Toolchain
+
+# Scala
+scala = {} # Toolchain
+sbt = {}   # Package manager
