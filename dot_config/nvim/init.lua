@@ -326,6 +326,7 @@ require("lazy").setup({
 					"c", -- C
 					"cpp", -- C++
 					"python", -- Python
+					"javascript", -- JavaScript
 				},
 			})
 			treesitter.language.register("bash", "zsh") -- TODO: Remove this when zsh parser is supported officially
