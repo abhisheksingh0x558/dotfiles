@@ -339,6 +339,7 @@ require("lazy").setup({
 					"hcl", -- HCL
 					"html", -- HTML
 					"css", -- CSS
+					"scss", -- SCSS
 				},
 			})
 			treesitter.language.register("bash", "zsh") -- TODO: Remove this when zsh parser is supported officially
