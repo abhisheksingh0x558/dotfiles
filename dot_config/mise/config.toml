@@ -110,3 +110,6 @@ kotlin = "latest" # Toolchain
 node = "latest"  # Toolchain
 pnpm = "latest"  # Package manager
 biome = "latest" # Language server, linter and formatter
+
+# PureScript
+purescript = "latest" # Toolchain
