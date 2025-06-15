@@ -325,6 +325,7 @@ require("lazy").setup({
 					"purescript", -- PureScript
 					"c", -- C
 					"cpp", -- C++
+					"python", -- Python
 				},
 			})
 			treesitter.language.register("bash", "zsh") -- TODO: Remove this when zsh parser is supported officially
@@ -346,6 +347,7 @@ require("lazy").setup({
 			lsp.enable("metals") -- Scala
 			lsp.enable("purescriptls") -- PureScript
 			lsp.enable("clangd") -- C++
+			lsp.enable("ruff") -- Python -- TODO: Replace with ty
 		end,
 	},
 
@@ -373,6 +375,7 @@ require("lazy").setup({
 				-- TODO: Setup linter for scala
 				-- TODO: Setup linter for purescript
 				cpp = { "cppcheck" }, -- C++
+				python = { "ruff" }, -- Python
 			}
 		end,
 	},
@@ -395,6 +398,7 @@ require("lazy").setup({
 				scala = { "scalafmt" }, -- Scala
 				purescript = { "purs-tidy" }, -- PureScript
 				cpp = { "clang-format" }, -- C++
+				python = { "ruff_format" }, -- Python
 			},
 		},
 	},
