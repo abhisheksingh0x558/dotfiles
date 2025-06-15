@@ -332,6 +332,7 @@ require("lazy").setup({
 					"json5", -- JSON
 					"toml", -- TOML
 					"yaml", -- YAML
+					"csv", -- CSV
 				},
 			})
 			treesitter.language.register("bash", "zsh") -- TODO: Remove this when zsh parser is supported officially
