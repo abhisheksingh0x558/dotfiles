@@ -307,6 +307,7 @@ require("lazy").setup({
 				ensure_installed = {
 					"nu", -- Nushell
 					-- TODO: Setup zsh
+					"bash", -- Bash
 				},
 			})
 			treesitter.language.register("bash", "zsh") -- TODO: Remove this when zsh parser is supported officially
@@ -319,6 +320,7 @@ require("lazy").setup({
 		config = function()
 			-- Register language servers
 			lsp.enable("nushell") -- Nushell
+			lsp.enable("bashls") -- Zsh and Bash # TODO: Enable for zsh
 		end,
 	},
 
@@ -337,6 +339,7 @@ require("lazy").setup({
 			-- Register linters
 			lint.linters_by_ft = {
 				zsh = { "shellcheck" }, -- Zsh
+				bash = { "shellcheck" }, -- Bash
 			}
 		end,
 	},
@@ -350,6 +353,7 @@ require("lazy").setup({
 			formatters_by_ft = {
 				nu = { "nufmt" }, -- Nushell
 				zsh = { "shfmt" }, -- Zsh
+				bash = { "shfmt" }, -- Bash
 			},
 		},
 	},
