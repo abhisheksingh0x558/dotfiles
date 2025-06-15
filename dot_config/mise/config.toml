@@ -142,3 +142,7 @@ gofumpt = "latest"                                # Formatter
 
 # Java
 java = "latest" # Toolchain
+
+# Scala
+scala = "latest" # Toolchain
+sbt = "latest"   # Package manager
