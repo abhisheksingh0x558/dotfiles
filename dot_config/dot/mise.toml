@@ -49,3 +49,8 @@ clojure = {} # Toolchain
 
 # Kotlin
 kotlin = {} # Toolchain
+
+# JavaScript
+node = {}  # Toolchain
+pnpm = {}  # Package manager
+biome = {} # Language server, linter and formatter
