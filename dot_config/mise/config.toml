@@ -102,3 +102,6 @@ sbt = "latest"   # Package manager
 
 # Clojure
 clojure = "latest" # Toolchain
+
+# Kotlin
+kotlin = "latest" # Toolchain
