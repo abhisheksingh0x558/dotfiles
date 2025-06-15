@@ -149,7 +149,8 @@
         (go "https://github.com/tree-sitter/tree-sitter-go") ; Go
         (gomod "https://github.com/camdencheek/tree-sitter-go-mod") ; Go
         (scala "https://github.com/tree-sitter/tree-sitter-scala") ; Scala
-        (purescript "https://github.com/postsolar/tree-sitter-purescript"))) ; PureScript
+        (purescript "https://github.com/postsolar/tree-sitter-purescript") ; PureScript
+        (c "https://github.com/tree-sitter/tree-sitter-c"))) ; C
 ;; Install parsers on startup
 (mapc
   (lambda (source)
