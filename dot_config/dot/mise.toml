@@ -54,3 +54,6 @@ kotlin = {} # Toolchain
 node = {}  # Toolchain
 pnpm = {}  # Package manager
 biome = {} # Language server, linter and formatter
+
+# PureScript
+purescript = {} # Toolchain
