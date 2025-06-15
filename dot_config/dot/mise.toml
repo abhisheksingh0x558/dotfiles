@@ -46,3 +46,6 @@ sbt = {}   # Package manager
 
 # Clojure
 clojure = {} # Toolchain
+
+# Kotlin
+kotlin = {} # Toolchain
