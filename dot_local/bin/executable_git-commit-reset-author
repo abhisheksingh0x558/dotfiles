@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+# Claim authorship of last Git commit
+main() {
+	git stash --include-untracked
+	git commit --reset-author --amend --no-edit
+	git stash pop --index
+}
+
+main "$@"
