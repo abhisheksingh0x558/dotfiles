@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+# Get default Git branch
+main() {
+	git branch --no-column --list --format='%(refname:short)' main master | head --lines=1
+}
+
+main "$@"

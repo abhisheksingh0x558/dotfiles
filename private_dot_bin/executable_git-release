@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+# Create a GitHub release
+# TODO: Add support to infer a new version from the current version
+main() {
+	local current_version
+	current_version="$(gh release view --json=tagName --jq=.tagName)"
+	echo "Last release version: $current_version"
+	echo "Enter new release version (e.g., v1.2.3): "
+	local version
+	read -r version
+	gh release create --generate-notes "$version"
+}
+
+main "$@"

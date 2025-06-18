@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+# Delete stale Git branches
+main() {
+	git branch --verbose | rg --fixed-strings '[gone]' | choose 0 | rust-parallel git branch --delete --force
+}
+
+main "$@"

@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+# Reset date of last Git commit to current timestamp
+main() {
+	git stash --include-untracked
+	git commit --date=now --amend --no-edit
+	git stash pop --index
+}
+
+main "$@"
