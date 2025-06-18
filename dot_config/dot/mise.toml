@@ -65,10 +65,10 @@ purescript = {} # Toolchain
 # clang = {} # Toolchain # TODO: Enable this
 
 # Python
-python = {}              # Toolchain
-uv = {}                  # Package manager
-"pipx:astral-sh/ty" = {} # Type checker and language server # TODO: Add to official registry
-ruff = {}                # Language server, linter and formatter
+python = { postinstall = "uv pip install --system --upgrade setuptools" } # Toolchain and global packages # TODO: Remove global package
+uv = {}                                                                   # Package manager
+"pipx:astral-sh/ty" = {}                                                  # Type checker and language server # TODO: Add to official registry
+ruff = {}                                                                 # Language server, linter and formatter
 
 # Protobuf
 protoc = {} # Toolchain
