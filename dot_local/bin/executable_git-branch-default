@@ -1,0 +1,4 @@
+#!/usr/bin/env nu
+
+# Get default git branch
+git branch --format='%(refname:short)' --no-column --list main master | lines | first
