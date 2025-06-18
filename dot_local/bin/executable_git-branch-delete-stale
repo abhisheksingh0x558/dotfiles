@@ -1,0 +1,4 @@
+#!/usr/bin/env nu
+
+# Get default git branch
+git branch --verbose | rg --fixed-strings '[gone]' | choose 0 | rust-parallel git branch --delete --force
