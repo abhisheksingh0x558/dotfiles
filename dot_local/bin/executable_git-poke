@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+# Create an empty commit to poke CI/CD and push it to remote
+main() {
+	git stash --include-untracked
+	git commit --allow-empty --message="${1:-poke ci and cd}"
+	git push
+	git stash pop --index
+}
+
+main "$@"
