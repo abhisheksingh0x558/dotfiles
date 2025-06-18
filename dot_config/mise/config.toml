@@ -121,10 +121,10 @@ purescript = "latest" # Toolchain
 # clang = "latest" # Toolchain # TODO: Enable this
 
 # Python
-python = "latest"              # Toolchain and global packages # TODO: Remove global package
-uv = "latest"                  # Package manager
-"pipx:astral-sh/ty" = "latest" # Type checker and language server # TODO: Add to official registry
-ruff = "latest"                # Language server, linter and formatter
+python = { version = "latest", postinstall = "uv pip install --system --upgrade setuptools" } # Toolchain and global packages # TODO: Remove global package
+uv = "latest"                                                                                 # Package manager
+"pipx:astral-sh/ty" = "latest"                                                                # Type checker and language server # TODO: Add to official registry
+ruff = "latest"                                                                               # Language server, linter and formatter
 
 # Protobuf
 protoc = "latest" # Toolchain
