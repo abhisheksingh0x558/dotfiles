@@ -35,6 +35,10 @@
 [core]
 	untrackedcache = true # Cache untracked files
 	fsmonitor = true # Monitor filesystem
+	pager = delta # Pager with syntax highlighting
+
+[diff]
+	external = difft # Semantic diffs
 
 [column]
 	ui = auto # Display output in columns for supported commands
