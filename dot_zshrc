@@ -7,3 +7,8 @@ ZINIT[NO_ALIASES]=1 # Do not set aliases
 zinit_path=~/.local/share/zinit/plugins/zdharma-continuum---zinit
 source "${zinit_path}/zinit.zsh" # Load plugin manager
 unset zinit
+
+# Source local run commands
+rc_file=~/.rc
+[[ -f $rc_file ]] && source "$rc_file"
+unset rc_file
