@@ -14,3 +14,8 @@ declare -U path # De-duplicate path elements
 local_bin=~/.bin
 [[ -d $local_bin ]] && path+=$local_bin
 unset local_bin
+
+# Source local environment
+env_file=~/.zshenv.local
+[[ -f $env_file ]] && source "$env_file"
+unset env_file
