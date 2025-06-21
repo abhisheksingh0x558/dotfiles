@@ -8,3 +8,8 @@ declare -U path # De-duplicate path elements
 [[ $(uname -s) == "Darwin" && $(uname -m) == "arm64" ]] && path+=/opt/homebrew/bin
 path+=~/.local/bin                      # Custom scripts
 path+="${CARGO_HOME:-$HOME/.cargo}/bin" # Global Rust binaries
+
+# Source local environment
+env_file=~/.env
+[[ -f $env_file ]] && source "$env_file"
+unset env_file
