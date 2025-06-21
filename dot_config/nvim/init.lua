@@ -320,6 +320,7 @@ require("lazy").setup({
 					"racket", -- Racket
 					"go", -- Go
 					"scala", -- Scala
+					"clojure", -- Clojure
 				},
 			})
 			treesitter.language.register("bash", "zsh") -- TODO: Remove this when zsh parser is supported officially
