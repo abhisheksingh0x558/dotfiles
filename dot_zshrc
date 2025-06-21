@@ -34,3 +34,8 @@ autoload -Uz compinit && compinit         # Initialize autocompletion engine
 zinit light zsh-users/zsh-autosuggestions # Enable command suggestion
 source <(carapace _carapace zsh)          # Autocompletion
 source <(pay-respects zsh)                # Autocorrection
+
+# Fuzzy finder
+FZF_DEFAULT_OPTS=--reverse                     # Display style for fzf
+zvm_after_init_commands+='source <(fzf --zsh)' # Directory sourcing causes conflicts with vi mode plugin
+source <(zoxide init zsh)                      # Change directory
