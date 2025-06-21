@@ -287,4 +287,7 @@ require("lazy").setup({
 		"michaelb/sniprun",
 		build = "cargo build --release",
 	},
+
+	-- Folding
+	"kevinhwang91/nvim-ufo",
 })
