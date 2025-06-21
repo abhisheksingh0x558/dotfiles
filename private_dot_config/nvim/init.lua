@@ -415,4 +415,7 @@ require("lazy").setup({
 		build = "cargo build --release",
 		opts = {},
 	},
+
+	-- Folding
+	"kevinhwang91/nvim-ufo", -- TODO: Enable this
 })
