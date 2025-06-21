@@ -9,3 +9,8 @@ ZINIT[NO_ALIASES]=1 # Disable aliases
 declare -U path                         # De-duplicate path elements
 path+=~/.local/bin                      # Custom scripts
 path+="${CARGO_HOME:-$HOME/.cargo}/bin" # Global Rust binaries
+
+# Source local environment
+env_file=~/.env.local.zsh
+[[ -f $env_file ]] && source "$env_file"
+unset env_file
