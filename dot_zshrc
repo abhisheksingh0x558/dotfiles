@@ -33,3 +33,8 @@ autoload -Uz compinit && compinit         # Initialize autocompletion engine
 zinit light zsh-users/zsh-autosuggestions # Enable command suggestion
 source <(carapace _carapace zsh)          # Autocompletion
 source <(pay-respects zsh)                # Autocorrection
+
+# Fuzzy finder
+source <(fzf --zsh)
+source <(zoxide init zsh)       # Change directory
+bindkey '^r' fzf-history-widget # Needs to be set explicitly as vi mode overrides history search keymap # TODO: Remove this
