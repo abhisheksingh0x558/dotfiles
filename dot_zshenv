@@ -11,3 +11,8 @@ path+=~/.local/bin # Custom scripts # TODO: Do this in a better way
 # Environment
 export EDITOR=nvim        # Default editor
 export DFT_DISPLAY=inline # Display style for difftastic
+
+# Source local environment
+env_file=~/.env
+[[ -f $env_file ]] && source "$env_file"
+unset env_file
