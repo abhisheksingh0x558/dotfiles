@@ -314,6 +314,7 @@ require("lazy").setup({
 					"nix", -- Nix
 					"lua", -- Lua
 					"haskell", -- Haskell
+					"commonlisp", -- Common Lisp
 				},
 			})
 			treesitter.language.register("bash", "zsh") -- TODO: Remove this when zsh parser is supported officially
