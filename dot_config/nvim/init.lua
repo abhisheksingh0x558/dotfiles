@@ -30,6 +30,9 @@ o.smartcase = true -- Respect case if pattern has upper case characters
 o.splitright = true -- Put new window towards right on vertical split
 o.splitbelow = true -- Put new window towards bottom on horizontal split
 
+-- Spell checker
+o.spell = true
+
 require("lazy").setup({
 	-- Collection of plugins
 	{
