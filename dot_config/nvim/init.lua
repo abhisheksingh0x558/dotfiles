@@ -239,4 +239,7 @@ require("lazy").setup({
 		"akinsho/git-conflict.nvim",
 		opts = {},
 	},
+
+	-- PKM tool
+	"nvim-neorg/neorg", -- TODO: Enable defaults and concealer addons
 })
