@@ -303,4 +303,7 @@ require("lazy").setup({
 		opts = {},
 	},
 	"sindrets/diffview.nvim", -- Cycle diffs
+
+	-- PKM tool
+	"nvim-neorg/neorg", -- TODO: Enable defaults and concealer addons
 })
