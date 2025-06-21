@@ -28,3 +28,6 @@ export EDITOR=nvim                 # Default editor
 export DELTA_FEATURES=line-numbers # Feature to enable for delta
 export DFT_DISPLAY=inline          # Display style for difftastic
 export JUST_UNSTABLE=1             # Enable unstable just features # TODO: Remove this
+
+# Fuzzy finder
+export FZF_DEFAULT_OPTS=--reverse # Display style for fzf
