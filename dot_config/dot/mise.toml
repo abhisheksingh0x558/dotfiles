@@ -1,0 +1,3 @@
+[settings]
+experimental = true                      # TODO: Remove this
+idiomatic_version_file_enable_tools = [] # TODO: Remove this
