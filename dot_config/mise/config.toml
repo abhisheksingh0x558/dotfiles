@@ -129,3 +129,6 @@ ruff = "latest"                # Language server, linter and formatter
 # Protobuf
 protoc = "latest" # Toolchain
 buf = "latest"    # Language server, linter and formatter
+
+# OpenTofu
+opentofu = "latest" # Toolchain
