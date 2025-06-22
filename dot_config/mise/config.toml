@@ -143,6 +143,11 @@ go = "latest"                                     # Toolchain and package manage
 staticcheck = "latest"                            # Linter
 gofumpt = "latest"                                # Formatter
 "go:github.com/go-delve/delve/cmd/dlv" = "latest" # Debugger # TODO: Add to official registry
+# Global packages
+"go:google.golang.org/protobuf/cmd/protoc-gen-go" = "latest"                   # TODO: Remove this
+"go:google.golang.org/grpc/cmd/protoc-gen-go-grpc" = "latest"                  # TODO: Remove this
+"go:github.com/mwitkow/go-proto-validators/protoc-gen-govalidators" = "latest" # TODO: Remove this
+"go:github.com/golang-migrate/migrate/v4/cmd/migrate" = "latest"               # TODO: Remove this
 
 # Java
 java = "latest" # Toolchain
