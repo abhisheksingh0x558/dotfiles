@@ -73,3 +73,6 @@ biome = {} # Language server, linter and formatter
 # Protobuf
 protoc = {} # Toolchain
 buf = {}    # Language server, linter and formatter
+
+# OpenTofu
+opentofu = {} # Toolchain
