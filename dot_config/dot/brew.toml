@@ -100,6 +100,9 @@ zellij = {}  # Terminal multiplexer
 neovim = {}  # Text editor
 k9s = {}     # Kubernetes client
 
+# GUIs
+pinentry-mac = {} # Passphrase dialog
+
 [cask]
 # Keymaps
 karabiner-elements = {}
@@ -107,3 +110,75 @@ karabiner-elements = {}
 # CLIs
 ngrok = {}            # Expose local web server to internet
 google-cloud-sdk = {} # Google Cloud client
+
+# GUIs
+"firefox@developer-edition" = {}             # Browser
+brave-browser = {}                           # Browser
+firefox = {}                                 # Browser
+zen = {}                                     # Browser
+alacritty = {}                               # Terminal
+wezterm = {}                                 # Terminal
+iterm2 = {}                                  # Terminal
+emacs = {}                                   # Text editor
+zed = {}                                     # Text editor
+vscodium = {}                                # Text editor
+void = {}                                    # Text editor
+logseq = {}                                  # Note taker
+element = {}                                 # Instant messenger
+signal = {}                                  # Instant messenger
+keybase = {}                                 # Instant messenger
+bitwarden = {}                               # Password manager
+proton-pass = {}                             # Password manager
+proton-mail = {}                             # Mail
+insomnia = {}                                # API client
+dbeaver-community = {}                       # DB client
+proton-drive = {}                            # Cloud storage
+protonvpn = {}                               # VPN
+mockoon = {}                                 # Mock server
+raycast = {}                                 # Application launcher
+thebrowsercompany-dia = { arch = "aarch64" } # Browser # TODO: Remove arch restriction
+arc = {}                                     # Browser
+google-chrome = {}                           # Browser
+warp = {}                                    # Terminal
+visual-studio-code = {}                      # Text editor
+obsidian = {}                                # Note taker
+notion = {}                                  # Note taker
+microsoft-onenote = {}                       # Note taker
+cursor = {}                                  # Text editor
+windsurf = {}                                # Text editor
+discord = {}                                 # Instant messenger
+slack = {}                                   # Instant messenger
+microsoft-teams = {}                         # Instant messenger
+1password = {}                               # Password manager
+readdle-spark = {}                           # Mail
+notion-mail = {}                             # Mail
+notion-calendar = {}                         # Calendar
+microsoft-outlook = {}                       # Mail
+ticktick = {}                                # Reminder
+linear-linear = {}                           # Issue tracker
+zoom = {}                                    # Video caller
+postman = {}                                 # API client
+tableplus = {}                               # DB client
+dropbox = {}                                 # Cloud storage
+nordvpn = {}                                 # VPN
+figma = {}                                   # Design
+microsoft-word = {}                          # Word processing
+microsoft-excel = {}                         # Spreadsheet
+microsoft-powerpoint = {}                    # Presentation
+gitkraken = {}                               # Git client
+docker = {}                                  # Containerization
+yubico-authenticator = {}                    # TOTP generator
+goland = {}                                  # IDE
+chatgpt = { arch = "aarch64" }               # GenAI # TODO: Remove arch restriction
+claude = {}                                  # GenAI
+
+# TODO: Move these to casks
+[mas]
+# GUIs
+Saber = { id = 1671523739 }                      # Handwritten note taker
+Number = { id = 409203825 }                      # Spreadsheet
+Pages = { id = 409201541 }                       # Word processing
+Keynote = { id = 409183694 }                     # Presentation
+Goodnotes = { id = 1444383602 }                  # Handwritten note taker
+Notability = { id = 360593530 }                  # Handwritten note taker
+"Perplexity: Ask Anything" = { id = 6714467650 } # GenAI
