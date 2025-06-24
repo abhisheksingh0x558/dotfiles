@@ -1,7 +1,9 @@
+mod brew;
 mod common;
 mod mise;
 mod paru;
 
+use brew::BrewCommand;
 use clap::Parser;
 use clap::Subcommand;
 use mise::MiseCommand;
@@ -26,6 +28,11 @@ enum PackageCommand {
         #[command(subcommand)]
         command: ParuCommand,
     },
+    #[command(name = "brew")]
+    Brew {
+        #[command(subcommand)]
+        command: BrewCommand,
+    },
 }
 
 impl DotCommand {
@@ -39,6 +46,7 @@ impl PackageCommand {
         match self {
             PackageCommand::Mise { command } => command.execute(),
             PackageCommand::Paru { command } => command.execute(),
+            PackageCommand::Brew { command } => command.execute(),
         }
     }
 }
