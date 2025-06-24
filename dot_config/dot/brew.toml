@@ -109,6 +109,9 @@ carapace = {}                             # Autocompletion
 "timescam/homebrew-tap/pay-respects" = {} # Autocorrection # TODO: Merge tap to upstream
 direnv = {}                               # Environment manager
 
+# LLM utilities
+ollama = {} # Run servers locally
+
 [cask]
 # Keymaps
 karabiner-elements = {}
