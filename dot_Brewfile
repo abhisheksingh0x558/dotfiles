@@ -1,0 +1,9 @@
+# -*- mode: ruby-ts -*-
+# vim: filetype=ruby
+
+# Shells
+brew "nushell"
+brew "elvish"
+brew "fish"
+brew "zsh"
+brew "bash"

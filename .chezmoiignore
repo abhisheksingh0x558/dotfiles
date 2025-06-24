@@ -6,3 +6,8 @@ README.md # Documentation
 {{ if ne .chezmoi.os "linux" }}
 .config/keyd/default.conf # Keyd configuration
 {{ end }}
+
+# MacOS only includes
+{{ if ne .chezmoi.os "darwin" }}
+.Brewfile # Homebrew packages
+{{ end }}
