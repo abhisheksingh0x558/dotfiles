@@ -1,0 +1,7 @@
+[formula]
+# Shells
+nushell = {}
+elvish = {}
+fish = {}
+zsh = {}
+bash = {}
