@@ -6,3 +6,8 @@ README.md # Readme
 {{ if ne .chezmoi.os "linux" }}
 .config/dot/paru.toml # Paru packages managed by Dot CLI
 {{ end }}
+
+# MacOS only includes
+{{ if ne .chezmoi.os "darwin" }}
+.config/dot/brew.toml # Homebrew packages managed by Dot CLI
+{{ end }}
