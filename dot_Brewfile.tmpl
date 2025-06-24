@@ -1,0 +1,8 @@
+# -*- mode: ruby-ts -*-
+# vim: filetype=ruby
+
+# Shells
+brew "zsh"
+brew "bash"
+
+{{ includeTemplate (printf "Brewfile.%s" .profile) -}}
