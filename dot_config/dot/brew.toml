@@ -5,3 +5,7 @@ elvish = {}
 fish = {}
 zsh = {}
 bash = {}
+
+[cask]
+# Keymaps
+karabiner-elements = {}
