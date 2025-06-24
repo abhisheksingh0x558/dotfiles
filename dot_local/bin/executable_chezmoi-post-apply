@@ -1,0 +1,4 @@
+#!/usr/bin/env nu
+
+# Install Dot CLI
+cargo install --path ~/.local/share/dot
