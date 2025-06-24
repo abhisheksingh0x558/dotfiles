@@ -1,3 +1,8 @@
+# TODO: Remove these once merged to upstream
+tap = [
+  "timescam/tap", # Pay-respects
+]
+
 [formula]
 # Shells
 nushell = {}
@@ -83,6 +88,17 @@ graphqurl = {}  # GraphQL client # TODO: Remove this
 mas = {}        # MacOS App Store application installer
 kubergrunt = {} # Kubernetes integration with Helm and Terraform # TODO: Remove this
 gettext = {}    # Internationalization and localization # TODO: Remove this
+
+# TUIs
+fzf = {}     # Fuzzy finder
+sk = {}      # Fuzzy finder
+up = {}      # Utility for writing pipes
+lazygit = {} # Git client
+gitui = {}   # Git client
+forgit = {}  # Git client
+zellij = {}  # Terminal multiplexer
+neovim = {}  # Text editor
+k9s = {}     # Kubernetes client
 
 [cask]
 # Keymaps
