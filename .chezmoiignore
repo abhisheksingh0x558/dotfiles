@@ -6,3 +6,8 @@
 # Arch Linux only includes
 /.config/paru.txt # Paru applications
 {{ end }}
+
+{{ if ne .chezmoi.os "darwin" }}
+# MacOS only includes
+/.Brewfile # Homebrew applications
+{{ end }}
