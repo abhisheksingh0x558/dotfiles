@@ -103,6 +103,12 @@ k9s = {}     # Kubernetes client
 # GUIs
 pinentry-mac = {} # Passphrase dialog
 
+# Shell utilities
+starship = {}                             # Prompt
+carapace = {}                             # Autocompletion
+"timescam/homebrew-tap/pay-respects" = {} # Autocorrection # TODO: Merge tap to upstream
+direnv = {}                               # Environment manager
+
 [cask]
 # Keymaps
 karabiner-elements = {}
