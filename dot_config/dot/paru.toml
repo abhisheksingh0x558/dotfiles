@@ -1,0 +1,168 @@
+# Shells
+nushell = {}
+elvish = {}
+fish = {}
+zsh = {}
+bash = {}
+
+# Keymaps
+keyd = {}
+
+# CLIs
+chezmoi = {}          # Dotfile manager
+mise = {}             # Version manager
+keychain = {}         # Key manager
+gitoxide = {}         # Version control system
+uutils-coreutils = {} # Core utilities
+uutils-findutils = {} # Find utilities
+uutils-diffutils = {} # Diff utilities
+zoxide = {}           # Change directory
+eza = {}              # List files
+bat = {}              # View files
+fd = {}               # Find files
+ripgrep = {}          # Search files
+difftastic = {}       # Compare files
+delta = {}            # Compare files
+git-absorb = {}       # Git utility for fixups
+sd = {}               # Search and replace files
+sad = {}              # Search and replace files
+choose = {}           # Extract text from files
+scc = {}              # Code counter
+tokei = {}            # Code counter
+just = {}             # Command runner
+go-task = {}          # Command runner
+hyperfine = {}        # Benchmarking
+grex = {}             # Generate regular expressions
+ouch = {}             # Compressor
+pup = {}              # HTML toolkit
+xq = {}               # XML and HTML toolkit
+xan = {}              # CSV toolkit
+jaq = {}              # JSON toolkit
+gojq = {}             # JSON toolkit
+taplo = {}            # TOML toolkit
+yq = {}               # JSON, TOML, YAML, XML and CSV toolkit
+dasel = {}            # JSON, TOML, YAML, XML and CSV toolkit
+qsv = {}              # Data wrangling toolkit
+watchexec = {}        # File watcher
+pueue = {}            # Background task executor
+rust-parallel = {}    # Parse arguments and execute commands
+precious = {}         # Linter and formatter
+dprint = {}           # Formatter
+treefmt = {}          # Formatter
+devenv = {}           # Project manager # TODO: Enable this
+lefthook = {}         # Git hook manager
+age = {}              # Encryption
+rage = {}             # Encryption
+rsign2 = {}           # Signing # TODO: Enable this
+sops = {}             # Configuration file encryption
+rops = {}             # Configuration file encryption # TODO: Enable this
+xh = {}               # HTTP client
+curlie = {}           # HTTP client
+grpcurl = {}          # gRPC client
+nginx = {}            # Web server and reverse proxy
+frpc = {}             # Expose local web server to internet
+zrok = {}             # Expose local web server to internet
+ngrok = {}            # Expose local web server to internet
+gh = {}               # GitHub client
+awscli = {}           # AWS client
+azure-cli = {}        # Azure client
+google-cloud-sdk = {} # Google Cloud client
+ykman = {}            # YubiKey client
+stern = {}            # Kubernetes log explorer
+kubectx = {}          # Kubernetes context and namespace manager
+git = {}              # VCS # TODO: Remove this
+grep = {}             # Search files # TODO: Remove this
+make = {}             # Build system # TODO: Remove this
+gnupg = {}            # Encryption and signing # TODO: Remove this
+jq = {}               # JSON toolkit # TODO: Remove this
+prettier = {}         # Formatter # TODO: Remove this
+entr = {}             # File watcher # TODO: Remove this
+watchman = {}         # File watcher # TODO: Remove this
+pre-commit = {}       # Git hook manager # TODO: Remove this
+minisign = {}         # Signing # TODO: Remove this
+httpie = {}           # HTTP client # TODO: Remove this
+wget = {}             # HTTP client # TODO: Remove this
+curl = {}             # HTTP client # TODO: Remove this
+graphqurl = {}        # GraphQL client # TODO: Remove this
+
+# TUIs
+fzf = {}     # Fuzzy finder
+sk = {}      # Fuzzy finder
+up = {}      # Utility for writing pipes
+lazygit = {} # Git client
+gitui = {}   # Git client
+forgit = {}  # Git client
+zellij = {}  # Terminal multiplexer
+neovim = {}  # Text editor
+k9s = {}     # Kubernetes client
+
+# Shell utilities
+starship = {}     # Prompt
+carapace = {}     # Autocompletion
+pay-respects = {} # Autocorrection
+direnv = {}       # Environment manager
+
+# LLM utilities
+ollama = {} # Run servers locally
+
+# Lua
+luacheck = {} # Linter # TODO: Move this to mise packages
+
+# Haskell
+haskell-language-server = {} # Language server # TODO: Move this to mise packages
+hlint = {}                   # Linter # TODO: Move this to mise packages
+fourmolu = {}                # Formatter # TODO: Move this to mise packages
+
+# GUIs
+firefox-devedition = {} # Browser
+brave = {}              # Browser
+alacritty = {}          # Terminal
+wezterm = {}            # Terminal
+emacs = {}              # Text editor
+zed-editor = {}         # Text editor
+vscodium = {}           # Text editor
+logseq = {}             # Note taker
+element-desktop = {}    # Instant messenger
+signal-desktop = {}     # Instant messenger
+keybase-gui = {}        # Instant messenger
+bitwarden-desktop = {}  # Password manager
+proton-pass = {}        # Password manager
+protonmail-desktop = {} # Email
+insomnia = {}           # API client
+dbeaver-bin = {}        # DB client
+protonvpn-gui = {}      # VPN
+mockoon = {}            # Mock server
+
+# # Nix
+# nil # Language server
+# statix # Linter # TODO: Install deadnix as well
+# nixfmt # Formatter
+#
+# # Scala
+# metals # Language server
+# scalafix # Linter
+# scalafmt # Formatter
+#
+# # Kotlin
+# kotlin-language-server # Language server
+# ktlint # Linter
+# ktfmt # Formatter
+#
+# # PureScript
+# spago # Package manager
+# nodePackages.purescript-language-server # Language server
+# # TODO: Setup linter
+# nodePackages.purs-tidy # Formatter
+#
+# # ClojureScript
+# # TODO: Setup toolchain
+#
+# # C++
+# clang-tools # Language server and formatter
+# cppcheck # Linter
+#
+# # Typst
+# typst # Toolchain
+#
+# # Mermaid
+# mermaid-cli # Toolchain

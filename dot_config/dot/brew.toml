@@ -199,3 +199,37 @@ Keynote = { id = 409183694 }                     # Presentation
 Goodnotes = { id = 1444383602 }                  # Handwritten note taker
 Notability = { id = 360593530 }                  # Handwritten note taker
 "Perplexity: Ask Anything" = { id = 6714467650 } # GenAI
+
+# # Nix
+# nil # Language server
+# statix # Linter # TODO: Install deadnix as well
+# nixfmt # Formatter
+#
+# # Scala
+# metals # Language server
+# scalafix # Linter
+# scalafmt # Formatter
+#
+# # Kotlin
+# kotlin-language-server # Language server
+# ktlint # Linter
+# ktfmt # Formatter
+#
+# # PureScript
+# spago # Package manager
+# nodePackages.purescript-language-server # Language server
+# # TODO: Setup linter
+# nodePackages.purs-tidy # Formatter
+#
+# # ClojureScript
+# # TODO: Setup toolchain
+#
+# # C++
+# clang-tools # Language server and formatter
+# cppcheck # Linter
+#
+# # Typst
+# typst # Toolchain
+#
+# # Mermaid
+# mermaid-cli # Toolchain
