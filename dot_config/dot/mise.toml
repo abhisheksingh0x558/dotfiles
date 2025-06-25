@@ -5,3 +5,8 @@ idiomatic_version_file_enable_tools = [] # TODO: Remove this
 [tools]
 # Nushell
 "cargo:https://github.com/nushell/nufmt" = {} # Formatter # TODO: Add to official registry
+
+# Zsh and Bash
+"npm:bash-language-server" = {} # Language server # TODO: Add to official registry
+shellcheck = {}                 # Linter # TODO: Install shellharden as well
+shfmt = {}                      # Formatter
