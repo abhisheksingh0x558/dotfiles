@@ -160,3 +160,6 @@ biome = "latest" # Language server, linter and formatter
 
 # PureScript
 purescript = "latest" # Toolchain
+
+# TypeScript
+"npm:typescript" = "latest" # Toolchain
