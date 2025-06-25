@@ -57,3 +57,6 @@ biome = {} # Language server, linter and formatter
 
 # PureScript
 purescript = {} # Toolchain
+
+# TypeScript
+"npm:typescript" = {} # Toolchain
