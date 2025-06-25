@@ -1,3 +1,7 @@
 [settings]
 experimental = true                      # TODO: Remove this
 idiomatic_version_file_enable_tools = [] # TODO: Remove this
+
+[tools]
+# Nushell
+"cargo:https://github.com/nushell/nufmt" = {} # Formatter # TODO: Add to official registry
