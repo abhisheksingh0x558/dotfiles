@@ -49,3 +49,6 @@ kotlin = {} # Toolchain
 
 # PureScript
 purescript = {} # Toolchain
+
+# TypeScript
+"npm:typescript" = {} # Toolchain
