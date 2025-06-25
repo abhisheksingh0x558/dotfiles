@@ -15,3 +15,9 @@ url = "https://git.sr.ht/~micampe/fennel-ls-nvim-docs/blob/main/nvim.lua"
 [".config/emacs/elpaca/repos/elpaca"]
 type = "git-repo"
 url = "https://github.com/progfolio/elpaca.git"
+
+# Neovim
+# Plugin manager
+[".local/share/nvim/lazy/lazy.nvim"]
+type = "git-repo"
+url = "https://github.com/folke/lazy.nvim.git"
