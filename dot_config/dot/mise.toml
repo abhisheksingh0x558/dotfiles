@@ -10,3 +10,7 @@ idiomatic_version_file_enable_tools = [] # TODO: Remove this
 "npm:bash-language-server" = {} # Language server # TODO: Add to official registry
 shellcheck = {}                 # Linter # TODO: Install shellharden as well
 shfmt = {}                      # Formatter
+
+# Lua
+lua-language-server = {} # Language server
+stylua = {}              # Formatter
