@@ -7,3 +7,8 @@ url = "https://github.com/zdharma-continuum/zinit.git"
 [".config/emacs/elpaca/repos/elpaca"]
 type = "git-repo"
 url = "https://github.com/progfolio/elpaca.git"
+
+# Neovim plugin manager
+[".local/share/nvim/lazy/lazy.nvim"]
+type = "git-repo"
+url = "https://github.com/folke/lazy.nvim.git"
