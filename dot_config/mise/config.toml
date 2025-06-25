@@ -105,3 +105,6 @@ direnv = "latest"                                                               
 
 # LLM utilities
 ollama = "latest" # Run servers locally
+
+# Nushell
+"cargo:https://github.com/nushell/nufmt" = "latest" # Formatter # TODO: Add to official registry
