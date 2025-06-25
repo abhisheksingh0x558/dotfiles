@@ -9,3 +9,9 @@ url = "https://github.com/zdharma-continuum/zinit.git"
 [".local/share/fennel-ls/docsets/nvim.lua"]
 type = "file"
 url = "https://git.sr.ht/~micampe/fennel-ls-nvim-docs/blob/main/nvim.lua"
+
+# Emacs
+# Package manager
+[".config/emacs/elpaca/repos/elpaca"]
+type = "git-repo"
+url = "https://github.com/progfolio/elpaca.git"
