@@ -1,0 +1,5 @@
+# Zsh
+# Plugin manager
+[".local/share/zinit/plugins/zdharma-continuum---zinit"]
+type = "git-repo"
+url = "https://github.com/zdharma-continuum/zinit.git"
