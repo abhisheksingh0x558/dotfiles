@@ -58,3 +58,6 @@ gitui = "latest"                                                                
 zellij = "latest"                                                                # Terminal multiplexer
 neovim = "latest"                                                                # Text editor
 k9s = "latest"                                                                   # Kubernetes client
+
+# Nushell
+"cargo:https://github.com/nushell/nufmt" = "latest" # Formatter # TODO: Add to official registry
