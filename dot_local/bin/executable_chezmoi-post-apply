@@ -10,3 +10,14 @@ if (uname | get kernel-name) == "Linux" {
 	let keyd_file = ($keyd_dir | path join 'default.conf')
 	not ($keyd_file | path exists); sudo cp ($nu.home-path | path join '.dotfiles/keyd.conf') $keyd_file
 }
+
+# GnuPG UI/UX
+if (uname | get kernel-name) == "Darwin" {
+	let gpg_dir = ($nu.home-path | path join '.gnupg')
+	if not ($gpg_dir | path exists) {
+		mkdir $gpg_dir
+		chmod 700 $gpg_dir
+	}
+	let gpg_file = ($gpg_dir | path join 'gpg-agent.conf')
+	not ($gpg_file | path exists); echo $'pinentry-program (which pinentry-mac | get 0.path)' | save --force $gpg_file
+}
