@@ -116,3 +116,7 @@ ollama = "latest" # Run servers locally
 "npm:bash-language-server" = "latest" # Language server # TODO: Add to official registry
 shellcheck = "latest"                 # Linter # TODO: Install shellharden as well
 shfmt = "latest"                      # Formatter
+
+# Lua
+lua-language-server = "latest" # Language server
+stylua = "latest"              # Formatter
