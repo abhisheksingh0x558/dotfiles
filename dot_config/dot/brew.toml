@@ -112,6 +112,9 @@ direnv = {}                               # Environment manager
 # LLM utilities
 ollama = {} # Run servers locally
 
+# Lua
+luacheck = {} # Linter # TODO: Move this to mise packages
+
 [cask]
 # Keymaps
 karabiner-elements = {}
