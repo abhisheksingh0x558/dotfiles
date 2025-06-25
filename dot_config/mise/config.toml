@@ -108,3 +108,8 @@ ollama = "latest" # Run servers locally
 
 # Nushell
 "cargo:https://github.com/nushell/nufmt" = "latest" # Formatter # TODO: Add to official registry
+
+# Zsh and Bash
+"npm:bash-language-server" = "latest" # Language server # TODO: Add to official registry
+shellcheck = "latest"                 # Linter # TODO: Install shellharden as well
+shfmt = "latest"                      # Formatter
