@@ -1,5 +1,6 @@
 README.md # Readme
 justfile # Just
+install # Install script
 
 .local/share/dot/target/ # Cargo build for Dot CLI
 
