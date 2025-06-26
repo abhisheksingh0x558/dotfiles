@@ -1,3 +1,5 @@
+mod common;
+
 use clap::Parser;
 use clap::Subcommand;
 
