@@ -1,0 +1,103 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+# Show help message
+usage() {
+	cat <<EOF
+Usage: $0 [OPTIONS]
+
+Options:
+  -h, --help     Show help message
+  -p, --paru     Install Paru (Arch Linux only)
+  -b, --brew     Install Homebrew (MacOS only)
+  -f, --force    Force reinstall Paru/Homebrew
+  -n, --nix      Install Nix
+EOF
+	exit 0
+}
+
+# Install Homebrew
+install-brew() {
+	local force=false
+	for arg in "$@"; do
+		[[ $arg == --force || $arg == -f ]] && force=true
+		[[ $arg == --brew || $arg == -b ]] && {
+			command -v brew >/dev/null 2>&1 && ! "$force" && return
+			sudo --validate
+			curl --fail --silent --location --show-error https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
+		}
+	done
+}
+
+# Install Paru
+install-paru() {
+	local force=false
+	for arg in "$@"; do
+		[[ $arg == --force || $arg == -f ]] && force=true
+		[[ $arg == --paru || $arg == -p ]] && {
+			command -v paru >/dev/null 2>&1 && ! "$force" && return
+			local paru_dir
+			paru_dir=$(mktemp --directory)
+			git clone https://aur.archlinux.org/paru.git "$paru_dir"
+			cd "$paru_dir"
+			makepkg --install --syncdeps --noconfirm
+			cd -
+			rm -rf "$paru_dir"
+		}
+	done
+}
+
+# Install Nix
+install-nix() {
+	for arg in "$@"; do
+		[[ $arg == --nix || $arg == -n ]] && curl --fail --silent --location --show-error https://install.determinate.systems/nix | bash -s -- install --determinate
+	done
+}
+
+main() {
+	# Show help message and exit
+	for arg in "$@"; do
+		[[ $arg == --help || $arg == -h ]] && exit 0
+	done
+	local os
+	os=$(uname -s)
+	if [[ $os == "Darwin" ]]; then
+		# MacOS
+		install-brew "$@"         # Install Homebrew if required
+		brew install chezmoi mise # Install Chezmoi and Mise
+	elif [ "$os" == "Linux" ]; then
+		# Arch Linux
+		install-paru "$@"                    # Install Paru if required
+		paru --sync --noconfirm chezmoi mise # Install Chezmoi and Mise
+	else
+		echo "invalid os"
+		exit 1
+	fi
+	local dotfiles_repo
+	if ssh -T git@codeberg.org >/dev/null 2>&1; then
+		# If SSH is setup
+		dotfiles_repo=ssh://git@codeberg.org/abhisheksingh0x558/dotfiles.git
+	else
+		# If SSH is not setup
+		dotfiles_repo=https://codeberg.org/abhisheksingh0x558/dotfiles.git
+	fi
+	chezmoi init --source ~/.dotfiles "$dotfiles_repo"
+	mise exec rust -- chezmoi apply # Link dotfiles
+	mise install                    # Install tools
+	if [[ $os == "Darwin" ]]; then
+		# MacOS
+		dot brew sync # Install packages
+	elif [ "$os" == "Linux" ]; then
+		# Arch Linux
+		dot pacman sync # Install packages
+	else
+		echo "invalid os"
+		exit 1
+	fi
+	install-nix "$@" # Install Nix if required
+}
+
+main "$@"
