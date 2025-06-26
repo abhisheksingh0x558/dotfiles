@@ -1,3 +1,9 @@
 README.md # Readme
 
 .local/share/dot/target/ # Cargo build for Dot CLI
+
+# Arch Linux only includes
+# MacOS only includes
+{{- if ne .chezmoi.os "linux" }}
+.config/dot/paru.toml # Paru packages managed by Dot CLI
+{{- end }}
