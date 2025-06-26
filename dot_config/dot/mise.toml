@@ -36,3 +36,6 @@ go = {}                                     # Toolchain and package manager
 staticcheck = {}                            # Linter
 gofumpt = {}                                # Formatter
 "go:github.com/go-delve/delve/cmd/dlv" = {} # Debugger # TODO: Add to official registry
+
+# Java
+java = {} # Toolchain
