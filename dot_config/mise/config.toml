@@ -139,3 +139,6 @@ go = "latest"                                     # Toolchain and package manage
 staticcheck = "latest"                            # Linter
 gofumpt = "latest"                                # Formatter
 "go:github.com/go-delve/delve/cmd/dlv" = "latest" # Debugger # TODO: Add to official registry
+
+# Java
+java = "latest" # Toolchain
