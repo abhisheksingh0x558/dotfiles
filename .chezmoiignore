@@ -4,6 +4,8 @@ install # Install script
 
 .local/share/dot/target/ # Cargo build for Dot CLI
 
+keyd.conf # Keyd configuration
+
 # Arch Linux only includes
 {{ if ne .chezmoi.os "linux" }}
 .config/dot/paru.toml # Paru packages managed by Dot CLI
