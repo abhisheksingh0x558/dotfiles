@@ -637,4 +637,7 @@ require("lazy").setup({
 			vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
 		end,
 	},
+
+	-- Test runner
+	{ "nvim-neotest/neotest", opts = {} },
 })
