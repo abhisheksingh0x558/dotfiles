@@ -5,6 +5,7 @@
 {{ if ne .chezmoi.os "linux" }}
 # Arch Linux only includes
 /.config/paru.txt # Paru applications
+/.config/keyd/ # Keyd configuration
 {{ end }}
 
 {{ if ne .chezmoi.os "darwin" }}
