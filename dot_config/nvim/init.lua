@@ -352,4 +352,19 @@ require("lazy").setup({
 
 	-- Folding
 	"kevinhwang91/nvim-ufo",
+
+	-- Outliner
+	{
+		"stevearc/aerial.nvim",
+		opts = {},
+		keys = {
+			-- Toggle outline
+			{
+				"gO",
+				function()
+					require("aerial").toggle()
+				end,
+			},
+		},
+	},
 })
