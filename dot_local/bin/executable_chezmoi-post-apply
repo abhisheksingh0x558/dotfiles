@@ -2,3 +2,11 @@
 
 # Install Dot CLI
 cargo install --path ~/.local/share/dot
+
+# Keyd keymaps
+if (uname | get kernel-name) == "Linux" {
+	let keyd_dir = '/etc/keyd'
+	not ($keyd_dir | path exists); sudo mkdir $keyd_dir
+	let keyd_file = ($keyd_dir | path join 'default.conf')
+	not ($keyd_file | path exists); sudo cp ($nu.home-path | path join '.dotfiles/keyd.conf') $keyd_file
+}

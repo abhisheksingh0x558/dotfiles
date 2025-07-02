@@ -4,6 +4,8 @@ install # Install script
 
 .local/share/dot/target/ # Cargo build for Dot CLI
 
+keyd.conf # Keyd configuration
+
 # Arch Linux only includes
 # MacOS only includes
 {{- if ne .chezmoi.os "linux" }}
