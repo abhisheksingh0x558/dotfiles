@@ -1,3 +1,8 @@
 justfile # Just
 install # Installation script
 README.md # Documentation
+
+# Arch Linux only includes
+{{ if ne .chezmoi.os "linux" }}
+.config/keyd/default.conf # Keyd configuration
+{{ end }}
