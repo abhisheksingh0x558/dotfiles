@@ -447,6 +447,9 @@ require("lazy").setup({
 
 	-- GitHub client
 	"pwntester/octo.nvim",
+
+	-- Haskell support
+	"mrcjkb/haskell-tools.nvim", -- TODO: Disable server triggered
 })
 
 -- Language configurations
@@ -488,6 +491,13 @@ local languages = {
 		language_server = "lua_ls",
 		linters = { "luacheck" },
 		formatters = { "stylua" },
+	},
+
+	-- Haskell
+	haskell = {
+		language_server = "hls",
+		linters = { "hlint" },
+		formatters = { "fourmolu" },
 	},
 }
 
