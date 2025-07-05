@@ -85,6 +85,13 @@ local languages = {
 	-- TODO: Setup Common Lisp
 
 	-- TODO: Setup Zig
+
+	-- Rust
+	rust = {
+		language_server = "rust_analyzer",
+		linters = { "clippy" },
+		formatters = { "rustfmt" },
+	},
 }
 
 -- Setup language tools
