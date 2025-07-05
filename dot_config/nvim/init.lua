@@ -473,6 +473,8 @@ local languages = {
 	},
 
 	-- TODO: Setup Just
+
+	-- TODO: Setup Make
 }
 
 -- Setup language tools
