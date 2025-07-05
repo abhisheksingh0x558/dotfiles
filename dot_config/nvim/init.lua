@@ -614,6 +614,13 @@ local languages = {
 	-- TODO: Setup GraphQL
 
 	-- TODO: Setup JSON
+
+	-- TOML
+	toml = {
+		-- TODO: Add language server
+		-- TODO: Add linters
+		formatters = { "taplo" },
+	},
 }
 
 -- Setup language tools
