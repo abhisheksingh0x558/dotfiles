@@ -176,6 +176,13 @@ local languages = {
 		-- TODO: Add linters
 		formatters = { "taplo" }, -- TODO: Check alternatives
 	},
+
+	-- TODO: Setup YAML
+	yaml = {
+		-- TODO: Add language server
+		-- TODO: Add linters
+		formatters = { "yq" }, -- TODO: Check alternatives
+	},
 }
 
 -- Setup language tools
