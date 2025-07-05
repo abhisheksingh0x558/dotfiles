@@ -6,6 +6,7 @@ local o = vim.o
 local cmd = vim.cmd
 local api = vim.api
 local lsp = vim.lsp
+local treesitter = vim.treesitter
 
 -- Plugin manager
 local lazypath = fs.normalize("~/.local/share/nvim/lazy/lazy.nvim")
@@ -382,6 +383,9 @@ require("lazy").setup({
 			sync_install = true, -- Install parsers synchronously
 			highlight = { enable = true }, -- Enable syntax highlighting
 		},
+		config = function()
+			treesitter.language.register("bash", "zsh") -- TODO: Remove this when zsh parser is supported officially
+		end,
 	},
 	-- Text objects
 	{
@@ -452,6 +456,13 @@ local languages = {
 		language_server = "nushell",
 		-- TODO: Add linters
 		formatters = { "nufmt" },
+	},
+
+	-- Zsh
+	zsh = {
+		language_server = "bashls",
+		linters = { "shellcheck" },
+		formatters = { "shfmt" },
 	},
 }
 
