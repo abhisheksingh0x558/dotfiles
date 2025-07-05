@@ -151,3 +151,6 @@
 
 ;;; Folding
 (leaf origami)
+
+;;; Outliner
+(leaf lsp-treemacs) ; TODO: Replace with non lsp treesitter based alternative
