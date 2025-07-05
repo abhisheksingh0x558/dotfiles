@@ -200,7 +200,12 @@
 (leaf forge)
 
 ;;; Language configurations
-(defvar languages '())
+(defvar languages
+  '(;; Nix
+    (nix-ts-mode
+     :language-server nix-nil
+     :linters (statix)
+     :formatters (nixfmt)))
 
 ;;; Setup language tools
 (setq apheleia-mode-alist '())
@@ -234,3 +239,7 @@
 ;;; Setup tools for all configured languages
 (dolist (language languages)
   (setup-language (car language) (cdr language)))
+
+;;; Nix support
+(leaf nix-mode)
+(leaf nix-ts-mode)
