@@ -147,6 +147,13 @@ local languages = {
 		linters = { "ruff" },
 		formatters = { "ruff_format" },
 	},
+
+	-- Protobuf
+	proto = {
+		language_server = "buf_ls",
+		linters = { "buf_lint" },
+		formatters = { "buf" },
+	},
 }
 
 -- Setup language tools
