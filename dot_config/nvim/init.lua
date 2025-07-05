@@ -562,6 +562,10 @@ require("lazy").setup({
 
 	-- Haskell support
 	"mrcjkb/haskell-tools.nvim", -- TODO: Disable server triggered
+
+	-- Rust support
+	"mrcjkb/rustaceanvim", -- TODO: Disable server triggered
+	{ "Saecki/crates.nvim", opts = {} },
 })
 
 -- Language configurations
@@ -627,6 +631,13 @@ local languages = {
 	-- TODO: Setup Common Lisp
 
 	-- TODO: Setup Zig
+
+	-- Rust
+	rust = {
+		language_server = "rust_analyzer",
+		linters = { "clippy" },
+		formatters = { "rustfmt" },
+	},
 }
 
 -- Setup language tools
