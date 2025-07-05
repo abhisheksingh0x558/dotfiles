@@ -436,6 +436,7 @@ require("lazy").setup({
 		build = ":TSUpdate",
 		config = function()
 			-- require("nvim-treesitter").install("all") -- Install all parsers asynchronously -- TODO: Keep this consistent with Emacs
+			vim.treesitter.language.register("bash", "zsh") -- TODO: Remove this when zsh parser is supported officially
 		end,
 	},
 	-- Text objects
@@ -669,6 +670,13 @@ local languages = {
 		language_server = "nushell",
 		-- TODO: Add linters
 		-- TODO: Add formatters
+	},
+
+	-- Zsh
+	zsh = {
+		language_server = "bashls",
+		linters = { "shellcheck" },
+		formatters = { "shfmt" },
 	},
 }
 
