@@ -151,3 +151,6 @@
 
 ;;; Snippet executer
 (leaf quickrun)
+
+;;; Folding
+(leaf origami)
