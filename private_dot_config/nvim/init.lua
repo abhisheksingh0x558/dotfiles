@@ -663,7 +663,14 @@ require("lazy").setup({
 })
 
 -- Language configurations
-local languages = {}
+local languages = {
+	-- Nushell
+	nu = {
+		language_server = "nushell",
+		-- TODO: Add linters
+		-- TODO: Add formatters
+	},
+}
 
 -- Setup language tools
 require("lint").linters_by_ft = {}
