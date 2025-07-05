@@ -169,6 +169,13 @@ local languages = {
 		-- TODO: Add linters
 		formatters = { "gojq" }, -- TODO: Check alternatives
 	},
+
+	-- TOML
+	toml = {
+		-- TODO: Add language server
+		-- TODO: Add linters
+		formatters = { "taplo" }, -- TODO: Check alternatives
+	},
 }
 
 -- Setup language tools
