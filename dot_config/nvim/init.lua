@@ -610,6 +610,8 @@ local languages = {
 		linters = { "buf_lint" },
 		formatters = { "buf" },
 	},
+
+	-- TODO: Setup GraphQL
 }
 
 -- Setup language tools
