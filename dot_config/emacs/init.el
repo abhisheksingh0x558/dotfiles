@@ -188,3 +188,37 @@
 
 ;;; GitHub client
 (leaf forge)
+
+;;; Language configurations
+(defvar languages '())
+
+;;; Setup language tools
+(defun setup-language (mode config)
+  (let ((language-server (plist-get config :language-server))
+        (linters (plist-get config :linters))
+        (formatters (plist-get config :formatters))
+        (hook (intern (concat (symbol-name mode) "-hook"))))
+    ;; Register language server
+    (when language-server
+      (add-hook hook
+                (lambda ()
+                  (setq-local lsp-enabled-clients language-server)
+                  (lsp-deferred))))
+    ;; Register linters
+    ;; TODO: Add support for multiple linters
+    (when linters
+      (add-hook 'lsp-diagnostics-mode-hook
+                (lambda ()
+                  (setq-local flycheck-checker 'lsp)
+                  (let ((next-checkers (flycheck-get-next-checkers 'lsp)))
+                    (dolist (next-checker next-checkers)
+                      (flycheck-remove-next-checker 'lsp next-checker)))
+                  (flycheck-add-next-checker 'lsp '(t . linter)))))
+    ;; Register formatters
+    ;; TODO: Add support for multiple formatters
+    (when formatters
+      (add-to-list 'apheleia-mode-alist '(mode . formatters)))))
+
+;;; Setup tools for all configured languages
+(dolist (language languages)
+  (setup-language (car language) (cdr language)))
