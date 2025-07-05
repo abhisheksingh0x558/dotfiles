@@ -21,3 +21,62 @@ lazy.setup({ import = "my.spec" })
 
 -- Load plugin modules
 load(vim.fn.stdpath("config") .. "/lua/my/plug")
+
+-- Language configurations
+local languages = {}
+
+-- Setup language tools
+require("lint").linters_by_ft = {}
+local function setup_language(filetype, config)
+	-- Install treesitter parser
+	local installed = false
+	for _, parser in ipairs(require("nvim-treesitter").get_installed()) do
+		if filetype == parser then
+			installed = true
+		end
+	end
+	if not installed then
+		require("nvim-treesitter").install(filetype)
+	end
+	-- Register language server
+	if config.language_server and vim.fn.executable(config.language_server) then
+		vim.lsp.enable(config.language_server)
+	end
+	-- Register linter
+	local linters = {}
+	for _, linter in ipairs(config.linters or {}) do
+		if vim.fn.executable(linter) then
+			table.insert(linters, linter)
+		end
+	end
+	if linters then
+		require("lint").linters_by_ft[filetype] = linters
+	end
+	-- Register formatter
+	local formatters = {}
+	for _, formatter in ipairs(config.formatters or {}) do
+		if vim.fn.executable(formatter) then
+			table.insert(formatters, formatter)
+		end
+	end
+	if formatters then
+		require("conform").formatters_by_ft[filetype] = formatters
+	end
+end
+
+-- Setup tools for all configured languages
+local filetypes = {}
+for filetype, config in pairs(languages) do
+	table.insert(filetypes, filetype)
+	setup_language(filetype, config)
+end
+
+-- Enabled treesitter syntax highlighting and indentation
+vim.api.nvim_create_autocmd("FileType", {
+	group = vim.api.nvim_create_augroup("my-treesitter-highlight", {}),
+	pattern = filetypes,
+	callback = function()
+		vim.treesitter.start()
+		vim.bo.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+	end,
+})
