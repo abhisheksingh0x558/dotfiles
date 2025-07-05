@@ -208,7 +208,13 @@
     (rust-mode
      :language-server rust-analyzer
      :linters (rust-clippy)
-     :formatters (rustfmt)))
+     :formatters (rustfmt))
+
+    ;; Go
+    (go-mode
+     :language-server gopls
+     :linters (go-staticcheck)
+     :formatters (gofumpt)))
 
 ;;; Setup language tools
 (defun setup-language (mode config)
@@ -251,3 +257,6 @@
 
 ;;; Rust support
 (leaf rust-mode)
+
+;;; Go support
+(leaf go-mode)
