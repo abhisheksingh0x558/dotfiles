@@ -451,6 +451,13 @@ local languages = {
 	-- TODO: Setup Clojure
 
 	-- TODO: Setup Kotlin
+
+	-- PureScript
+	purescript = {
+		language_server = "purescriptls",
+		-- TODO: Add linters
+		formatters = { "purs-tidy" },
+	},
 }
 
 -- Setup language tools
