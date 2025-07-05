@@ -538,6 +538,13 @@ local languages = {
 		linters = { "staticcheck" },
 		formatters = { "gofumpt" },
 	},
+
+	-- Scala
+	scala = {
+		language_server = "metals",
+		-- TODO: Add linters
+		formatters = { "scalafmt" },
+	},
 }
 
 -- Setup language tools
