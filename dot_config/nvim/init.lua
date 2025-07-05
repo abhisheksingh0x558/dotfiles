@@ -502,6 +502,8 @@ local languages = {
 		linters = { "hlint" },
 		formatters = { "fourmolu" },
 	},
+
+	-- TODO: Setup Common Lisp
 }
 
 -- Setup language tools
