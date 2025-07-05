@@ -482,6 +482,13 @@ local languages = {
 		linters = { "statix" },
 		formatters = { "nixfmt" },
 	},
+
+	-- Lua
+	lua = {
+		language_server = "lua_ls",
+		linters = { "luacheck" },
+		formatters = { "stylua" },
+	},
 }
 
 -- Setup language tools
