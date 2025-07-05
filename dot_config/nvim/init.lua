@@ -475,6 +475,13 @@ local languages = {
 	-- TODO: Setup Just
 
 	-- TODO: Setup Make
+
+	-- Nix
+	nix = {
+		language_server = "nil_ls",
+		linters = { "statix" },
+		formatters = { "nixfmt" },
+	},
 }
 
 -- Setup language tools
