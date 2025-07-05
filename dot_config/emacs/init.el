@@ -190,7 +190,12 @@
 (leaf forge)
 
 ;;; Language configurations
-(defvar languages '())
+(defvar languages
+  '(;; Nix
+    (nix-mode
+     :language-server nix-nil
+     :linters (statix)
+     :formatters (nixfmt)))
 
 ;;; Setup language tools
 (defun setup-language (mode config)
@@ -222,3 +227,7 @@
 ;;; Setup tools for all configured languages
 (dolist (language languages)
   (setup-language (car language) (cdr language)))
+
+;;; Nix support
+(leaf nix-mode)
+(leaf nix-ts-mode)
