@@ -227,7 +227,13 @@
     (purescript-mode
      :language-server purescript-language-server
      :linters nil ; TODO: Add linters
-     :formatters (purs-tidy)))
+     :formatters (purs-tidy))
+
+    ;; C++
+    (c++-mode
+     :language-server clangd
+     :linters (c/c++-cppcheck)
+     :formatters (clang-format))))
 
 ;;; Setup language tools
 (defun setup-language (mode config)
