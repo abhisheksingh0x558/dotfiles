@@ -581,6 +581,8 @@ local languages = {
 	-- TODO: Setup GraphQL
 
 	-- TODO: Setup JSON
+
+	-- TODO: Setup TOML
 }
 
 -- Setup language tools
