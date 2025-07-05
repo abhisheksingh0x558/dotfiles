@@ -253,7 +253,13 @@
      (purescript-mode
        :language-server purescript-language-server
        :linters nil ; TODO: Add linters
-       :formatters (purs-tidy))))
+       :formatters (purs-tidy))
+
+     ;; C++
+     (c++-ts-mode
+       :language-server clangd
+       :linters (c/c++-cppcheck)
+       :formatters (clang-format))))
 
 ;;; Setup language tools
 (setq apheleia-mode-alist '())
