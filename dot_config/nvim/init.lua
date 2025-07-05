@@ -471,6 +471,8 @@ local languages = {
 		linters = { "shellcheck" },
 		formatters = { "shfmt" },
 	},
+
+	-- TODO: Setup Just
 }
 
 -- Setup language tools
