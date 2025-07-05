@@ -30,6 +30,13 @@ local languages = {
 		-- TODO: Add linters
 		-- TODO: Add formatters
 	},
+
+	-- Zsh
+	zsh = {
+		language_server = "bashls",
+		linters = { "shellcheck" },
+		formatters = { "shfmt" },
+	},
 }
 
 -- Setup language tools
