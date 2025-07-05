@@ -449,6 +449,8 @@ local languages = {
 	},
 
 	-- TODO: Setup Clojure
+
+	-- TODO: Setup Kotlin
 }
 
 -- Setup language tools
