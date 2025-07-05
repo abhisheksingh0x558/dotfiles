@@ -213,7 +213,13 @@
     (haskell-ts-mode
      :language-server lsp-haskell
      :linters (haskell-hlint)
-     :formatters (fourmolu)))
+     :formatters (fourmolu))
+
+    ;; Rust
+    (rust-ts-mode
+     :language-server rust-analyzer
+     :linters (rust-clippy)
+     :formatters (rustfmt)))
 
 ;;; Setup language tools
 (setq apheleia-mode-alist '())
@@ -255,3 +261,6 @@
 ;;; Haskell support
 (leaf haskell-mode)
 (leaf haskell-ts-mode)
+
+;;; Rust support
+(leaf rust-mode)
