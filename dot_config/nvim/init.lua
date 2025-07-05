@@ -447,6 +447,9 @@ require("lazy").setup({
 
 	-- GitHub client
 	"pwntester/octo.nvim",
+
+	-- Lua support
+	"folke/lazydev.nvim", -- TODO: Disable server triggered
 })
 
 -- Language configurations
@@ -481,6 +484,13 @@ local languages = {
 		language_server = "nil_ls",
 		linters = { "statix" },
 		formatters = { "nixfmt" },
+	},
+
+	-- Lua
+	lua = {
+		language_server = "lua_ls",
+		linters = { "luacheck" },
+		formatters = { "stylua" },
 	},
 }
 
