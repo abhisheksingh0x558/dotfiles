@@ -180,6 +180,7 @@
    (lsp-ui-doc-position . 'at-point)) ; Show lsp hover documentation above cursor
   :config (nmap "K" #'lsp-ui-doc-glance)) ; Show lsp hover documentation
 (leaf lsp-haskell) ; Haskell
+(leaf lsp-metals) ; Scala
 
 ;;; Linter
 (leaf flycheck
@@ -225,7 +226,13 @@
     (go-ts-mode
      :language-server gopls
      :linters (go-staticcheck)
-     :formatters (gofumpt)))
+     :formatters (gofumpt))
+
+    ;; Scala
+    (scala-mode
+     :language-server metals
+     :linters nil ; TODO: Add linters
+     :formatters (scalafmt))) ; TODO: Add formatters
 
 ;;; Setup language tools
 (setq apheleia-mode-alist '())
@@ -273,3 +280,7 @@
 
 ;;; Go support
 (leaf go-mode)
+
+;;; Scala support
+(leaf scala-mode)
+(leaf scala-ts-mode) ; TODO: Add scala mode as parent
