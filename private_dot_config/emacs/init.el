@@ -193,6 +193,8 @@
   ((lsp-ui-doc-show-with-mouse . nil) ; Do not show lsp hover documentation on mouse hover
     (lsp-ui-doc-position . 'at-point)) ; Show lsp hover documentation above cursor
   :config (evil-define-key 'normal 'global "K" #'lsp-ui-doc-glance)) ; Show lsp hover documentation
+;; TODO: Remove these
+(leaf lsp-haskell) ; Haskell
 
 ;;; Linter
 (leaf flycheck
@@ -220,7 +222,13 @@
      (nix-ts-mode
        :language-server nix-nil
        :linters (statix)
-       :formatters (nixfmt))))
+       :formatters (nixfmt))
+
+     ;; Haskell
+     (haskell-ts-mode
+       :language-server lsp-haskell
+       :linters (haskell-hlint)
+       :formatters (fourmolu))))
 
 ;;; Setup language tools
 (setq apheleia-mode-alist '())
@@ -259,3 +267,8 @@
 ;; TODO: Remove these
 (leaf nix-mode)
 (leaf nix-ts-mode)
+
+;;; Haskell support
+;; TODO: Remove these
+(leaf haskell-mode)
+(leaf haskell-ts-mode)
