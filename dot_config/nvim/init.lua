@@ -583,6 +583,8 @@ local languages = {
 	-- TODO: Setup JSON
 
 	-- TODO: Setup TOML
+
+	-- TODO: Setup YAML
 }
 
 -- Setup language tools
