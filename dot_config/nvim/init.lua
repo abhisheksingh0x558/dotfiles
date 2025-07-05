@@ -584,6 +584,8 @@ local languages = {
 	-- TODO: Setup YAML
 
 	-- TODO: Setup CSV
+
+	-- TODO: Setup SQL
 }
 
 -- Setup language tools
