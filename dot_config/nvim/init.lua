@@ -506,6 +506,8 @@ local languages = {
 		-- TODO: Add linters
 		formatters = { "just" },
 	},
+
+	-- TODO: Setup Make
 }
 
 -- Setup language tools
