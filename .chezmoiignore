@@ -4,6 +4,7 @@ README.md # Documentation
 
 # Arch Linux only includes
 {{ if ne .chezmoi.os "linux" }}
+.config/paru # Paru packages
 .config/keyd/default.conf # Keyd configuration
 {{ end }}
 
