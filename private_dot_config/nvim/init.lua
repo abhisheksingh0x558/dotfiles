@@ -140,6 +140,13 @@ local languages = {
 		linters = { "cppcheck" },
 		formatters = { "clang-format" },
 	},
+
+	-- Python
+	python = {
+		language_server = "ty",
+		linters = { "ruff" },
+		formatters = { "ruff_format" },
+	},
 }
 
 -- Setup language tools
