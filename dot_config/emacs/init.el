@@ -219,7 +219,13 @@
     (rust-ts-mode
      :language-server rust-analyzer
      :linters (rust-clippy)
-     :formatters (rustfmt)))
+     :formatters (rustfmt))
+
+    ;; Go
+    (go-ts-mode
+     :language-server gopls
+     :linters (go-staticcheck)
+     :formatters (gofumpt)))
 
 ;;; Setup language tools
 (setq apheleia-mode-alist '())
@@ -264,3 +270,6 @@
 
 ;;; Rust support
 (leaf rust-mode)
+
+;;; Go support
+(leaf go-mode)
