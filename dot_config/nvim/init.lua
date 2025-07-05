@@ -621,6 +621,8 @@ local languages = {
 		-- TODO: Add linters
 		formatters = { "taplo" },
 	},
+
+	-- TODO: Setup YAML
 }
 
 -- Setup language tools
