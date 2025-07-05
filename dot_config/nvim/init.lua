@@ -557,6 +557,8 @@ local languages = {
 		linters = { "clippy" },
 		formatters = { "rustfmt" },
 	},
+
+	-- TODO: Setup Racket
 }
 
 -- Setup language tools
