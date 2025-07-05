@@ -710,6 +710,13 @@ local languages = {
 		-- TODO: Add linters
 		formatters = { "jq" }, -- TODO: Replace with jaq or gojq
 	},
+
+	-- TOML
+	toml = {
+		-- TODO: Add language server
+		-- TODO: Add linters
+		formatters = { "taplo" },
+	},
 }
 
 -- Setup language tools
