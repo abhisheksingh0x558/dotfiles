@@ -556,3 +556,36 @@ require("lazy").setup({
 	-- GitHub client
 	{ "pwntester/octo.nvim", opts = {} },
 })
+
+-- Language configurations
+local languages = {}
+
+-- Setup language tools
+require("lint").linters_by_ft = {}
+local function setup_language(filetype, config)
+	-- Enabled treesitter syntax highlighting
+	vim.api.nvim_create_autocmd("FileType", {
+		group = vim.api.nvim_create_augroup("treesitter-highlight", {}),
+		pattern = filetype,
+		callback = function()
+			vim.treesitter.start()
+		end,
+	})
+	-- Register language server
+	if config.language_server then
+		vim.lsp.enable(config.language_server)
+	end
+	-- Register linter
+	if config.linters then
+		require("lint").linters_by_ft[filetype] = config.linters
+	end
+	-- Register formatter
+	if config.formatters then
+		require("conform").formatters_by_ft[filetype] = config.formatters
+	end
+end
+
+-- Setup tools for all configured languages
+for filetype, config in pairs(languages) do
+	setup_language(filetype, config)
+end
