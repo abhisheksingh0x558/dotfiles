@@ -544,6 +544,8 @@ local languages = {
 	},
 
 	-- TODO: Setup Common Lisp
+
+	-- TODO: Setup Zig
 }
 
 -- Setup language tools
