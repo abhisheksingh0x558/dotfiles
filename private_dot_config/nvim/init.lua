@@ -784,6 +784,13 @@ local languages = {
 	},
 
 	-- TODO: Setup TypeScript
+
+	-- C++
+	cpp = {
+		language_server = "clangd",
+		linters = { "cppcheck" },
+		formatters = { "clang-format" },
+	},
 }
 
 -- Setup language tools
