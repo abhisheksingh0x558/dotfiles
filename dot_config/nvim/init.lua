@@ -478,6 +478,9 @@ require("lazy").setup({
 
 	-- Lua support
 	"folke/lazydev.nvim", -- TODO: Disable server triggered
+
+	-- Haskell support
+	"mrcjkb/haskell-tools.nvim", -- TODO: Disable server triggered
 })
 
 -- Language configurations
@@ -531,6 +534,13 @@ local languages = {
 		language_server = "fennel_ls",
 		linters = { "fennel" },
 		formatters = { "fnlfmt" },
+	},
+
+	-- Haskell
+	haskell = {
+		language_server = "hls",
+		linters = { "hlint" },
+		formatters = { "fourmolu" },
 	},
 }
 
