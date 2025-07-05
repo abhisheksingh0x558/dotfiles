@@ -247,7 +247,13 @@
      (scala-mode
        :language-server metals
        :linters nil ; TODO: Add linters
-       :formatters (scalafmt))))
+       :formatters (scalafmt))
+
+     ;; PureScript
+     (purescript-mode
+       :language-server purescript-language-server
+       :linters nil ; TODO: Add linters
+       :formatters (purs-tidy))))
 
 ;;; Setup language tools
 (setq apheleia-mode-alist '())
@@ -304,3 +310,8 @@
 ;; TODO: Remove these
 (leaf scala-mode)
 (leaf scala-ts-mode) ; TODO: Add scala mode as parent
+
+;;; PureScript support
+;; TODO: Remove these
+(leaf purescript-mode)
+;; TODO: Setup purescript treesitter mode
