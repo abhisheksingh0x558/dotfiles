@@ -202,7 +202,13 @@
     (haskell-mode
      :language-server lsp-haskell
      :linters (haskell-lint)
-     :formatters (fourmolu)))
+     :formatters (fourmolu))
+
+    ;; Rust
+    (rust-mode
+     :language-server rust-analyzer
+     :linters (rust-clippy)
+     :formatters (rustfmt)))
 
 ;;; Setup language tools
 (defun setup-language (mode config)
@@ -242,3 +248,6 @@
 ;;; Haskell support
 (leaf haskell-mode)
 (leaf haskell-ts-mode)
+
+;;; Rust support
+(leaf rust-mode)
