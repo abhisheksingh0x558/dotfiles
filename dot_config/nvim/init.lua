@@ -545,6 +545,8 @@ local languages = {
 		-- TODO: Add linters
 		formatters = { "scalafmt" },
 	},
+
+	-- TODO: Setup Clojure
 }
 
 -- Setup language tools
