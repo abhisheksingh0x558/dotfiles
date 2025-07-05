@@ -195,6 +195,7 @@
   :config (evil-define-key 'normal 'global "K" #'lsp-ui-doc-glance)) ; Show lsp hover documentation
 ;; TODO: Remove these
 (leaf lsp-haskell) ; Haskell
+(leaf lsp-metals) ; Scala
 
 ;;; Linter
 (leaf flycheck
@@ -240,7 +241,13 @@
      (go-ts-mode
        :language-server gopls
        :linters (go-staticcheck)
-       :formatters (gofumpt))))
+       :formatters (gofumpt))
+
+     ;; Scala
+     (scala-mode
+       :language-server metals
+       :linters nil ; TODO: Add linters
+       :formatters (scalafmt))))
 
 ;;; Setup language tools
 (setq apheleia-mode-alist '())
@@ -292,3 +299,8 @@
 ;;; Go support
 ;; TODO: Remove these
 (leaf go-mode)
+
+;;; Scala support
+;; TODO: Remove these
+(leaf scala-mode)
+(leaf scala-ts-mode) ; TODO: Add scala mode as parent
