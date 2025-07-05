@@ -5,6 +5,7 @@ local keymap = vim.keymap
 local o = vim.o
 local cmd = vim.cmd
 local api = vim.api
+local lsp = vim.lsp
 
 -- Plugin manager
 local lazypath = fs.normalize("~/.local/share/nvim/lazy/lazy.nvim")
@@ -443,3 +444,27 @@ require("lazy").setup({
 	-- GitHub client
 	"pwntester/octo.nvim",
 })
+
+-- Language configurations
+local languages = {}
+
+-- Setup language tools
+local function setup_language(filetype, config)
+	-- Register language server
+	if config.language_server then
+		lsp.enable(config.language_server)
+	end
+	-- Register linter
+	if config.linters then
+		require("lint").linters_by_ft[filetype] = config.linters
+	end
+	-- Register formatter
+	if config.formatters then
+		require("conform").formatters_by_ft[filetype] = config.formatters
+	end
+end
+
+-- Setup tools for all configured languages
+for filetype, config in pairs(languages) do
+	setup_language(filetype, config)
+end
