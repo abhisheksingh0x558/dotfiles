@@ -438,6 +438,12 @@ require("lazy").setup({
 		"theHamsta/nvim-dap-virtual-text",
 		opts = {},
 	},
+	-- Register debuggers
+	-- Go
+	{
+		"leoluz/nvim-dap-go",
+		opts = {},
+	},
 
 	-- AI integration
 	{
@@ -457,6 +463,9 @@ require("lazy").setup({
 		"Saecki/crates.nvim",
 		opts = {},
 	},
+
+	-- Go support
+	"ray-x/go.nvim", -- TODO: Disable server triggered
 })
 
 -- Language configurations
@@ -519,6 +528,13 @@ local languages = {
 	},
 
 	-- TODO: Setup Racket
+
+	-- Go
+	go = {
+		language_server = "gopls",
+		linters = { "staticcheck" },
+		formatters = { "gofumpt" },
+	},
 }
 
 -- Setup language tools
