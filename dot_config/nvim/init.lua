@@ -499,6 +499,13 @@ local languages = {
 		linters = { "shellcheck" },
 		formatters = { "shfmt" },
 	},
+
+	-- Just
+	just = {
+		-- TODO: Add language server
+		-- TODO: Add linters
+		formatters = { "just" },
+	},
 }
 
 -- Setup language tools
