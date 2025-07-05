@@ -23,7 +23,14 @@ lazy.setup({ import = "my.spec" })
 load(vim.fn.stdpath("config") .. "/lua/my/plug")
 
 -- Language configurations
-local languages = {}
+local languages = {
+	-- Nushell
+	nu = {
+		language_server = "nushell",
+		-- TODO: Add linters
+		-- TODO: Add formatters
+	},
+}
 
 -- Setup language tools
 require("lint").linters_by_ft = {}
