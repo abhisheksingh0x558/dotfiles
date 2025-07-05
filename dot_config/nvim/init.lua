@@ -553,6 +553,13 @@ local languages = {
 		-- TODO: Add linters
 		formatters = { "purs-tidy" },
 	},
+
+	-- C++
+	cpp = {
+		language_server = "clangd",
+		linters = { "cppcheck" },
+		formatters = { "clang-format" },
+	},
 }
 
 -- Setup language tools
