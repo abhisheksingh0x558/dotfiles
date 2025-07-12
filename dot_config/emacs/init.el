@@ -69,6 +69,7 @@
 (global-hl-line-mode) ; Enable line highlighting
 (setq evil-vsplit-window-right t) ; Put new window on right on vertical split
 (setq evil-split-window-below t) ; Put new window on bottom on horizontal split
+(recentf-mode) ; Track recent files
 ;; Theme
 (leaf catppuccin-theme
   :custom ((catppuccin-flavor . 'mocha))
@@ -78,3 +79,7 @@
 (leaf hl-todo :config (global-hl-todo-mode)) ; Highlight todo comments
 (leaf symbol-overlay :config (symbol-overlay-mode)) ; Highlight word under cursor ; TODO: Replace with lsp alternative
 (leaf rainbow-delimiters :config (rainbow-delimiters-mode)) ; Highlight brackets
+
+;;; Spell checker
+(add-hook 'text-mode-hook #'flyspell-mode)
+(add-hook 'prog-mode-hook #'flyspell-mode)
