@@ -78,3 +78,7 @@
 (leaf hl-todo :config (global-hl-todo-mode)) ; Highlight todo comments
 (leaf symbol-overlay :config (symbol-overlay-mode)) ; Highlight lsp references ; TODO: Replace with lsp alternative
 (leaf rainbow-delimiters :config (rainbow-delimiters-mode)) ; Highlight brackets
+
+;;; Spell checker
+(add-hook 'text-mode-hook #'flyspell-mode)
+(add-hook 'prog-mode-hook #'flyspell-mode)
