@@ -117,3 +117,11 @@ mas "Keynote", id: 409183694                   # Presentation # TODO: Move these
 mas "Goodnotes", id: 1444383602                # Handwritten note taker # TODO: Move these to casks
 mas "Notability", id: 360593530                # Handwritten note taker # TODO: Move these to casks
 mas "Perplexity", id: 6714467650               # GenAI # TODO: Move these to casks
+
+# Shell utilities
+brew "starship"                           # Prompt
+brew "carapace"                           # Autocompletion
+# Autocorrection
+tap "timescam/tap"                        # TODO: Remove this tap once merged to upstream
+brew "timescam/homebrew-tap/pay-respects" # TODO: Merge tap to upstream
+brew "direnv"                             # Environment manager
