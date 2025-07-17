@@ -1,6 +1,7 @@
 justfile # Just
 install # Installation script
 README.md # Documentation
+WIP.md # TODO: Remove this
 
 # Arch Linux only includes
 {{ if ne .chezmoi.os "linux" }}

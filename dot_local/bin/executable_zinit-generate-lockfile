@@ -1,0 +1,18 @@
+#!/usr/bin/env nu
+# Get all Zinit plugins by listing the plugins directory
+ls /Users/abhisheksingh/.local/share/zinit/plugins/ |
+  # Only get directories
+  where type == dir |
+  # Get just the name column
+  select name |
+  # Sort alphabetically
+  sort-by name |
+  # For each plugin, get its git info
+  each { |plugin|
+    cd $plugin.name
+    {
+      name: (basename $plugin.name)
+      commit: (git rev-parse HEAD)
+      branch: (git branch --show-current)
+    }
+  }
