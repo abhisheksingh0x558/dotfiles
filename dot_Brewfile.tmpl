@@ -60,3 +60,26 @@ brew "bottom"     # System monitor
 brew "podman-tui" # Podman client
 brew "lazydocker" # Docker client
 brew "k9s"        # Kubernetes client
+
+# GUIs
+brew "pinentry-mac"  # Passphrase dialog
+cask "brave-browser" # Browser
+cask "ghostty"       # Terminal
+cask "emacs-app"     # Text editor
+cask "neovide-app"   # Text editor
+cask "utm"           # Virtualisation and emulation
+# Proprietary
+cask "raycast" # Application launcher
+
+
+{{ if eq .profile "default" -}}
+# Default profile
+
+# GUIs
+cask "proton-pass"  # Password manager
+cask "proton-drive" # Cloud storage
+# Proprietary
+cask "dropbox"      # Cloud storage
+cask "onedrive"     # Cloud storage
+cask "google-drive" # Cloud storage
+{{- end }}
