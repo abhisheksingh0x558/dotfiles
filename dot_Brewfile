@@ -10,3 +10,27 @@ brew "bash"
 
 # Keymaps
 cask "karabiner-elements"
+
+# CLIs
+brew "mise"             # Tool version manager
+brew "keychain"         # Key manager
+brew "uutils-findutils" # Find utilities
+brew "uutils-diffutils" # Diff utilities
+brew "nginx"            # Web server and reverse proxy
+cask "ngrok"            # Expose local web server to internet
+brew "awscli"           # AWS client
+brew "azure-cli"        # Azure client
+cask "gcloud-cli"       # Google Cloud client
+brew "ykman"            # YubiKey client
+brew "git"              # VCS # TODO: Remove this
+brew "grep"             # Search files # TODO: Remove this
+brew "make"             # Build system # TODO: Remove this
+brew "gnupg"            # Encryption and signing # TODO: Remove this
+brew "entr"             # File watcher # TODO: Remove this
+brew "watchman"         # File watcher # TODO: Remove this
+brew "minisign"         # Signing # TODO: Remove this
+brew "httpie"           # HTTP client # TODO: Remove this
+brew "wget"             # HTTP client # TODO: Remove this
+brew "curl"             # HTTP client # TODO: Remove this
+brew "graphqurl"        # GraphQL client # TODO: Remove this
+brew "mas"              # MacOS App Store application installer
