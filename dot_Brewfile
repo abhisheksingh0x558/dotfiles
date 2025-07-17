@@ -125,3 +125,6 @@ brew "carapace"                           # Autocompletion
 tap "timescam/tap"                        # TODO: Remove this tap once merged to upstream
 brew "timescam/homebrew-tap/pay-respects" # TODO: Merge tap to upstream
 brew "direnv"                             # Environment manager
+
+# LLM utilities
+brew "ollama" # Run servers locally
