@@ -128,3 +128,6 @@ brew "direnv"                             # Environment manager
 
 # LLM utilities
 brew "ollama" # Run servers locally
+
+# Lua
+brew "luacheck" # Linter # TODO: Move this to mise packages
