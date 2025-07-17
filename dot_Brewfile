@@ -7,3 +7,6 @@ brew "elvish"
 brew "fish"
 brew "zsh"
 brew "bash"
+
+# Keymaps
+cask "karabiner-elements"
