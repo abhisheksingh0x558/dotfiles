@@ -114,3 +114,6 @@ mas "Keynote", id: 409183694                   # Presentation # TODO: Move these
 mas "Goodnotes", id: 1444383602                # Handwritten note taker # TODO: Move these to casks
 mas "Notability", id: 360593530                # Handwritten note taker # TODO: Move these to casks
 mas "Perplexity", id: 6714467650               # GenAI # TODO: Move these to casks
+
+# Lua
+brew "luacheck" # Linter # TODO: Move this to mise packages
