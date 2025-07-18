@@ -3,6 +3,7 @@ set script-interpreter := ["bash", "-o", "errexit", "-o", "nounset", "-o", "pipe
 
 mod chezmoi
 mod mise
+mod paru
 
 # Install Just
 init:
