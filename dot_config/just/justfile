@@ -6,6 +6,7 @@ mod chezmoi
 mod emacs
 mod gpg
 mod keyd
+mod nvim
 mod mise
 mod nix
 mod paru
