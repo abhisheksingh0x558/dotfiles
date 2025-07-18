@@ -1,0 +1,37 @@
+set shell := ["bash", "-o", "errexit", "-o", "nounset", "-o", "pipefail", "-o", "xtrace", "-c"]
+set script-interpreter := ["bash", "-o", "errexit", "-o", "nounset", "-o", "pipefail", "-o", "xtrace", "-c"]
+
+mod install
+
+# TODO: Add mas commands to each of the commands defined below
+
+[macos]
+default: refresh prune sync upgrade
+
+# Install Homebrew applications
+[macos]
+sync:
+    brew bundle install --global --force
+
+# Upgrade Homebrew applications
+[macos]
+upgrade:
+    brew upgrade --greedy --overwrite # TODO: Run this in the background
+
+# Upgrade Homebrew and refresh its registry
+[macos]
+refresh:
+    brew update # TODO: Run this in the background
+
+# Prune Homebrew applications
+[macos]
+prune:
+    brew bundle cleanup --global --zap --force
+    brew autoremove # TODO: See if this is required and if possible run this in background
+    brew cleanup --prune=all --scrub # TODO: See if this is required and if possible run this in background
+
+# Install Homebrew on MacOS
+[macos]
+init:
+    sudo --validate
+    curl --fail --silent --location --show-error https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh | bash
