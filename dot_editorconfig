@@ -29,3 +29,10 @@ trim_trailing_whitespace = true
 indent_size = 2
 # Indentation with spaces
 indent_style = space
+
+# Just overrides
+[{justfile,*.just}]
+# Spaces used for indentation
+indent_size = 4
+# Indentation with spaces
+indent_style = space
