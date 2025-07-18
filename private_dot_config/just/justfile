@@ -9,6 +9,7 @@ mod gpg
 mod keyd
 mod mise
 mod nix
+mod nvim
 mod paru
 mod ssh
 mod zsh
