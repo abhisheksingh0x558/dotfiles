@@ -22,3 +22,10 @@ max_line_length = 120
 tab_width = 2
 # Remove whitespaces at end of line
 trim_trailing_whitespace = true
+
+# Emacs Lisp overrides
+[*.el]
+# Spaces used for indentation
+indent_size = 2
+# Indentation with spaces
+indent_style = space
