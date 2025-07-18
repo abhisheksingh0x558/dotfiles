@@ -3,6 +3,7 @@ set script-interpreter := ["bash", "-o", "errexit", "-o", "nounset", "-o", "pipe
 
 mod brew
 mod chezmoi
+mod gpg
 mod keyd
 mod mise
 mod nix
