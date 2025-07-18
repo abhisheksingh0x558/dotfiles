@@ -1,14 +1,6 @@
 set shell := ["bash", "-o", "errexit", "-o", "nounset", "-o", "pipefail", "-o", "xtrace", "-c"]
 set script-interpreter := ["bash", "-o", "errexit", "-o", "nounset", "-o", "pipefail", "-o", "xtrace", "-c"]
 
-mod brew
-mod chezmoi
-mod keyd
-mod mise
-mod nix
-mod paru
-mod ssh
-
-# Install Just
-init:
-    curl --fail --silent --location --show-error https://just.systems/install.sh | bash -s -- --to=~/.local/bin
+# Generate SSH key
+generate email="abhisheksingh0x558@proton.me" file="~/.ssh/default/auth_git_forge":
+    ssh-keygen -t ed25519 -C {{ email }}  -f {{ file }}
