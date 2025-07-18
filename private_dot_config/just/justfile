@@ -9,6 +9,7 @@ mod mise
 mod nix
 mod paru
 mod ssh
+mod zsh
 
 # Install Just
 init:
