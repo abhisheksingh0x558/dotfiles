@@ -42,3 +42,6 @@ source <(zoxide init zsh)                      # Change directory
 
 # Environment manager
 source <(direnv hook zsh)
+
+# TUIs
+zinit load wfxr/forgit # Git client
