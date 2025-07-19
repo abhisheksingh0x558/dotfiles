@@ -37,3 +37,7 @@ zvm_after_init_commands+='source <(atuin init zsh)' # History, direct sourcing c
 
 # Environment manager
 (( $+commands[direnv] )) &>/dev/null && source <(direnv hook zsh)
+
+# Git client
+# zinit light kazhala/dotbare # TODO: Enable this
+# zinit light wfxr/forgit # TODO: Enable this

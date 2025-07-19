@@ -31,3 +31,6 @@ export JUST_UNSTABLE=1             # Enable unstable just features # TODO: Remov
 
 # Fuzzy finder
 export FZF_DEFAULT_OPTS=--reverse # Display style for fzf
+
+# Git client
+# export FORGIT_NO_ALIASES=1 # Disable aliases # TODO: Enable this
