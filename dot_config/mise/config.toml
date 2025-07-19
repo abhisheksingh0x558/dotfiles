@@ -48,3 +48,13 @@ sops = "latest"                                                                 
 xh = "latest"                                                                        # HTTP client
 curlie = "latest"                                                                    # HTTP client
 grpcurl = "latest"                                                                   # gRPC client
+
+# TUIs
+fzf = "latest"                                                                   # Fuzzy finder
+"cargo:https://github.com/skim-rs/skim" = { version = "latest", crate = "skim" } # Fuzzy finder # TODO: Add to official registry
+"go:github.com/akavel/up" = "latest"                                             # Utility for writing pipes # TODO: Add to official registry
+lazygit = "latest"                                                               # Git client
+gitui = "latest"                                                                 # Git client
+zellij = "latest"                                                                # Terminal multiplexer
+neovim = "latest"                                                                # Text editor
+k9s = "latest"                                                                   # Kubernetes client
