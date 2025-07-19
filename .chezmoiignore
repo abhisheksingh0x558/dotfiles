@@ -1,1 +1,2 @@
 justfile # Just
+install # Installation script
