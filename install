@@ -1,0 +1,46 @@
+#!/usr/bin/env bash
+
+set -o errexit
+set -o nounset
+set -o pipefail
+
+main() {
+	local just_dir=$(mktemp --directory)
+	local just_bin="$just_dir/just"
+	local chezmoi_dir=$(mktemp --directory)
+	local chezmoi_bin="$chezmoi_dir/chezmoi"
+	local mise_dir=$(mktemp --directory)
+	local mise_bin="$mise_dir/mise"
+	curl --fail --silent --location --show-error https://just.systems/install.sh | bash -s -- --to="$just_dir" # Install Just
+	dotfiles_dir=~/.dotfiles
+	git clone https://codeberg.org/abhisheksingh0x558/dotfiles.git "$dotfiles_dir" # Clone dotfiles
+	cd "$dotfiles_dir"
+	curl --fail --silent --location --show-error https://get.chezmoi.io | bash -s -- -b "$chezmoi_dir" # Install Chezmoi
+	echo "Enter profile (Default profile is default): "
+	local profile
+	read -r profile
+	if [[ -z "$profile" ]]; then
+		profile="default"
+	fi
+	echo "profile = \"$profile\"" > .chezmoidata.toml
+	"$chezmoi_bin" init --apply --source "$chezmoi_dir"                                                # Link dotfiles
+	cd -
+	curl --fail --silent --location --show-error https://mise.run | MISE_INSTALL_PATH="$mise_dir" bash # Install Mise
+	"$mise_bin" install                                                                                # Install tools
+	local os
+	os=$(uname -s)
+	if [[ $os == "Linux" ]]; then
+		# Arch Linux
+		"$just_bin" --global-justfile paru init # Install Paru
+		"$just_bin" --global-justfile paru sync # Install Paru applications
+	elif [[ $os == "Darwin" ]]; then
+		# MacOS
+		"$just_bin" --global-justfile brew init # Install Homebrew
+		"$just_bin" --global-justfile brew sync # Install Homebrew applications
+	else
+		echo "[ERROR] Invalid os: $os"
+		exit 1
+	fi
+}
+
+main "$@"
