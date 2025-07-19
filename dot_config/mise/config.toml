@@ -1,3 +1,50 @@
 [settings]
 experimental = true                      # TODO: Remove this
 idiomatic_version_file_enable_tools = [] # TODO: Remove this
+
+[tools]
+# CLIs
+just = "latest"                                                                               # Command runner
+task = "latest"                                                                               # Command runner
+chezmoi = "latest"                                                                            # Dotfile manager
+"cargo:https://github.com/GitoxideLabs/gitoxide" = { version = "latest", crate = "gitoxide" } # VCS # TODO: Add to official registry
+zoxide = "latest"                                                                             # Change directory
+eza = "latest"                                                                                # List files
+bat = "latest"                                                                                # View files
+fd = "latest"                                                                                 # Find files
+ripgrep = "latest"                                                                            # Search files
+delta = "latest"                                                                              # Compare files
+difftastic = "latest"                                                                         # Compare files
+"cargo:https://github.com/tummychow/git-absorb" = "latest"                                    # Git utility for fixups # TODO: Add to official registry
+"cargo:https://github.com/chmln/sd" = { version = "latest", crate = "sd" }                    # Search and replace files # TODO: Add to official registry
+"cargo:https://github.com/ms-jpq/sad" = "latest"                                              # Search and replace files
+"cargo:choose" = "latest"                                                                     # Extract text from files # TODO: Add to official registry
+"go:github.com/boyter/scc" = "latest"                                                         # Code counter
+tokei = "latest"                                                                              # Code counter
+hyperfine = "latest"                                                                          # Benchmarking
+grex = "latest"                                                                               # Generate regular expressions
+"cargo:https://github.com/ouch-org/ouch" = "latest"                                           # Compress and decompress files # TODO: Add to official registry
+"go:github.com/ericchiang/pup" = "latest"                                                     # HTML toolkit # TODO: Add to official registry
+"go:github.com/sibprogrammer/xq" = "latest"                                                   # XML and HTML toolkit # TODO: Add to official registry
+"cargo:https://github.com/medialab/xan" = "latest"                                            # CSV toolkit # TODO: Add to official registry
+"cargo:https://github.com/01mf02/jaq" = { version = "latest", crate = "jaq" }                 # JSON toolkit # TODO: Add to official registry
+gojq = "latest"                                                                               # JSON toolkit
+taplo = "latest"                                                                              # TOML toolkit
+yq = "latest"                                                                                 # JSON, TOML, YAML, XML and CSV toolkit
+dasel = "latest"                                                                              # JSON, TOML, YAML, XML and CSV toolkit
+qsv = "latest"                                                                                # Data wrangling toolkit
+watchexec = "latest"                                                                          # File watcher
+# "cargo:https://github.com/Nukesor/pueue" = "latest"                                         # Background task executor # TODO: Add to official registry # TODO: Enable this
+"cargo:https://github.com/aaronriekenberg/rust-parallel" = "latest" # Parse arguments and execute commands # TODO: Add to official registry
+"cargo:https://github.com/houseabsolute/precious" = "latest"        # Linter and formatter # TODO: Add to official registry
+dprint = "latest"                                                   # Formatter
+# "go:github.com/numtide/treefmt" = "latest"                                                  # Formatter # TODO: Add to official registry # TODO: Enable this
+lefthook = "latest"                                                                  # Git hook manager
+age = "latest"                                                                       # Encryption
+"cargo:https://github.com/str4d/rage" = { version = "latest", crate = "rage" }       # Encryption # TODO: Add to official registry
+"cargo:https://github.com/jedisct1/rsign2" = "latest"                                # Signing # TODO: Add to official registry
+sops = "latest"                                                                      # Configuration file encryption
+"cargo:https://github.com/gibbz00/rops" = { version = "latest", crate = "rops-cli" } # Configuration file encryption # TODO: Add to official registry
+xh = "latest"                                                                        # HTTP client
+curlie = "latest"                                                                    # HTTP client
+grpcurl = "latest"                                                                   # gRPC client
