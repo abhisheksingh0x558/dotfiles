@@ -105,3 +105,6 @@ starship = "latest"                                                             
 "aqua:carapace-sh/carapace-bin" = "latest"                                                     # Autocompletion # TODO: Add to official registry
 "cargo:https://github.com/iffse/pay-respects" = { version = "latest", crate = "pay-respects" } # Autocorrection # TODO: Add to official registry
 direnv = "latest"                                                                              # Environment manager
+
+# LLM utilities
+ollama = "latest" # Run servers locally
