@@ -1,0 +1,53 @@
+# Git
+g = "git"
+grm = "git rm"
+ggrep = "git grep"
+
+# Just
+j = "just"
+jc = "just --choose"
+jl = "just --list"
+jg = "just --global-justfile"
+jgc = "just --global-justfile --choose"
+jgl = "just --global-justfile --list"
+
+# Chezmoi
+cz = "chezmoi"
+cza = "chezmoi add"
+czy = "chezmoi apply"
+czd = "chezmoi diff"
+czg = "chezmoi git"
+czi = "chezmoi init"
+
+# Zoxide
+l = "z -"
+h = "z"
+r = "z $(git rev-parse --show-toplevel)"
+
+# Eza
+eza = "eza --all"
+
+# Fd
+fd = "fd --hidden"
+
+# Kubernetes
+k = "kubectl"
+# Kubernetes get
+kg = "kubectl get"
+kgd = "kubectl get deployments"
+kgp = "kubectl get pods"
+kgs = "kubectl get services"
+# Kubernetes describe
+kd = "kubectl describe"
+kdd = "kubectl describe deployments"
+kdp = "kubectl describe pods"
+kds = "kubectl describe services"
+
+# Emacs
+emacs = "emacs --no-window-system"
+
+# Doomemacs
+doomemacs = "emacs --no-window-system --init-directory ~/.config/doomemacs"
+
+# LazyVim
+lazyvim = "NVIM_APPNAME=lazyvim nvim"
