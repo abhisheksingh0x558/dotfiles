@@ -8,4 +8,7 @@ require("lazy").setup({
 
 	-- Lua libraries
 	"nvim-neotest/nvim-nio", -- TODO: Use luarocks to manage this and remove from here
+
+	-- Lua transpiler
+	{ "rktjmp/hotpot.nvim", opts = {} },
 })
