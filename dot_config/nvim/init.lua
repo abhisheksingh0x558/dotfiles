@@ -8,4 +8,10 @@ require("lazy").setup({
 		opts = {},
 	},
 	"echasnovski/mini.nvim",
+
+	-- Lua transpiler
+	{
+		"rktjmp/hotpot.nvim",
+		opts = {},
+	},
 })
