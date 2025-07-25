@@ -606,6 +606,13 @@ local languages = {
 		linters = { "luacheck" },
 		formatters = { "stylua" },
 	},
+
+	-- Fennel
+	fennel = {
+		language_server = "fennel_ls",
+		linters = { "fennel" },
+		formatters = { "fnlfmt" },
+	},
 }
 
 -- Setup language tools
