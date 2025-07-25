@@ -36,4 +36,11 @@ brew "make"          # Build system
 brew "gnupg"         # Encryption and signing
 brew "gh"            # GitHub client
 
+# TUIs
+brew "fzf"     # Fuzzy finder
+brew "neovim"  # Text editor
+brew "lazygit" # Git client
+brew "zellij"  # Terminal multiplexer
+brew "bottom"  # System monitor
+
 {{ includeTemplate (printf "Brewfile.%s" .profile) -}}
