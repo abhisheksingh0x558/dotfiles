@@ -17,3 +17,8 @@ fi
 go_bin=$(go env GOBIN)
 path+="${go_bin:-$(go env GOPATH)/bin}"
 unset go_bin
+
+# Source local profile
+profile_file=~/.profile.local.zsh
+[[ -f $profile_file ]] && source "$profile_file"
+unset profile_file
