@@ -26,3 +26,8 @@ if (( $+commands[cargo] )) &>/dev/null; then
 	[[ -d $rust_bin ]] && path+=$rust_bin
 	unset rust_bin
 fi
+
+# Source local profile
+profile_file=~/.zprofile.local
+[[ -f $profile_file ]] && source "$profile_file"
+unset profile_file
