@@ -1,0 +1,4 @@
+# Show hidden files
+--hidden
+# Respect case if pattern has upper case characters otherwise ignore it
+--smart-case
