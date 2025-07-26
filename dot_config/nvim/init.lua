@@ -320,4 +320,45 @@ require("lazy").setup({
 			},
 		},
 	},
+
+	-- VCS integration
+	-- Git client
+	{
+		"NeogitOrg/neogit",
+		lazy = false,
+		opts = {},
+		keys = {
+			{ "<Leader>gg", "<Cmd>Neogit<CR>" }, -- Open git client
+		},
+	},
+	-- Git commands in file
+	{
+		"lewis6991/gitsigns.nvim",
+		lazy = false,
+		opts = {},
+		keys = {
+			{ "<Leader>gb", "<Cmd>Gitsigns blame<CR>" }, -- Blame
+			{ "[c", "<Cmd>Gitsigns nav_hunk prev<CR>" }, -- Goto previous hunk
+			{ "]c", "<Cmd>Gitsigns nav_hunk next<CR>" }, -- Goto next hunk
+			{ "[C", "<Cmd>Gitsigns nav_hunk first<CR>" }, -- Goto first hunk
+			{ "]C", "<Cmd>Gitsigns nav_hunk last<CR>" }, -- Goto last hunk
+		},
+	},
+	{
+		"folke/snacks.nvim",
+		opts = {
+			gitbrowse = { enabled = true },
+		},
+		keys = {
+			-- Open git forge for current file in browser
+			{
+				"<Leader>gB",
+				function()
+					Snacks.gitbrowser()
+				end,
+			},
+		},
+	},
+	{ "akinsho/git-conflict.nvim", opts = {} },
+	{ "sindrets/diffview.nvim", opts = {} }, -- Cycle diffs
 })
