@@ -358,4 +358,7 @@ require("lazy").setup({
 	},
 	{ "akinsho/git-conflict.nvim", opts = {} },
 	{ "sindrets/diffview.nvim", opts = {} }, -- Cycle diffs
+
+	-- PKM tool
+	"nvim-neorg/neorg", -- TODO: Enable defaults and concealer addons
 })
