@@ -1,3 +1,8 @@
 /README.md # Documentation
 /LICENSE # License
 /install # Installation script
+
+{{ if ne .chezmoi.os "linux" }}
+# Arch Linux only includes
+/.config/paru.txt # Paru applications
+{{ end }}
