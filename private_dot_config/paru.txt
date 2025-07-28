@@ -112,3 +112,6 @@ saber                     # Handwritten note taker
 # goodnotes                 # Handwritten note taker # TODO: Enable this
 # notability                # Handwritten note taker # TODO: Enable this
 perplexity-ai-app         # GenAI
+
+# Lua
+luacheck # Linter # TODO: Move this to mise packages
