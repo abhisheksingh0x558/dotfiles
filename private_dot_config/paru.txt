@@ -115,3 +115,7 @@ perplexity-ai-app         # GenAI
 
 # Lua
 luacheck # Linter # TODO: Move this to mise packages
+
+# Fennel
+fennel # Toolchain # TODO: Move this to mise packages
+fnlfmt # Formatter # TODO: Move this to mise packages
