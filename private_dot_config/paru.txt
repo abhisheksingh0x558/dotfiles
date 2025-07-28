@@ -37,3 +37,78 @@ google-cloud-cli # Google Cloud client
 htop    # System monitor # TODO: Remove this
 btop    # System monitor # TODO: Remove this
 glances # System monitor # TODO: Remove this
+
+# GUIs
+# pinentry-curses           # Passphrase dialog # TODO: Enable this
+firefox-developer-edition # Browser
+brave                     # Browser
+firefox                   # Browser
+zen                       # Browser
+alacritty                 # Terminal
+wezterm                   # Terminal
+# iterm                    # Terminal # TODO: Enable this
+waveterm                  # Terminal
+ghostty                   # Terminal
+emacs                     # Text editor
+neovide                   # Text editor
+zed                       # Text editor
+vscodium                  # Text editor
+void                      # Text editor
+logseq-desktop            # Note taker
+element-desktop           # Instant messenger
+signal-desktop            # Instant messenger
+keybase-gui               # Instant messenger
+bitwarden                 # Password manager
+proton-pass               # Password manager
+proton-mail               # Email
+insomnia                  # API client
+dbeaver                   # DB client
+# proton-drive              # Cloud storage # TODO: Enable this
+proton-vpn-gtk-app        # VPN
+mockoon                   # Mock server
+podman-desktop            # Podman client
+openlens-bin              # Kubernetes client
+yubico-authenticator      # TOTP generator
+# raycast                   # Application launcher # TODO: Enable this
+# thebrowsercompany-dia     # Browser # TODO: Enable this
+# arc                       # Browser # TODO: Enable this
+google-chrome             # Browser
+warp-terminal-bin         # Terminal
+visual-studio-code-bin    # Text editor
+obsidian                  # Note taker
+notion-app-electron       # Note taker
+p3x-onenote               # Note taker
+cursor-bin                # Text editor
+windsurf                  # Text editor
+discord                   # Instant messenger
+slack-desktop             # Instant messenger
+teams                     # Instant messenger
+1password                 # Password manager
+# readdle-spark             # Mail # TODO: Enable this
+# notion-mail               # Mail # TODO: Enable this
+notion-calendar-electron  # Calendar
+# outlook                   # Calendar # TODO: Enable this
+ticktick                  # Reminder
+linear-nativefier         # Issue tracker
+zoom                      # Video caller
+postman-bin               # API client
+tableplus                 # DB client
+dropbox                   # Cloud storage
+nordvpn-gui               # VPN
+figma-linux               # Design
+# word                      # Word processing # TODO: Enable this
+# excel                     # Spreadsheet # TODO: Enable this
+# powerpoint                # Presentation # TODO: Enable this
+gitkraken                 # Git client
+docker-desktop            # Docker client
+lens-bin                  # Kubernetes client
+goland                    # IDE
+chatgpt-desktop           # GenAI
+claude-desktop            # GenAI
+saber                     # Handwritten note taker
+# numbers                   # Spreadsheet # TODO: Enable this
+# pages                     # Word processing # TODO: Enable this
+# keynote                   # Presentation # TODO: Enable this
+# goodnotes                 # Handwritten note taker # TODO: Enable this
+# notability                # Handwritten note taker # TODO: Enable this
+perplexity-ai-app         # GenAI
