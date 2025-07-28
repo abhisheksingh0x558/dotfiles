@@ -119,3 +119,8 @@ luacheck # Linter # TODO: Move this to mise packages
 # Fennel
 fennel # Toolchain # TODO: Move this to mise packages
 fnlfmt # Formatter # TODO: Move this to mise packages
+
+# Haskell
+haskell-language-server # Language server # TODO: Move this to mise packages
+hlint                   # Linter # TODO: Move this to mise packages
+haskell-fourmolu        # Formatter # TODO: Move this to mise packages
