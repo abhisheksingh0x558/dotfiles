@@ -4,3 +4,6 @@ elvish
 fish
 zsh
 bash
+
+# Key mapper
+keyd
