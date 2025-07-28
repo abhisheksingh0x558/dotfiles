@@ -2,3 +2,8 @@
 /LICENSE # License
 /justfile # Just
 /install # Installation script
+
+{{ if ne .chezmoi.os "linux" }}
+# Arch Linux only includes
+/.config/paru.txt # Paru applications
+{{ end }}
