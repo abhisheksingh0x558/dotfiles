@@ -32,3 +32,8 @@ curl             # HTTP client # TODO: Remove this
 graphqurl        # GraphQL client # TODO: Remove this
 ngrok            # Expose local web server to internet
 google-cloud-cli # Google Cloud client
+
+# TUIs
+htop    # System monitor # TODO: Remove this
+btop    # System monitor # TODO: Remove this
+glances # System monitor # TODO: Remove this
