@@ -10,3 +10,25 @@ keyd
 
 # Fonts
 font-fira-code-nerd-font
+
+# CLIs
+mise             # Tool version manager
+uutils-findutils # Find utilities
+uutils-diffutils # Diff utilities
+nginx            # Web server and reverse proxy
+aws-cli-v2       # AWS client
+azure-cli        # Azure client
+yubikey-manager  # YubiKey client
+git              # VCS # TODO: Remove this
+grep             # Search files # TODO: Remove this
+make             # Build system # TODO: Remove this
+gnupg            # Encryption and signing # TODO: Remove this
+entr             # File watcher # TODO: Remove this
+watchman         # File watcher # TODO: Remove this
+minisign         # Signing # TODO: Remove this
+httpie           # HTTP client # TODO: Remove this
+wget             # HTTP client # TODO: Remove this
+curl             # HTTP client # TODO: Remove this
+graphqurl        # GraphQL client # TODO: Remove this
+ngrok            # Expose local web server to internet
+google-cloud-cli # Google Cloud client
