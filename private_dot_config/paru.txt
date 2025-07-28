@@ -7,3 +7,6 @@ bash
 
 # Key mapper
 keyd
+
+# Fonts
+font-fira-code-nerd-font
