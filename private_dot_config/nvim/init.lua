@@ -92,6 +92,9 @@ vim.opt.smartcase = true -- Respect case if pattern has upper case characters ot
 vim.opt.splitright = true -- Put new window towards right on vertical split
 vim.opt.splitbelow = true -- Put new window towards bottom on horizontal split
 
+-- Spell checker
+vim.opt.spell = true
+
 require("lazy").setup({
 	-- Collection of plugins
 	{ "folke/snacks.nvim", opts = {} },
