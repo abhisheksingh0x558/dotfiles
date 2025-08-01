@@ -35,6 +35,11 @@ if command -v go &>/dev/null; then
 	unset go_bin
 fi
 
+# Source local profile
+profile_file=~/.bash_profile.local
+[[ -f $profile_file ]] && source "$profile_file"
+unset profile_file
+
 # Source run commands
 rc_file=~/.bashrc
 [[ -f $rc_file ]] && source "$rc_file"
