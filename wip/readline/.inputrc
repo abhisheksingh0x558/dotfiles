@@ -1,0 +1,18 @@
+set editing-mode emacs
+set bell-style visible
+set colored-stats On
+set completion-ignore-case On
+set completion-prefix-display-length 3
+set mark-symlinked-directories On
+set show-all-if-ambiguous On
+set show-all-if-unmodified On
+set visible-stats On
+
+# Bind up and down to incrementally search history
+"\e[A": history-search-backward
+"\e[B": history-search-forward
+# Ensure left and right work as expected with the above.
+"\e[C": forward-char
+"\e[D": backward-char
+
+"\C-n": menu-complete

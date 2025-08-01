@@ -1,0 +1,15 @@
+#!/bin/sh
+# Wrapper around /usr/bin/mosh, which enables mouse forwarding
+#
+# Source: https://github.com/keithw/mosh/issues/101#issuecomment-12317162
+
+# Enable mouse forwarding
+perl -E ' print "\e[?1005h\e[?1002h" '
+
+# run mosh
+mosh "$@"
+
+echo "Undoing mouse forwarding and resetting terminal in 5 seconds"
+sleep 5
+# reset the terminal after mosh exits, to undo mouse forwarding effects.
+reset

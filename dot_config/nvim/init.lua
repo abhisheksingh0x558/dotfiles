@@ -434,56 +434,54 @@ require("lazy").setup({
 	-- Treesitter integration
 	{
 		"nvim-treesitter/nvim-treesitter",
-		branch = "main", -- TODO: Remove this when main is set as default branch
 		build = ":TSUpdate",
 		config = function()
-			require("nvim-treesitter").install("all") -- Install all parsers asynchronously
+			require("nvim-treesitter.configs").setup({
+				auto_install = true,
+				highlight = { enable = true },
+				textobjects = {
+					select = {
+						enable = true,
+						lookahead = true, -- Automatically jump forward to text object
+						keymaps = {
+							["af"] = "@function.outer", -- Select outside function
+							["if"] = "@function.inner", -- Select inside function
+							["ac"] = "@class.outer", -- Select outside class
+							["ic"] = "@class.inner", -- Select inside class
+							["aa"] = "@parameter.outer", -- Select outside parameter
+							["ia"] = "@parameter.inner", -- Select inside parameter
+						},
+					},
+					move = {
+						enable = true,
+						goto_next_start = {
+							["]m"] = "@function.outer", -- Goto start of next function
+							["]]"] = "@class.outer", -- Goto start of next class
+							["]a"] = "@parameter.inner", -- Goto start of next parameter
+						},
+						goto_next_end = {
+							["]M"] = "@function.outer", -- Goto end of next function
+							["]["] = "@class.outer", -- Goto end of next class
+							["]A"] = "@parameter.inner", -- Goto end of next parameter
+						},
+						goto_previous_start = {
+							["[m"] = "@function.outer", -- Goto start of previous function
+							["[["] = "@class.outer", -- Goto start of previous class
+							["[a"] = "@parameter.inner", -- Goto start of previous parameter
+						},
+						goto_previous_end = {
+							["[M"] = "@function.outer", -- Goto end of previous function
+							["[]"] = "@class.outer", -- Goto end of previous class
+							["[A"] = "@parameter.inner", -- Goto end of previous parameter
+						},
+					},
+				},
+			})
 			vim.treesitter.language.register("bash", "zsh") -- TODO: Remove this when zsh parser is supported officially
 		end,
 	},
 	-- Text objects
-	{
-		"nvim-treesitter/nvim-treesitter-textobjects",
-		branch = "main", -- TODO: Remove this when main is set as default branch
-		-- TODO: Define other keymaps
-		opts = {
-			select = {
-				enable = true,
-				lookahead = true, -- Automatically jump forward to text object
-				keymaps = {
-					["af"] = "@function.outer", -- Select outside function
-					["if"] = "@function.inner", -- Select inside function
-					["ac"] = "@class.outer", -- Select outside class
-					["ic"] = "@class.inner", -- Select inside class
-					["aa"] = "@parameter.outer", -- Select outside parameter
-					["ia"] = "@parameter.inner", -- Select inside parameter
-				},
-			},
-			move = {
-				enable = true,
-				goto_next_start = {
-					["]m"] = "@function.outer", -- Goto start of next function
-					["]]"] = "@class.outer", -- Goto start of next class
-					["]a"] = "@parameter.inner", -- Goto start of next parameter
-				},
-				goto_next_end = {
-					["]M"] = "@function.outer", -- Goto end of next function
-					["]["] = "@class.outer", -- Goto end of next class
-					["]A"] = "@parameter.inner", -- Goto end of next parameter
-				},
-				goto_previous_start = {
-					["[m"] = "@function.outer", -- Goto start of previous function
-					["[["] = "@class.outer", -- Goto start of previous class
-					["[a"] = "@parameter.inner", -- Goto start of previous parameter
-				},
-				goto_previous_end = {
-					["[M"] = "@function.outer", -- Goto end of previous function
-					["[]"] = "@class.outer", -- Goto end of previous class
-					["[A"] = "@parameter.inner", -- Goto end of previous parameter
-				},
-			},
-		},
-	},
+	{ "nvim-treesitter/nvim-treesitter-textobjects" },
 
 	-- LSP integration
 	{
@@ -728,14 +726,6 @@ local languages = {
 -- Setup language tools
 require("lint").linters_by_ft = {}
 local function setup_language(filetype, config)
-	-- Enabled treesitter syntax highlighting
-	vim.api.nvim_create_autocmd("FileType", {
-		group = vim.api.nvim_create_augroup("treesitter-highlight", {}),
-		pattern = filetype,
-		callback = function()
-			vim.treesitter.start()
-		end,
-	})
 	-- Register language server
 	if config.language_server then
 		vim.lsp.enable(config.language_server)
