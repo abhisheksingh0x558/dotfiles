@@ -46,3 +46,9 @@ for key in "${ssh_keys[@]}"; do
 	[[ -f $key ]] && eval "$(keychain --eval --quiet "$key")"
 done
 unset ssh_keys
+
+# Source run commands
+# TODO: Do this in a better way
+rc_file=~/.bashrc
+[[ -f $rc_file ]] && source "$rc_file"
+unset rc_file
