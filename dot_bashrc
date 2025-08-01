@@ -8,3 +8,6 @@ eval "$(sheldon source)" # Load plugin manager
 rc_file=~/.rc.local.bash
 [[ -f $rc_file ]] && source "$rc_file"
 unset rc_file
+
+# UI/UX
+eval "$(starship init bash)" # Shell prompt

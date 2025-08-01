@@ -26,3 +26,10 @@ export PATH
 profile_file=~/.profile.local.bash
 [[ -f $profile_file ]] && source "$profile_file"
 unset profile_file
+
+# UI/UX
+# TODO: Configure history file and settings
+export EDITOR=nvim                 # Default editor
+export DELTA_FEATURES=line-numbers # Feature to enable for delta
+export DFT_DISPLAY=inline          # Display style for difftastic
+export JUST_UNSTABLE=1             # Enable unstable just features # TODO: Remove this
