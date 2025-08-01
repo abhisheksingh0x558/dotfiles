@@ -24,3 +24,11 @@ command -v starship &>/dev/null && eval "$(starship init bash)"                 
 # Autocompletion
 command -v carapace &>/dev/null && eval "$(carapace _carapace bash)" # Autocompletion
 command -v pay-respects &>/dev/null && eval "$(pay-respects bash)"   # Autocorrection
+
+# Fuzzy finder
+if command -v fzf &>/dev/null; then
+	export FZF_DEFAULT_OPTS=--reverse # Display style for fzf
+	eval "$(fzf --bash)"
+fi
+command -v zoxide &>/dev/null && eval "$(zoxide init bash)" # Change directory
+command -v atuin &>/dev/null && eval "$(atuin init bash)"  # History
