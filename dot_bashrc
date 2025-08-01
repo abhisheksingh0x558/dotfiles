@@ -3,3 +3,8 @@
 
 # Plugin manager
 eval "$(sheldon source)" # Load plugin manager
+
+# Source local run commands
+rc_file=~/.bashrc.local
+[[ -f $rc_file ]] && source "$rc_file"
+unset rc_file
