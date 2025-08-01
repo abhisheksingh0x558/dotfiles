@@ -36,3 +36,12 @@ export JUST_UNSTABLE=1             # Enable unstable just features # TODO: Remov
 
 # Fuzzy finder
 export FZF_DEFAULT_OPTS=--reverse # Display style for fzf
+
+# Key manager
+ssh_keys=(
+	~/.ssh/default/auth_git_forge # Default git forge
+)
+for key in "${ssh_keys[@]}"; do
+	[[ -f $key ]] && eval "$(keychain --eval --quiet "$key")"
+done
+unset ssh_keys
