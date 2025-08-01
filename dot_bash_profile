@@ -7,6 +7,34 @@ eval "$(mise activate bash --shims)"
 # Environment
 export GOPATH=~/.go # Global Go directory
 
+# Path
+# TODO: Enforce de-duplication of path elements
+# Custom scripts
+local_bin=~/.bin
+[[ -d $local_bin ]] && PATH="$local_bin:$PATH"
+unset local_bin
+# Add Homebrew to path on MacOS
+if [[ $(uname -s) == "Darwin" ]]; then
+	if [[ $(uname -m) == "arm64" ]]; then
+		eval "$(/opt/homebrew/bin/brew shellenv)"
+	elif [[ $(uname -m) == "x86_64" ]]; then
+		eval "$(/usr/local/bin/brew shellenv)"
+	fi
+fi
+# Global Rust binaries
+if command -v cargo &>/dev/null; then
+	rust_bin="${CARGO_HOME:-$HOME/.cargo}/bin"
+	[[ -d $rust_bin ]] && PATH="$rust_bin:$PATH"
+	unset rust_bin
+fi
+# Global Go binaries
+if command -v go &>/dev/null; then
+	go_bin=$(go env GOBIN)
+	go_bin="${go_bin:-$(go env GOPATH)/bin}"
+	[[ -d $go_bin ]] && PATH="$go_bin:$PATH"
+	unset go_bin
+fi
+
 # Source run commands
 rc_file=~/.bashrc
 [[ -f $rc_file ]] && source "$rc_file"
