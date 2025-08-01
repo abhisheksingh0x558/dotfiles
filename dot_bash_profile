@@ -21,3 +21,8 @@ go_bin=$(go env GOBIN)
 PATH="${go_bin:-$(go env GOPATH)/bin}:$PATH"
 unset go_bin
 export PATH
+
+# Source local profile
+profile_file=~/.profile.local.bash
+[[ -f $profile_file ]] && source "$profile_file"
+unset profile_file
