@@ -20,3 +20,7 @@ command -v difft &>/dev/null && export DFT_DISPLAY=inline                       
 command -v just &>/dev/null && export JUST_UNSTABLE=1                                 # Enable unstable just features # TODO: Remove this
 command -v ripgrep &>/dev/null && export RIPGREP_CONFIG_PATH=~/.config/ripgrep/config # Ripgrep settings
 command -v starship &>/dev/null && eval "$(starship init bash)"                       # Shell prompt
+
+# Autocompletion
+command -v carapace &>/dev/null && eval "$(carapace _carapace bash)" # Autocompletion
+command -v pay-respects &>/dev/null && eval "$(pay-respects bash)"   # Autocorrection
