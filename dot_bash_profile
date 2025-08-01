@@ -1,0 +1,5 @@
+# -*- mode: sh -*-
+# vim: filetype=sh
+
+# Version manager
+eval "$(mise activate bash --shims)"
