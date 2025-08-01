@@ -11,3 +11,7 @@ unset rc_file
 
 # UI/UX
 eval "$(starship init bash)" # Shell prompt
+
+# Autocompletion
+eval "$(carapace _carapace bash)" # Autocompletion
+eval "$(pay-respects bash)"       # Autocorrection
