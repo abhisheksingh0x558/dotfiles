@@ -35,3 +35,11 @@ command -v atuin &>/dev/null && eval "$(atuin init bash)"   # History
 
 # Environment manager
 command -v direnv &>/dev/null && eval "$(direnv hook bash)"
+
+# Aliases
+# Define common aliases
+if command -v yq &>/dev/null && command -v sd &>/dev/null; then
+	eval "$(yq --output-format=shell ~/.alias.toml | sd '^(.+)' 'alias $1')"
+fi
+# Define Git aliases
+eval "$(git config --get-regexp '^alias\.' | sd 'alias.(\w+) (!git )?(.+)' "alias g\$1='git \$3'")"
