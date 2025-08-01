@@ -84,19 +84,19 @@ terragrunt = "latest"                                                           
 kubergrunt = "latest"                                                                         # Kubernetes integration with Helm and Terraform # TODO: Remove this
 
 # TUIs
-fzf = "latest"                                   # Fuzzy finder
-"aqua:skim-rs/skim" = "latest"                   # Fuzzy finder # TODO: Add to official registry
-"go:github.com/akavel/up" = "latest"             # Utility for writing pipes # TODO: Add to official registry
-lazygit = "latest"                               # Git client
-gitui = "latest"                                 # Git client
-zellij = "latest"                                # Terminal multiplexer
-bottom = "latest"                                # System monitor
-"aqua:bvaisvil/zenith" = "latest"                # System monitor # TODO: Add to official registry
-"aqua:xxxserxxx/gotop" = "latest"                # System monitor # TODO: Add to official registry
-neovim = "latest"                                # Text editor
-"go:github.com/containers/podman-tui" = "latest" # Podman client
-lazydocker = "latest"                            # Docker client
-k9s = "latest"                                   # Kubernetes client
+fzf = "latest"                       # Fuzzy finder
+"aqua:skim-rs/skim" = "latest"       # Fuzzy finder # TODO: Add to official registry
+"go:github.com/akavel/up" = "latest" # Utility for writing pipes # TODO: Add to official registry
+lazygit = "latest"                   # Git client
+gitui = "latest"                     # Git client
+zellij = "latest"                    # Terminal multiplexer
+bottom = "latest"                    # System monitor
+"aqua:bvaisvil/zenith" = "latest"    # System monitor # TODO: Add to official registry
+"aqua:xxxserxxx/gotop" = "latest"    # System monitor # TODO: Add to official registry
+neovim = "latest"                    # Text editor
+# "go:github.com/containers/podman-tui" = "latest" # podman client # todo: enable this
+lazydocker = "latest" # docker client
+k9s = "latest"        # Kubernetes client
 
 # Shell utilities
 "cargo:https://github.com/rossmacarthur/sheldon" = "latest"                                    # Plugin manager # TODO: Add to official registry
