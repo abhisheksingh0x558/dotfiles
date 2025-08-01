@@ -15,3 +15,8 @@ eval "$(starship init bash)" # Shell prompt
 # Autocompletion
 eval "$(carapace _carapace bash)" # Autocompletion
 eval "$(pay-respects bash)"       # Autocorrection
+
+# Fuzzy finder
+eval "$(fzf --bash)"
+eval "$(zoxide init bash)" # Change directory
+eval "$(atuin init bash)"  # History
