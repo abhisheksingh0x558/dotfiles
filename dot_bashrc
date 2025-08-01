@@ -20,3 +20,6 @@ eval "$(pay-respects bash)"       # Autocorrection
 eval "$(fzf --bash)"
 eval "$(zoxide init bash)" # Change directory
 eval "$(atuin init bash)"  # History
+
+# Environment manager
+eval "$(direnv hook bash)"
