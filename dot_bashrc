@@ -11,3 +11,12 @@ command -v sheldon &>/dev/null && eval "$(sheldon source)" # Load plugin manager
 rc_file=~/.bashrc.local
 [[ -f $rc_file ]] && source "$rc_file"
 unset rc_file
+
+# UI/UX
+# TODO: Configure history file and settings
+command -v nvim &>/dev/null && export EDITOR=nvim                                     # Default editor
+command -v delta &>/dev/null && export DELTA_FEATURES=line-numbers                    # Feature to enable for delta
+command -v difft &>/dev/null && export DFT_DISPLAY=inline                             # Display style for difftastic
+command -v just &>/dev/null && export JUST_UNSTABLE=1                                 # Enable unstable just features # TODO: Remove this
+command -v ripgrep &>/dev/null && export RIPGREP_CONFIG_PATH=~/.config/ripgrep/config # Ripgrep settings
+command -v starship &>/dev/null && eval "$(starship init bash)"                       # Shell prompt
