@@ -3,3 +3,21 @@
 
 # Version manager
 eval "$(mise activate bash --shims)"
+
+# Path
+# TODO: Enforce de-duplication of path elements
+PATH="$HOME/.local/bin:$PATH" # Custom scripts
+# Add Homebrew to path on MacOS
+if [[ $(uname -s) == "Darwin" ]]; then
+	if [[ $(uname -m) == "arm64" ]]; then
+		eval "$(/opt/homebrew/bin/brew shellenv)"
+	elif [[ $(uname -m) == "x86_64" ]]; then
+		eval "$(/usr/local/bin/brew shellenv)"
+	fi
+fi
+PATH="${CARGO_HOME:-$HOME/.cargo}/bin:$PATH" # Global Rust binaries
+# Global Go binaries
+go_bin=$(go env GOBIN)
+PATH="${go_bin:-$(go env GOPATH)/bin}:$PATH"
+unset go_bin
+export PATH
