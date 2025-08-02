@@ -1,0 +1,5 @@
+# -*- mode: sh -*-
+# vim: filetype=sh
+
+# Plugin manager
+eval "$(sheldon source)" # Load plugin manager
