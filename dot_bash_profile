@@ -1,0 +1,7 @@
+# -*- mode: sh -*-
+# vim: filetype=sh
+
+# Source run commands
+rc_file=~/.bashrc
+[[ -f $rc_file ]] && source "$rc_file"
+unset rc_file
