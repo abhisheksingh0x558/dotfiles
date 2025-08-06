@@ -663,6 +663,13 @@ local languages = {
 	-- TODO: Setup Clojure
 
 	-- TODO: Setup Kotlin
+
+	-- JavaScript
+	javascript = {
+		-- TODO: Add language server
+		-- TODO: Add linters
+		formatters = { "biome" },
+	},
 }
 
 -- Setup language tools
