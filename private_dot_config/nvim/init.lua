@@ -126,6 +126,13 @@ local languages = {
 		-- TODO: Add linters
 		formatters = { "purs-tidy" },
 	},
+
+	-- TypeScript
+	typescript = {
+		language_server = "biome",
+		linters = { "biomejs" },
+		formatters = { "biome" },
+	},
 }
 
 -- Setup language tools
