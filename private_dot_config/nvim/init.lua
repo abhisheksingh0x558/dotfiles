@@ -112,6 +112,13 @@ local languages = {
 	-- TODO: Setup Clojure
 
 	-- TODO: Setup Kotlin
+
+	-- JavaScript
+	javascript = {
+		language_server = "biome",
+		linters = { "biomejs" },
+		formatters = { "biome" },
+	},
 }
 
 -- Setup language tools
