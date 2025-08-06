@@ -782,6 +782,8 @@ local languages = {
 		-- TODO: Add linters
 		formatters = { "purs-tidy" },
 	},
+
+	-- TODO: Setup TypeScript
 }
 
 -- Setup language tools
