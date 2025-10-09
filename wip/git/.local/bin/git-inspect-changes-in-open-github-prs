@@ -1,0 +1,4 @@
+#!/usr/bin/env zsh
+
+# List all active PRs, and for each of them, list changes in the PR
+hub pr list -f "%I%n" | while read -n prnum; do echo "Inspecting PR #$prnum"; hub pr checkout $prnum;PAGER=cat git diff --name-status --no-ext-diff origin/master HEAD; done
