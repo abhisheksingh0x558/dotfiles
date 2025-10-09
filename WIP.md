@@ -862,10 +862,8 @@ forgit
 43. Stack Overflow and Stack Exchange
 45. Terraspace
 45. Openspace
-45. Kubectl
 46. Containerd
 48. Systemd
-49. Colima
 49. Rancher
 50. Haskell with Stack and Cabal
 51. Atuin desktop

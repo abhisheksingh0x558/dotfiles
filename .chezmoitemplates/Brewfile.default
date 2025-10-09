@@ -1,0 +1,57 @@
+# -*- mode: ruby-ts -*-
+# vim: filetype=ruby
+
+# Shells
+brew "zsh"
+brew "bash"
+
+# Key mapper
+cask "karabiner-elements"
+
+# Fonts
+cask "font-fira-code-nerd-font"
+
+# CLIs
+brew "mise"          # Tool version manager
+brew "git"           # VCS
+brew "git-absorb"    # Git utility for fixups
+brew "just"          # Command runner
+brew "chezmoi"       # Dotfile manager
+brew "zoxide"        # Change directory
+brew "eza"           # List files
+brew "bat"           # View files
+brew "fd"            # Find files
+brew "ripgrep"       # Search files
+brew "delta"         # Compare files
+brew "sd"            # Search and replace files
+brew "choose"        # Extract text from files
+brew "rust-parallel" # Parse arguments and execute commands
+brew "scc"           # Code counter
+brew "hyperfine"     # Benchmarking
+brew "procs"         # View running processes
+brew "taplo"         # TOML toolkit
+brew "yq"            # JSON, TOML, YAML, XML and CSV toolkit
+brew "make"          # Build system
+brew "gnupg"         # Encryption and signing
+
+# TUIs
+brew "fzf"     # Fuzzy finder
+brew "neovim"  # Text editor
+brew "lazygit" # Git client
+brew "zellij"  # Terminal multiplexer
+brew "bottom"  # System monitor
+
+# GUIs
+brew "pinentry-mac"  # Passphrase dialog
+cask "brave-browser" # Browser
+cask "ghostty"       # Terminal
+cask "emacs-app"     # Text editor
+cask "neovide-app"   # Text editor
+
+# Shell utilities
+brew "starship" # Prompt
+brew "atuin"    # History
+brew "carapace" # Autocompletion
+# Autocorrection # TODO: Add to official registry
+tap "timescam/tap"
+brew "timescam/tap/pay-respects"

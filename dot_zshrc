@@ -5,7 +5,7 @@
 source ~/.local/share/zinit/plugins/zdharma-continuum---zinit/zinit.zsh # Load plugin manager
 
 # Source local run commands
-rc_file=~/.rc.local.zsh
+rc_file=~/.zshrc.local
 [[ -f $rc_file ]] && source "$rc_file"
 unset rc_file
 
@@ -36,11 +36,11 @@ source <(zoxide init zsh)                           # Change directory
 zvm_after_init_commands+='source <(atuin init zsh)' # History, direct sourcing causes conflicts with vi mode plugin
 
 # Environment manager
-source <(direnv hook zsh)
+(( $+commands[direnv] )) &> /dev/null && source <(direnv hook zsh)
 
 # Git client
-zinit light kazhala/dotbare
-zinit light wfxr/forgit
+# zinit light kazhala/dotbare # TODO: Enable this
+# zinit light wfxr/forgit # TODO: Enable this
 
 # Aliases
 # Define common aliases

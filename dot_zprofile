@@ -14,21 +14,20 @@ if [[ $(uname -s) == "Darwin" ]]; then
 	fi
 fi
 # Global Go binaries
-go_bin=$(go env GOBIN)
-path+="${go_bin:-$(go env GOPATH)/bin}"
-unset go_bin
+if (( $+commands[go] )) &> /dev/null; then
+	go_bin=$(go env GOBIN)
+	go_bin="${go_bin:-$(go env GOPATH)/bin}"
+	[[ -d $go_bin ]] && path+=$go_bin
+	unset go_bin
+fi
+# Global Rust binaries
+if (( $+commands[cargo] )) &> /dev/null; then
+	rust_bin="${CARGO_HOME:-$HOME/.cargo}/bin"
+	[[ -d $rust_bin ]] && path+=$rust_bin
+	unset rust_bin
+fi
 
 # Source local profile
-profile_file=~/.profile.local.zsh
+profile_file=~/.zprofile.local
 [[ -f $profile_file ]] && source "$profile_file"
 unset profile_file
-
-# Key manager
-ssh_keys=(
-	~/.ssh/default/auth_git_forge   # Default git forge
-	~/.ssh/nightfall/auth_git_forge # Nightfall git forge # TODO: Remove this
-)
-for key in "${ssh_keys[@]}"; do
-	[[ -f $key ]] && eval "$(keychain --eval --quiet "$key")"
-done
-unset ssh_keys

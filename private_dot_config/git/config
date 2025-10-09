@@ -5,7 +5,7 @@
 [user]
 	name = Abhishek Singh
 	email = abhisheksingh0x558@proton.me
-	signingKey = 037EFBF4F57F150C
+	signingKey = 0B9ADEA0F3E21BFC
 
 [init]
 	defaultBranch = main # Branch created while initializing repository
@@ -62,14 +62,19 @@
   insteadOf = github:
 [url "git@gitlab.com:"]
   insteadOf = gitlab:
+# TODO: Remove this
+[url "git@cyberhaven.github.com:CyberhavenInc/"]
+  insteadOf = cyberhaven:
 
 [maintenance]
 	# repo = ~/.dotfiles # Hourly run optimization tasks for dotfiles repository in background # TODO: Enable this
 
 # TODO: Remove this
-# Nightfall overrides
-[includeIf "hasconfig:remote.*.url:git@github.com:watchtowerai/*"]
-	path = ~/.config/git/nightfall
+# Cyberhaven overrides
+[includeIf "hasconfig:remote.*.url:git@github.com:CyberhavenInc/*"]
+	path = ~/.config/git/cyberhaven
+[includeIf "hasconfig:remote.*.url:git@cyberhaven.github.com:CyberhavenInc/*"]
+	path = ~/.config/git/cyberhaven
 
 # Aliases
 [alias]
@@ -386,6 +391,9 @@
 	rv = revert --no-commit
 	rve = revert --edit
 	rvn = revert --no-edit
+	rvh = revert --no-commit HEAD
+	rveh = revert --edit HEAD
+	rvnh = revert --no-edit HEAD
 	# Status
 	s = status --short --branch
 	# Send email

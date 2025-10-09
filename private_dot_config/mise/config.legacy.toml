@@ -1,31 +1,13 @@
-[settings]
-experimental = true                      # TODO: Remove this
-idiomatic_version_file_enable_tools = [] # TODO: Remove this
-
 [tools]
 # CLIs
-"aqua:tummychow/git-absorb" = "latest"                                                        # Git utility for fixups # TODO: Add to official registry
 "cargo:https://github.com/GitoxideLabs/gitoxide" = { version = "latest", crate = "gitoxide" } # VCS # TODO: Add to official registry
 coreutils = "latest"                                                                          # Core utilities
-just = "latest"                                                                               # Command runner
 task = "latest"                                                                               # Command runner
-chezmoi = "latest"                                                                            # Dotfile manager
-zoxide = "latest"                                                                             # Change directory
-eza = "latest"                                                                                # List files
-bat = "latest"                                                                                # View files
 bat-extras = "latest"                                                                         # View files
-fd = "latest"                                                                                 # Find files
-ripgrep = "latest"                                                                            # Search files
 ripgrep-all = "latest"                                                                        # Search files
-delta = "latest"                                                                              # Compare files
 difftastic = "latest"                                                                         # Compare files
-"aqua:chmln/sd" = "latest"                                                                    # Search and replace files # TODO: Add to official registry
 "aqua:ms-jpq/sad" = "latest"                                                                  # Search and replace files
-"cargo:choose" = "latest"                                                                     # Extract text from files # TODO: Add to official registry
-"cargo:https://github.com/aaronriekenberg/rust-parallel" = "latest"                           # Parse arguments and execute commands # TODO: Add to official registry
-"aqua:boyter/scc" = "latest"                                                                  # Code counter
 tokei = "latest"                                                                              # Code counter
-hyperfine = "latest"                                                                          # Benchmarking
 "cargo:https://github.com/Nukesor/pueue" = "latest"                                           # Background task executor # TODO: Add to official registry
 watchexec = "latest"                                                                          # File watcher
 grex = "latest"                                                                               # Generate regular expressions
@@ -39,14 +21,11 @@ gdu = "latest"                                                                  
 "aqua:solidiquis/erdtree" = "latest"                                                          # View disk usage
 duf = "latest"                                                                                # View disk usage
 "cargo:https://github.com/Canop/dysk" = "latest"                                              # View disk usage
-"aqua:dalance/procs" = "latest"                                                               # View running processes
 "aqua:ericchiang/pup" = "latest"                                                              # HTML toolkit # TODO: Add to official registry
 "go:github.com/sibprogrammer/xq" = "latest"                                                   # XML and HTML toolkit # TODO: Add to official registry
 "cargo:https://github.com/medialab/xan" = "latest"                                            # CSV toolkit # TODO: Add to official registry
 "aqua:01mf02/jaq" = "latest"                                                                  # JSON toolkit # TODO: Add to official registry
 gojq = "latest"                                                                               # JSON toolkit
-taplo = "latest"                                                                              # TOML toolkit
-yq = "latest"                                                                                 # JSON, TOML, YAML, XML and CSV toolkit
 dasel = "latest"                                                                              # JSON, TOML, YAML, XML and CSV toolkit
 qsv = "latest"                                                                                # Data wrangling toolkit
 "cargo:https://github.com/houseabsolute/precious" = "latest"                                  # Linter and formatter # TODO: Add to official registry
@@ -76,34 +55,21 @@ typst = "latest"                                                                
 "npm:@mermaid-js/mermaid-cli" = "latest"                                                      # Diagram as code # TODO: Add to official registry
 podman = "latest"                                                                             # Containerization
 "pipx:containers/podman-compose" = "latest"                                                   # Containerization
-docker-cli = "latest"                                                                         # Containerization
-kubectl = "latest"                                                                            # Container orchestration
 pulumi = "latest"                                                                             # Infrastructure as code
 opentofu = "latest"                                                                           # Infrastructure as code
 terragrunt = "latest"                                                                         # Infrastructure as code
 kubergrunt = "latest"                                                                         # Kubernetes integration with Helm and Terraform # TODO: Remove this
 
 # TUIs
-fzf = "latest"                                   # Fuzzy finder
-"aqua:skim-rs/skim" = "latest"                   # Fuzzy finder # TODO: Add to official registry
-"go:github.com/akavel/up" = "latest"             # Utility for writing pipes # TODO: Add to official registry
-lazygit = "latest"                               # Git client
-gitui = "latest"                                 # Git client
-zellij = "latest"                                # Terminal multiplexer
-bottom = "latest"                                # System monitor
-"aqua:bvaisvil/zenith" = "latest"                # System monitor # TODO: Add to official registry
-"aqua:xxxserxxx/gotop" = "latest"                # System monitor # TODO: Add to official registry
-neovim = "latest"                                # Text editor
-"go:github.com/containers/podman-tui" = "latest" # Podman client
-lazydocker = "latest"                            # Docker client
-k9s = "latest"                                   # Kubernetes client
+"aqua:skim-rs/skim" = "latest"       # Fuzzy finder # TODO: Add to official registry
+"go:github.com/akavel/up" = "latest" # Utility for writing pipes # TODO: Add to official registry
+gitui = "latest"                     # Git client
+"aqua:bvaisvil/zenith" = "latest"    # System monitor # TODO: Add to official registry
+"aqua:xxxserxxx/gotop" = "latest"    # System monitor # TODO: Add to official registry
+# "go:github.com/containers/podman-tui" = "latest" # podman client # todo: enable this
 
 # Shell utilities
 "cargo:https://github.com/rossmacarthur/sheldon" = "latest"                                    # Plugin manager # TODO: Add to official registry
-starship = "latest"                                                                            # Prompt
-"aqua:atuinsh/atuin" = "latest"                                                                # History
-"aqua:carapace-sh/carapace-bin" = "latest"                                                     # Autocompletion # TODO: Add to official registry
-"cargo:https://github.com/iffse/pay-respects" = { version = "latest", crate = "pay-respects" } # Autocorrection # TODO: Add to official registry
 direnv = "latest"                                                                              # Environment manager
 
 # LLM utilities

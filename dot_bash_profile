@@ -23,7 +23,7 @@ unset go_bin
 export PATH
 
 # Source local profile
-profile_file=~/.profile.local.bash
+profile_file=~/.bash_profile.local
 [[ -f $profile_file ]] && source "$profile_file"
 unset profile_file
 
@@ -36,16 +36,6 @@ export JUST_UNSTABLE=1             # Enable unstable just features # TODO: Remov
 
 # Fuzzy finder
 export FZF_DEFAULT_OPTS=--reverse # Display style for fzf
-
-# Key manager
-ssh_keys=(
-	~/.ssh/default/auth_git_forge   # Default git forge
-	~/.ssh/nightfall/auth_git_forge # Nightfall git forge # TODO: Remove this
-)
-for key in "${ssh_keys[@]}"; do
-	[[ -f $key ]] && eval "$(keychain --eval --quiet "$key")"
-done
-unset ssh_keys
 
 # Source run commands
 # TODO: Do this in a better way

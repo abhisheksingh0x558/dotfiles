@@ -1,0 +1,19 @@
+# TODO: Remove this
+
+[settings]
+experimental = true                      # TODO: Remove this
+idiomatic_version_file_enable_tools = [] # TODO: Remove this
+
+[tools]
+# Rust
+rust = "latest" # Toolchain, package manager, linter and formatter
+
+# Go
+go = "latest"                                     # Toolchain and package manager
+"go:golang.org/x/tools/gopls" = "latest"          # Language server # TODO: Add to official registry
+staticcheck = "latest"                            # Linter
+gofumpt = "latest"                                # Formatter
+"go:github.com/go-delve/delve/cmd/dlv" = "latest" # Debugger # TODO: Add to official registry
+
+# JavaScript
+node = "latest" # Toolchain

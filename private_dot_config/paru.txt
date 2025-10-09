@@ -13,7 +13,6 @@ font-fira-code-nerd-font
 
 # CLIs
 mise             # Tool version manager
-keychain         # Key manager
 uutils-findutils # Find utilities
 uutils-diffutils # Diff utilities
 nginx            # Web server and reverse proxy

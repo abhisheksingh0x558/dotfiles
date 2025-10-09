@@ -1,7 +1,7 @@
 set shell := ["bash", "-o", "errexit", "-o", "nounset", "-o", "pipefail", "-o", "xtrace", "-c"]
 set script-interpreter := ["bash", "-o", "errexit", "-o", "nounset", "-o", "pipefail", "-o", "xtrace", "-c"]
 
-config := home_directory() / ".config" / "paru"
+config := home_directory() / ".config" / "paru.txt"
 
 [linux]
 default: refresh prune sync upgrade

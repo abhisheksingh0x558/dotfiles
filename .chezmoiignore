@@ -1,16 +1,20 @@
-README.md # Documentation
-LICENSE # License
-justfile # Just
-install # Installation script
+/README.md # Documentation
+/LICENSE # License
+/justfile # Just
+/install # Installation script
+/WIP.md # TODO: Remove this
+/wip/ # TODO: Remove this
+/.Brewfile.legacy # TODO: Remove this
+/.config/mise/config.legacy.toml # TODO: Remove this
 
 {{ if ne .chezmoi.os "linux" }}
 # Arch Linux only includes
-.config/paru # Paru applications
-.config/keyd/default.conf # Keyd configuration
+/.config/paru.txt # Paru applications
+/.config/keyd/ # Keyd configuration
 {{ end }}
 
 {{ if ne .chezmoi.os "darwin" }}
 # MacOS only includes
-.Brewfile # Homebrew applications
-.config/karabiner # Karabiner configuration
+/.Brewfile # Homebrew applications
+/.config/karabiner/ # Karabiner configuration
 {{ end }}

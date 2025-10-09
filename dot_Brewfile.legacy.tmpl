@@ -1,0 +1,140 @@
+# -*- mode: ruby-ts -*-
+# vim: filetype=ruby
+
+# Homebrew extensions
+brew "whalebrew" # Docker image installer
+brew "mas"       # MacOS App Store application installer
+
+# Shells
+brew "nushell"
+brew "elvish"
+brew "fish"
+
+# CLIs
+brew "uutils-findutils" # Find utilities
+brew "uutils-diffutils" # Diff utilities
+brew "nginx"            # Web server and reverse proxy
+brew "awscli"           # AWS client
+brew "azure-cli"        # Azure client
+brew "ykman"            # YubiKey client
+brew "grep"             # Search files # TODO: Remove this
+brew "entr"             # File watcher # TODO: Remove this
+brew "watchman"         # File watcher # TODO: Remove this
+brew "minisign"         # Signing # TODO: Remove this
+brew "httpie"           # HTTP client # TODO: Remove this
+brew "wget"             # HTTP client # TODO: Remove this
+brew "curl"             # HTTP client # TODO: Remove this
+brew "graphqurl"        # GraphQL client # TODO: Remove this
+cask "ngrok"            # Expose local web server to internet
+
+# TUIs
+brew "htop"    # System monitor # TODO: Remove this
+brew "btop"    # System monitor # TODO: Remove this
+brew "glances" # System monitor # TODO: Remove this
+
+# GUIs
+cask "firefox@developer-edition" # Browser
+cask "firefox"                   # Browser
+cask "zen"                       # Browser
+cask "alacritty"                 # Terminal
+cask "wezterm"                   # Terminal
+cask "iterm2"                    # Terminal
+cask "wave"                      # Terminal
+cask "zed"                       # Text editor
+cask "vscodium"                  # Text editor
+cask "void"                      # Text editor
+cask "appflowy"                  # Note taker
+cask "element"                   # Instant messenger
+cask "signal"                    # Instant messenger
+cask "keybase"                   # Instant messenger
+cask "proton-pass"               # Password manager
+cask "proton-mail"               # Mail
+cask "bruno"                     # API client
+cask "proton-drive"              # Cloud storage
+cask "protonvpn"                 # VPN
+cask "mockoon"                   # Mock server
+cask "podman-desktop"            # Podman client
+cask "openlens"                  # Kubernetes client
+cask "yubico-authenticator"      # TOTP generator
+cask "arc"                       # Browser
+cask "cursor"                    # Text editor
+cask "windsurf"                  # Text editor
+cask "discord"                   # Instant messenger
+cask "1password"                 # Password manager
+cask "readdle-spark"             # Mail
+cask "notion-mail"               # Mail
+cask "notion-calendar"           # Calendar
+cask "ticktick"                  # Reminder
+cask "linear-linear"             # Issue tracker
+cask "tableplus"                 # DB client
+cask "dropbox"                   # Cloud storage
+cask "nordvpn"                   # VPN
+cask "figma"                     # Design
+cask "claude"                    # GenAI
+mas "Saber", id: 1671523739      # Handwritten note taker # TODO: Move these to casks
+mas "Numbers", id: 409203825     # Spreadsheet # TODO: Move these to casks
+mas "Pages", id: 409201541       # Word processing # TODO: Move these to casks
+mas "Keynote", id: 409183694     # Presentation # TODO: Move these to casks
+mas "Goodnotes", id: 1444383602  # Handwritten note taker # TODO: Move these to casks
+mas "Notability", id: 360593530  # Handwritten note taker # TODO: Move these to casks
+mas "Perplexity", id: 6714467650 # GenAI # TODO: Move these to casks
+{{- if eq .chezmoi.arch "arm64" }}
+# TODO: Enable this for all architectures
+# ARM machine
+cask "thebrowsercompany-dia" # Browser
+cask "chatgpt"               # GenAI
+{{- end }}
+{{- if eq .profile "cyberhaven" }}
+# TODO: Remove this
+# Cyberhaven workstation
+cask "microsoft-onenote"    # Note taker
+cask "microsoft-teams"      # Instant messenger
+cask "microsoft-outlook"    # Mail
+cask "microsoft-word"       # Word processing
+cask "microsoft-excel"      # Spreadsheet
+cask "microsoft-powerpoint" # Presentation
+cask "gitkraken"            # Git client
+cask "docker-desktop"       # Docker client
+cask "lens"                 # Kubernetes client
+cask "goland"               # IDE
+{{- end }}
+
+# Lua
+brew "luacheck" # Linter # TODO: Move this to mise packages
+
+# Fennel
+brew "fennel" # Toolchain # TODO: Move this to mise packages
+brew "fnlfmt" # Formatter # TODO: Move this to mise packages
+
+# Haskell
+brew "haskell-language-server" # Language server # TODO: Move this to mise packages
+brew "hlint"                   # Linter # TODO: Move this to mise packages
+brew "fourmolu"                # Formatter # TODO: Move this to mise packages
+
+# # Nix
+# nil # Language server
+# statix # Linter # TODO: Install deadnix as well
+# nixfmt # Formatter
+#
+# # Scala
+# metals # Language server
+# scalafix # Linter
+# scalafmt # Formatter
+#
+# # Kotlin
+# kotlin-language-server # Language server
+# ktlint # Linter
+# ktfmt # Formatter
+#
+# # PureScript
+# spago # Package manager
+# nodePackages.purescript-language-server # Language server
+# # TODO: Setup linter
+# nodePackages.purs-tidy # Formatter
+#
+# # ClojureScript
+# # TODO: Setup toolchain
+#
+# # C++
+# clang-tools # Language server and formatter
+# cppcheck # Linter

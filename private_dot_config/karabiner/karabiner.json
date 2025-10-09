@@ -4,7 +4,20 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Change return to control if pressed with other keys, to return if pressed alone",
+                        "description": "Change caps_lock to escape.",
+                        "manipulators": [
+                            {
+                                "from": {
+                                    "key_code": "escape",
+                                    "modifiers": { "optional": ["any"] }
+                                },
+                                "to": [{ "key_code": "caps_lock" }],
+                                "type": "basic"
+                            }
+                        ]
+                    },
+                    {
+                        "description": "Change return to control if pressed with other keys, to return if pressed alone.",
                         "manipulators": [
                             {
                                 "from": {
@@ -32,7 +45,7 @@
                         ]
                     },
                     {
-                        "description": "Change spacebar to left_option if pressed with other keys (Post spacebar when pressed alone)",
+                        "description": "Change spacebar to left_option if pressed with other keys (post spacebar when pressed alone).",
                         "manipulators": [
                             {
                                 "from": {
@@ -48,19 +61,6 @@
                 ]
             },
             "devices": [
-                {
-                    "identifiers": {
-                        "is_keyboard": true,
-                        "product_id": 832,
-                        "vendor_id": 1452
-                    },
-                    "simple_modifications": [
-                        {
-                            "from": { "key_code": "escape" },
-                            "to": [{ "key_code": "caps_lock" }]
-                        }
-                    ]
-                },
                 {
                     "identifiers": {
                         "is_keyboard": true,

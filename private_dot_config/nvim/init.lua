@@ -97,17 +97,14 @@ vim.opt.spell = true
 
 require("lazy").setup({
 	-- Collection of plugins
-	{
-		"folke/snacks.nvim",
-		opts = {},
-	},
+	{ "folke/snacks.nvim", opts = {} },
 	"echasnovski/mini.nvim",
 
+	-- Lua libraries
+	"nvim-neotest/nvim-nio", -- TODO: Use luarocks to manage this and remove from here
+
 	-- Lua transpiler
-	{
-		"rktjmp/hotpot.nvim",
-		opts = {},
-	},
+	{ "rktjmp/hotpot.nvim", opts = {} },
 
 	-- Keymaps
 	{ "numToStr/Comment.nvim", opts = {} }, -- Manipulate comments TODO: Remove this
@@ -434,56 +431,54 @@ require("lazy").setup({
 	-- Treesitter integration
 	{
 		"nvim-treesitter/nvim-treesitter",
-		branch = "main", -- TODO: Remove this when main is set as default branch
 		build = ":TSUpdate",
 		config = function()
-			require("nvim-treesitter").install("all") -- Install all parsers asynchronously
+			require("nvim-treesitter.configs").setup({
+				auto_install = true,
+				highlight = { enable = true },
+				textobjects = {
+					select = {
+						enable = true,
+						lookahead = true, -- Automatically jump forward to text object
+						keymaps = {
+							["af"] = "@function.outer", -- Select outside function
+							["if"] = "@function.inner", -- Select inside function
+							["ac"] = "@class.outer", -- Select outside class
+							["ic"] = "@class.inner", -- Select inside class
+							["aa"] = "@parameter.outer", -- Select outside parameter
+							["ia"] = "@parameter.inner", -- Select inside parameter
+						},
+					},
+					move = {
+						enable = true,
+						goto_next_start = {
+							["]m"] = "@function.outer", -- Goto start of next function
+							["]]"] = "@class.outer", -- Goto start of next class
+							["]a"] = "@parameter.inner", -- Goto start of next parameter
+						},
+						goto_next_end = {
+							["]M"] = "@function.outer", -- Goto end of next function
+							["]["] = "@class.outer", -- Goto end of next class
+							["]A"] = "@parameter.inner", -- Goto end of next parameter
+						},
+						goto_previous_start = {
+							["[m"] = "@function.outer", -- Goto start of previous function
+							["[["] = "@class.outer", -- Goto start of previous class
+							["[a"] = "@parameter.inner", -- Goto start of previous parameter
+						},
+						goto_previous_end = {
+							["[M"] = "@function.outer", -- Goto end of previous function
+							["[]"] = "@class.outer", -- Goto end of previous class
+							["[A"] = "@parameter.inner", -- Goto end of previous parameter
+						},
+					},
+				},
+			})
 			vim.treesitter.language.register("bash", "zsh") -- TODO: Remove this when zsh parser is supported officially
 		end,
 	},
 	-- Text objects
-	{
-		"nvim-treesitter/nvim-treesitter-textobjects",
-		branch = "main", -- TODO: Remove this when main is set as default branch
-		-- TODO: Define other keymaps
-		opts = {
-			select = {
-				enable = true,
-				lookahead = true, -- Automatically jump forward to text object
-				keymaps = {
-					["af"] = "@function.outer", -- Select outside function
-					["if"] = "@function.inner", -- Select inside function
-					["ac"] = "@class.outer", -- Select outside class
-					["ic"] = "@class.inner", -- Select inside class
-					["aa"] = "@parameter.outer", -- Select outside parameter
-					["ia"] = "@parameter.inner", -- Select inside parameter
-				},
-			},
-			move = {
-				enable = true,
-				goto_next_start = {
-					["]m"] = "@function.outer", -- Goto start of next function
-					["]]"] = "@class.outer", -- Goto start of next class
-					["]a"] = "@parameter.inner", -- Goto start of next parameter
-				},
-				goto_next_end = {
-					["]M"] = "@function.outer", -- Goto end of next function
-					["]["] = "@class.outer", -- Goto end of next class
-					["]A"] = "@parameter.inner", -- Goto end of next parameter
-				},
-				goto_previous_start = {
-					["[m"] = "@function.outer", -- Goto start of previous function
-					["[["] = "@class.outer", -- Goto start of previous class
-					["[a"] = "@parameter.inner", -- Goto start of previous parameter
-				},
-				goto_previous_end = {
-					["[M"] = "@function.outer", -- Goto end of previous function
-					["[]"] = "@class.outer", -- Goto end of previous class
-					["[A"] = "@parameter.inner", -- Goto end of previous parameter
-				},
-			},
-		},
-	},
+	{ "nvim-treesitter/nvim-treesitter-textobjects" },
 
 	-- LSP integration
 	{
@@ -539,22 +534,14 @@ require("lazy").setup({
 
 	-- AI integration
 	-- TODO: Update model used
+	-- TODO: Enable NES
 	{
-		"olimorris/codecompanion.nvim",
-		opts = {
-			strategies = {
-				chat = {
-					adapter = "gemini",
-				},
-				inline = {
-					adapter = "gemini",
-				},
-				cmd = {
-					adapter = "gemini",
-				},
-			},
-		},
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		event = "InsertEnter",
+		opts = {},
 	},
+	{ "olimorris/codecompanion.nvim", opts = {} },
 
 	-- GitHub client
 	{ "pwntester/octo.nvim", opts = {} },
@@ -728,14 +715,6 @@ local languages = {
 -- Setup language tools
 require("lint").linters_by_ft = {}
 local function setup_language(filetype, config)
-	-- Enabled treesitter syntax highlighting
-	vim.api.nvim_create_autocmd("FileType", {
-		group = vim.api.nvim_create_augroup("treesitter-highlight", {}),
-		pattern = filetype,
-		callback = function()
-			vim.treesitter.start()
-		end,
-	})
 	-- Register language server
 	if config.language_server then
 		vim.lsp.enable(config.language_server)

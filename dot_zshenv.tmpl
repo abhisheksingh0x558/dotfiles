@@ -6,12 +6,14 @@ declare -A ZINIT
 ZINIT[NO_ALIASES]=1 # Disable aliases
 
 # Path
-declare -U path                         # De-duplicate path elements
-path+=~/.local/bin                      # Custom scripts
-path+="${CARGO_HOME:-$HOME/.cargo}/bin" # Global Rust binaries
+declare -U path # De-duplicate path elements
+# Custom scripts
+local_bin=~/.local/bin
+[[ -d $local_bin ]] && path+=$local_bin
+unset local_bin
 
 # Source local environment
-env_file=~/.env.local.zsh
+env_file=~/.zshenv.local
 [[ -f $env_file ]] && source "$env_file"
 unset env_file
 
@@ -28,4 +30,9 @@ export JUST_UNSTABLE=1             # Enable unstable just features # TODO: Remov
 export FZF_DEFAULT_OPTS=--reverse # Display style for fzf
 
 # Git client
-export FORGIT_NO_ALIASES=1 # Disable aliases
+# export FORGIT_NO_ALIASES=1 # Disable aliases # TODO: Enable this
+
+# Environment
+{{- if eq .profile "cyberhaven" }}
+export GOPRIVATE=github.com/CyberhavenInc # Go private modules
+{{- end }}
