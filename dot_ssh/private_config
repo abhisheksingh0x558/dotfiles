@@ -1,0 +1,20 @@
+# Default SSH key for Codeberg
+Host codeberg.org
+  AddKeysToAgent yes
+  HostName codeberg.org
+  IdentityFile ~/.ssh/default/auth_git_forge
+  UseKeychain yes
+
+# Default SSH key for GitLab
+Host gitlab.com
+  AddKeysToAgent yes
+  HostName gitlab.com
+  IdentityFile ~/.ssh/default/auth_git_forge
+  UseKeychain yes
+
+# Default SSH key for GitHub
+Host github.com
+  AddKeysToAgent yes
+  HostName github.com
+  IdentityFile ~/.ssh/default/auth_git_forge
+  UseKeychain yes
