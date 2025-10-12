@@ -5,4 +5,7 @@ require("lazy").setup({
 	-- Collection of plugins
 	{ "folke/snacks.nvim", opts = {} },
 	"echasnovski/mini.nvim",
+
+	-- Lua libraries
+	"nvim-neotest/nvim-nio", -- TODO: Use luarocks to manage this and remove from here
 })
