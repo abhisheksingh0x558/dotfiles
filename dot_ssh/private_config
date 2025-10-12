@@ -18,3 +18,10 @@ Host github.com
   HostName github.com
   IdentityFile ~/.ssh/default/auth_git_forge
   UseKeychain yes
+
+# Cyberhaven SSH key for GitHub
+Host cyberhaven.github.com
+  AddKeysToAgent yes
+  HostName github.com
+  IdentityFile ~/.ssh/cyberhaven/auth_git_forge
+  UseKeychain yes
