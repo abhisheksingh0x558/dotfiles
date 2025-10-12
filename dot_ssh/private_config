@@ -1,0 +1,6 @@
+# Default SSH key
+Host github.com
+  AddKeysToAgent yes
+  HostName github.com
+  IdentityFile ~/.ssh/default/auth_git_forge
+  UseKeychain yes
