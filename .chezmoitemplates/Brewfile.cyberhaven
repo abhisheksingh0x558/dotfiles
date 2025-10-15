@@ -1,0 +1,10 @@
+# -*- mode: ruby-ts -*-
+# vim: filetype=ruby
+
+# TODO: Remove this
+
+# CLIs
+brew "colima"         # Containerization
+brew "docker"         # Containerization
+brew "kubernetes-cli" # Container orchestration
+cask "gcloud-cli"     # Google Cloud client
