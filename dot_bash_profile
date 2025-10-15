@@ -36,3 +36,9 @@ export JUST_UNSTABLE=1             # Enable unstable just features # TODO: Remov
 
 # Fuzzy finder
 export FZF_DEFAULT_OPTS=--reverse # Display style for fzf
+
+# Source run commands
+# TODO: Do this in a better way
+rc_file=~/.bashrc
+[[ -f $rc_file ]] && source "$rc_file"
+unset rc_file
