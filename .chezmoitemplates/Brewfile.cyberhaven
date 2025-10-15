@@ -8,3 +8,7 @@ brew "colima"         # Containerization
 brew "docker"         # Containerization
 brew "kubernetes-cli" # Container orchestration
 cask "gcloud-cli"     # Google Cloud client
+
+# TUIs
+brew "lazydocker" # docker client
+brew "k9s"        # Kubernetes client
