@@ -2,6 +2,8 @@
 /LICENSE # License
 /justfile # Just
 /install # Installation script
+/WIP.md # TODO: Remove this
+/wip/ # TODO: Remove this
 
 {{ if ne .chezmoi.os "linux" }}
 # Arch Linux only includes

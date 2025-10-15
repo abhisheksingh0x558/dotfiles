@@ -1,0 +1,142 @@
+# The sections are sorted alphabetically.
+
+# Help the lazy me.
+[alias]
+  rup = remote -v update -p
+  unstage = reset HEAD --
+  last = log -1 HEAD
+  serveall-ro = daemon --base-path=. --export-all --reuseaddr --informative-errors --verbose
+  serveall-rw = daemon --base-path=. --export-all --enable=receive-pack --reuseaddr --informative-errors --verbose
+  remove-deleted-files = "rm $(git ls-files -d)"
+  # Change date of the last commit safely. Source: http://stackoverflow.com/a/23693336/1276737
+  # Usage: git change-date "2 hours ago"
+  change-date = "!d=\"$(date -d \"$1\")\" && shift && \
+    git diff-index --cached --quiet HEAD --ignore-submodules -- && \
+    GIT_COMMITTER_DATE=\"$d\" git commit --amend -C HEAD --date \"$d\"" \
+    || echo >&2 "error: date change failed: index not clean!"
+  # Generate .gitignore snippets from gitignore.io
+  genignore = "!gi() { curl -L -s https://www.gitignore.io/api/$@ ;}; gi"
+  # Helpers to inspect github pull requests locally.
+  # `git pr nnn remote` creates and checks out pr/nnn branch. Uses remote origin by default.
+  pr  = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
+  # Cleans all local prs.
+  pr-clean = "!git for-each-ref refs/heads/pr/* --format='%(refname)' | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
+  # Setup gh-pr pulling
+  # `git setup-pr-tracking remote will setup GH pr tracking on `git remote update`.
+  # Just `git checkout pr/nnn` to create a local branch and track the PR.
+  setup-gh-pr-tracking = "!f() { git config --add remote.${1:-origin}.fetch \"+refs/pull/*/head:refs/remotes/${1:-origin}/pr/*\"; }; f"
+  graph = "log --all --graph --pretty=format:'%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative"
+  # Fun stuff
+  gen-commitmsg = "!curl -s whatthecommit.com/index.txt"
+  # Show verbose output about tags, branches or remotes
+  tags = tag -l
+  remotes = remote -v
+  # Cleanup merged branches
+  cleanup-merged =  "!git branch --no-color --merged | grep -v '*' | xargs --interactive --no-run-if-empty git branch -d"
+  # Open github url with exact commit referenced by $1, head by default.
+  # Stolen from http://codeinthehole.com/writing/linking-to-github/
+  gh-url = "!f() { sha=$(git rev-parse ${1:-HEAD}); hub browse -u -- commit/$sha; }; f"
+  alias = "!f() { git config \"alias.$1\"; }; f"
+  log-fuller = log --pretty=fuller
+  log-compact = log --pretty=\"format:%C(yellow)%h %Cblue%>(12)%ad %Cgreen%<(7)%aN%Cred%d %Creset%s\" --date=relative
+
+
+[branch]
+  autosetupmerge = true
+  autosetuprebase = always
+
+[clean]
+  # Always good to be forced to delete.
+  requireForce = true
+
+[color]
+  # I like colors.
+  # always here messes with git add -p and a bunch of other stuff. dunno why
+  ui = auto
+
+[commit]
+  gpgsign = false
+  verbose = true
+
+[core]
+  pager = delta
+  trustctime = false
+  excludesFile = ~/.config/git/ignore
+  autocrlf = input
+
+[diff]
+  submodule = log
+  tool = splice
+
+[gc]
+  reflogExpire = never
+
+[help]
+  # Wait for 3 seconds and proceed with typo correction
+  autocorrect = 30
+
+[http]
+  # Prevent problems with http transport by using large buffer
+  postBuffer = 524288000
+
+[interactive]
+  diffFilter = delta --color-only --features=interactive
+
+[add.interactive]
+  useBuiltin = false # required for git 2.37.0
+
+[diff]
+  tool = difftastic
+
+[difftool]
+  # prompt = false
+
+[difftool "difftastic"]
+  cmd = difft "$LOCAL" "$REMOTE"
+
+[delta]
+  navigate = true    # use n and N to move between diff sections
+  light = false      # set to true if you're in a terminal w/ a light background color (e.g. the default macOS terminal)
+  features = interactive decorations
+
+[delta "interactive"]
+  keep-plus-minus-markers = false
+  side-by-side = true
+
+[delta "decorations"]
+  commit-decoration-style = blue ol
+  commit-style = raw
+  file-style = omit
+  hunk-header-decoration-style = blue box
+  hunk-header-file-style = red
+  hunk-header-line-number-style = "#067a00"
+  hunk-header-style = file line-number syntax
+
+[diff]
+  colorMoved = default
+
+[merge]
+  # Merge commits should carry summaries of included commits
+  # This is a limit, there's no all option and true is 20.
+  # That's just stupid, but one can argue >20 commits in merges
+  # are bad. Whatever. I deal with bad code.
+  # I hope I won't have to deal with a merge of >100000 commits.
+  log = 100000
+  # I like meld, but it's not available on OSX.
+  tool = splice
+
+# For those times when I make a bad wrapper script and exit 0 always.
+[mergetool]
+  trustExitCode = false
+
+[mergetool "splice"]
+  cmd = "nvim -f $BASE $LOCAL $REMOTE $MERGED -c 'SpliceInit'"
+  trustExitCode = true
+
+[status]
+  submodulesummary = true
+
+[stash]
+	showPatch = true
+[advice]
+	skippedCherryPicks = false

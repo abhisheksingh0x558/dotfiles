@@ -1,0 +1,34 @@
+#!/usr/bin/env zsh
+# -*- mode: zsh -*-
+# vim:ft=zsh
+
+# Allow zplug to manage itself
+zplug "zplug/zplug", hook-build:"zplug --self-manage"
+
+# When nix is installed and setup, load scripts/plugins from there
+zplug "~/.nix-profile/etc/profile.d", \
+  from:local, use:"*.sh", \
+  if:"[ -d ~/.nix-profile ]"
+
+# Lots of contributed completions.
+zplug "zsh-users/zsh-completions"
+
+# Remind if there's an alias to the command being run
+# zplug "djui/alias-tips"
+
+# Automatically load per directory env files
+# (technically full fledged scripts,
+#  but bad idea to do anything except tweak env)
+zplug "Tarrasch/zsh-autoenv"
+
+zplug "zsh-users/zsh-history-substring-search"
+zplug "zsh-users/zsh-autosuggestions"
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "RobSis/zsh-completion-generator"
+zplug "denisidoro/navi", hook-build:"scripts/install ~/.local/bin"
+zplug mafredri/zsh-async, from:github
+# zplug "phanimahesh/purer", as:theme, use:pure.zsh
+zplug romkatv/powerlevel10k, as:theme, depth:1
+# zplug "paulmelnikow/zsh-startup-timer"
+zplug "bigH/git-fuzzy", as:command, use:"bin/git-fuzzy"
+zplug "zsh-users/zaw"
