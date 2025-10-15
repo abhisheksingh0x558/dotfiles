@@ -67,4 +67,11 @@ brew "stylua"              # Formatter
 brew "rust"          # Toolchain, package manager, linter and formatter
 brew "rust-analyzer" # Language server
 
+# Go
+brew "go"          # Toolchain and package manager
+brew "gopls"       # Language server
+brew "staticcheck" # Linter
+brew "gofumpt"     # Formatter
+brew "delve"       # Debugger
+
 {{ includeTemplate (printf "Brewfile.%s" .profile) -}}
