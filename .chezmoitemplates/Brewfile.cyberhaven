@@ -12,3 +12,19 @@ cask "gcloud-cli"     # Google Cloud client
 # TUIs
 brew "lazydocker" # docker client
 brew "k9s"        # Kubernetes client
+
+# GUIs
+cask "logseq"             # Note taker
+cask "bitwarden"          # Password manager
+cask "bruno"              # API client
+cask "dbeaver-community"  # DB client
+cask "raycast"            # Application launcher
+cask "google-chrome"      # Browser
+cask "warp"               # Terminal
+cask "visual-studio-code" # Text editor
+cask "obsidian"           # Note taker
+cask "notion"             # Note taker
+cask "slack"              # Instant messenger
+cask "zoom"               # Video caller
+cask "postman"            # API client
+cask "chatgpt"            # GenAI
