@@ -105,6 +105,15 @@ brew "rust"
 brew "cargo-binstall" # Binary installer
 brew "rust-analyzer"  # Language server
 
+# Go
+brew "go"
+brew "gopls"          # Language server
+brew "staticcheck"    # Linter
+brew "gofumpt"        # Formatter
+brew "delve"          # Debugger
+brew "mockery"        # Mock generator
+brew "golang-migrate" # Migration manager
+
 {{ if eq .profile "default" -}}
 # Default profile
 
