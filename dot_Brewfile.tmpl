@@ -74,4 +74,9 @@ brew "staticcheck" # Linter
 brew "gofumpt"     # Formatter
 brew "delve"       # Debugger
 
+# JavaScript
+brew "node"  # Toolchain
+brew "pnpm"  # Package manager
+brew "biome" # Language server, linter and formatter
+
 {{ includeTemplate (printf "Brewfile.%s" .profile) -}}
