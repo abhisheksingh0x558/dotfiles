@@ -135,3 +135,6 @@
   (nmap
     "[c" #'diff-hl-previous-hunk ; Goto previous hunk
     "]c" #'diff-hl-next-hunk)) ; Goto next hunk
+
+;;; PKM tool
+(leaf org-roam)
