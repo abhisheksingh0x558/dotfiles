@@ -137,3 +137,16 @@
     "[c" #'diff-hl-previous-hunk ; Go to previous hunk
     "]c" #'diff-hl-next-hunk)) ; Go to next hunk
 
+;;; PKM tool
+(setq org-directory "~/Documents/org") ; Org files
+(setq org-agenda-files `(,org-directory)) ; Org agenda files
+(setq org-default-notes-file (expand-file-name "notes.org" org-directory)) ; Org capture file
+(leaf org-roam
+  :custom* ((org-roam-directory (expand-file-name "roam" org-directory)))) ; Org roam files
+(evil-define-key 'normal 'global
+  ;; Find org files
+  (kbd "<leader>o") #'(lambda ()
+                        (interactive)
+                        (let ((project-current-directory-override org-directory))
+                          (project-find-file-in nil (list org-directory) (project-current t org-directory) t)))
+  (kbd "<leader>a") #'org-agenda) ; Open org agenda
