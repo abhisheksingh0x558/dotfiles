@@ -50,3 +50,8 @@ indent_style = space
 indent_size = 4
 # Indentation with spaces
 indent_style = space
+
+# Org overrides
+[*.org]
+# Tab size
+tab_width = 8
