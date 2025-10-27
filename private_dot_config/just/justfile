@@ -8,6 +8,7 @@ mod doomemacs
 mod emacs
 mod gpg
 mod keyd
+mod lazyvim
 mod mise
 mod nix
 mod nvim
