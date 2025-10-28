@@ -25,3 +25,6 @@ Host cyberhaven.github.com
   HostName github.com
   IdentityFile ~/.ssh/cyberhaven/auth_git_forge
   UseKeychain yes
+
+# Colima
+Include ~/.colima/ssh_config
