@@ -4,6 +4,9 @@
 # Version manager
 eval "$(mise activate bash --shims)"
 
+# Environment
+export GOPATH=~/.go # Global Go directory
+
 # Source run commands
 rc_file=~/.bashrc
 [[ -f $rc_file ]] && source "$rc_file"
