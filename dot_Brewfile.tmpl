@@ -123,6 +123,13 @@ brew "biome" # Language server, linter and formatter
 brew "pnpm"  # Version manager, package manager, project manager, command runner and binary installer
 brew "vite"  # Build tool
 
+# Python
+brew "python"
+brew "uv"   # Version manager, package manager, project manager, command runner and binary installer
+# TODO: Enable this
+# brew "ty"   # Type checker and language server
+brew "ruff" # Linter and formatter
+
 {{ if eq .profile "default" -}}
 # Default profile
 
