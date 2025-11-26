@@ -1,6 +1,7 @@
 /README.md # Documentation
 /LICENSE # License
 /install # Installation script
+/flsproject.fnl # Fennel language server
 
 {{ if ne .chezmoi.os "linux" }}
 # Arch Linux only includes
