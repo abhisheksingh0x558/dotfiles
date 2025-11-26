@@ -1,0 +1,10 @@
+{
+  "Lua.runtime.version": "LuaJIT", // Lua version
+  "Lua.workspace.checkThirdParty": false, // Disable workspace scanning
+  "Lua.workspace.library": [
+    "/usr/local/share/nvim/runtime", // Neovim runtime
+    "${3rd}/luv/library", // Libuv runtime
+    // "~/.local/share/nvim/lazy" // Neovim plugins TODO: Enable this
+  ],
+	// "Lua.workspace.preloadFileSize": 100 // Number of files to preload TODO: Enable this
+}
