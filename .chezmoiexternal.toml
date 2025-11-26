@@ -3,3 +3,9 @@
 [".local/share/zinit/plugins/zdharma-continuum---zinit"]
 type = "git-repo"
 url = "https://github.com/zdharma-continuum/zinit.git"
+
+# Fennel
+# Language server
+[".local/share/fennel-ls/docsets/nvim.lua"]
+type = "file"
+url = "https://git.sr.ht/~micampe/fennel-ls-nvim-docs/blob/main/nvim.lua"
