@@ -162,4 +162,7 @@ return {
 
 	-- Folding
 	{ "kevinhwang91/nvim-ufo", opts = {} },
+
+	-- Outliner
+	{ "stevearc/aerial.nvim", opts = {} },
 }
