@@ -183,4 +183,7 @@ return {
 			},
 		},
 	},
+
+	-- LSP integration
+	"neovim/nvim-lspconfig",
 }
