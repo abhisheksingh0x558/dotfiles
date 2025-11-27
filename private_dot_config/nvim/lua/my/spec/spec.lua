@@ -71,4 +71,20 @@ return {
 	"RRethy/vim-illuminate",
 	"HiPhish/rainbow-delimiters.nvim", -- Highlight brackets
 	{ "folke/which-key.nvim", opts = {} }, --  Key mapping pop up helper
+
+	-- Autocompletion
+	-- Auto close pairs
+	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+		opts = {},
+	},
+	"rafamadriz/friendly-snippets", -- Snippet collection
+	{
+		"saghen/blink.cmp",
+		version = "*",
+		opts = {
+			keymap = { preset = "super-tab" }, -- Use tab for autocompletion
+		},
+	},
 }
