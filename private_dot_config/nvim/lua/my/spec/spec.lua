@@ -186,4 +186,7 @@ return {
 
 	-- LSP integration
 	"neovim/nvim-lspconfig",
+
+	-- Linter
+	"mfussenegger/nvim-lint",
 }
