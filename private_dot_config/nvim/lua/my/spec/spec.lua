@@ -197,4 +197,7 @@ return {
 			format_after_save = {}, -- Enable asynchronous formatting
 		},
 	},
+
+	-- Test runner
+	{ "nvim-neotest/neotest", opts = {} },
 }
