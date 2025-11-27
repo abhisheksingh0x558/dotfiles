@@ -29,6 +29,10 @@ return {
 					},
 				},
 			},
+
+			-- VCS integration
+			-- Git client
+			gitbrowse = { enabled = true },
 		},
 	},
 	"echasnovski/mini.nvim",
@@ -100,4 +104,20 @@ return {
 			keymap = { preset = "super-tab" }, -- Use tab for autocompletion
 		},
 	},
+
+	-- VCS integration
+	-- Git client
+	{
+		"NeogitOrg/neogit",
+		lazy = false,
+		opts = {},
+	},
+	-- Git commands in file
+	{
+		"lewis6991/gitsigns.nvim",
+		lazy = false,
+		opts = {},
+	},
+	{ "akinsho/git-conflict.nvim", opts = {} },
+	{ "sindrets/diffview.nvim", opts = {} }, -- Cycle diffs
 }
