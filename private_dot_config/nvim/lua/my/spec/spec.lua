@@ -215,4 +215,12 @@ return {
 		opts = {},
 	},
 	{ "olimorris/codecompanion.nvim", opts = {} }, -- Chat interface
+
+	-- GitHub client
+	{
+		"pwntester/octo.nvim",
+		opts = {
+			picker = "snacks", -- Fuzzy finder
+		},
+	},
 }
