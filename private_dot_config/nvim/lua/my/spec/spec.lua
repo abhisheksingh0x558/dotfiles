@@ -44,6 +44,9 @@ return {
 					},
 				},
 			},
+
+			-- Terminal manager
+			terminal = { enabled = true },
 		},
 	},
 	"echasnovski/mini.nvim",
