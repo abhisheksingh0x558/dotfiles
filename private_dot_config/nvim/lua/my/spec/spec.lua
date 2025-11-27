@@ -189,4 +189,12 @@ return {
 
 	-- Linter
 	"mfussenegger/nvim-lint",
+
+	-- Formatter
+	{
+		"stevearc/conform.nvim",
+		opts = {
+			format_after_save = {}, -- Enable asynchronous formatting
+		},
+	},
 }
