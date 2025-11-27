@@ -149,4 +149,7 @@ return {
 	-- File system manager
 	{ "stevearc/oil.nvim", opts = {} }, -- File system explorer in buffer
 	{ "chrisgrieser/nvim-genghis", opts = {} }, -- Commands for managing files and directories
+
+	-- REPL manager
+	{ "Vigemus/iron.nvim", opts = {} },
 }
