@@ -33,6 +33,17 @@ return {
 			-- VCS integration
 			-- Git client
 			gitbrowse = { enabled = true },
+
+			-- File system manager
+			-- File system explorer in sidebar
+			explorer = {
+				enabled = true,
+				sources = {
+					files = {
+						hidden = true, -- Show hidden files
+					},
+				},
+			},
 		},
 	},
 	"echasnovski/mini.nvim",
@@ -131,4 +142,8 @@ return {
 			},
 		},
 	},
+
+	-- File system manager
+	{ "stevearc/oil.nvim", opts = {} }, -- File system explorer in buffer
+	{ "chrisgrieser/nvim-genghis", opts = {} }, -- Commands for managing files and directories
 }
