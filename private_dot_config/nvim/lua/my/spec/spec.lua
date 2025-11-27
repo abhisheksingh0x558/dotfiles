@@ -16,6 +16,19 @@ return {
 			-- UI/UX
 			-- Indentation guides
 			indent = { enabled = true },
+
+			-- Fuzzy finder
+			picker = {
+				enabled = true,
+				layout = {
+					preset = "bottom", -- Show fuzzy finder at the bottom
+				},
+				sources = {
+					files = {
+						hidden = true, -- Show hidden files
+					},
+				},
+			},
 		},
 	},
 	"echasnovski/mini.nvim",
