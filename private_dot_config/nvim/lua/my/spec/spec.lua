@@ -120,4 +120,15 @@ return {
 	},
 	{ "akinsho/git-conflict.nvim", opts = {} },
 	{ "sindrets/diffview.nvim", opts = {} }, -- Cycle diffs
+
+	-- PKM tool
+	{
+		"nvim-neorg/neorg",
+		opts = {
+			load = {
+				["core.defaults"] = {},
+				["core.concealer"] = {}, -- Convert markup to icons
+			},
+		},
+	},
 }
