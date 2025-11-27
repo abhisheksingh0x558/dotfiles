@@ -152,4 +152,11 @@ return {
 
 	-- REPL manager
 	{ "Vigemus/iron.nvim", opts = {} },
+
+	-- Snippet executer
+	{
+		"michaelb/sniprun",
+		build = "sh install.sh",
+		opts = {},
+	},
 }
