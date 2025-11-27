@@ -205,4 +205,14 @@ return {
 	"mfussenegger/nvim-dap",
 	{ "rcarriga/nvim-dap-ui", opts = {} },
 	{ "theHamsta/nvim-dap-virtual-text", opts = {} },
+
+	-- AI integration
+	-- Model
+	{
+		"zbirenbaum/copilot.lua",
+		cmd = "Copilot",
+		event = "InsertEnter",
+		opts = {},
+	},
+	{ "olimorris/codecompanion.nvim", opts = {} }, -- Chat interface
 }
