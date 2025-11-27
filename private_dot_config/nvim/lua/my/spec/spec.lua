@@ -12,6 +12,10 @@ return {
 					jump = {},
 				},
 			},
+
+			-- UI/UX
+			-- Indentation guides
+			indent = { enabled = true },
 		},
 	},
 	"echasnovski/mini.nvim",
@@ -31,4 +35,40 @@ return {
 	{ "folke/flash.nvim", opts = {} }, -- Navigate with search labels
 	"Vonr/align.nvim", -- Manipulate alignments
 	{ "MagicDuck/grug-far.nvim", opts = {} }, -- Find and replace in project
+
+	-- UI/UX
+	-- Theme
+	"folke/tokyonight.nvim",
+	{ "nvim-lualine/lualine.nvim", opts = {} }, -- Statusline
+	{ "nvim-tree/nvim-web-devicons", opts = {} }, -- Icons
+	"MunifTanjim/nui.nvim", -- UI component library -- TODO: Use luarocks to manage this and remove from here
+	-- UI for messages, cmdline, and popupmenu
+	{
+		"folke/noice.nvim",
+		opts = {
+			cmdline = {
+				view = "cmdline", -- Show command line at the bottom
+			},
+		},
+	},
+	{ "Bekaboo/dropbar.nvim", opts = {} }, -- Breadcrumbs
+	{ "nvim-treesitter/nvim-treesitter-context", opts = {} }, -- Cursor context
+	-- UI for diagnostics, references, quickfix list and location list
+	{
+		"folke/trouble.nvim",
+		lazy = false,
+		opts = {
+			focus = true, -- Move cursor to trouble window when open
+		},
+	},
+	-- Highlight to do comments
+	{
+		"folke/todo-comments.nvim",
+		lazy = false,
+		opts = {},
+	},
+	-- Highlight lsp references
+	"RRethy/vim-illuminate",
+	"HiPhish/rainbow-delimiters.nvim", -- Highlight brackets
+	{ "folke/which-key.nvim", opts = {} }, --  Key mapping pop up helper
 }
