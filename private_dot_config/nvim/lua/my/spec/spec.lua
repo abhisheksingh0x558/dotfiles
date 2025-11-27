@@ -159,4 +159,7 @@ return {
 		build = "sh install.sh",
 		opts = {},
 	},
+
+	-- Folding
+	{ "kevinhwang91/nvim-ufo", opts = {} },
 }
