@@ -45,3 +45,6 @@
         (eval (macroexpand `(leaf ,spec))))
       (_ (message "invalid package specification: %S" spec)))))
 (elpaca-wait)
+
+;; Load package modules
+(my-load "my-pkg")
