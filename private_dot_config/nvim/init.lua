@@ -18,3 +18,6 @@ load(vim.fn.stdpath("config") .. "/lua/my/core")
 
 -- Setup plugins
 lazy.setup({ import = "my.spec" })
+
+-- Load plugin modules
+load(vim.fn.stdpath("config") .. "/lua/my/plug")
