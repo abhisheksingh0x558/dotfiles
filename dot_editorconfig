@@ -43,3 +43,10 @@ indent_style = space
 indent_size = 4
 # Indentation with spaces
 indent_style = space
+
+# Python overrides
+[*.py]
+# Spaces used for indentation
+indent_size = 4
+# Indentation with spaces
+indent_style = space
